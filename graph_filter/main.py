@@ -15,8 +15,8 @@ def main(filters={}):
     members = g.get_vertex_dataframe()
 
     if trx is not None and members is not None:
-        members.to_csv('./output/filtered_members.csv', index=False)
-        trx.to_csv('./output/filtered_transactions.csv', index=False)
+        members.to_csv('./output/members.csv', index=False)
+        trx.to_csv('./output/transactions.csv', index=False)
 
 
 arg_parser = argparse.ArgumentParser()
