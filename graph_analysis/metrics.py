@@ -65,6 +65,12 @@ def compute_graph_metrics(g=Graph):
     data['Page Rank'] = pagerank(g=g)
     data['Clustering Coefficient'] = clustering_coefficient(
         g=g)
+    data["Revenu"] = g.vs['revenu']
+    data["Age"] = g.vs['age']
+    data["Accorderie"] = g.vs['accorderie']
+    data["Ville"] = g.vs['ville']
+    data["Region"] = g.vs['region']
+    data["Arrondissement"] = g.vs['arrondissement']
 
     result = pd.DataFrame(
         data=data)
