@@ -18,7 +18,7 @@ def plot_degree_distribution(xa, ya, folder_name='', title='', line=False, logsc
     ax.set_ylabel('Frequency')
     ax.set_xlabel('Degree')
 
-    fig.savefig('./artifacts/' + folder_name + title + '.pdf', dpi=300)
+    fig.savefig('./output/' + folder_name + title + '.pdf', dpi=300)
     plt.close()
 
 
@@ -27,9 +27,9 @@ def plot_communities(g, layout, title):
 
     components = g1.clusters()
 
-    file_writer = create_xlsx_file('./artifacts/'+title+'metrics')
+    file_writer = create_xlsx_file('./output/'+title+'metrics')
 
-    with PdfPages('./artifacts/'+title+'graphs.pdf') as pdf:
+    with PdfPages('./output/'+title+'graphs.pdf') as pdf:
         for cidx in range(len(components)):
 
             gc = components.subgraph(cidx)
@@ -69,7 +69,7 @@ def plot_communities(g, layout, title):
 
 
 def plot_graph_snapshots(snapshots, layout, title, color_palette):
-    with PdfPages('./artifacts/'+title+'.pdf') as pdf:
+    with PdfPages('./output/'+title+'.pdf') as pdf:
         for x in range(len(snapshots)):
 
             snp = snapshots[x]
@@ -110,7 +110,7 @@ def plot_complete_graph(g=Graph, layout=Graph.layout,  title='', color_palette={
         vertex_label_size=4,
         edge_align_label=True)
 
-    fig.savefig('./artifacts/' + title + '.pdf', dpi=300)
+    fig.savefig('./output/' + title + '.pdf', dpi=300)
     plt.close()
 
 
@@ -125,5 +125,5 @@ def plot_snapshot_metrics(data, title):
         target = ax[i]
         target.bar(range(len(data[d])), xx)
 
-    fig.savefig('./artifacts/' + title + '.pdf', dpi=300)
+    fig.savefig('./output/' + title + '.pdf', dpi=300)
     plt.close()

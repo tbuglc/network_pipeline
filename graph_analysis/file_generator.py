@@ -24,7 +24,7 @@ def save_csv_file(file_writer=pd.ExcelWriter):
 
 def pdf_degree_distribution(complete_graph, snapshots, folder_name):
 
-    with PdfPages('./artifacts/'+folder_name+'.pdf') as pdf:
+    with PdfPages('./output/'+folder_name+'.pdf') as pdf:
         # plot complete graph distribution
         fig, ax = plt.subplots()
 

@@ -4,8 +4,8 @@ import pandas as pd
 
 def data_loader():
     # TODO: Should consider loading as stream for better memory usage in case of large dataset
-    users = pd.read_csv('data/users.csv', encoding='latin-1')
-    transactions = pd.read_csv('data/transactions.csv', encoding='latin-1')
+    users = pd.read_csv('input/members.csv', encoding='latin-1')
+    transactions = pd.read_csv('input/transactions.csv', encoding='latin-1')
     # print(users, transactions)
     return users, transactions
 

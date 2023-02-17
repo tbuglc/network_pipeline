@@ -34,7 +34,7 @@ def main(span_days, folder_name="", g=None):
         raise "Missing folder name"
         # return
 
-    # create experiment folder to house all artifacts
+    # create experiment folder to house all output
 
     # load graph complet
 
@@ -45,15 +45,15 @@ def main(span_days, folder_name="", g=None):
     # folder_name = datetime.now().strftime('%f')+'/'
     # print(g)
 
-    dir_exits = os.path.exists('./artifacts/')
+    dir_exits = os.path.exists('./output/')
     if (dir_exits == False):
-        os.mkdir('./artifacts')
+        os.mkdir('./output')
 
-    if (os.path.exists('./artifacts/'+folder_name) is False):
-        os.mkdir('./artifacts/'+folder_name)
+    if (os.path.exists('./output/'+folder_name) is False):
+        os.mkdir('./output/'+folder_name)
 
     # create file
-    file_writer = create_xlsx_file('./artifacts/'+folder_name+'graphs_metrics')
+    file_writer = create_xlsx_file('./output/'+folder_name+'graphs_metrics')
     # create layout
     layout = g.layout('kk')
     # compute metrics on complete graph
@@ -128,123 +128,18 @@ def main(span_days, folder_name="", g=None):
 # main(span_days=30, folder_name="accorderie-data/")
 
 
-def perform_filter(filters):
-    if (not filters):
-        return None
-
-    g = load_accorderie_network()
-
-    # vertices properties filter
-
-    if (filters["age"]):
-        g = g.induced_subgraph(g.vs.select(age_in=filters["age"]))
-
-    if (filters["adresse"]):
-        g = g.induced_subgraph(g.vs.select(adresse_in=filters["adresse"]))
-
-    if (filters["arrondissement"]):
-        g = g.induced_subgraph(g.vs.select(
-            arrondissement_in=filters["arrondissement"]))
-
-    if (filters["ville"]):
-        g = g.induced_subgraph(g.vs.select(aville_in=filters["ville"]))
-
-    if (filters["genre"]):
-        g = g.induced_subgraph(g.vs.select(
-            genre_in=[int(j) for j in filters["genre"]]))
-
-    if (filters["revenu"]):
-        rev = {''+filters["revenu"][0]: filters["revenu"][1]}
-        g = g.induced_subgraph(g.vs(**rev))
-
-    # edges properties
-    if (filters["date"]):
-
-        rev = {}
-        if (len(filters["date"]) == 1):
-            rev['date_in'] = [parser.parse(d) for d in filters["date"][0]]
-        else:
-            rev['date_'+filters["date"][0]
-                ] = [parser.parse(d) for d in filters["date"][1]]
-
-        g = g.subgraph_edges(g.es(**rev))
-
-    if (filters["duree"]):
-        duree = {}
-        if (len(filters["duree"]) == 1):
-            duree['duree_in'] = [str(i) for i in filters["duree"][0]]
-        else:
-            duree['duree_'+filters["duree"][0]
-                  ] = [str(i) for i in filters["duree"][1]]
-
-        g = g.subgraph_edges(g.es.select(**duree))
-
-    if (filters["service"]):
-        g = g.subgraph_edges(g.es.select(service_in=filters["service"]))
-
-    return g
-
-
-def filter_graph(filters={}):
-
-    g = perform_filter(filters=filters)
-
-    trx = g.get_edge_dataframe()
-    members = g.get_vertex_dataframe()
-
-    # generate folder name
-    # TODO: create folder if not exist, add timestamp
-    folder_name = 'filtered_analysis/'
-
-    if (g):
-        # call main to calculate metrics
-        main(span_days=30, folder_name=folder_name, g=g)
-
-    folder_name = 'filtered_data/'
-    t_file_writer = create_xlsx_file('./artifacts/'+folder_name+'transactions')
-    add_sheet_to_xlsx(file_writer=t_file_writer, data=trx, title='trx')
-    save_csv_file(file_writer=t_file_writer)
-
-    m_file_writer = create_xlsx_file('./artifacts/'+folder_name+'members')
-    add_sheet_to_xlsx(file_writer=m_file_writer, data=members, title='m')
-    save_csv_file(file_writer=m_file_writer)
-
-    return trx, members
 
 
 arg_parser = argparse.ArgumentParser()
 # list down all available properties for
 # users or transactions
 
-arg_parser.add_argument('-f', '--filter', action="store_true")
-
-arg_parser.add_argument('--age', action="append",
-                        help="--age: filter by age, i.e --age=12-23 for single value otherwise, chaining --age=12-23 --age=23-32 will return to a list ['12-23', '23-32']. Note that we perform OR operation on a list")
-arg_parser.add_argument('--adresse', action="append",
-                        help="--adresse: filter by adresse, i.e --adresse=12 for single value otherwise, chaining --adresse=12 --adresse=23 will return to a list [12, 23]. Note that we perform OR operation on a list")
-arg_parser.add_argument('--arrondissement', action="append",
-                        help="--arrondissement: filter by arrondissement, i.e --arrondissement=12 for single value otherwise, chaining --arrondissement=12 --arrondissement=23 will return to a list [12, 23]. Note that we perform OR operation on a list")
-arg_parser.add_argument('--ville', action="append",
-                        help="--ville: filter by ville, i.e --ville=12 for single value otherwise, chaining --ville=12 --ville=23 will return to a list [12, 23]. Note that we perform OR operation on a list")
-arg_parser.add_argument('--revenu', action="append",
-                        help="--revenu: filter by revenu, i.e --revenu=12 for single value otherwise, chaining --revenu=12 --revenu=23 will return to a list [12, 23]. Note that we perform OR operation on a list")
-arg_parser.add_argument('--genre', action="append",
-                        help="--genre: filter by genre, i.e --genre=12 for single value otherwise, chaining --genre=12 --genre=23 will return to a list [12, 23]. Note that we perform OR operation on a list")
-
-
-arg_parser.add_argument('--date', action="append",
-                        help="--date: filter by date, i.e --date=12 for single value otherwise, chaining --date=12 --date=23 will return to a list [12, 23]. Note that we perform OR operation on a list")
-arg_parser.add_argument('--duree', action="append",
-                        help="--duree: filter by duree, i.e --duree=12 for single value otherwise, chaining --duree=12 --duree=23 will return to a list [12, 23]. Note that we perform OR operation on a list")
-arg_parser.add_argument('--service', action="append",
-                        help="--service: filter by service, i.e --service=12 for single value otherwise, chaining --service=12 --service=23 will return to a list [12, 23]. Note that we perform OR operation on a list")
-
+arg_parser.add_argument('-s', '--span', default=30, type=int)
+arg_parser.add_argument('-f', '--folder_name', default='analysis')
 
 args = arg_parser.parse_args()
 
 
-if (args.filter is True):
-    filters = args.__dict__
-    filter_graph(filters)
-else:
-    main(span_days=30, folder_name='analysis/')
+
+filters = args.__dict__
+main(span_days=int(filters['span']), folder_name=filters['folder_name'])
