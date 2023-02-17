@@ -61,4 +61,9 @@ def perform_filter(g, filters):
         print("Filtering by service, value= "+str(filters["service"]))
         g = g.subgraph_edges(g.es.select(service_in=filters["service"]))
 
+    if (filters["accorderie"]):
+        filters['accorderie'] = [int(x) for x in filters['accorderie']]
+        print("Filtering by accorderie, value= "+str(filters["accorderie"]))
+        g = g.subgraph_edges(g.es.select(accorderie_in=filters["accorderie"]))
+
     return g

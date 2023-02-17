@@ -15,8 +15,8 @@ def main(filters={}):
     members = g.get_vertex_dataframe()
 
     if trx is not None and members is not None:
-        members.to_csv('./output/filtered_members.csv')
-        trx.to_csv('./output/filtered_transactions.csv')
+        members.to_csv('./output/filtered_members.csv', index=False)
+        trx.to_csv('./output/filtered_transactions.csv', index=False)
 
 
 arg_parser = argparse.ArgumentParser()
@@ -43,6 +43,9 @@ arg_parser.add_argument('--duree', action="append")
 # help="--duree: filter by duree, i.e --duree=12 for single value otherwise, chaining --duree=12 --duree=23 will return to a list [12, 23]. Note that we perform OR operation on a list")
 arg_parser.add_argument('--service', action="append")
 # help="--service: filter by service, i.e --service=12 for single value otherwise, chaining --service=12 --service=23 will return to a list [12, 23]. Note that we perform OR operation on a list")
+
+arg_parser.add_argument('--accorderie', action="append")
+# help="--accorderie: filter by accorderie, i.e --accorderie=12 for single value otherwise, chaining --accorderie=12 --accorderie=23 will return to a list [12, 23]. Note that we perform OR operation on a list")
 
 
 args = arg_parser.parse_args()
