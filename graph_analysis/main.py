@@ -24,6 +24,8 @@ def main(span_days, folder_name="", g=None):
     #     span_days = int(sys.argv[3])
     #     #folder_name = datetime.now().strftime('%f') + "_" + sys.argv[4] + "/"
     #     folder_name = (sys.argv[4] + "/").replace(" ", "")
+    
+    folder_name = folder_name + '/'
 
     start_date, end_date = get_start_and_end_date()
 
@@ -73,7 +75,7 @@ def main(span_days, folder_name="", g=None):
     # compute snapshots
 
     snapshots = create_snapshots(
-        g, start_date=start_date, end_date=end_date, span_days=span_days)
+        g, start_date=start_date, end_date=end_date, span_days=int(span_days))
     if (len(snapshots) == 0):
         print('Could not create snapshots')
         return
@@ -135,11 +137,11 @@ arg_parser = argparse.ArgumentParser()
 # users or transactions
 
 arg_parser.add_argument('-s', '--span', default=30, type=int)
-arg_parser.add_argument('-f', '--folder_name', default='analysis/')
+arg_parser.add_argument('-f', '--folder-name', default='analysis')
 
 args = arg_parser.parse_args()
 
 
 
 filters = args.__dict__
-main(span_days=int(filters['span']), folder_name=filters['folder_name'])
+main(span_days=int(filters['span']), folder_name=filters['folder-name'])
