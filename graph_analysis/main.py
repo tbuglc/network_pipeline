@@ -135,7 +135,7 @@ arg_parser = argparse.ArgumentParser()
 # users or transactions
 
 arg_parser.add_argument('-s', '--span', default=30, type=int)
-arg_parser.add_argument('-f', '--folder_name', default='analysis')
+arg_parser.add_argument('-f', '--folder_name', default='analysis/')
 
 args = arg_parser.parse_args()
 
