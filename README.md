@@ -56,5 +56,5 @@ graph_filter $ python .\main.py --age=18-30 --age=55-65 --accorderie=2 # this co
 ```sh
 $ cd graph_analysis
 # csv files are expected to be in input folder
-graph_analysis $ python .\main.py --span=30 --folder-name=experiment_101 # default span=30 and folder-name=analysis
+graph_analysis $ python .\main.py --span=30 --folder_name=experiment_101 # default span=30 and folder_name=analysis
 ```
