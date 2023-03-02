@@ -1,8 +1,10 @@
+pandas
+datetime
 igraph
+argparse
 wheel
 pycairo 
 cairocffi
-pandas
 matplotlib
 numpy
 openpyxl

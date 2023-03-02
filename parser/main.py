@@ -2,6 +2,7 @@
 from parse_members import parse_members
 from parse_transactions import parse_transaction
 from igraph import Graph
+from common import graph_loader
 
 output_dir = '.\output\\'
 

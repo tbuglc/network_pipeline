@@ -1,4 +1,0 @@
-pandas
-datetime
-numpy
-igraph

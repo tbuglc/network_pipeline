@@ -1,5 +1,6 @@
 from igraph import Graph
 import pandas as pd
+import os
 
 def data_loader(vertex_path, edge_path):
     # TODO: Should consider loading as stream for better memory usage in case of large dataset
@@ -21,3 +22,7 @@ def load_accorderie_network(vertex_path, edge_path):
         raise err
 
     return g
+
+
+def test_context():
+    print('running from: ' + os.path.abspath())
