@@ -1,0 +1,71 @@
+id,age,genre,revenu,ville,region,arrondissement,adresse,accorderie,mapid
+33,55-65,0,50001-,Granby,Montérégie,,J2G,120,10436
+59,55-65,1,50001-,Waterloo,Montérégie,,J0E,120,10409
+69,31-54,1,50001-,Granby,Montérégie,,J2H,120,10400
+84,31-54,0,10001-20000,Granby,Montérégie,,J2H,120,10382
+86,66-80,0,10001-20000,Granby,Montérégie,,J2H,120,10384
+87,66-80,0,10001-20000,Granby,Montérégie,,J2H,120,10385
+92,18-30,0,30001-50000,Saint-Césaire,Montérégie,,J0L,120,10378
+94,55-65,1,50001-,Granby,Montérégie,,J2G,120,10374
+107,55-65,0,30001-50000,Saint-Paul-d'Abbotsford,Montérégie,,J0E,120,10364
+119,18-30,1,30001-50000,Roxton Pond,Montérégie,,J0E,120,10354
+122,31-54,0,0-10000,Granby,Montérégie,,J2H,120,10344
+132,31-54,0,10001-20000,Granby,Montérégie,,J2G,120,10337
+137,31-54,0,30001-50000,Granby,Montérégie,,J2J,120,10332
+143,55-65,0,10001-20000,Granby,Montérégie,,J2G,120,10326
+155,81-95,0,10001-20000,Granby,Montérégie,,J2G,120,10316
+163,66-80,0,10001-20000,Granby,Montérégie,,J2G,120,10306
+191,55-65,0,50001-,Ange-Gardien,Montérégie,,J0E,120,10278
+194,31-54,0,50001-,Granby,Montérégie,,J2H,120,10273
+200,81-95,0,10001-20000,Granby,Montérégie,,J2G,120,10269
+228,66-80,0,20001-30000,Granby,Montérégie,,J2G,120,10238
+230,31-54,1,20001-30000,Lac-Brome,Montérégie,,J0E,120,10240
+234,31-54,0,50001-,Saint-Césaire,Montérégie,,J0L,120,10230
+244,31-54,0,10001-20000,Cowansville,Montérégie,,J2K,120,10224
+251,31-54,0,50001-,Bromont,Montérégie,,J2L,120,10218
+389,55-65,0,50001-,Granby,Montérégie,,J2J,120,10075
+390,0,0,50001-,Granby,Montérégie,,J0H,120,10076
+401,66-80,0,50001-,Granby,Montérégie,,J2G,120,10066
+402,55-65,1,50001-,Granby,Montérégie,,J2G,120,10067
+416,55-65,0,0,Granby,Montérégie,,J2G,120,10050
+418,18-30,1,10001-20000,Granby,Montérégie,,J2G,120,10052
+427,55-65,0,10001-20000,Granby,Montérégie,,J2G,120,10041
+436,66-80,0,30001-50000,Granby,Montérégie,,J2H,120,10030
+437,31-54,1,20001-30000,Granby,Montérégie,,J2G,120,10031
+444,55-65,0,50001-,Bromont,Montérégie,,J2L,120,10024
+446,31-54,0,0,Granby,Montérégie,,J2G,120,10019
+454,31-54,0,30001-50000,Ange-Gardien,Montérégie,,J0E,120,10010
+455,31-54,1,0,Granby,Montérégie,,J2H,120,10011
+456,66-80,0,30001-50000,Saint-Jean-Baptiste,Montérégie,,J0L,120,10012
+462,31-54,0,30001-50000,Granby,Montérégie,,J2G,120,9980
+463,31-54,0,30001-50000,Granby,Montérégie,,J2G,120,9981
+465,31-54,1,0,Granby,Montérégie,,J2H,120,9983
+473,66-80,1,50001-,Granby,Montérégie,,J2H,120,9991
+474,31-54,0,20001-30000,Ange-Gardien,Montérégie,,J0E,120,9992
+475,66-80,0,20001-30000,Granby,Montérégie,,J2G,120,9993
+476,66-80,0,50001-,Granby,Montérégie,,J2H,120,9994
+478,55-65,0,0-10000,Granby,Montérégie,,J2G,120,9996
+479,55-65,0,20001-30000,Shefford,Montérégie,,J2M,120,9997
+482,55-65,1,10001-20000,Granby,Montérégie,,J2G,120,10000
+483,31-54,0,20001-30000,Roxton Falls,Montérégie,,J0H,120,10001
+537,0,0,50001-,Granby,Montérégie,,J2G,120,9929
+547,0,\N,,Granby,Montérégie,,J2G,120,9916
+665,55-65,0,10001-20000,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1V,114,9802
+2287,55-65,0,50001-,Montréal,Montréal,Villeray--Saint-Michel--Parc-Extension,H2A,114,8176
+2512,31-54,1,10001-20000,Montréal,Montréal,Ville-Marie,H2X,114,7949
+3089,31-54,0,0-10000,Montréal-Est,Montréal,,H1M,2,7369
+3441,55-65,0,0-10000,Granby,Montérégie,,J2G,120,7018
+3910,66-80,1,30001-50000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1X,114,6567
+4426,31-54,0,0-10000,Montréal,Montréal,Le Plateau-Mont-Royal,H2K,114,6037
+4696,31-54,0,20001-30000,Sainte-Julienne,Lanaudière,,J0K,114,5764
+4826,66-80,0,10001-20000,Montréal,Montréal,Ahuntsic-Cartierville,H2M,114,5640
+5182,31-54,1,10001-20000,Montréal,Montréal,Rosemont--La Petite-Patrie,H2G,114,5286
+5298,0,1,0,Boucherville,Montérégie,,J4B,115,5183
+5397,0,\N,,Montréal,Montréal,Rosemont--La Petite-Patrie,H1X,114,5075
+7119,55-65,1,0-10000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1T,88,3352
+7215,31-54,0,10001-20000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1Y,114,3256
+7337,66-80,1,20001-30000,Roxton Pond,Montérégie,,J0E,120,3141
+7354,31-54,0,0-10000,Montréal,Montréal,Villeray--Saint-Michel--Parc-Extension,H2R,104,3122
+7380,66-80,0,0-10000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1Y,114,3089
+7398,31-54,0,50001-,Montréal,Montréal,Rosemont--La Petite-Patrie,H2E,114,3072
+7708,31-54,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,2763

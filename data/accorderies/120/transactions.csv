@@ -1,0 +1,408 @@
+source,target,duree,date,service,detailservice,accorderie,id
+65,66,01:30:00,2011-10-20,Santé / Maternité / Esthétique,Massothérapie thérapeutique,120.0,25898
+65,68,01:30:00,2011-11-02,Santé / Maternité / Esthétique,Massothérapie thérapeutique,120.0,26081
+65,69,07:00:00,2011-11-07,Travaux / Entretien / Jardinage,Peinture intérieure,120.0,26398
+65,68,01:30:00,2012-02-06,Santé / Maternité / Esthétique,Massothérapie thérapeutique,120.0,27513
+65,69,01:00:00,2012-03-28,Santé / Maternité / Esthétique,Massothérapie thérapeutique,120.0,29035
+55,54,02:00:00,2016-07-01,Santé / Maternité / Esthétique,Harmonisation énergétique,120.0,73362
+55,64,03:00:00,2016-11-15,Santé / Maternité / Esthétique,Harmonisation énergétique,120.0,77696
+55,67,02:30:00,2017-02-06,Santé / Maternité / Esthétique,Harmonisation énergétique,120.0,80741
+55,62,03:00:00,2017-03-26,Échanges associatifs,Animation kiosque pour L'Accorderie,120.0,82231
+55,52,02:00:00,2017-09-29,Santé / Maternité / Esthétique,Harmonisation énergétique,120.0,87996
+55,60,03:00:00,2018-08-14,Santé / Maternité / Esthétique,Harmonisation énergétique,120.0,95954
+55,60,04:00:00,2018-08-20,Travaux / Entretien / Jardinage,Ménage léger,120.0,95959
+55,60,05:00:00,2018-08-27,Travaux / Entretien / Jardinage,Ménage léger,120.0,96064
+55,61,05:30:00,2018-09-25,Travaux / Entretien / Jardinage,Ménage léger,120.0,96522
+55,60,04:00:00,2018-10-02,Travaux / Entretien / Jardinage,Ménage léger,120.0,96625
+55,60,03:00:00,2018-10-12,Travaux / Entretien / Jardinage,Ménage léger,120.0,96891
+55,60,02:00:00,2018-10-23,Travaux / Entretien / Jardinage,Aide pour jardinage,120.0,97240
+55,58,03:00:00,2018-12-07,Santé / Maternité / Esthétique,Harmonisation énergétique,120.0,97674
+55,61,05:00:00,2018-12-11,Travaux / Entretien / Jardinage,Ménage léger,120.0,97767
+55,56,03:00:00,2018-12-13,Sports / Loisirs / Animation,Initiation danse sociale,120.0,97790
+55,56,02:00:00,2018-12-18,Sports / Loisirs / Animation,Initiation danse sociale,120.0,98322
+55,56,01:00:00,2019-01-25,Sports / Loisirs / Animation,Initiation danse sociale,120.0,98564
+55,56,01:00:00,2019-02-01,Sports / Loisirs / Animation,Initiation danse sociale,120.0,98568
+55,56,01:00:00,2019-03-15,Sports / Loisirs / Animation,Initiation danse sociale,120.0,99227
+55,63,02:00:00,2019-09-29,Santé / Maternité / Esthétique,Harmonisation énergétique,120.0,102850
+55,57,00:30:00,2020-02-01,Administration / Emploi / Organisation,Classement documents,120.0,105066
+38,50,02:30:00,2020-01-28,Échanges associatifs,Session d'accueil de L'Accorderie,120.0,105109
+38,50,02:00:00,2020-01-26,Échanges associatifs,Session d'accueil de L'Accorderie,120.0,105110
+38,50,01:00:00,2020-01-28,Échanges associatifs,Comité accueil - coordination,120.0,105111
+38,50,01:00:00,2020-01-21,Échanges associatifs,Comité accueil - coordination,120.0,105112
+38,50,01:30:00,2020-01-17,Échanges associatifs,Comité accueil - coordination,120.0,105113
+38,50,01:30:00,2020-01-14,Échanges associatifs,Comité accueil - coordination,120.0,105114
+38,50,03:30:00,2020-01-12,Échanges associatifs,Comité accueil - coordination,120.0,105115
+38,50,02:00:00,2020-01-10,Échanges associatifs,Comité accueil - coordination,120.0,105116
+38,50,01:00:00,2020-01-09,Échanges associatifs,Comité accueil - coordination,120.0,105117
+38,50,02:00:00,2020-01-07,Échanges associatifs,Comité accueil - coordination,120.0,105118
+38,50,01:00:00,2020-02-03,Échanges associatifs,Comité accueil - coordination,120.0,105119
+38,50,01:30:00,2020-02-12,Échanges associatifs,Comité accueil - coordination,120.0,105218
+30,32,01:00:00,2020-02-18,Cuisine / Alimentation,Préparation muffins,120.0,105403
+36,50,02:00:00,2020-02-13,Administration / Emploi / Organisation,Animation de réunions,120.0,105288
+34,50,02:00:00,2020-02-20,Échanges associatifs,Session d'accueil de L'Accorderie,120.0,105354
+36,37,01:30:00,2020-02-26,Informatique / Bureautique,Initiation et aide Espace membre,120.0,105456
+38,50,01:30:00,2020-03-02,Échanges associatifs,Comité accueil - coordination,120.0,105499
+32,46,06:30:00,2020-02-29,Travaux / Entretien / Jardinage,Peinture intérieure,120.0,105557
+32,28,04:00:00,2020-03-01,Travaux / Entretien / Jardinage,Peinture intérieure,120.0,105558
+38,50,01:30:00,2019-02-23,Échanges associatifs,Comité accueil - coordination,120.0,105561
+48,50,01:30:00,2020-02-23,Échanges associatifs,Session d'accueil de L'Accorderie,120.0,105562
+42,50,01:30:00,2020-03-11,Échanges associatifs,Session d'accueil de L'Accorderie,120.0,105569
+37,50,01:30:00,2020-03-11,Échanges associatifs,Session d'accueil de L'Accorderie,120.0,105572
+38,50,01:30:00,2020-03-11,Échanges associatifs,Comité accueil - coordination,120.0,105580
+38,50,00:30:00,2020-03-23,Échanges associatifs,Comité accueil - coordination,120.0,105642
+40,49,03:00:00,2020-04-17,Travaux / Entretien / Jardinage,Travaux d'entretien de terrains,120.0,105998
+55,56,00:30:00,2020-08-21,,,120.0,107348
+55,59,00:30:00,2020-08-21,,,120.0,107349
+55,51,00:30:00,2020-08-21,,,120.0,107350
+55,53,00:30:00,2020-08-21,,,120.0,107351
+25,50,04:00:00,2020-12-10,Artisanat / Couture / Vêtements,Confection cartes de souhait artisanales,120.0,108908
+28,25,02:00:00,2021-01-17,Travaux / Entretien / Jardinage,Fabrication produits d'entretien écologiques,120.0,108947
+24,36,01:00:00,2020-12-11,Artisanat / Couture / Vêtements,Petites réparations vêtements,120.0,109039
+25,50,01:00:00,2021-01-25,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,120.0,109162
+48,50,06:00:00,2021-01-25,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,120.0,109240
+42,50,07:00:00,2021-01-25,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,120.0,109241
+29,50,05:30:00,2021-02-17,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,120.0,109242
+35,50,06:30:00,2021-01-25,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,120.0,109243
+41,17,02:30:00,2021-04-07,Travaux / Entretien / Jardinage,Nettoyage saisonnier de terrains,120.0,109777
+50,20,02:00:00,2021-05-10,Accompagnement / Gardiennage / Animaux,Garde de plantes chez moi,120.0,110164
+48,50,07:30:00,2021-04-21,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,120.0,110350
+29,50,07:00:00,2021-04-21,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,120.0,110351
+22,50,02:00:00,2021-02-21,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,120.0,110352
+42,50,10:00:00,2021-04-21,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,120.0,110353
+35,50,09:00:00,2021-04-21,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,120.0,110354
+23,50,11:00:00,2021-04-21,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,120.0,110355
+33,15,01:00:00,2021-07-02,Langues / Littérature,Conversation anglaise,120.0,110619
+14,50,02:00:00,2021-07-19,Travaux / Entretien / Jardinage,Entretien de plates-bandes,120.0,110684
+15,50,03:00:00,2021-07-13,Échanges associatifs,Session d'accueil de L'Accorderie,120.0,110685
+18,23,00:30:00,2021-07-12,Artisanat / Couture / Vêtements,Petites réparations vêtements,120.0,110689
+14,50,01:00:00,2021-07-26,Travaux / Entretien / Jardinage,Entretien de plates-bandes,120.0,110721
+42,50,04:00:00,2021-04-22,Échanges associatifs,Session d'accueil de L'Accorderie,120.0,110732
+32,50,01:30:00,2021-07-27,Travaux / Entretien / Jardinage,Bricoleur pour petits travaux,120.0,110733
+23,50,16:00:00,2021-07-31,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,120.0,110774
+48,50,05:00:00,2021-07-31,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,120.0,110775
+29,50,03:30:00,2021-07-31,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,120.0,110776
+29,50,03:30:00,2021-07-31,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,120.0,110777
+35,50,07:00:00,2021-07-31,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,120.0,110778
+42,50,06:00:00,2021-07-31,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,120.0,110779
+16,50,01:30:00,2021-08-17,Échanges associatifs,Session d'accueil de L'Accorderie,120.0,110912
+14,50,05:00:00,2021-08-30,Travaux / Entretien / Jardinage,Entretien de plates-bandes,120.0,110962
+16,50,03:00:00,2021-09-01,Échanges associatifs,Session d'accueil de L'Accorderie,120.0,110963
+32,50,00:30:00,2021-08-09,Travaux / Entretien / Jardinage,Entretien de plates-bandes,120.0,110964
+25,15,00:30:00,2021-07-13,Transport / Déménagement,Transport moyenne distance,120.0,111025
+13,28,01:30:00,2021-09-07,Santé / Maternité / Esthétique,Coupe cheveux,120.0,111026
+28,50,00:30:00,2021-09-05,Artisanat / Couture / Vêtements,Petites réparations vêtements,120.0,111027
+16,50,02:00:00,2021-09-07,Échanges associatifs,Session d'accueil de L'Accorderie,120.0,111028
+45,50,02:00:00,2021-09-09,Artisanat / Couture / Vêtements,Fabrication de bijoux,120.0,111029
+17,50,03:00:00,2021-09-09,Artisanat / Couture / Vêtements,Fabrication de bijoux,120.0,111030
+31,15,01:00:00,2021-09-13,Divers,Aide dénichage d'aubaines,120.0,111108
+32,12,03:00:00,2021-09-09,Travaux / Entretien / Jardinage,Menus travaux plomberie,120.0,111109
+39,50,02:00:00,2021-09-09,Artisanat / Couture / Vêtements,Fabrication de bijoux,120.0,111110
+16,50,01:00:00,2021-09-15,Échanges associatifs,Session d'accueil de L'Accorderie,120.0,111111
+14,50,02:00:00,2021-09-13,Travaux / Entretien / Jardinage,Entretien de plates-bandes,120.0,111112
+48,50,08:00:00,2021-09-16,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,120.0,111113
+42,50,02:00:00,2021-09-16,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,120.0,111114
+35,50,05:00:00,2021-09-16,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,120.0,111115
+23,50,04:30:00,2021-09-16,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,120.0,111116
+24,50,01:30:00,2021-09-02,Artisanat / Couture / Vêtements,Confection sacs réutilisables en tissu,120.0,111166
+28,50,01:30:00,2021-09-02,Artisanat / Couture / Vêtements,Confection sacs réutilisables en tissu,120.0,111167
+23,50,01:30:00,2021-09-02,Artisanat / Couture / Vêtements,Confection sacs réutilisables en tissu,120.0,111168
+18,17,01:00:00,2021-10-01,Travaux / Entretien / Jardinage,Ménage léger,120.0,111304
+41,24,03:00:00,2021-09-17,Travaux / Entretien / Jardinage,Taille de haie / arbustes,120.0,111305
+41,24,02:00:00,2021-10-01,Travaux / Entretien / Jardinage,Taille de haie / arbustes,120.0,111306
+32,50,01:00:00,2021-09-15,Travaux / Entretien / Jardinage,Bricoleur pour petits travaux,120.0,111313
+13,23,03:00:00,2021-09-21,Santé / Maternité / Esthétique,Coupe cheveux,120.0,111308
+36,55,03:00:00,2021-09-30,Transport / Déménagement,Aide pour aménager,120.0,111309
+35,16,01:00:00,2021-09-30,Santé / Maternité / Esthétique,Massothérapie de détente,120.0,111310
+32,15,01:00:00,2021-09-18,Transport / Déménagement,Transport avec camionnette,120.0,111311
+32,28,03:00:00,2021-09-16,Travaux / Entretien / Jardinage,Peinture intérieure,120.0,111312
+36,55,02:30:00,2021-10-05,Transport / Déménagement,Aide pour aménager,120.0,111363
+10,50,02:00:00,2021-10-05,Informatique / Bureautique,Dépannage pour ordinateurs P.C.,120.0,111365
+15,50,02:30:00,2021-10-05,Échanges associatifs,Accueil/réception permanence Accorderie,120.0,111367
+15,50,03:00:00,2021-09-18,Échanges associatifs,Tâches activité de financement,120.0,111369
+15,50,01:30:00,2021-09-21,Échanges associatifs,Session d'accueil de L'Accorderie,120.0,111370
+15,50,03:00:00,2021-09-20,Échanges associatifs,Session d'accueil de L'Accorderie,120.0,111371
+15,50,01:00:00,2021-09-29,Échanges associatifs,Accueil/réception permanence Accorderie,120.0,111372
+24,50,02:00:00,2021-10-05,Échanges associatifs,Rencontre de travail comité de financement,120.0,111373
+18,50,02:00:00,2021-10-05,Échanges associatifs,Rencontre de travail comité de financement,120.0,111374
+17,26,01:30:00,2021-10-06,Échanges associatifs,Rencontre de travail comité de financement,120.0,111378
+28,50,02:00:00,2021-10-05,Échanges associatifs,Rencontre de travail comité de financement,120.0,111376
+17,50,02:00:00,2021-10-05,Échanges associatifs,Rencontre de travail comité de financement,120.0,111377
+17,18,01:00:00,2021-10-08,Cuisine / Alimentation,Cuisine plats ou repas,120.0,111412
+18,17,01:00:00,2021-10-08,Travaux / Entretien / Jardinage,Ménage léger,120.0,111413
+25,50,01:00:00,2021-09-08,Artisanat / Couture / Vêtements,Fabrication de bijoux,120.0,111508
+28,50,02:00:00,2021-09-09,Artisanat / Couture / Vêtements,Fabrication de bijoux,120.0,111509
+28,50,18:00:00,2021-09-18,Échanges associatifs,Tâches activité de financement,120.0,111510
+16,50,11:00:00,2021-09-18,Échanges associatifs,Tâches activité de financement,120.0,111511
+25,50,02:00:00,2021-09-17,Échanges associatifs,Tâches activité de financement,120.0,111512
+48,50,02:00:00,2021-09-18,Échanges associatifs,Tâches activité de financement,120.0,111513
+14,50,07:00:00,2021-09-18,Échanges associatifs,Tâches activité de financement,120.0,111514
+20,50,02:30:00,2021-09-18,Échanges associatifs,Tâches activité de financement,120.0,111515
+16,50,02:00:00,2021-09-21,Échanges associatifs,Session d'accueil de L'Accorderie,120.0,111516
+16,17,01:30:00,2021-10-25,Travaux / Entretien / Jardinage,Ménage léger,120.0,111529
+31,8,01:30:00,2021-10-22,Cuisine / Alimentation,Confection pâtisserie,120.0,111531
+8,21,01:00:00,2021-10-25,Cuisine / Alimentation,Préparation lunchs,120.0,111532
+17,18,01:00:00,2021-10-22,Cuisine / Alimentation,Cuisine plats ou repas,120.0,111533
+18,17,01:00:00,2021-10-22,Travaux / Entretien / Jardinage,Ménage léger,120.0,111535
+32,15,01:30:00,2021-10-21,Transport / Déménagement,Transport avec camionnette,120.0,111537
+32,15,02:30:00,2021-10-14,Transport / Déménagement,Transport avec camionnette,120.0,111538
+17,24,10:00:00,2021-10-14,Arts / Culture / Éducation,Portraitiste,120.0,111540
+17,24,04:00:00,2021-10-18,Artisanat / Couture / Vêtements,Conception jouets en fibres naturelles,120.0,111541
+17,18,01:00:00,2021-10-15,Cuisine / Alimentation,Cuisine plats ou repas,120.0,111542
+18,17,01:00:00,2021-10-15,Travaux / Entretien / Jardinage,Ménage léger,120.0,111543
+10,24,03:00:00,2021-10-14,Transport / Déménagement,Transport avec camionnette,120.0,111544
+15,50,02:30:00,2021-10-19,Échanges associatifs,Accueil/réception permanence Accorderie,120.0,111547
+24,50,04:00:00,2021-09-24,Échanges associatifs,Rencontre de travail comité de financement,120.0,111548
+24,50,01:00:00,2021-09-25,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,120.0,111549
+24,50,01:00:00,2021-10-10,Échanges associatifs,Aide aux courses ,120.0,111550
+24,50,02:30:00,2021-10-08,Échanges associatifs,Rencontre de travail comité de financement,120.0,111551
+24,50,00:30:00,2021-10-09,Échanges associatifs,Aide aux courses ,120.0,111552
+24,50,03:00:00,2021-10-15,Échanges associatifs,Rencontre de travail comité de financement,120.0,111553
+24,50,01:00:00,2021-10-16,Échanges associatifs,Aide aux courses ,120.0,111554
+24,50,01:00:00,2021-10-17,Échanges associatifs,Tâches cléricales pour L'Accorderie,120.0,111555
+28,50,04:00:00,2021-09-24,Échanges associatifs,Rencontre de travail comité de financement,120.0,111556
+28,50,02:30:00,2021-10-08,Échanges associatifs,Rencontre de travail comité de financement,120.0,111557
+28,50,06:30:00,2021-10-15,Artisanat / Couture / Vêtements,Confection sacs réutilisables en tissu,120.0,111558
+28,50,03:30:00,2021-10-22,Artisanat / Couture / Vêtements,Confection sacs réutilisables en tissu,120.0,111559
+28,50,01:00:00,2021-10-22,Échanges associatifs,Tâches activité de financement,120.0,111560
+18,50,01:00:00,2021-10-24,Artisanat / Couture / Vêtements,Confection sacs réutilisables en tissu,120.0,111567
+18,50,00:30:00,2021-10-25,Artisanat / Couture / Vêtements,Confection sacs réutilisables en tissu,120.0,111568
+31,21,01:00:00,2021-10-25,Cuisine / Alimentation,Confection pâtisserie,120.0,111569
+31,18,00:30:00,2021-10-25,Cuisine / Alimentation,Confection pâtisserie,120.0,111570
+32,50,24:00:00,2021-09-28,Arts / Culture / Éducation,Film événements spéciaux,120.0,111572
+16,50,15:00:00,2021-09-28,Arts / Culture / Éducation,Film événements spéciaux,120.0,111573
+20,50,09:00:00,2021-09-28,Arts / Culture / Éducation,Film événements spéciaux,120.0,111574
+28,50,03:00:00,2021-09-28,Arts / Culture / Éducation,Film événements spéciaux,120.0,111575
+11,50,04:00:00,2021-09-28,Arts / Culture / Éducation,Film événements spéciaux,120.0,111576
+43,50,07:00:00,2021-09-28,Arts / Culture / Éducation,Film événements spéciaux,120.0,111577
+20,50,04:00:00,2021-09-28,Cuisine / Alimentation,Confection desserts pour événements,120.0,111578
+17,50,01:30:00,2021-10-07,Échanges associatifs,Communications pour L'Accorderie,120.0,111636
+17,50,00:30:00,2021-10-09,Échanges associatifs,Communications pour L'Accorderie,120.0,111637
+17,50,01:00:00,2021-10-22,Échanges associatifs,Communications pour L'Accorderie,120.0,111638
+17,50,00:30:00,2021-10-07,Divers,Conseils consommation responsable,120.0,111639
+17,50,01:00:00,2021-10-12,Informatique / Bureautique,Utilisation Illustrator,120.0,111640
+17,50,00:30:00,2021-10-25,Échanges associatifs,Production de sacs écologiques pour Accorderie,120.0,111641
+45,50,01:30:00,2021-10-26,Échanges associatifs,Entretien ménager des locaux,120.0,111642
+15,50,04:00:00,2021-10-26,Échanges associatifs,Accueil/réception permanence Accorderie,120.0,111643
+15,50,03:00:00,2021-11-02,Échanges associatifs,Accueil/réception permanence Accorderie,120.0,111644
+24,50,03:00:00,2021-10-22,Échanges associatifs,Production de sacs écologiques pour Accorderie,120.0,111645
+24,50,01:00:00,2021-10-23,Échanges associatifs,Aide aux courses ,120.0,111646
+24,50,01:00:00,2021-10-27,Échanges associatifs,Aide aux courses ,120.0,111647
+35,50,01:30:00,2021-11-03,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,120.0,111648
+25,50,01:30:00,2021-10-28,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,120.0,111649
+20,50,01:00:00,2021-10-28,Travaux / Entretien / Jardinage,Création ou élaboration d'un potager,120.0,111650
+23,50,01:30:00,2021-10-28,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,120.0,111651
+8,50,02:30:00,2021-11-03,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,120.0,111652
+10,50,01:30:00,2021-10-19,Informatique / Bureautique,Dépannage pour ordinateurs P.C.,120.0,111653
+10,50,02:00:00,2021-11-02,Informatique / Bureautique,Dépannage pour ordinateurs P.C.,120.0,111654
+47,50,01:00:00,2021-11-02,Échanges associatifs,Parrainage nouveaux AccordeurEs,120.0,111655
+19,47,01:30:00,2021-11-02,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous médicaux,120.0,111656
+17,18,03:00:00,2021-11-01,Informatique / Bureautique,Initiation médias sociaux sur Internet,120.0,111657
+17,18,01:00:00,2021-10-29,Cuisine / Alimentation,Cuisine plats ou repas,120.0,111658
+17,31,01:30:00,2021-10-28,Informatique / Bureautique,Initiation à Internet et courriel,120.0,111659
+17,24,01:00:00,2021-10-28,Artisanat / Couture / Vêtements,Conception jouets en fibres naturelles,120.0,111660
+18,17,01:00:00,2021-10-29,Travaux / Entretien / Jardinage,Ménage léger,120.0,111661
+18,24,01:00:00,2021-10-28,Artisanat / Couture / Vêtements,Conception jouets en fibres naturelles,120.0,111662
+10,15,00:30:00,2021-11-02,Transport / Déménagement,Transport avec camionnette,120.0,111663
+16,21,02:30:00,2021-11-02,Langues / Littérature,Correction textes en français,120.0,111664
+37,14,02:30:00,2021-10-28,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,120.0,111669
+37,14,01:00:00,2021-11-04,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,120.0,111670
+31,18,01:00:00,2021-11-03,Cuisine / Alimentation,Cuisine plats ou repas,120.0,111671
+18,17,01:00:00,2021-11-04,Travaux / Entretien / Jardinage,Ménage léger,120.0,111751
+16,17,01:30:00,2021-11-04,Travaux / Entretien / Jardinage,Ménage léger,120.0,111752
+17,18,01:00:00,2021-11-04,Cuisine / Alimentation,Cuisine plats ou repas,120.0,111753
+45,50,02:30:00,2021-11-09,Artisanat / Couture / Vêtements,Fabrication de bijoux,120.0,111754
+43,50,02:30:00,2021-11-09,Artisanat / Couture / Vêtements,Fabrication de bijoux,120.0,111755
+4,50,02:30:00,2021-11-09,Artisanat / Couture / Vêtements,Fabrication de bijoux,120.0,111756
+15,50,02:30:00,2021-11-09,Échanges associatifs,Accueil/réception permanence Accorderie,120.0,111757
+10,50,02:30:00,2021-11-09,Informatique / Bureautique,Dépannage pour ordinateurs P.C.,120.0,111758
+8,50,02:00:00,2021-11-05,Échanges associatifs,Organisation et animation d'activités - milieux de vie dynamisés,120.0,111759
+21,50,02:00:00,2021-11-05,Échanges associatifs,Organisation et animation d'activités - milieux de vie dynamisés,120.0,111760
+45,50,01:00:00,2021-11-10,Échanges associatifs,Entretien ménager des locaux,120.0,111761
+17,31,01:00:00,2021-11-10,Informatique / Bureautique,Initiation à Internet et courriel,120.0,111762
+36,16,01:00:00,2021-11-09,Travaux / Entretien / Jardinage,Conseils pour travaux de peinture / teinture,120.0,111763
+10,15,00:30:00,2021-11-09,Transport / Déménagement,Transport avec camionnette,120.0,111764
+10,25,01:30:00,2021-11-15,Transport / Déménagement,Transport avec camionnette,120.0,111778
+17,18,01:00:00,2021-11-12,Cuisine / Alimentation,Cuisine plats ou repas,120.0,111779
+18,24,02:30:00,2021-11-11,Cuisine / Alimentation,Aide pour cuisiner,120.0,111780
+24,50,01:00:00,2021-10-31,Échanges associatifs,Production de sacs écologiques pour Accorderie,120.0,111809
+18,17,01:00:00,2021-11-12,Travaux / Entretien / Jardinage,Ménage léger,120.0,111810
+9,8,01:00:00,2021-11-14,Travaux / Entretien / Jardinage,Travail sur carosserie auto,120.0,111811
+10,15,03:30:00,2021-11-11,Transport / Déménagement,Transport avec camionnette,120.0,111812
+17,24,09:00:00,2021-11-10,Cuisine / Alimentation,Cuisine plats ou repas,120.0,111813
+24,18,04:30:00,2021-11-16,Travaux / Entretien / Jardinage,Ménage léger,120.0,111814
+24,50,01:00:00,2021-11-03,Échanges associatifs,Production de sacs écologiques pour Accorderie,120.0,111815
+24,50,01:30:00,2021-11-05,Échanges associatifs,Production de sacs écologiques pour Accorderie,120.0,111816
+24,50,03:00:00,2021-11-08,Échanges associatifs,Production de sacs écologiques pour Accorderie,120.0,111817
+24,50,02:00:00,2021-11-11,Échanges associatifs,Production de sacs écologiques pour Accorderie,120.0,111818
+24,50,01:30:00,2021-11-12,Échanges associatifs,Production de sacs écologiques pour Accorderie,120.0,111819
+17,18,01:00:00,2021-11-18,Cuisine / Alimentation,Cuisine plats ou repas,120.0,111825
+18,50,03:30:00,2021-10-27,Artisanat / Couture / Vêtements,Confection sacs réutilisables en tissu,120.0,111826
+36,16,02:30:00,2021-11-17,Travaux / Entretien / Jardinage,Peinture intérieure,120.0,111827
+18,17,01:00:00,2021-11-18,Travaux / Entretien / Jardinage,Ménage léger,120.0,111828
+24,17,05:00:00,2021-11-19,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,120.0,111844
+17,35,03:00:00,2021-11-20,Artisanat / Couture / Vêtements,Confection cartes de souhait artisanales,120.0,111845
+17,31,01:30:00,2021-11-22,Informatique / Bureautique,Dépannage pour ordinateurs P.C.,120.0,111847
+44,50,03:00:00,2021-10-15,Échanges associatifs,Production de sacs écologiques pour Accorderie,120.0,111885
+44,50,01:30:00,2021-10-25,Échanges associatifs,Production de sacs écologiques pour Accorderie,120.0,111886
+44,50,01:30:00,2021-10-26,Échanges associatifs,Production de sacs écologiques pour Accorderie,120.0,111887
+44,50,01:00:00,2021-10-27,Échanges associatifs,Production de sacs écologiques pour Accorderie,120.0,111888
+44,50,01:30:00,2021-10-28,Échanges associatifs,Production de sacs écologiques pour Accorderie,120.0,111889
+44,50,01:30:00,2021-11-15,Échanges associatifs,Production de sacs écologiques pour Accorderie,120.0,111890
+44,50,01:00:00,2021-11-18,Échanges associatifs,Production de sacs écologiques pour Accorderie,120.0,111891
+3,50,02:00:00,2021-11-19,Échanges associatifs,Animation kiosque pour L'Accorderie,120.0,111892
+21,50,08:00:00,2021-11-20,Échanges associatifs,Animation kiosque pour L'Accorderie,120.0,111893
+3,50,08:00:00,2021-11-20,Échanges associatifs,Animation kiosque pour L'Accorderie,120.0,111894
+25,50,05:00:00,2021-11-20,Échanges associatifs,Animation kiosque pour L'Accorderie,120.0,111895
+16,50,05:00:00,2021-11-20,Échanges associatifs,Animation kiosque pour L'Accorderie,120.0,111896
+24,50,05:00:00,2021-11-20,Échanges associatifs,Animation kiosque pour L'Accorderie,120.0,111897
+20,50,03:00:00,2021-11-20,Échanges associatifs,Animation kiosque pour L'Accorderie,120.0,111898
+23,50,03:00:00,2021-11-20,Échanges associatifs,Animation kiosque pour L'Accorderie,120.0,111899
+43,50,03:00:00,2021-11-20,Échanges associatifs,Animation kiosque pour L'Accorderie,120.0,111900
+28,50,03:00:00,2021-11-20,Échanges associatifs,Animation kiosque pour L'Accorderie,120.0,111901
+21,50,07:00:00,2021-11-21,Échanges associatifs,Animation kiosque pour L'Accorderie,120.0,111902
+3,50,07:00:00,2021-11-21,Échanges associatifs,Animation kiosque pour L'Accorderie,120.0,111903
+3,50,01:00:00,2021-11-22,Échanges associatifs,Animation kiosque pour L'Accorderie,120.0,111904
+20,50,03:00:00,2021-11-16,Artisanat / Couture / Vêtements,Fabrication de bijoux,120.0,111905
+45,50,03:00:00,2021-11-16,Artisanat / Couture / Vêtements,Fabrication de bijoux,120.0,111906
+4,50,03:00:00,2021-11-16,Artisanat / Couture / Vêtements,Fabrication de bijoux,120.0,111907
+3,50,02:30:00,2021-11-16,Artisanat / Couture / Vêtements,Fabrication de bijoux,120.0,111908
+43,50,02:00:00,2021-11-16,Artisanat / Couture / Vêtements,Fabrication de bijoux,120.0,111909
+23,50,02:30:00,2021-11-16,Artisanat / Couture / Vêtements,Fabrication de bijoux,120.0,111910
+10,50,03:00:00,2021-11-16,Informatique / Bureautique,Dépannage pour ordinateurs P.C.,120.0,111911
+24,18,02:00:00,2021-11-22,Travaux / Entretien / Jardinage,Ménage léger,120.0,111950
+28,7,01:00:00,2021-11-19,Artisanat / Couture / Vêtements,Confection sacs réutilisables en tissu,120.0,111951
+4,45,01:00:00,2021-11-25,Artisanat / Couture / Vêtements,Coud bas de pantalon,120.0,111952
+27,35,05:00:00,2021-11-24,Travaux / Entretien / Jardinage,Lavage de voiture,120.0,111953
+35,50,03:00:00,2021-11-12,Administration / Emploi / Organisation,Organisation événements sociaux,120.0,111954
+18,17,01:00:00,2021-11-26,Travaux / Entretien / Jardinage,Ménage léger,120.0,111955
+17,18,01:00:00,2021-11-28,Cuisine / Alimentation,Cuisine plats ou repas,120.0,111956
+36,16,05:30:00,2021-11-27,Travaux / Entretien / Jardinage,Peinture intérieure,120.0,111957
+31,42,01:30:00,2021-11-26,Cuisine / Alimentation,Cuisine plats ou repas,120.0,111958
+10,50,01:00:00,2021-11-11,Informatique / Bureautique,Dépannage pour ordinateurs P.C.,120.0,111966
+10,50,01:30:00,2021-11-11,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,120.0,111967
+10,50,01:00:00,2021-11-12,Informatique / Bureautique,Dépannage pour ordinateurs P.C.,120.0,111968
+10,50,00:30:00,2021-11-14,Informatique / Bureautique,Dépannage pour ordinateurs P.C.,120.0,111969
+10,50,01:30:00,2021-11-16,Échanges associatifs,Organisation / animation activité de L'Accorderie,120.0,111970
+10,50,00:30:00,2021-11-17,Échanges associatifs,Tâches cléricales pour L'Accorderie,120.0,111971
+24,18,04:30:00,2021-11-29,Travaux / Entretien / Jardinage,Ménage léger,120.0,111979
+18,17,02:00:00,2021-12-01,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous médicaux,120.0,112002
+36,16,01:00:00,2021-12-01,Travaux / Entretien / Jardinage,Peinture intérieure,120.0,112003
+13,23,03:00:00,2021-12-01,Santé / Maternité / Esthétique,Coupe cheveux,120.0,112004
+21,15,01:30:00,2021-12-02,Administration / Emploi / Organisation,Aide pour remplir formulaires,120.0,112005
+36,16,01:30:00,2021-12-02,Travaux / Entretien / Jardinage,Peinture intérieure,120.0,112006
+17,31,01:00:00,2021-12-03,Informatique / Bureautique,Dépannage pour ordinateurs P.C.,120.0,112007
+17,31,12:00:00,2021-12-03,Arts / Culture / Éducation,Portraitiste,120.0,112008
+8,50,02:00:00,2021-11-08,Échanges associatifs,Organisation et animation d'activités - milieux de vie dynamisés,120.0,112052
+8,50,01:30:00,2021-11-22,Échanges associatifs,Organisation et animation d'activités - milieux de vie dynamisés,120.0,112053
+8,50,02:00:00,2021-11-28,Échanges associatifs,Organisation et animation d'activités - milieux de vie dynamisés,120.0,112054
+8,21,02:00:00,2021-11-15,Cuisine / Alimentation,Préparation lunchs,120.0,112055
+20,50,02:00:00,2021-11-08,Échanges associatifs,Organisation / animation activité de L'Accorderie,120.0,112056
+20,50,01:30:00,2021-11-22,Échanges associatifs,Organisation / animation activité de L'Accorderie,120.0,112057
+20,50,01:30:00,2021-11-27,Échanges associatifs,Organisation / animation activité de L'Accorderie,120.0,112058
+20,50,02:00:00,2021-11-28,Échanges associatifs,Organisation / animation activité de L'Accorderie,120.0,112059
+25,50,02:00:00,2021-11-08,Échanges associatifs,Organisation / animation activité de L'Accorderie,120.0,112060
+25,50,01:30:00,2021-11-22,Échanges associatifs,Organisation / animation activité de L'Accorderie,120.0,112061
+25,50,02:00:00,2021-11-28,Échanges associatifs,Organisation / animation activité de L'Accorderie,120.0,112062
+23,50,02:00:00,2021-11-28,Échanges associatifs,Organisation / animation activité de L'Accorderie,120.0,112063
+23,50,02:00:00,2021-11-08,Échanges associatifs,Organisation / animation activité de L'Accorderie,120.0,112064
+23,50,01:30:00,2021-11-22,Échanges associatifs,Organisation / animation activité de L'Accorderie,120.0,112065
+23,50,01:00:00,2021-11-26,Échanges associatifs,Organisation / animation activité de L'Accorderie,120.0,112066
+23,50,02:00:00,2021-11-28,Échanges associatifs,Organisation / animation activité de L'Accorderie,120.0,112067
+49,50,02:30:00,2021-11-27,Cuisine / Alimentation,Confection desserts pour événements,120.0,112068
+16,50,01:00:00,2021-10-13,Échanges associatifs,Session d'accueil de L'Accorderie,120.0,112069
+16,50,02:00:00,2021-10-18,Échanges associatifs,Session d'accueil de L'Accorderie,120.0,112070
+16,50,02:00:00,2021-10-26,Échanges associatifs,Session d'accueil de L'Accorderie,120.0,112071
+16,50,02:00:00,2021-10-16,Échanges associatifs,Session d'accueil de L'Accorderie,120.0,112072
+13,28,02:00:00,2021-12-03,Santé / Maternité / Esthétique,Coupe cheveux,120.0,112096
+18,47,03:30:00,2021-12-05,Artisanat / Couture / Vêtements,Petites réparations vêtements,120.0,112097
+13,23,03:00:00,2021-12-01,Santé / Maternité / Esthétique,Coupe cheveux,120.0,112098
+1,3,02:00:00,2021-11-30,Travaux / Entretien / Jardinage,Conseils pour autoconstruction,120.0,112099
+3,15,00:30:00,2021-12-08,Transport / Déménagement,Transport besoins divers,120.0,112100
+13,23,02:00:00,2021-12-10,Santé / Maternité / Esthétique,Réflexologie,120.0,112101
+16,17,03:30:00,2021-12-09,Travaux / Entretien / Jardinage,Ménage léger,120.0,112102
+17,18,01:00:00,2021-12-10,Cuisine / Alimentation,Cuisine plats ou repas,120.0,112103
+18,17,01:00:00,2021-12-10,Travaux / Entretien / Jardinage,Ménage léger,120.0,112104
+18,24,04:00:00,2021-12-10,Travaux / Entretien / Jardinage,Ménage léger,120.0,112105
+47,50,01:00:00,2021-11-11,Échanges associatifs,Parrainage nouveaux AccordeurEs,120.0,112160
+18,47,00:30:00,2021-12-09,Artisanat / Couture / Vêtements,Petites réparations vêtements,120.0,112185
+10,50,03:00:00,2021-12-10,Échanges associatifs,Tâches cléricales pour L'Accorderie,120.0,112162
+15,50,04:30:00,2021-12-08,Échanges associatifs,Accueil/réception permanence Accorderie,120.0,112163
+3,50,01:30:00,2021-12-08,Échanges associatifs,Animation kiosque pour L'Accorderie,120.0,112164
+3,50,02:30:00,2021-12-08,Échanges associatifs,Animation kiosque pour L'Accorderie,120.0,112165
+23,50,01:30:00,2021-12-08,Échanges associatifs,Animation kiosque pour L'Accorderie,120.0,112166
+19,50,03:00:00,2021-12-08,Échanges associatifs,Animation kiosque pour L'Accorderie,120.0,112167
+23,50,01:30:00,2021-12-04,Échanges associatifs,Animation kiosque pour L'Accorderie,120.0,112168
+19,50,03:00:00,2021-12-04,Échanges associatifs,Animation kiosque pour L'Accorderie,120.0,112169
+15,50,03:30:00,2021-12-07,Échanges associatifs,Accueil/réception permanence Accorderie,120.0,112170
+15,50,04:00:00,2021-12-04,Échanges associatifs,Animation kiosque pour L'Accorderie,120.0,112171
+17,18,01:00:00,2021-11-11,Informatique / Bureautique,Dépannage pour ordinateurs P.C.,120.0,112201
+3,15,00:30:00,2021-12-14,Transport / Déménagement,Transport besoins divers,120.0,112202
+45,50,03:30:00,2021-12-14,Échanges associatifs,Entretien ménager des locaux,120.0,112203
+23,50,02:00:00,2021-12-17,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,120.0,112211
+48,50,02:00:00,2021-12-17,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,120.0,112212
+42,50,02:00:00,2021-12-17,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,120.0,112213
+21,50,01:00:00,2021-12-17,Échanges associatifs,Organisation et animation d'activités - milieux de vie dynamisés,120.0,112214
+31,21,01:30:00,2021-11-15,Cuisine / Alimentation,Cuisine plats ou repas,120.0,112215
+18,17,01:00:00,2021-12-17,Travaux / Entretien / Jardinage,Ménage léger,120.0,112217
+32,55,01:00:00,2021-12-17,Travaux / Entretien / Jardinage,Entretien de plates-bandes,120.0,112218
+17,18,00:30:00,2021-12-17,Informatique / Bureautique,Dépannage pour ordinateurs P.C.,120.0,112219
+17,18,01:00:00,2021-12-17,Cuisine / Alimentation,Cuisine plats ou repas,120.0,112220
+31,8,05:30:00,2021-12-20,Cuisine / Alimentation,Cuisine plats ou repas,120.0,112293
+16,30,02:00:00,2021-12-20,Travaux / Entretien / Jardinage,Ménage léger,120.0,112294
+16,17,02:30:00,2021-12-21,Travaux / Entretien / Jardinage,Ménage léger,120.0,112295
+1,3,08:30:00,2021-12-21,Travaux / Entretien / Jardinage,Restauration ou fabrication de petits meubles,120.0,112296
+17,16,04:30:00,2021-12-21,Arts / Culture / Éducation,Portraitiste,120.0,112297
+30,10,01:30:00,2021-12-22,Artisanat / Couture / Vêtements,Emballage cadeau,120.0,112298
+36,5,01:30:00,2021-12-28,Informatique / Bureautique,Mise en page sur ordinateur,120.0,112301
+36,4,01:30:00,2021-12-28,Informatique / Bureautique,Mise en page sur ordinateur,120.0,112302
+28,7,01:30:00,2021-12-22,Artisanat / Couture / Vêtements,Confection sacs réutilisables en tissu,120.0,112303
+13,3,01:30:00,2022-01-13,Santé / Maternité / Esthétique,Coupe cheveux,120.0,112416
+24,10,01:00:00,2022-01-07,Transport / Déménagement,Transport besoins divers,120.0,112449
+31,10,01:00:00,2022-01-19,Transport / Déménagement,Transport besoins divers,120.0,112450
+17,24,08:00:00,2021-11-20,Artisanat / Couture / Vêtements,Conception jouets en fibres naturelles,120.0,112451
+17,24,12:00:00,2021-12-01,Arts / Culture / Éducation,Portraitiste,120.0,112452
+18,17,01:00:00,2022-01-21,Travaux / Entretien / Jardinage,Ménage léger,120.0,112453
+18,17,01:00:00,2022-01-29,Travaux / Entretien / Jardinage,Ménage léger,120.0,112563
+17,18,01:00:00,2022-01-29,Informatique / Bureautique,Initiation à Internet et courriel,120.0,112564
+36,8,04:00:00,2022-02-01,Travaux / Entretien / Jardinage,Peinture intérieure,120.0,112565
+36,8,04:00:00,2022-02-02,Travaux / Entretien / Jardinage,Peinture intérieure,120.0,112566
+24,10,06:00:00,2022-01-24,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,120.0,112667
+18,17,01:00:00,2022-02-03,Travaux / Entretien / Jardinage,Ménage léger,120.0,112611
+36,55,03:30:00,2022-02-04,Travaux / Entretien / Jardinage,Peinture intérieure,120.0,112668
+36,55,03:00:00,2022-02-04,Travaux / Entretien / Jardinage,Menus travaux électricité,120.0,112669
+17,18,01:00:00,2022-02-03,Cuisine / Alimentation,Cuisine plats ou repas,120.0,112670
+31,18,02:30:00,2022-02-09,Cuisine / Alimentation,Cuisine plats ou repas,120.0,112671
+18,17,01:00:00,2022-02-11,Travaux / Entretien / Jardinage,Ménage léger,120.0,112843
+17,18,01:00:00,2022-02-11,Cuisine / Alimentation,Cuisine plats ou repas,120.0,112844
+32,55,12:00:00,2022-02-09,Travaux / Entretien / Jardinage,Peinture intérieure,120.0,112845
+32,55,03:00:00,2022-02-11,Transport / Déménagement,Des bras pour moyen déménagement,120.0,112846
+36,55,06:00:00,2022-02-10,Travaux / Entretien / Jardinage,Peinture intérieure,120.0,112847
+2,55,06:00:00,2022-02-12,Transport / Déménagement,Des bras pour moyen déménagement,120.0,112848
+16,30,03:00:00,2022-02-15,Travaux / Entretien / Jardinage,Ménage léger,120.0,112849
+32,18,03:00:00,2022-02-15,Travaux / Entretien / Jardinage,Peinture intérieure,120.0,112850
+36,55,03:00:00,2022-02-17,Transport / Déménagement,Des bras pour petit déménagement,120.0,112851
+28,30,01:30:00,2022-02-18,Artisanat / Couture / Vêtements,Petites réparations vêtements,120.0,112852
+18,17,01:00:00,2022-02-19,Travaux / Entretien / Jardinage,Ménage léger,120.0,112853
+2,55,02:00:00,2022-02-20,Transport / Déménagement,Des bras pour moyen déménagement,120.0,112854
+17,18,01:30:00,2022-02-19,Cuisine / Alimentation,Cuisine plats ou repas,120.0,112855
+31,18,03:00:00,2022-02-23,Cuisine / Alimentation,Cuisine plats ou repas,120.0,112856
+1,0,22:00:00,2022-01-17,Travaux / Entretien / Jardinage,Conseils pour autoconstruction,120.0,112857
+32,55,01:00:00,2021-12-17,Travaux / Entretien / Jardinage,Entretien de plates-bandes,120.0,112858
+55,56,07:00:00,2022-02-02,Santé / Maternité / Esthétique,Harmonisation énergétique,120.0,112887
+36,55,04:00:00,2022-02-22,Transport / Déménagement,Des bras pour moyen déménagement,120.0,113172
+36,4,01:00:00,2022-02-25,Informatique / Bureautique,Initiation générale à l'informatique,120.0,113173
+13,17,02:00:00,2022-02-25,Santé / Maternité / Esthétique,Coupe cheveux,120.0,113174
+7,31,03:00:00,2022-02-25,Travaux / Entretien / Jardinage,Bricoleur pour petits travaux,120.0,113175
+18,17,01:00:00,2022-02-26,Travaux / Entretien / Jardinage,Ménage léger,120.0,113176
+17,18,01:00:00,2022-02-26,Cuisine / Alimentation,Cuisine plats ou repas,120.0,113177
+31,18,01:00:00,2022-03-08,Cuisine / Alimentation,Cuisine plats ou repas,120.0,113178
+17,18,11:00:00,2022-03-09,Arts / Culture / Éducation,Portraitiste,120.0,113179
+13,28,02:00:00,2022-03-09,Santé / Maternité / Esthétique,Coupe cheveux,120.0,113180
+23,17,12:00:00,2022-03-24,Artisanat / Couture / Vêtements,Fabrication objets en macramé,120.0,113314
+16,30,01:30:00,2022-03-24,Travaux / Entretien / Jardinage,Ménage léger,120.0,113315
+39,6,01:30:00,2022-03-25,Accompagnement / Gardiennage / Animaux,Garde d'enfants à ma maison avec les miens,120.0,113324
+30,21,02:00:00,2022-01-25,Cuisine / Alimentation,Préparation muffins,120.0,113325
+30,21,02:00:00,2022-03-21,Cuisine / Alimentation,Préparation muffins santé,120.0,113326
+5,50,02:30:00,2021-11-09,Artisanat / Couture / Vêtements,Fabrication de bijoux,120.0,113419
+5,50,03:00:00,2021-11-16,Artisanat / Couture / Vêtements,Fabrication de bijoux,120.0,113420
+30,21,01:00:00,2022-03-30,Cuisine / Alimentation,Cuisine plats ou repas,120.0,113421
