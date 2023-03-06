@@ -1,5 +1,5 @@
 from datetime import timedelta
-from utils import filter_by_trans_date
+from graph_common.utils import filter_by_trans_date
 
 
 def create_snapshots(g, start_date, end_date, span_days):

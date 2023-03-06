@@ -1,10 +1,9 @@
-
+from dateutil import parser
 def perform_filter(g, filters):
     if (not filters):
         return None
 
     # vertices properties filter
-
     if (filters["age"]):
         print("Filtering by age, value= "+str(filters["age"]))
         g = g.induced_subgraph(g.vs.select(age_in=filters["age"]))

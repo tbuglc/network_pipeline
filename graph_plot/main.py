@@ -1,10 +1,11 @@
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
+import argparse
 from matplotlib.backends.backend_pdf import PdfPages
 
 # Set the directory path
-dir_path = './input'
+dir_path = 'data/filters/Sherbrooke'
 
 # Create an empty list to store data from all Excel files
 all_data = []
@@ -38,13 +39,13 @@ for filename in os.listdir(dir_path):
 # print(data)
 
 def plot_metrics_average():
-    with PdfPages('./output/average_metric_plots.pdf') as pdf:
+    with PdfPages('data/plots/average_metric_plots.pdf') as pdf:
         # page per metrics
 
         for key, value in data['metrics'].items():
             idx = 0
             for v in value:
-                plt.plot(v, marker='o')
+                plt.plot(v)
                 # lg = data['files'][idx] + ' '+ key
                 # print(lg)
                 plt.legend(data['files'])
@@ -55,25 +56,14 @@ def plot_metrics_average():
             plt.close()
 
 
-
-
-
+# arg_parser = argparse.ArgumentParser()
+#
+# arg_parser.add_argument('-k', '--key')
+# arg_parser.add_argument('-v', '--value')
+# arg_parser.add_argument('-fd', '--folder_name')
+#
+# args = arg_parser.parse_args()
+#
+# filters = args.__dict__
+#
 plot_metrics_average()
-# s1 = pd.Series([1, 3, 2, 4])
-# s2 = pd.Series([1, 3, 2, 4])
-#
-# # Plot the series using Matplotlib
-# plt.plot(s1, linestyle='dashdot')
-# plt.plot(s2, linestyle='--', marker='o')
-#
-# plt.legend(data['files'])
-# plt.title('My Series Plot')
-# plt.xlabel('X-axis')
-# plt.ylabel('Y-axis')
-
-# Display the plot
-# plt.show()
-# Concatenate all dataframes into a single dataframe
-# merged_df = pd.concat(all_data, ignore_index=True
-
-# Do something with the merged dataframe

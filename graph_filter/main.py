@@ -2,6 +2,8 @@ import argparse
 import os
 from graph_loader import load_accorderie_network
 from filters import perform_filter
+from graph_common.constants import accorderies
+
 
 output_dir = 'data/accorderies/'
 
@@ -18,7 +20,7 @@ def main(filters={}):
         print('Not transactions and members found!')
         return
 
-    file_dir = output_dir + '_'.join([str(acc) for acc in filters['accorderie']])
+    file_dir = output_dir + accorderies[filters['accorderie'][0]]
 
     dir_exits = os.path.exists(file_dir)
 
@@ -62,8 +64,6 @@ args = arg_parser.parse_args()
 
 if (args is not None):
     filters = args.__dict__
-    print('filters')
-    print(filters)
     main(filters)
 else:
     print("Missing filters")

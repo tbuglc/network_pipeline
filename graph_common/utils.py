@@ -1,4 +1,5 @@
 
+import os
 from datetime import date
 from dateutil import parser
 from graph_loader import data_loader
@@ -18,3 +19,9 @@ def get_start_and_end_date(path=''):
     _, trx = data_loader(path)
 
     return parser.parse(trx['date'].min()), parser.parse(trx['date'].max())
+
+
+def create_folder_if_not_exist(path):
+    dir_exits = os.path.exists(path)
+    if not dir_exits:
+        os.mkdir(path)

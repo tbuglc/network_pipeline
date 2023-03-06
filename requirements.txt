@@ -3,10 +3,11 @@ datetime
 igraph
 argparse
 wheel
-pycairo 
+pycairo
 cairocffi
 matplotlib
 numpy
 openpyxl
 xlsxwriter
 InquirerPy
+python-dateutil

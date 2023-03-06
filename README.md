@@ -23,10 +23,10 @@ graph_filter $ pip install -r requirements.txt
 3. Graph Analysis 
 
 ```sh
-$ cd graph_analysis
-graph_analysis $ python -m venv venv
-graph_analysis $ .\venv\Scripts\Activate.ps1
-graph_analysis $ pip install -r requirements.txt
+$ cd graph_metrics
+graph_metrics $ python -m venv venv
+graph_metrics $ .\venv\Scripts\Activate.ps1
+graph_metrics $ pip install -r requirements.txt
 ```
 
 
@@ -54,7 +54,7 @@ graph_filter $ python .\main.py --age=18-30 --age=55-65 --accorderie=2 # this co
 3. Graph Analysis 
 
 ```sh
-$ cd graph_analysis
+$ cd graph_metrics
 # csv files are expected to be in input folder
-graph_analysis $ python .\main.py --span=30 --folder_name=experiment_101 # default span=30 and folder_name=analysis
+graph_metrics $ python .\main.py --span=30 --folder_name=experiment_101 # default span=30 and folder_name=analysis
 ```

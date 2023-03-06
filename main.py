@@ -1,8 +1,9 @@
 import os
-
 from InquirerPy import prompt, inquirer
 import subprocess as sb
 from InquirerPy.validator import NumberValidator
+
+os.environ['PYTHONPATH'] = os.path.abspath('.')
 
 questions = [
     {"type": "input", "message": "\n1) Parse \n2) Split Accorderie \n3) Metrics \n4) Filters \n5) Plots \n0) Exit \n",
@@ -44,8 +45,26 @@ while is_on:
         ).execute()
 
         for flder in acc_folders:
-            sb.run(['python', 'graph_analysis/main.py', '--span=' + str(span), '--folder_name=' + str(flder)])
+            sb.run(['python', 'graph_metrics/main.py', '--span=' + str(span), '--folder_name=' + str(flder)])
+    if entry_query == 4:
+        accorderies = inquirer.checkbox(
+            message="Select Accorderie(s)",
+            choices=os.listdir('data/metrics'),
+            validate=lambda r: len(r) >= 1,
+            invalid_message="should be at least 1 selection",
+            instruction="(select at least 1)",
+        ).execute()
 
-# show options
-# work on structuring options select,
-# restructure data and output
+        key = inquirer.text(
+            message="Query key: ",
+        ).execute()
+        value = inquirer.text(
+            message="Query value: ",
+        ).execute()
+
+        for acc in accorderies:
+            sb.run(
+                ['python', 'graph_filter/report_file.py', '--key=' + key, '--value=' + value, '--folder_name=' + acc])
+
+    if entry_query == 5:
+        sb.run(['python', 'graph_plot/main.py'])
