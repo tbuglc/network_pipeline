@@ -1,5 +1,27 @@
 from dateutil import parser
-def perform_filter(g, filters):
+
+
+def perform_filter_on_dataframe(df, filters):
+    print(filters)
+    if filters['age']:
+        df = df.loc[df['Age'].isin(filters['age'])]
+
+    if filters['revenu']:
+        df = df.loc[df['Revenu'].isin(filters['revenu'])]
+
+    if filters['ville']:
+        df = df.loc[df['Ville'].isin(filters['ville'])]
+
+    if filters['arrondissement']:
+        df = df.loc[df['Arrondissement'].isin(filters['arrondissement'])]
+
+    if filters['region']:
+        df = df.loc[df['Region'].isin(filters['region'])]
+
+    return df
+
+
+def perform_filter_on_graph(g, filters):
     if (not filters):
         return None
 
@@ -66,3 +88,4 @@ def perform_filter(g, filters):
         g = g.subgraph_edges(g.es.select(accorderie_in=filters["accorderie"]))
 
     return g
+

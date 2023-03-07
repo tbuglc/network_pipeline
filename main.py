@@ -55,16 +55,27 @@ while is_on:
             instruction="(select at least 1)",
         ).execute()
 
-        key = inquirer.text(
-            message="Query key: ",
-        ).execute()
-        value = inquirer.text(
-            message="Query value: ",
+        query = inquirer.text(
+            message="Filter query (i.e --age=34-55 --age=23-43 --ville=sherbrooke): ",
         ).execute()
 
         for acc in accorderies:
-            sb.run(
-                ['python', 'graph_filter/report_file.py', '--key=' + key, '--value=' + value, '--folder_name=' + acc])
+            command = ['python', 'graph_filter/report_filter.py', '--folder_name=' + acc]
+
+            for q in query.split(' '):
+                command.append(q)
+
+            sb.run(command)
 
     if entry_query == 5:
-        sb.run(['python', 'graph_plot/main.py'])
+        fils = []
+        for fd in os.listdir('data/metrics'):
+            print(fd)
+            fl_m = inquirer.checkbox(
+                message="Select metric file in "+fd,
+                choices=os.listdir('data/metrics/' + fd),
+            ).execute()
+
+            fils.append(fl_m)
+        print(fils)
+        # sb.run(['python', 'graph_plot/main.py'])

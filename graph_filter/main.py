@@ -1,7 +1,7 @@
 import argparse
 import os
 from graph_loader import load_accorderie_network
-from filters import perform_filter
+from filters import perform_filter_on_graph
 from graph_common.constants import accorderies
 
 
@@ -11,7 +11,7 @@ output_dir = 'data/accorderies/'
 def main(filters={}):
     g = load_accorderie_network()
 
-    g = perform_filter(g, filters=filters)
+    g = perform_filter_on_graph(g, filters=filters)
 
     trx = g.get_edge_dataframe()
     members = g.get_vertex_dataframe()

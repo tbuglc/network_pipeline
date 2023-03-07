@@ -4,6 +4,7 @@ import argparse
 from graph_common.constants import metrics_columns
 from graph_common.file_handler import add_sheet_to_xlsx, create_xlsx_file, save_csv_file
 from graph_common.utils import create_folder_if_not_exist
+from filters import perform_filter_on_dataframe
 
 '''
 get accorderie name
@@ -31,8 +32,19 @@ def filter_report_file(filters):
 
     create_folder_if_not_exist(dir_name)
 
+    file_name = ''
+    for key in filters:
+        print(key)
+        if key == 'folder_name' or not filters[key]:
+            continue
+
+        if file_name == '':
+            file_name += str(key + '_'.join(filters[key]))
+        else:
+            file_name += '_' + str(key + '_'.join(filters[key]))
+
     file_writer = create_xlsx_file(
-        dir_name + '/' + filters['key'] + '_' + filters['value'])
+        dir_name + '/' + file_name)
 
     add_sheet_to_xlsx(file_writer=file_writer,
                       data=metrics['Global Metrics'], title='Global Metrics', index=True)
@@ -42,10 +54,10 @@ def filter_report_file(filters):
         if key == 'Global Metrics':
             continue
 
-        filtered_sheet = sheet.loc[sheet[filters['key'].capitalize()] == filters['value']]
+        # Filter here
+        filtered_sheet = perform_filter_on_dataframe(sheet, filters)
 
         if filtered_sheet.empty:
-            # result[key] = filtered_sheet
             continue
 
         indices.append(key)
@@ -68,8 +80,11 @@ def filter_report_file(filters):
 
 arg_parser = argparse.ArgumentParser()
 
-arg_parser.add_argument('-k', '--key')
-arg_parser.add_argument('-v', '--value')
+arg_parser.add_argument('-r', '--revenu', action='append')
+arg_parser.add_argument('-a', '--age', action='append')
+arg_parser.add_argument('-v', '--ville', action='append')
+arg_parser.add_argument('-re', '--region', action='append')
+arg_parser.add_argument('-ar', '--arrondissement', action='append')
 arg_parser.add_argument('-fd', '--folder_name')
 
 args = arg_parser.parse_args()

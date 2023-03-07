@@ -7,18 +7,21 @@ from matplotlib.backends.backend_pdf import PdfPages
 # Set the directory path
 dir_path = 'data/filters/Sherbrooke'
 
-# Create an empty list to store data from all Excel files
-all_data = []
+def gather_metrics(command):
+    # Create an empty list to store data from all Excel files
+    all_data = []
 
-# Loop through all files in the directory
-data = {
-    "files": [],
-    "metrics": {
+    # Loop through all files in the directory
+    data = {
+        "files": [],
+        "metrics": {
 
+        }
     }
-}
-for filename in os.listdir(dir_path):
-    if filename.endswith('.xlsx'):  # Only read Excel files
+    for filename in os.listdir(dir_path):
+        if not filename.endswith('.xlsx'):
+            break
+        # Only read Excel files
         file_path = os.path.join(dir_path, filename)
         # Read the Excel file into a Pandas dataframe
         df = pd.read_excel(file_path, sheet_name=None)
@@ -33,9 +36,9 @@ for filename in os.listdir(dir_path):
 
         data['files'].append(filename)
 
-        # Append the dataframe to the list
+            # Append the dataframe to the list
 
-
+    return data
 # print(data)
 
 def plot_metrics_average():
