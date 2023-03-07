@@ -67,3 +67,11 @@ if (args is not None):
     main(filters)
 else:
     print("Missing filters")
+
+
+# TODO:
+# Fix folder structure
+# Create virtual environment for each module
+# Fix import from component
+# Review args for each module
+# Add in vs out folder
