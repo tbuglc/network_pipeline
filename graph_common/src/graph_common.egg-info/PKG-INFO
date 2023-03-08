@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: graph-common
+Version: 0.3
+Summary: Common functions
+Author: luc
+Author-email: bugl2301@usherbrooke.ca
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
