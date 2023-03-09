@@ -5,9 +5,9 @@ import argparse
 from matplotlib.backends.backend_pdf import PdfPages
 
 # Set the directory path
-dir_path = 'data/filters/Sherbrooke'
+# dir_path = 'data/filters/Sherbrooke'
 
-def gather_metrics(command):
+def gather_metrics(input_dit):
     # Create an empty list to store data from all Excel files
     all_data = []
 
@@ -18,11 +18,11 @@ def gather_metrics(command):
 
         }
     }
-    for filename in os.listdir(dir_path):
+    for filename in os.listdir(input_dit):
         if not filename.endswith('.xlsx'):
-            break
+            continue
         # Only read Excel files
-        file_path = os.path.join(dir_path, filename)
+        file_path = os.path.join(input_dit, filename)
         # Read the Excel file into a Pandas dataframe
         df = pd.read_excel(file_path, sheet_name=None)
 
@@ -41,8 +41,9 @@ def gather_metrics(command):
     return data
 # print(data)
 
-def plot_metrics_average():
-    with PdfPages('data/plots/average_metric_plots.pdf') as pdf:
+def plot_metrics_average(input_dir, output_dir):
+    data = gather_metrics(input_dir)
+    with PdfPages(output_dir + '/average_metric_plots.pdf') as pdf:
         # page per metrics
 
         for key, value in data['metrics'].items():
@@ -59,14 +60,13 @@ def plot_metrics_average():
             plt.close()
 
 
-# arg_parser = argparse.ArgumentParser()
-#
-# arg_parser.add_argument('-k', '--key')
-# arg_parser.add_argument('-v', '--value')
-# arg_parser.add_argument('-fd', '--folder_name')
-#
-# args = arg_parser.parse_args()
-#
-# filters = args.__dict__
-#
-plot_metrics_average()
+arg_parser = argparse.ArgumentParser()
+
+arg_parser.add_argument('-i', '--input', required=True)
+arg_parser.add_argument('-o', '--output', required=True)
+
+args = arg_parser.parse_args()
+
+filters = args.__dict__
+
+plot_metrics_average(filters['input'], filters['output'])
