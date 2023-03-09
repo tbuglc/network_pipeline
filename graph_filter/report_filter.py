@@ -1,21 +1,7 @@
-import os
 import pandas as pd
 import argparse
-from graph_common.constants import metrics_columns
-from graph_common.file_handler import add_sheet_to_xlsx, create_xlsx_file, save_csv_file
-from graph_common.utils import create_folder_if_not_exist
+from utils import add_sheet_to_xlsx ,create_folder_if_not_exist, save_csv_file, create_xlsx_file, metrics_columns
 from filters import perform_filter_on_dataframe
-
-'''
-get accorderie name
-read folder from metrics
-
-create a dataframe
-filter through each sheet
-compute average
-add computed average
-save file
-'''
 
 
 def filter_report_file(filters):

@@ -1,5 +1,3 @@
-import os
-import pandas as pd
 from math import ceil
 from matplotlib.backends.backend_pdf import PdfPages
 import matplotlib.pyplot as plt

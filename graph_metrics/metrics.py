@@ -1,8 +1,6 @@
 
 from numpy import mean
 from igraph import Graph, rescale
-# from file_generator import add_sheet_to_xlsx
-# from plots import plot_snapshot_metrics
 import pandas as pd
 
 

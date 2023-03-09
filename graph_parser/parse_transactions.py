@@ -1,5 +1,4 @@
 import pandas as pd
-from datetime import datetime, date
 import numpy as np
 
 input_dir = 'data/raw/'

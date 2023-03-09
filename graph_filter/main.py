@@ -2,7 +2,7 @@ import argparse
 import os
 from graph_loader import load_accorderie_network
 from filters import perform_filter_on_graph
-from graph_common.constants import accorderies
+from utils import accorderies
 
 
 output_dir = 'data/accorderies/'
@@ -75,3 +75,6 @@ else:
 # Fix import from component
 # Review args for each module
 # Add in vs out folder
+
+#  data: provide an input file path and out for required data and output
+#  common imports build a pip package

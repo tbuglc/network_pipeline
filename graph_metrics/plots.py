@@ -1,9 +1,8 @@
-from math import ceil
-from igraph import plot, Graph
+from igraph import Graph
 import igraph as ig
 from matplotlib.backends.backend_pdf import PdfPages
 import matplotlib.pyplot as plt
-from graph_common.file_handler import add_sheet_to_xlsx, create_xlsx_file, save_csv_file
+from utils import add_sheet_to_xlsx, create_xlsx_file, save_csv_file
 
 
 def plot_degree_distribution(xa, ya, folder_name='', title='', line=False, logscale=False):
