@@ -2,26 +2,28 @@ import pandas as pd
 import argparse
 from utils import add_sheet_to_xlsx ,create_folder_if_not_exist, save_csv_file, create_xlsx_file, metrics_columns
 from filters import perform_filter_on_dataframe
+from pathlib import Path
+
 
 
 def filter_report_file(filters):
     metrics = None
     try:
-        metrics = pd.read_excel('data/metrics/' + filters['folder_name'] + '/graphs_metrics.xlsx', sheet_name=None)
+        metrics = pd.read_excel(Path(filters['input'] + '/graphs_metrics.xlsx'), sheet_name=None)
     except ValueError:
         metrics = None
+        return
 
     averages = []
     indices = []
 
-    dir_name = 'data/filters/' + filters['folder_name'] + '/'
-
+    dir_name = filters['output'] + '/'
+ 
     create_folder_if_not_exist(dir_name)
 
     file_name = ''
     for key in filters:
-        print(key)
-        if key == 'folder_name' or not filters[key]:
+        if key == 'input' or key == 'output' or not filters[key]:
             continue
 
         if file_name == '':
@@ -36,7 +38,6 @@ def filter_report_file(filters):
                       data=metrics['Global Metrics'], title='Global Metrics', index=True)
 
     for key, sheet in metrics.items():
-
         if key == 'Global Metrics':
             continue
 
@@ -66,12 +67,15 @@ def filter_report_file(filters):
 
 arg_parser = argparse.ArgumentParser()
 
+arg_parser.add_argument('-i', '--input', required=True)
+arg_parser.add_argument('-o', '--output', required=True)
+
 arg_parser.add_argument('-r', '--revenu', action='append')
 arg_parser.add_argument('-a', '--age', action='append')
 arg_parser.add_argument('-v', '--ville', action='append')
 arg_parser.add_argument('-re', '--region', action='append')
 arg_parser.add_argument('-ar', '--arrondissement', action='append')
-arg_parser.add_argument('-fd', '--folder_name')
+# arg_parser.add_argument('-fd', '--folder_name', required=True)
 
 args = arg_parser.parse_args()
 

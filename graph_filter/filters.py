@@ -2,7 +2,7 @@ from dateutil import parser
 
 
 def perform_filter_on_dataframe(df, filters):
-    print(filters)
+    # print(filters)
     if filters['age']:
         df = df.loc[df['Age'].isin(filters['age'])]
 

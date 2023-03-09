@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+from pathlib import Path
 
 # FIXME: POTENTIAL DUPLICATE
 metrics_columns = ['Degree', 'Betweenness', 'Closeness',
@@ -53,7 +54,7 @@ def save_csv_file(file_writer=pd.ExcelWriter):
 def create_folder_if_not_exist(path):
     dir_exits = os.path.exists(path)
     if not dir_exits:
-        os.mkdir(path)
+        os.mkdir(Path(path))
 '''
 # FIXME: END OF DUPLICATE
 '''

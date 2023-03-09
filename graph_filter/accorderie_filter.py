@@ -3,13 +3,11 @@ import os
 from graph_loader import load_accorderie_network
 from filters import perform_filter_on_graph
 from utils import accorderies
-
-
-output_dir = 'data/accorderies/'
+from pathlib import Path
 
 
 def main(filters={}):
-    g = load_accorderie_network()
+    g = load_accorderie_network(filters['input'])
 
     g = perform_filter_on_graph(g, filters=filters)
 
@@ -20,18 +18,21 @@ def main(filters={}):
         print('Not transactions and members found!')
         return
 
-    file_dir = output_dir + accorderies[filters['accorderie'][0]]
+    file_dir = filters['output'] +'/' + accorderies[filters['accorderie'][0]]
 
     dir_exits = os.path.exists(file_dir)
 
     if (dir_exits == False):
-        os.mkdir(file_dir)
+        os.mkdir(Path(file_dir))
 
     members.to_csv(file_dir + '/members.csv', index=False)
     trx.to_csv(file_dir + '/transactions.csv', index=False)
 
 
 arg_parser = argparse.ArgumentParser()
+
+arg_parser.add_argument('-i', '--input', required=True)
+arg_parser.add_argument('-o', '--output', required=True)
 
 arg_parser.add_argument('-f', '--filter', action="store_true")
 
@@ -56,7 +57,7 @@ arg_parser.add_argument('--duree', action="append")
 arg_parser.add_argument('--service', action="append")
 # help="--service: filter by service, i.e --service=12 for single value otherwise, chaining --service=12 --service=23 will return to a list [12, 23]. Note that we perform OR operation on a list")
 
-arg_parser.add_argument('--accorderie', action="append", default=[])
+arg_parser.add_argument('--accorderie', action="append", required=True)
 # help="--accorderie: filter by accorderie, i.e --accorderie=12 for single value otherwise, chaining --accorderie=12 --accorderie=23 will return to a list [12, 23]. Note that we perform OR operation on a list")
 
 
@@ -69,12 +70,3 @@ else:
     print("Missing filters")
 
 
-# TODO:
-# Fix folder structure
-# Create virtual environment for each module
-# Fix import from component
-# Review args for each module
-# Add in vs out folder
-
-#  data: provide an input file path and out for required data and output
-#  common imports build a pip package
