@@ -56,17 +56,10 @@ def compute_graph_metrics(g=Graph):
 
     data = {}
     data['Degree'] = degree(g=g)
-    print('Computed degree centrality')
-    data['Betweenness'] = betweenness(
-        g=g)
-    print('Computed betweenness centrality')
+    data['Betweenness'] = betweenness(g=g)
     data['Closeness'] = closeness(g=g)
-    print('Computed closeness centrality')
     data['Page Rank'] = pagerank(g=g)
-    print('Computed page rank centrality')
-    data['Clustering Coefficient'] = clustering_coefficient(
-        g=g)
-    print('Computed clustering coefficient')
+    data['Clustering Coefficient'] = clustering_coefficient(g=g)
 
     data["Revenu"] = g.vs['revenu']
     data["Age"] = g.vs['age']
@@ -86,26 +79,15 @@ def compute_global_properties_on_graph(g=Graph):
     indices = ['Diameter', 'Radius', 'Density',
                'Average path length', 'Girth', 'Reciprocity', 'Eccentricity', 'Clustering coefficient', 'Edge betweenness']
 
-
-    print('global metrics')
     x1 = g.diameter(directed=True)
-    print('diameter')
     x2 = g.radius()
-    print('radius')
     x3 = g.density()
-    print('density')
     x4 = g.average_path_length(directed=True)
-    print('average path length')
     x5 = g.girth()
-    print('girth')
     x6 = g.reciprocity()
-    print('reciprocity')
     x7 = mean(g.eccentricity())
-    print('eccentricity')
     x8 = clustering_coefficient(g, average=True)
-    print('cc')
     x9 = edge_betweenness(g, average=True)
-    print('edge betweeness')
 
 
     data = [x1, x2, x3, x4, x5, x6, x7, x8, x9]

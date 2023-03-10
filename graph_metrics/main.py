@@ -5,15 +5,14 @@ from datetime import date
 from snapshot_generator import create_snapshots
 from metrics import compute_global_properties_on_graph, compute_graph_metrics
 import argparse
+from pathlib import Path
 
 
-output_dir = 'data/metrics/'
 
-
-def main(span_days, folder_name="", g=None):
+def main(span_days, folder_name, input_dir, output_dir, g=None):
     folder_name = folder_name + '/'
 
-    start_date, end_date = get_start_and_end_date(path=folder_name)
+    start_date, end_date = get_start_and_end_date(input_dir=input_dir)
 
     if isinstance(start_date, date) == False or isinstance(end_date, date) == False or span_days < 1:
         raise "Incorrect date(s)"
@@ -22,7 +21,7 @@ def main(span_days, folder_name="", g=None):
         raise "Missing folder name"
 
     if g is None:
-        g = load_accorderie_network(path=folder_name)
+        g = load_accorderie_network(input_dir=input_dir)
 
     folder_name = output_dir + folder_name + '/'
 
@@ -30,7 +29,7 @@ def main(span_days, folder_name="", g=None):
     # TODO: refactor utils in graph_metrics
     dir_exits = os.path.exists(folder_name)
     if not dir_exits:
-        os.mkdir(folder_name)
+        os.mkdir(Path(folder_name))
 
     file_writer = create_xlsx_file(folder_name + '/graphs_metrics')
 
@@ -63,20 +62,13 @@ def main(span_days, folder_name="", g=None):
 
 
 arg_parser = argparse.ArgumentParser()
+arg_parser.add_argument('-i', '--input', required=True)
+arg_parser.add_argument('-o', '--output', required=True)
+
 arg_parser.add_argument('-s', '--span', default=30, type=int)
 arg_parser.add_argument('-f', '--folder_name', default='analysis')
 
 args = arg_parser.parse_args()
 
 filters = args.__dict__
-main(span_days=int(filters['span']), folder_name=filters['folder_name'])
-
-'''
-1. modifs on current metrics report 
-    - remove average computation
-2. on filter
-    - filter snapshot by the filter query
-    - compute average for each snapshot 
-    - add average as last sheet
-    - pass the filter file into plot for plotting
-'''
+main(span_days=int(filters['span']), folder_name=filters['folder_name'], input_dir=filters['input'] + '/', output_dir=filters['output'] + '/')

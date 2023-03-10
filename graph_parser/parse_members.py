@@ -3,7 +3,7 @@ from datetime import datetime, date
 import numpy as np
 
 input_dir = 'data/raw/'
-output_dir = 'data/global_network/'
+# output_dir = 'data/global_network/'
 
 
 def anonymize_age(year):
@@ -45,25 +45,30 @@ def splice_postal_code(code):
     return code
 
 
-def load_data():
-    members = pd.read_csv(input_dir + 'membres.csv', sep=";",
-                          encoding="latin-1", low_memory=False)
-    revenu = pd.read_csv(
-        input_dir + 'revenu_familiale_annuel.csv', sep=";", encoding="latin-1")
+def load_data(input_dir):
 
-    arrondissement = pd.read_csv(
-        input_dir + 'arrondissement.csv', sep=";", encoding="latin-1")
+    try:
+        members = pd.read_csv(input_dir + 'membres.csv', sep=";",
+                            encoding="latin-1", low_memory=False)
+        revenu = pd.read_csv(
+            input_dir + 'revenu_familiale_annuel.csv', sep=";", encoding="latin-1")
 
-    ville = pd.read_csv(input_dir + 'ville.csv', sep=";", encoding="latin-1")
-    region = pd.read_csv(input_dir + 'region.csv', sep=";", encoding="latin-1")
+        arrondissement = pd.read_csv(
+            input_dir + 'arrondissement.csv', sep=";", encoding="latin-1")
 
-    print('INIT Members shape: ' + str(members.shape))
+        ville = pd.read_csv(input_dir + 'ville.csv', sep=";", encoding="latin-1")
+        region = pd.read_csv(input_dir + 'region.csv', sep=";", encoding="latin-1")
 
-    return members, revenu, arrondissement, ville, region
+        print('INIT Members shape: ' + str(members.shape))
+
+        return members, revenu, arrondissement, ville, region
+    except Exception as e:
+        print('Something went wront while importing files')
+        print(e)
 
 
-def populate_columns_data():
-    members,  revenu, arrondissement, ville, region = load_data()
+def populate_columns_data(input_dir):
+    members,  revenu, arrondissement, ville, region = load_data(input_dir=input_dir+'/')
 
     ville = ville.merge(region, on="NoRegion", how="left")
     print('Joined with REGION, new member shape : ' + str(members.shape))
@@ -107,8 +112,8 @@ def format_members(members):
     return members
 
 
-def parse_members():
-    members = populate_columns_data()
+def parse_members(input_dir):
+    members = populate_columns_data(input_dir)
 
     members = format_members(members=members)
 

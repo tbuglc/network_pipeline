@@ -17,7 +17,7 @@ def filter_report_file(filters):
     averages = []
     indices = []
 
-    dir_name = filters['output'] + '/'
+    dir_name = filters['output'] + '/' + filters['folder_name'] + '/'
  
     create_folder_if_not_exist(dir_name)
 
@@ -69,6 +69,7 @@ arg_parser = argparse.ArgumentParser()
 
 arg_parser.add_argument('-i', '--input', required=True)
 arg_parser.add_argument('-o', '--output', required=True)
+arg_parser.add_argument('-fd', '--folder_name', required=True)
 
 arg_parser.add_argument('-r', '--revenu', action='append')
 arg_parser.add_argument('-a', '--age', action='append')

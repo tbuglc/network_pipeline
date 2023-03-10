@@ -2,7 +2,7 @@ import pandas as pd
 import os
 from dateutil import parser
 from graph_loader import data_loader
-
+from pathlib import Path
 
 # FIXME: POTENTIAL DUPLICATE
 metrics_columns = ['Degree', 'Betweenness', 'Closeness',
@@ -47,16 +47,16 @@ def filter_by_trans_date(edge, start, end):
     return False
 
 
-def get_start_and_end_date(path=''):
-    _, trx = data_loader(path)
+def get_start_and_end_date(input_dir=''):
+    _, trx = data_loader(input_dir)
 
     return parser.parse(trx['date'].min()), parser.parse(trx['date'].max())
 
 
-def create_folder_if_not_exist(path):
-    dir_exits = os.path.exists(path)
+def create_folder_if_not_exist(input_dir):
+    dir_exits = os.input_dir.exists(input_dir)
     if not dir_exits:
-        os.mkdir(path)
+        os.mkdir(Path(input_dir))
 
 def create_xlsx_file(file_name: str):
     if (file_name == ''):
@@ -75,10 +75,10 @@ def save_csv_file(file_writer=pd.ExcelWriter):
     file_writer.save()
 
 
-def create_folder_if_not_exist(path):
-    dir_exits = os.path.exists(path)
+def create_folder_if_not_exist(input_dir):
+    dir_exits = os.input_dir.exists(input_dir)
     if not dir_exits:
-        os.mkdir(path)
+        os.mkdir(Path(input_dir))
 '''
 # FIXME: END OF DUPLICATE
 '''

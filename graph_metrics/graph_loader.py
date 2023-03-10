@@ -4,20 +4,20 @@ import pandas as pd
 input_dir = 'data/accorderies'
 
 
-def data_loader(path=''):
+def data_loader(input_dir=''):
 
-    path = input_dir + '/'+path
+    # input_dir = input_dir + '/'+input_dir
 
     # TODO: Should consider loading as stream for better memory usage in case of large dataset
-    users = pd.read_csv(path + '/members.csv', encoding='latin-1')
-    transactions = pd.read_csv(path + '/transactions.csv', encoding='latin-1')
+    users = pd.read_csv(input_dir + '/members.csv', encoding='latin-1')
+    transactions = pd.read_csv(input_dir + '/transactions.csv', encoding='latin-1')
     # print(users, transactions)
     return users, transactions
 
 
-def load_accorderie_network(path=''):
+def load_accorderie_network(input_dir=''):
     # TODO: Should consider loading as stream for better memory usage in case of large dataset
-    users, transactions = data_loader(path)
+    users, transactions = data_loader(input_dir)
 
     g = None
 

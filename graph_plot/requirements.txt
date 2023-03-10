@@ -2,3 +2,4 @@ openpyxl
 pandas
 matplotlib
 argparse
+pathlib
