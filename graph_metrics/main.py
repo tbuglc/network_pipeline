@@ -34,15 +34,16 @@ def main(span_days, folder_name, input_dir, output_dir, g=None):
     file_writer = create_xlsx_file(folder_name + '/graphs_metrics')
 
     global_metrics = compute_global_properties_on_graph(g=g)
-
+    
     add_sheet_to_xlsx(file_writer=file_writer,
                       data=global_metrics, title='Global Metrics', index=True)
-
+    print('Computed global metrics')
     # compute snapshots
 
+    print(g)
     snapshots = create_snapshots(
         g, start_date=start_date, end_date=end_date, span_days=int(span_days))
-
+    print('Created snapshots')
     if len(snapshots) == 0:
         print('Could not create snapshots')
         return
@@ -54,7 +55,7 @@ def main(span_days, folder_name, input_dir, output_dir, g=None):
 
         add_sheet_to_xlsx(file_writer=file_writer,
                           data=metrics_row, title='from ' + snapshot['title'])
-
+    print('Computed metrics on snapshots')
     # save file
     save_csv_file(file_writer=file_writer)
 

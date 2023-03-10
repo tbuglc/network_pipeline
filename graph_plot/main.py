@@ -46,7 +46,7 @@ def plot_metrics_average(input_dir, output_dir, folder_name):
     
     output_dir =output_dir + '/'+ folder_name
 
-    create_folder_if_not_exist(output_dir=output_dir)
+    create_folder_if_not_exist(output_dir)
 
     with PdfPages(output_dir + '/average_metric_plots.pdf') as pdf:
         # page per metrics
