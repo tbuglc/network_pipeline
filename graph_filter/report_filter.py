@@ -23,7 +23,7 @@ def filter_report_file(filters):
 
     file_name = ''
     for key in filters:
-        if key == 'input' or key == 'output' or not filters[key]:
+        if key == 'input' or key == 'folder_name' or key == 'output' or not filters[key]:
             continue
 
         if file_name == '':
