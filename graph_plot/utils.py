@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-def create_folder_if_not_exist(input_dir):
-    dir_exits = os.input_dir.exists(input_dir)
+def create_folder_if_not_exist(path):
+    dir_exits = os.path.exists(path)
     if not dir_exits:
-        os.mkdir(Path(input_dir))
+        os.mkdir(Path(path))
