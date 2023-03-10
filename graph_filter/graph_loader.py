@@ -1,17 +1,18 @@
 from igraph import Graph
 import pandas as pd
 
-def data_loader():
+
+def data_loader(input_dir):
     # TODO: Should consider loading as stream for better memory usage in case of large dataset
-    users = pd.read_csv('input/members.csv', encoding='latin-1')
-    transactions = pd.read_csv('input/transactions.csv', encoding='latin-1')
+    users = pd.read_csv(input_dir+'members.csv', encoding='latin-1')
+    transactions = pd.read_csv(input_dir+'transactions.csv', encoding='latin-1')
 
     return users, transactions
 
 
-def load_accorderie_network():
+def load_accorderie_network(input_dir):
     # TODO: Should consider loading as stream for better memory usage in case of large dataset
-    users, transactions = data_loader()
+    users, transactions = data_loader(input_dir=input_dir + '/')
 
     g = None
 

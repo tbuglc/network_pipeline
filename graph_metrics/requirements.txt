@@ -1,0 +1,10 @@
+igraph
+wheel
+pycairo 
+cairocffi
+pandas
+matplotlib
+numpy
+openpyxl
+xlsxwriter
+argparse

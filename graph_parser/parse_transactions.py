@@ -1,11 +1,9 @@
 import pandas as pd
-from datetime import datetime, date
 import numpy as np
 
-input_dir = '.\input\\'
 
 
-def load_data():
+def load_data(input_dir):
     transactions = pd.read_csv(input_dir+'echange_services.csv',
                                sep=";", encoding="latin-1")
 
@@ -23,8 +21,8 @@ def load_data():
     return transactions, categorie, sous_category, offre_service
 
 
-def populate_columns_data():
-    transactions, categorie, sous_category, offre_service = load_data()
+def populate_columns_data(input_dir):
+    transactions, categorie, sous_category, offre_service = load_data(input_dir=input_dir+'/')
     '''
         T
         # transactions = transactions[["NoEchangeService", "NoMembreVendeur", "NoMembreAcheteur", "NbHeure",
@@ -116,8 +114,8 @@ def map_transactions_members(members, transactions):
     return transactions
 
 
-def parse_transaction(members):
-    transactions = populate_columns_data()
+def parse_transaction(input_dir, members):
+    transactions = populate_columns_data(input_dir)
     transactions = format_transactions(transactions=transactions)
 
     transactions = drop_trx_with_nan_vendeur_acheteur(

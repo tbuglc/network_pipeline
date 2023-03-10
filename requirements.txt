@@ -1,0 +1,13 @@
+pandas
+datetime
+igraph
+argparse
+wheel
+pycairo
+cairocffi
+matplotlib
+numpy
+openpyxl
+xlsxwriter
+InquirerPy
+python-dateutil

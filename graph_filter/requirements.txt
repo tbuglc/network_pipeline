@@ -1,3 +1,7 @@
 argparse
 igraph
 pandas
+python-dateutil
+pathlib
+openpyxl
+xlsxwriter
