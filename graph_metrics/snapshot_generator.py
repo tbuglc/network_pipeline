@@ -15,7 +15,7 @@ def create_snapshots(g, start_date, end_date, span_days):
 
         if (len(edge_list.indices) != 0):
             sub = g.subgraph_edges(edge_list)
-            print(sub)
+     
         if (sub is not None):
             snapshots.append({"subgraph": sub, "title": start_date.strftime(
                 '%Y-%m-%d') + ' to ' + new_date_limit.strftime('%Y-%m-%d')})
@@ -24,3 +24,4 @@ def create_snapshots(g, start_date, end_date, span_days):
         new_date_limit = new_date_limit + timedelta(span_days)
 
     return snapshots
+

@@ -11,3 +11,4 @@ openpyxl
 xlsxwriter
 InquirerPy
 python-dateutil
+pathlib

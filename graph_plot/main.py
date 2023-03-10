@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import argparse
 from matplotlib.backends.backend_pdf import PdfPages
-from utils import create_folder_if_not_exist
+from utils import create_folder_if_not_exist, parse_output_dir
 # Set the directory path
 # dir_path = 'data/filters/Sherbrooke'
 
@@ -41,14 +41,18 @@ def gather_metrics(input_dit):
     return data
 # print(data)
 
-def plot_metrics_average(input_dir, output_dir, folder_name):
+def plot_metrics_average(input_dir, output_dir):
     data = gather_metrics(input_dir)
     
-    output_dir =output_dir + '/'+ folder_name
+    output_dir =output_dir
+    dest_dir, file_name = parse_output_dir(output_dir)
 
-    create_folder_if_not_exist(output_dir)
+    create_folder_if_not_exist(dest_dir)
 
-    with PdfPages(output_dir + '/average_metric_plots.pdf') as pdf:
+    if file_name.endswith('.pdf'):
+        raise ValueError('Output dir should end with file.pdf')
+
+    with PdfPages(output_dir) as pdf:
         # page per metrics
 
         for key, value in data['metrics'].items():
@@ -69,10 +73,9 @@ arg_parser = argparse.ArgumentParser()
 
 arg_parser.add_argument('-i', '--input', required=True)
 arg_parser.add_argument('-o', '--output', required=True)
-arg_parser.add_argument('-fd', '--folder_name', required=True)
 
 args = arg_parser.parse_args()
 
 filters = args.__dict__
 
-plot_metrics_average(filters['input'], filters['output'], filters['folder_name'])
+plot_metrics_average(filters['input'], filters['output'])
