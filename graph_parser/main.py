@@ -2,6 +2,7 @@ from parse_members import parse_members
 from parse_transactions import parse_transaction
 from igraph import Graph
 import argparse
+from utils import create_folder_if_not_exist
 
 
 def remove_missing_edge_vertex(transactions, members):
@@ -23,9 +24,6 @@ def test_graph(members, transactions):
 def main(input_dir, output_dir):
     members = parse_members(input_dir)
 
-    print('Input directory: ' + input_dir)
-    print('Output directory: ' + output_dir)
-
     print('Loaded members')
 
     # print(members)
@@ -36,6 +34,8 @@ def main(input_dir, output_dir):
 
     is_graph = test_graph(members=members, transactions=transactions)
     print('constructing a graph test ')
+
+    create_folder_if_not_exist(output_dir)
 
     if is_graph:
         print('Saving to file')
