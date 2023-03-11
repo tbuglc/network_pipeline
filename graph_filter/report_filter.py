@@ -23,7 +23,7 @@ def filter_report_file(filters):
 
     create_folder_if_not_exist(dest_dir)
 
-    if file_name.endswith('.xlsx'):
+    if not file_name.endswith('.xlsx'):
         raise ValueError('Output dir should end with file.xlsx')
     
     file_writer = create_xlsx_file(
@@ -33,7 +33,7 @@ def filter_report_file(filters):
                       data=metrics['Global Metrics'], title='Global Metrics', index=True)
 
     for key, sheet in metrics.items():
-        if key == 'Global Metrics':
+        if key == 'Global Metrics' or key == 'Snapshot Average Metrics':
             continue
 
         # Filter here

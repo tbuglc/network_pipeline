@@ -70,6 +70,7 @@ def perform_filter_on_graph(g, filters):
     if (filters["duree"]):
         duree = {}
         if (len(filters["duree"]) == 1):
+            
             duree['duree_in'] = [str(i) for i in filters["duree"][0]]
         else:
             duree['duree_'+filters["duree"][0]

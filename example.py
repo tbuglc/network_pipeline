@@ -12,7 +12,7 @@ os.system(cmd)
 
 # input folder: global network or filtered network csv's and should contain transaction.csv and members.csv
 # output folder: transactions.csv and members.csv of the filtered network will be generated  
-cmd = 'graph_filter/main.py -i=folder/path -o=folder/path --accorderie=2 --duree=3 --revenu=300001-500000'
+cmd = 'graph_filter/main.py -i=folder/path -o=folder/path --accorderie=2'
 os.system(cmd)
 
 ## metrics ##
@@ -26,7 +26,7 @@ os.system(cmd)
 
 # input file: metrics computed from step above\
 # output file: generated file with average snapshots
-cmd = 'graph_filter/report_filter.py -i=folder/path/file.xlsx -o=folder/path/file_name.xlsx --revenu=300001-50000 --age=65-85 --age=31-55'
+cmd = 'graph_filter/report_filter.py -i=folder/path/file.xlsx -o=folder/path/file_name.xlsx --revenu=30001-50000 --age=55-65 --age=31-54'
 os.system(cmd)
 
 ## plots ##
