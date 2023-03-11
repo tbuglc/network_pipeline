@@ -26,8 +26,9 @@ def main(span_days, input_dir, output_dir, g=None):
     dest_dir, file_name = parse_output_dir(output_dir)
  
     create_folder_if_not_exist(dest_dir)
-    
-    if file_name.endswith('.xlsx'):
+
+
+    if not file_name.endswith('.xlsx'):
         raise ValueError('Output dir should end with file.xlsx')
     
     file_writer = create_xlsx_file(output_dir)

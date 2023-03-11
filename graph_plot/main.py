@@ -49,7 +49,7 @@ def plot_metrics_average(input_dir, output_dir):
 
     create_folder_if_not_exist(dest_dir)
 
-    if file_name.endswith('.pdf'):
+    if not file_name.endswith('.pdf'):
         raise ValueError('Output dir should end with file.pdf')
 
     with PdfPages(output_dir) as pdf:
