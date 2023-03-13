@@ -1,5 +1,5 @@
 from dateutil import parser
-
+from igraph import Graph
 
 def perform_filter_on_dataframe(df, filters):
     # print(filters)
@@ -53,31 +53,30 @@ def perform_filter_on_graph(g, filters):
         rev = {''+filters["revenu"][0]: filters["revenu"][1]}
         print("Filtering by revenu, value= "+str(filters["revenu"]))
         g = g.induced_subgraph(g.vs(**rev))
-
     # edges properties
     if (filters["date"]):
-
-        rev = {}
-        if (len(filters["date"]) == 1):
-            rev['date_in'] = [parser.parse(d) for d in filters["date"][0]]
-        else:
-            rev['date_'+filters["date"][0]
-                ] = [parser.parse(d) for d in filters["date"][1]]
-
         print("Filtering by date, value= "+str(filters["date"]))
-        g = g.subgraph_edges(g.es(**rev))
+
+        date_filter = filters['date']
+        if date_filter[0] == '<':
+            g = g.subgraph_edges(g.es.select(lambda e: False if e['date'] == '0000-00-00' else parser.parse(e['date']) <= parser.parse(date_filter[1:])))
+        elif date_filter[0] == '>':
+            g = g.subgraph_edges(g.es.select(lambda e: False if e['date'] == '0000-00-00' else parser.parse(e['date']) >= parser.parse(date_filter[1:])))
+        elif date_filter[0] == ':':
+            date_intervals = date_filter[1:].split(',')
+            g = g.subgraph_edges(g.es.select(lambda e: False if e['date'] == '0000-00-00' else parser.parse(e['date']) >= parser.parse(date_intervals[0]) and parser.parse(e['date']) <= parser.parse(date_intervals[1])))
+        else:
+            g = g.subgraph_edges(g.es.select(date_in=[date_filter]))
 
     if (filters["duree"]):
-        duree = {}
-        if (len(filters["duree"]) == 1):
-            
-            duree['duree_in'] = [str(i) for i in filters["duree"][0]]
-        else:
-            duree['duree_'+filters["duree"][0]
-                  ] = [str(i) for i in filters["duree"][1]]
-
+        for i, d in enumerate(filters['duree']):
+            splitted_d = d.split(':')
+            if len(splitted_d[0]) < 2:
+                filters['duree'][i] = '0' + filters['duree'][i] 
+        
         print("Filtering by duree, value= "+str(filters["duree"]))
-        g = g.subgraph_edges(g.es.select(**duree))
+        g = g.subgraph_edges(g.es.select(duree_in=filters['duree']))
+        
 
     if (filters["service"]):
         print("Filtering by service, value= "+str(filters["service"]))
