@@ -15,6 +15,12 @@ os.system(cmd)
 cmd = 'graph_filter/main.py -i=folder/path -o=folder/path --accorderie=2'
 os.system(cmd)
 
+# Date filter
+cmd = "graph_filter/main.py -i=folder/path -o=folder/path --date ':06/2010,10/2016'" # date between 06/2010 and 10/2016
+cmd = "graph_filter/main.py -i=folder/path -o=folder/path --date '>06/2010'" # date after 06/2010 
+cmd = "graph_filter/main.py -i=folder/path -o=folder/path --date '<06/2006'" # date before 06/2006
+os.system(cmd)
+
 ## metrics ##
 
 # input folder: should contain transactions.csv and members.csv, be it of the global network or filtered
