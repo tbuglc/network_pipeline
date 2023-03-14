@@ -63,7 +63,7 @@ def create_xlsx_file(file_name: str):
         raise ValueError('Missing file name')
 
     return pd.ExcelWriter(
-        file_name+'.xlsx', engine='xlsxwriter')
+        file_name, engine='xlsxwriter')
 
 
 def add_sheet_to_xlsx(file_writer=pd.ExcelWriter, data=pd.DataFrame, title='', index=False):
