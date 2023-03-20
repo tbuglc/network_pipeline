@@ -39,8 +39,8 @@ def filter_report_file(filters):
         # Filter here
         filtered_sheet = perform_filter_on_dataframe(sheet, filters)
 
-        if filtered_sheet.empty:
-            continue
+        # if filtered_sheet.empty:
+        #     continue
 
         indices.append(key)
         add_sheet_to_xlsx(file_writer=file_writer,
@@ -66,10 +66,12 @@ arg_parser.add_argument('-i', '--input', required=True)
 arg_parser.add_argument('-o', '--output', required=True)
 
 arg_parser.add_argument('-r', '--revenu', action='append')
+arg_parser.add_argument('-g', '--gender', action='append')
 arg_parser.add_argument('-a', '--age', action='append')
 arg_parser.add_argument('-v', '--ville', action='append')
 arg_parser.add_argument('-re', '--region', action='append')
 arg_parser.add_argument('-ar', '--arrondissement', action='append')
+
 
 
 args = arg_parser.parse_args()

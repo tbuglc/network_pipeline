@@ -6,6 +6,9 @@ def perform_filter_on_dataframe(df, filters):
     if filters['age']:
         df = df.loc[df['Age'].isin(filters['age'])]
 
+    if filters['genre']:
+        df = df.loc[df['Genre'].isin(filters['genre'])]
+
     if filters['revenu']:
         df = df.loc[df['Revenu'].isin(filters['revenu'])]
 

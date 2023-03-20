@@ -63,6 +63,7 @@ def compute_graph_metrics(g=Graph):
 
     data["Revenu"] = g.vs['revenu']
     data["Age"] = g.vs['age']
+    data["Genre"] = g.vs['genre']
     data["Accorderie"] = g.vs['accorderie']
     data["Ville"] = g.vs['ville']
     data["Region"] = g.vs['region']
