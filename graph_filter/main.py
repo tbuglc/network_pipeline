@@ -41,8 +41,6 @@ arg_parser.add_argument('--arrondissement', action="append")
 arg_parser.add_argument('--ville', action="append")
 arg_parser.add_argument('--revenu', action="append")
 arg_parser.add_argument('--genre', action="append")
-
-
 arg_parser.add_argument('--date')
 arg_parser.add_argument('--duree', action="append")
 arg_parser.add_argument('--service', action="append")

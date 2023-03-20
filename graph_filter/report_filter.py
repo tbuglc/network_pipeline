@@ -66,7 +66,7 @@ arg_parser.add_argument('-i', '--input', required=True)
 arg_parser.add_argument('-o', '--output', required=True)
 
 arg_parser.add_argument('-r', '--revenu', action='append')
-arg_parser.add_argument('-g', '--gender', action='append')
+arg_parser.add_argument('-g', '--genre', action='append')
 arg_parser.add_argument('-a', '--age', action='append')
 arg_parser.add_argument('-v', '--ville', action='append')
 arg_parser.add_argument('-re', '--region', action='append')
