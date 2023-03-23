@@ -1,0 +1,23 @@
+{
+  "name": "accorderie-data",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^7.5.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "moment-random": "^1.1.0"
+  },
+  "dependencies": {
+    "exceljs": "^4.3.0",
+    "faker": "^6.6.6"
+  }
+}

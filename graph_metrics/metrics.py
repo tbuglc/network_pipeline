@@ -60,6 +60,7 @@ def compute_graph_metrics(g=Graph):
     data['Closeness'] = closeness(g=g)
     data['Page Rank'] = pagerank(g=g)
     data['Clustering Coefficient'] = clustering_coefficient(g=g)
+    data['Page Rank 2'] = pagerank(g=g)
 
     data["Revenu"] = g.vs['revenu']
     data["Age"] = g.vs['age']

@@ -39,3 +39,10 @@ os.system(cmd)
 # input folder: folder containing metric files. Each file should contain a sheet named "Snapshot Average Metrics"   
 cmd = 'graph_plot/main.py -i=folder/path -o=folder/path/file_name.pdf'
 os.system(cmd)
+
+
+## generator ##
+# input folder: folder containing metric files. Each file should contain a sheet named "Snapshot Average Metrics"   
+cmd = 'node graph_generator/src/index.js -o=folder/path/file_name.pdf  -u=2000 -t=2000 -sd="exp" -sp=1.5 -r=0.5 -d=0.6'
+os.system(cmd)
+
