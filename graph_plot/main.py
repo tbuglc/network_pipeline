@@ -7,7 +7,7 @@ from utils import create_folder_if_not_exist, parse_output_dir
 # Set the directory path
 # dir_path = 'data/filters/Sherbrooke'
 
-def gather_metrics(input_dit):
+def gather_metrics(input_dir, sh_name):
     # Create an empty list to store data from all Excel files
     all_data = []
 
@@ -18,15 +18,15 @@ def gather_metrics(input_dit):
 
         }
     }
-    for filename in os.listdir(input_dit):
+    for filename in os.listdir(input_dir):
         if not filename.endswith('.xlsx'):
             continue
         # Only read Excel files
-        file_path = os.path.join(input_dit, filename)
+        file_path = os.path.join(input_dir, filename)
         # Read the Excel file into a Pandas dataframe
         df = pd.read_excel(file_path, sheet_name=None)
 
-        averages = df['Snapshot Average Metrics']
+        averages = df[sh_name]
         for name, series in averages.items():
             if name == 'Unnamed: 0':
                 continue
@@ -41,8 +41,11 @@ def gather_metrics(input_dit):
     return data
 # print(data)
 
-def plot_metrics_average(input_dir, output_dir):
-    data = gather_metrics(input_dir)
+def plot_metrics_average(filters):
+    input_dir = filters['input']
+    output_dir = filters['output']
+
+    data = gather_metrics(input_dir, filters['sheet_name'])
     
     output_dir =output_dir
     dest_dir, file_name = parse_output_dir(output_dir)
@@ -73,9 +76,10 @@ arg_parser = argparse.ArgumentParser()
 
 arg_parser.add_argument('-i', '--input', required=True)
 arg_parser.add_argument('-o', '--output', required=True)
+arg_parser.add_argument('-sh', '--sheet_name', default='Snapshot Average Metrics')
 
 args = arg_parser.parse_args()
 
 filters = args.__dict__
 
-plot_metrics_average(filters['input'], filters['output'])
+plot_metrics_average(filters)

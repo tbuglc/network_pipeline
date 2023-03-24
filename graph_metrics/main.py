@@ -3,10 +3,10 @@ from utils import get_start_and_end_date,  add_sheet_to_xlsx, create_xlsx_file, 
 from graph_loader import load_accorderie_network
 from datetime import date
 from snapshot_generator import create_snapshots
-from metrics import compute_global_properties_on_graph, compute_graph_metrics, compute_average_metrics
+from metrics import compute_global_properties_on_graph, compute_graph_metrics, compute_average_metrics, global_graph_properties
 import argparse
 from pathlib import Path
-from utils import create_folder_if_not_exist, parse_output_dir
+from utils import create_folder_if_not_exist, parse_output_dir, global_graph_indices
 import pandas as pd
 
 def main(span_days, input_dir, output_dir, g=None):
@@ -58,8 +58,11 @@ def main(span_days, input_dir, output_dir, g=None):
     
     average_metrics = []
     indices = []
+    global_metrics_on_snapshot = []
     for snapshot in snapshots:
         sub_graph = snapshot['subgraph']
+        
+        global_metrics_on_snapshot.append(global_graph_properties(sub_graph))
 
         metrics_row = compute_graph_metrics(g=sub_graph)
 
@@ -79,6 +82,10 @@ def main(span_days, input_dir, output_dir, g=None):
     add_sheet_to_xlsx(file_writer=file_writer, data=pd_av_m,
                       title='Snapshot Average Metrics', index=True)
 
+    sn_gb_m = pd.DataFrame(data=global_metrics_on_snapshot, index=indices, columns=global_graph_indices)
+
+    add_sheet_to_xlsx(file_writer=file_writer, data=sn_gb_m, index=True, title="Snapshots Global Metrics")
+    
     print('Computed metrics on snapshots')
     # save file
     save_csv_file(file_writer=file_writer)
