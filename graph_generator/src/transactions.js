@@ -32,19 +32,19 @@ export function generateTransactionSourceAndTarget(users, region_bias) {
     users_list = users;
   }
 
-  let acheteur;
-  let vendeur;
+  let target;
+  let source;
 
   let done = false;
   while (!done) {
-    acheteur = getRandomUser(users_list, "sociability_out");
-    vendeur = getRandomUser(users_list, "sociability_in");
-    if (acheteur.nom != vendeur.nom) {
+    target = getRandomUser(users_list, "sociability_out");
+    source = getRandomUser(users_list, "sociability_in");
+    if (target.id != source.id) {
       done = true;
     }
   }
 
-  return [acheteur, vendeur];
+  return [target, source];
 }
 
 /**
@@ -76,8 +76,8 @@ export function generateTransactions(
 ) {
   const transactions = [];
   for (let index = 0; index < transactionSize; index++) {
-    //const vendeur = generateRandomVendeur(users) || {};
-    //const acheteur = generateRandomAcheteur(users, vendeur) || {};
+    //const source = generateRandomsource(users) || {};
+    //const target = generateRandomtarget(users, source) || {};
 
     const transaction_date = generateTransactionDate(
       startdate,
@@ -85,20 +85,20 @@ export function generateTransactions(
       date_bias_factor
     );
 
-    const acheteur_vendeur = generateTransactionSourceAndTarget(
+    const target_source = generateTransactionSourceAndTarget(
       users,
       region_bias
     );
-    const acheteur = acheteur_vendeur[0];
-    const vendeur = acheteur_vendeur[1];
+    const target = target_source[0];
+    const source = target_source[1];
 
     const transaction = {
       service:
         serviceAccorderie[(0, randomizer(0, serviceAccorderie.length - 1))],
-      vendeur: vendeur.nom,
-      acheteur: acheteur.nom,
+      source: source.id,
+      target: target.id,
       date: formatDate(transaction_date),
-      weight: timeRandomizer(),
+      duree: timeRandomizer(),
     };
 
     transactions.push(transaction);
@@ -113,7 +113,7 @@ export function generateTransactions(
 export function generateDetailedTransactions(users, transactions) {
   let users_map = {};
   for (const u of users) {
-    let key = u.nom;
+    let key = u.id;
     users_map[key] = u;
   }
 
@@ -122,14 +122,14 @@ export function generateDetailedTransactions(users, transactions) {
   for (const t of transactions) {
     const detailed_t = {
       service: t.service,
-      vendeur: t.vendeur,
-      acheteur: t.acheteur,
+      source: t.source,
+      target: t.target,
       date: t.date,
-      weight: t.weight,
-      longitude1: users_map[t.vendeur].longitude,
-      latitude1: users_map[t.vendeur].latitude,
-      longitude2: users_map[t.acheteur].longitude,
-      latitude2: users_map[t.acheteur].latitude,
+      duree: t.duree,
+      longitude1: users_map[t.source].longitude,
+      latitude1: users_map[t.source].latitude,
+      longitude2: users_map[t.target].longitude,
+      latitude2: users_map[t.target].latitude,
     };
 
     detailed_transactions.push(detailed_t);

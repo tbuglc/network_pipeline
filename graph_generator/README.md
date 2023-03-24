@@ -26,8 +26,8 @@ main(300, 1000);
 // function: generateTransactions
 const transaction = {
   service: serviceAccorderie[(0, randomizer(0, serviceAccorderie.length - 1))],
-  vendeur: `${vendeur.nom} ${vendeur.prenom}`,
-  acheteur: `${acheteur.nom} ${acheteur.prenom}`,
+  vendeur: `${vendeur.id} ${vendeur.prenom}`,
+  acheteur: `${acheteur.id} ${acheteur.prenom}`,
   //FIXME: adjust transaction range END and/or START date below this line i.e: END: moment("2022-06-01"), START: moment("2022-04-01")
   date: randomDate(moment("2022-03-01"), moment("2022-01-01")).format(
     "YYYY-MM-DD"
