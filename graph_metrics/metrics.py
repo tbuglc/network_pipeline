@@ -2,7 +2,7 @@
 from numpy import mean
 from igraph import Graph, rescale
 import pandas as pd
-
+from utils import global_graph_indices
 
 def betweenness(g=Graph, average=False):
     if (average):
@@ -75,27 +75,31 @@ def compute_graph_metrics(g=Graph):
 
     return result
 
-
-def compute_global_properties_on_graph(g=Graph):
-    columns = ['Value']
-    indices = ['Diameter', 'Radius', 'Density',
-               'Average path length', 'Girth', 'Reciprocity', 'Eccentricity', 'Clustering coefficient', 'Edge betweenness']
-
+def global_graph_properties(g=Graph):
+    x0=g.vcount()
+    x10 = g.ecount()
     x1 = g.diameter(directed=True)
     x2 = g.radius()
     x3 = g.density()
     x4 = g.average_path_length(directed=True)
-    x5 = g.girth()
+    # x5 = g.girth()
     x6 = g.reciprocity()
     x7 = mean(g.eccentricity())
     x8 = clustering_coefficient(g, average=True)
     x9 = edge_betweenness(g, average=True)
 
 
-    data = [x1, x2, x3, x4, x5, x6, x7, x8, x9]
+    data = [x0, x10,x1, x2, x3, x4,  x6, x7, x8, x9]
+
+    return data
+
+def compute_global_properties_on_graph(g=Graph):
+    columns = ['Value']
+
+    data = global_graph_properties(g)
 
     result = pd.DataFrame(
-        data=data, index=indices, columns=columns)
+        data=data, index=global_graph_indices, columns=columns)
 
     return result
 

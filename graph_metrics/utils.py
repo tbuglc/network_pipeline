@@ -8,7 +8,8 @@ from pathlib import Path
 metrics_columns = ['Degree', 'Betweenness', 'Closeness',
                    'Page Rank', 'Clustering Coefficient']
 
-
+global_graph_indices = ['Vertices','Edges','Diameter', 'Radius', 'Density',
+               'Average path length', 'Reciprocity', 'Eccentricity', 'Clustering coefficient', 'Edge betweenness']
 # FIXME: POTENTIAL DUPLICATE
 accorderies = {
     2: "Québec",
