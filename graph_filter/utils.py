@@ -48,7 +48,7 @@ def add_sheet_to_xlsx(file_writer=pd.ExcelWriter, data=pd.DataFrame, title='', i
 
 
 def save_csv_file(file_writer=pd.ExcelWriter):
-    file_writer.save()
+    file_writer.close()
 
 
 def create_folder_if_not_exist(path):

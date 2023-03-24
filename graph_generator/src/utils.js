@@ -2,8 +2,10 @@ import ExcelJS from "exceljs";
 import { join } from "path";
 import _ from "lodash";
 import randomDate from "moment-random";
-import { regions } from "./constants.js";
+import { regions, ageRanges } from "./constants.js";
 import { alpha } from "./data.js";
+import moment from "moment";
+
 //catégo plus haut niveau
 //Celia
 
@@ -14,7 +16,7 @@ export function randomizer(min, max) {
 }
 
 export function dateRandomizer(end, start) {
-  return randomDate(end, start).format("MM-DD-YYYY");
+  return randomDate(end, start).format("YYYY-MM-DD");
 }
 
 export function hourNumberFormat(number) {
@@ -77,7 +79,7 @@ export function randomExponential(rate) {
 }
 
 /**
-    The sociability of an individual is an integer that weights the probability of being the endpoint of an edge
+    The sociability of an individual is an integer that durees the probability of being the endpoint of an edge
     distribution can either be "exp" for exponential, or anything else, which defaults to uniform 
     TODO: I am not sure about what the param controls
   **/
@@ -107,11 +109,22 @@ export async function excelGenerator(data, sheetLabel, columns, path) {
   ws.columns = columns;
 
   ws.addRows(data);
-
   await wb.csv.writeFile(
     join(
       process.cwd(),
-      `${path}/${_.join(_.split(_.toLower(sheetLabel), " "), "-")}.csv`
+      `/${path}/${_.join(_.split(_.toLower(sheetLabel), " "), "-")}.csv`
     )
   );
+}
+
+export function findAgeRange(age) {
+  if (_.isEmpty(age) || !moment(age, "YYYY-MM-DD").isValid()) return "";
+
+  age = moment().diff(age, "years");
+
+  if (age < 0) throw new Error("Invalid date of birth");
+
+  const range = _.find(ageRanges, (a) => a.min <= age && age <= a.max);
+
+  return `${range.min}-${range.max}`;
 }

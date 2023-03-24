@@ -6,3 +6,39 @@ export const regions = [
   ["Saint-Élie", -72.026, 45.405, 0.04, 0.035],
   ["des Nations", -71.939, 45.415, 0.03, 0.018],
 ];
+
+export const ageRanges = [
+  {
+    min: 18, //inclusive
+    max: 30, // exclusive
+  },
+  {
+    min: 31,
+    max: 54,
+  },
+  {
+    min: 55,
+    max: 65,
+  },
+  {
+    min: 66,
+    max: 80,
+  },
+  {
+    min: 81,
+    max: 95,
+  },
+  {
+    min: 96,
+    max: 150,
+  },
+];
+
+export const revenus = [
+  '0',
+  '0-10000',
+  '10001-20000',
+  '20001-30000',
+  '30001-50000',
+  '50001-'
+]

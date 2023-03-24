@@ -22,7 +22,7 @@ async function main(
     sociability_params
   );
 
-  const startdate = new Date("2022-01-01");
+  const startdate = new Date("2006-01-01");
   const enddate = new Date("2022-12-31");
 
   const transactions = generateTransactions(
@@ -38,24 +38,24 @@ async function main(
   await excelGenerator(transactions, "transactions", transactionDataColumn, output_dir);
 
   //ML: add detailed transactions export
-  const detailed_transactionDataColumn = [
-    ...transactionDataColumn,
-    { key: "longitude1", header: "Longitude1" },
-    { key: "latitude1", header: "Latitude1" },
-    { key: "longitude2", header: "Longitude2" },
-    { key: "latitude2", header: "Latitude2" },
-  ];
+  // const detailed_transactionDataColumn = [
+  //   ...transactionDataColumn,
+  //   { key: "longitude1", header: "Longitude1" },
+  //   { key: "latitude1", header: "Latitude1" },
+  //   { key: "longitude2", header: "Longitude2" },
+  //   { key: "latitude2", header: "Latitude2" },
+  // ];
 
-  const detailed_transactions = generateDetailedTransactions(
-    users,
-    transactions
-  );
-  await excelGenerator(
-    detailed_transactions,
-    "detailed_transactions",
-    detailed_transactionDataColumn,
-    output_dir
-  );
+  // const detailed_transactions = generateDetailedTransactions(
+  //   users,
+  //   transactions
+  // );
+  // await excelGenerator(
+  //   detailed_transactions,
+  //   "detailed_transactions",
+  //   detailed_transactionDataColumn,
+  //   output_dir
+  // );
 }
 
 /*process.argv.forEach(function (val, index, array) {
@@ -111,7 +111,7 @@ if (doHelp) {
     date_bias_factor +
     " \n" +
     "-sd [str] \n" +
-    "Sociability distribution for users.  Each individual is assigned 'sociability_out' and 'sociability_in' weights, which respectively control the probability that it is chosen as the tail of an edge, or the head of an edge.  str can be 'exp' for exponential distribution (see wiki), or any other string to use uniform distribution.  Under uniform, all nodes have the same number of neighbors on average, and under 'exp', some nodes will have more interactions than others.  Default=" +
+    "Sociability distribution for users.  Each individual is assigned 'sociability_out' and 'sociability_in' durees, which respectively control the probability that it is chosen as the tail of an edge, or the head of an edge.  str can be 'exp' for exponential distribution (see wiki), or any other string to use uniform distribution.  Under uniform, all nodes have the same number of neighbors on average, and under 'exp', some nodes will have more interactions than others.  Default=" +
     social_distrib +
     " \n" +
     "-sp [p] \n" +

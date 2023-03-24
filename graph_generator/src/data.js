@@ -1182,19 +1182,27 @@ export const alpha = [
 ];
 
 export const userDataColumn = [
-  { key: "nom", header: "nom" },
+  { key: "id", header: "id" },
   { key: "age", header: "age" },
-  { key: "address", header: "address" },
+  { key: "genre", header: "genre" },
+  { key: "revenu", header: "revenu" },
   { key: "region", header: "region" },
+  { key: "ville", header: "ville" },
+  { key: "arrondissement", header: "arrondissement" },
+  { key: "accorderie", header: "accorderie" },
+  { key: "mapid", header: "mapid" },
+  { key: "address", header: "address" },
   { key: "longitude", header: "longitude" },
   { key: "latitude", header: "latitude" },
-  { key: "genre", header: "genre" },
 ];
 
 export const transactionDataColumn = [
-  { key: "vendeur", header: "vendeur" },
-  { key: "acheteur", header: "acheteur" },
-  { key: "service", header: "service" },
+  { key: "source", header: "source" },
+  { key: "target", header: "target" },
+  { key: "duree", header: "duree" },
   { key: "date", header: "date" },
-  { key: "weight", header: "weight" },
+  { key: "service", header: "service" },
+  { key: "detailservice", header: "detailservice" },
+  { key: "accorderie", header: "accorderie" },
+  { key: "id", header: "id" },
 ];
