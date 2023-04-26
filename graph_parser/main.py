@@ -3,6 +3,7 @@ from parse_transactions import parse_transaction
 from igraph import Graph
 import argparse
 from utils import create_folder_if_not_exist
+import numpy as np
 
 
 def remove_missing_edge_vertex(transactions, members):
@@ -14,7 +15,10 @@ def remove_missing_edge_vertex(transactions, members):
 
 def test_graph(members, transactions):
     try:
-        Graph.DataFrame(transactions, directed=True, vertices=members)
+        g = Graph.DataFrame(transactions, directed=True, vertices=members)
+        print('IS MUTLIGRAPH: ', g.has_multiple())
+        print('HAS LOOP: ', np.any(np.unique(g.is_loop())))
+        print('IS SIMPLE: ', g.is_simple())
         return True
     except ValueError as err:
         print(err)

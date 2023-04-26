@@ -5,6 +5,7 @@ import randomDate from "moment-random";
 import { regions, ageRanges } from "./constants.js";
 import { alpha } from "./data.js";
 import moment from "moment";
+import * as fs from 'fs'
 
 //catégo plus haut niveau
 //Celia
@@ -109,10 +110,15 @@ export async function excelGenerator(data, sheetLabel, columns, path) {
   ws.columns = columns;
 
   ws.addRows(data);
+
+  // create folder if does not exist
+  if(!fs.existsSync(path))
+    fs.mkdirSync(join(path))
+
   await wb.csv.writeFile(
     join(
-      process.cwd(),
-      `/${path}/${_.join(_.split(_.toLower(sheetLabel), " "), "-")}.csv`
+      // process.cwd(),
+      `${path}/${_.join(_.split(_.toLower(sheetLabel), " "), "-")}.csv`
     )
   );
 }
