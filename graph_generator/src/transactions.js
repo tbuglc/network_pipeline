@@ -56,8 +56,7 @@ export function generateTransactionDate(startdate, enddate, biasfactor = 1) {
   let mintime = startdate.getTime();
   let maxtime = enddate.getTime();
 
-  let time =
-    mintime + (maxtime - mintime) * Math.pow(Math.random(), biasfactor);
+  let time = mintime + (maxtime - mintime) * Math.pow(Math.random(), biasfactor);
 
   return new Date(time);
 }
@@ -65,7 +64,7 @@ export function generateTransactionDate(startdate, enddate, biasfactor = 1) {
 /**
   region_bias is the probability that a transaction is forced to be inside the same region. 
   date_bias_factor determines the probability that the date is closer to end date.  See generateTransactionDate
-  **/
+**/
 export function generateTransactions(
   users,
   transactionSize,

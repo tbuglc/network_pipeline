@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "accorderie-data": "file:graph_generator"
+  }
+}
