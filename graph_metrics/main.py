@@ -1,4 +1,7 @@
 import os
+from file_generator import pdf_degree_distribution
+from metrics import compute_degree_distribution
+from plots import plot_degree_distribution
 from utils import get_start_and_end_date,  add_sheet_to_xlsx, create_xlsx_file, save_csv_file
 from graph_loader import load_accorderie_network
 from datetime import date
@@ -71,6 +74,15 @@ def main(span_days, input_dir, output_dir, g=None):
 
         add_sheet_to_xlsx(file_writer=file_writer,
                           data=metrics_row, title='from '+snapshot['title'])
+    
+
+    # gxa, gya = compute_degree_distribution(g)
+
+    # plot_degree_distribution(
+    #     gxa, gya, folder_name=dest_dir+'/graph_degree_distribution', title='Graph degree distribution')
+
+    pdf_degree_distribution(
+        complete_graph=g, snapshots=snapshots, folder_name=dest_dir+'/snapshots_degree_distribution')
     
     columns = ['Degree', 'Betweenness', 'Closeness',
                'Page Rank', 'Clustering Coefficient', 'Eccentricity', 'Mincut', 'Edge betweenness']

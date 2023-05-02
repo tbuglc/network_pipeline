@@ -9,7 +9,7 @@ def compute_edge_weight_based_on_edge_number(g):
     for e in g.es:
         src, tgt = e.source, e.target
         count = g.count_multiple([(src, tgt)])
-        weights.append(count)
+        weights = weights + count
         
     return weights
 
@@ -58,8 +58,8 @@ def compute_average_metrics(g=Graph):
     
     return [degree(g=g, average=True), betweenness(
         g=g, average=True, weights=weights), closeness(g=g, average=True, weights=weights), pagerank(g=g, average=True, weights=weights), clustering_coefficient(
-        g=g, average=True, weights=weights), mean(g.eccentricity()),
-        mincut(g), edge_betweenness(g, average=True)]
+        g=g, average=True), mean(g.eccentricity()),
+        mincut(g), edge_betweenness(g, average=True, weights=weights)]
 
 
 def compute_graph_metrics(g=Graph):
@@ -95,8 +95,11 @@ def global_graph_properties(g=Graph):
     # x5 = g.girth()
     x6 = g.reciprocity()
     x7 = mean(g.eccentricity())
+    
+    weights  = compute_edge_weight_based_on_edge_number(g)
+    
     x8 = clustering_coefficient(g, average=True)
-    x9 = edge_betweenness(g, average=True)
+    x9 = edge_betweenness(g, average=True, weights=weights)
 
 
     data = [x0, x10,x1, x2, x3, x4,  x6, x7, x8, x9]
