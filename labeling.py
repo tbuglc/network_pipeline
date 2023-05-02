@@ -29,7 +29,7 @@ def region_label(n):
     try:
         if n == 0: return 'r-random'
         if n > 0 and n < 0.6: return 'r-weak'
-        if n >= 0.6 and n < 1: return 'r-strong'
+        if n >= 0.6: return 'r-strong'
     except Exception as e:
         print("Error region: ",type(n))
     
@@ -50,8 +50,6 @@ def folder_to_label(fld):
 i = 0  
 dataset = pd.DataFrame()
 for walk_dir, sub_dir, files in os.walk(root_dir):
-
-
     if len(sub_dir) == 0 and 'metrics.xlsx' in files and os.stat(walk_dir+'\\metrics.xlsx').st_size > 1024:        
         # 1. read global metrics 
         folder_name = walk_dir.split('\\')[-1]
@@ -60,17 +58,23 @@ for walk_dir, sub_dir, files in os.walk(root_dir):
 
         df = pd.read_excel( walk_dir+'\\metrics.xlsx', sheet_name=None)
     
-        df = df['Global Metrics'].iloc[2:,:].T
+        df = df['Global Metrics'].T
         df['target'] = ['target',target]
         
 
+        
         dataset = pd.concat([dataset, df.iloc[1:,:]], ignore_index=True, axis=0)
-        # if(i== 2):
+        
+        # print(dataset)
+        # break
+        # if(i==50):
         #     break     
+        
         i = i+1
         print(i)
-        # 2. parse folder name 
-        # 3. create an entry with global metrics as features and parsed folder name as label
-dataset.columns = ['Diameter', 'Radius', 'Density', 'Average path lenght', 'Reciprocity', 'Eccentricity', 'Clustering coefficient', 'Edge betweenness', 'target']
+
+print('Done!')
+
+dataset.columns = ['Vertices','Edges','Diameter', 'Radius', 'Density', 'Average path lenght', 'Reciprocity', 'Eccentricity', 'Clustering coefficient', 'Edge betweenness', 'target']
 
 dataset.to_csv('dataset.csv')
