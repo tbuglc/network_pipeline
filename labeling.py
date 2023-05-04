@@ -3,7 +3,7 @@ import pandas as pd
 
 root_dir = 'C:\\Users\\bugl2301\\Documents\\generated_graphs'
 
-def convert_str_to_dict(s):
+def convert_folder_name_to_dict(s):
     d = {}
     for kv in s.split('_'):
         k, v = kv.split('-')
@@ -35,11 +35,11 @@ def region_label(n):
     
 def sociability_label(n):
     if isinstance(n, (int, float, complex)): return 's-exp'
-    
+    if n == 'rand': return 1
     return 's-random'
 
 def folder_to_label(fld):
-    d = convert_str_to_dict(fld)
+    d = convert_folder_name_to_dict(fld)
 
     r = region_label(d['r'])
     dt = date_label(d['d'])
@@ -54,7 +54,9 @@ for walk_dir, sub_dir, files in os.walk(root_dir):
         # 1. read global metrics 
         folder_name = walk_dir.split('\\')[-1]
         
-        target = folder_to_label(folder_name)
+        fld_to_dict = convert_folder_name_to_dict(folder_name)
+        
+        target = [fld_to_dict['r'], fld_to_dict['s'], fld_to_dict['d']]
 
         df = pd.read_excel( walk_dir+'\\metrics.xlsx', sheet_name=None)
     
@@ -77,4 +79,4 @@ print('Done!')
 
 dataset.columns = ['Vertices','Edges','Diameter', 'Radius', 'Density', 'Average path lenght', 'Reciprocity', 'Eccentricity', 'Clustering coefficient', 'Edge betweenness', 'target']
 
-dataset.to_csv('dataset.csv')
+dataset.to_csv('data.csv')
