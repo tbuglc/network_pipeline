@@ -1,0 +1,5 @@
+powerlaw
+numpy
+igraph
+matplotlib
+pandas

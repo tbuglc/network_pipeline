@@ -33,7 +33,7 @@ def filter_report_file(filters):
                       data=metrics['Global Metrics'], title='Global Metrics', index=True)
 
     for key, sheet in metrics.items():
-        if key == 'Global Metrics' or key == 'Snapshot Average Metrics':
+        if key == 'Global Metrics' or key == 'Snapshot Average Metrics' or key == 'Snapshots Global Metrics':
             continue
 
         # Filter here
