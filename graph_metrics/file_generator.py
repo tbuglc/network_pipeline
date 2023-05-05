@@ -5,7 +5,7 @@ from metrics import compute_degree_distribution
 
 def pdf_degree_distribution(complete_graph, snapshots, folder_name):
 
-    with PdfPages('./output/'+folder_name+'.pdf') as pdf:
+    with PdfPages(folder_name+'.pdf') as pdf:
         # plot complete graph distribution
         fig, ax = plt.subplots()
 

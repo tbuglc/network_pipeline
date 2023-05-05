@@ -17,7 +17,7 @@ def plot_degree_distribution(xa, ya, folder_name='', title='', line=False, logsc
     ax.set_ylabel('Frequency')
     ax.set_xlabel('Degree')
 
-    fig.savefig('./output/' + folder_name + title + '.pdf', dpi=300)
+    fig.savefig(folder_name + '.pdf', dpi=300)
     plt.close()
 
 
