@@ -4,9 +4,11 @@ from utils import filter_by_trans_date
 
 def create_snapshots(g, start_date, end_date, span_days):
     new_date_limit = start_date + timedelta(days=span_days)
-
+    print(span_days)
+    
     snapshots = []
     while (new_date_limit <= end_date):
+
         # filter from start to new_date_limit
         edge_list = g.es.select(lambda edge: filter_by_trans_date(
             edge, start_date, new_date_limit))
@@ -17,6 +19,9 @@ def create_snapshots(g, start_date, end_date, span_days):
             sub = g.subgraph_edges(edge_list)
      
         if (sub is not None):
+            # print(start_date)
+            # print(new_date_limit)
+            # print('====\n')
             snapshots.append({"subgraph": sub, "title": start_date.strftime(
                 '%Y-%m-%d') + ' to ' + new_date_limit.strftime('%Y-%m-%d')})
 

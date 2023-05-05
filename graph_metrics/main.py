@@ -8,7 +8,8 @@ import argparse
 from pathlib import Path
 from utils import create_folder_if_not_exist, parse_output_dir, global_graph_indices
 import pandas as pd
-
+import matplotlib.pyplot as plt
+from pathlib import Path
 def main(span_days, input_dir, output_dir, g=None):
 
     start_date, end_date = get_start_and_end_date(input_dir=input_dir)
@@ -89,6 +90,30 @@ def main(span_days, input_dir, output_dir, g=None):
     print('Computed metrics on snapshots')
     # save file
     save_csv_file(file_writer=file_writer)
+
+    fig, ax = plt.subplots()
+
+    # degree_seq = g.degree()
+
+    xa, ya = zip(*[(int(left), count) for left, _, count in
+                   g.degree_distribution().bins()])
+
+    # plot the degree distribution
+    ax.loglog(xa, ya)
+    ax.set_xlabel('Degree')
+    ax.set_ylabel('Count')
+    ax.set_title('Degree Distribution')
+
+    # FIXME: create a reusable block of code below
+    path_dir = ''
+    if '/' in output_dir:
+        path_dir = '/'.join(output_dir.split('/')[0:-1])
+    elif '\\' in output_dir:
+        path_dir = '\\'.join(output_dir.split('\\')[0:-1])
+
+
+    fig.savefig(Path(path_dir+'/degree_distribution.pdf'), dpi=300)
+    plt.close()
 
     return
 

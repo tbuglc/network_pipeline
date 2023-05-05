@@ -97,7 +97,11 @@ for group_name in groups:
     print(cmd)
     os.system(cmd)
 
-
+    # filter by date 
+    # -i={outpath_raw} -o={outpath_acc} --accorderie={accorderie_id}
+    cmd = "graph_filter/main.py -i=folder/path -o=folder/path --date '>10/2012'"
+    print(cmd)
+    os.system(cmd)
 
 
 
