@@ -1,4 +1,4 @@
-from models.base.base_mode import BaseModel
+from models.base.base_model import BaseModel
 from sklearn.metrics import accuracy_score
 
 class BaseClassification(BaseModel):

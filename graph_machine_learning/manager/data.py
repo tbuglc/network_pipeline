@@ -30,6 +30,8 @@ class DataManager:
         - tuple: a tuple containing the training and validation data as numpy arrays,
         the list of class labels, and the minimum number of samples for each label.
         """
+        
+        data = self.training_set.iloc[:,1:]
         # Extract the input features (pixels) and target variable (species) from the training data
         x = np.array(self.training_set.iloc[:, 1:-3].values)
 
@@ -56,7 +58,7 @@ class DataManager:
         # t_train = self.one_hot_vector_encoding(data=t_train)
         # t_val = self.one_hot_vector_encoding(data=t_val)
 
-        return x_train, x_val, t_train, t_val
+        return data, x_train, x_val, t_train, t_val
 
     def one_hot_vector_encoding(self, data: np.ndarray) -> np.ndarray:
         """
