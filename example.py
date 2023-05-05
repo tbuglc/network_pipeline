@@ -46,3 +46,4 @@ os.system(cmd)
 cmd = 'node graph_generator/src/index.js -o "folder/path"  -u=2000 -t=2000 -sd="exp" -sp=1.5 -r=0.5 -d=0.6'
 os.system(cmd)
 
+# 

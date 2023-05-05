@@ -71,12 +71,14 @@ var date_bias_factor = 0.6;
 var output_dir = './'
 var doHelp = false;
 
+// console.log(process.argv)
 for (var i = 2; i < process.argv.length; i += 2) {
+
   if (process.argv[i] == "-o") output_dir = process.argv[i + 1];
   if (process.argv[i] == "-u") nbusers = process.argv[i + 1];
   if (process.argv[i] == "-t") nbtransactions = process.argv[i + 1];
-  if (process.argv[i] == "-sd") social_distrib = process.argv[i + 1]; // exp || any
-  if (process.argv[i] == "-sp") social_param = process.argv[i + 1]; //
+  if (process.argv[i] == "-sd") social_distrib = process.argv[i + 1]; 
+  if (process.argv[i] == "-sp") social_param = process.argv[i + 1];
   if (process.argv[i] == "-r") region_bias = process.argv[i + 1];
   if (process.argv[i] == "-d") date_bias_factor = process.argv[i + 1];
   if (process.argv[i] == "-h") {

@@ -4,63 +4,73 @@ from igraph import Graph, rescale
 import pandas as pd
 from utils import global_graph_indices
 
-def betweenness(g=Graph, average=False):
+def compute_edge_weight_based_on_edge_number(g):
+    weights = []
+    for e in g.es:
+        src, tgt = e.source, e.target
+        count = g.count_multiple([(src, tgt)])
+        weights = weights + count
+        
+    return weights
+
+def betweenness(g=Graph, average=False, weights=[]):
     if (average):
-        return mean(rescale(g.betweenness(directed=True)))
-    return rescale(g.betweenness(directed=True))
+        return mean(rescale(g.betweenness(directed=True, weights=weights)))
+    return rescale(g.betweenness(directed=True, weights=weights))
 
 
 def degree(g=Graph, average=False):
     if (average):
-        return mean(g.degree(mode='all'))
-    return g.degree(mode='all')
+        return mean(g.degree(mode='all', loops=True))
+    return g.degree(mode='all', loops=True)
 
 
-def closeness(g=Graph, average=False):
+def closeness(g=Graph, average=False, weights=[]):
     if (average):
-        return mean(g.closeness(mode='all'))
-    return g.closeness(mode='all')
+        return mean(g.closeness(mode='all', normalized=True, weights=weights))
+    return g.closeness(mode='all', normalized=True, weights=weights)
 
 
 def mincut(g=Graph, average=False):
     return g.mincut().value
 
 
-def edge_betweenness(g=Graph, average=False):
+def edge_betweenness(g=Graph, average=False, weights=[]):
     if (average):
-        return mean(g.edge_betweenness())
-    return g.edge_betweenness()
+        return mean(g.edge_betweenness(directed=True, weights=weights))
+    return g.edge_betweenness(directed=True, weights=weights)
 
 
 def clustering_coefficient(g=Graph, average=False):
     if (average):
-        return mean(g.transitivity_undirected())
-    return g.transitivity_undirected()
+        return mean(g.transitivity_undirected(mode='zero'))
+    return g.transitivity_undirected(mode='zero')
 
 
-def pagerank(g=Graph, average=False):
+def pagerank(g=Graph, average=False,  weights=[]):
     if (average):
-        return mean(g.pagerank(directed=True))
-    return g.pagerank(directed=True)
+        return mean(g.pagerank(directed=True, weights=weights))
+    return g.pagerank(directed=True, weights=weights)
 
 
 def compute_average_metrics(g=Graph):
-
+    weights  = compute_edge_weight_based_on_edge_number(g)
+    
     return [degree(g=g, average=True), betweenness(
-        g=g, average=True), closeness(g=g, average=True), pagerank(g=g, average=True), clustering_coefficient(
+        g=g, average=True, weights=weights), closeness(g=g, average=True, weights=weights), pagerank(g=g, average=True, weights=weights), clustering_coefficient(
         g=g, average=True), mean(g.eccentricity()),
-        mincut(g), edge_betweenness(g, average=True)]
+        mincut(g), edge_betweenness(g, average=True, weights=weights)]
 
 
 def compute_graph_metrics(g=Graph):
-
+    weights  = compute_edge_weight_based_on_edge_number(g)
     data = {}
     data['Degree'] = degree(g=g)
-    data['Betweenness'] = betweenness(g=g)
-    data['Closeness'] = closeness(g=g)
-    data['Page Rank'] = pagerank(g=g)
+    data['Betweenness'] = betweenness(g=g, weights=weights)
+    data['Closeness'] = closeness(g=g, weights=weights)
+    data['Page Rank'] = pagerank(g=g, weights=weights)
     data['Clustering Coefficient'] = clustering_coefficient(g=g)
-    data['Page Rank 2'] = pagerank(g=g)
+
 
     data["Revenu"] = g.vs['revenu']
     data["Age"] = g.vs['age']
@@ -85,8 +95,11 @@ def global_graph_properties(g=Graph):
     # x5 = g.girth()
     x6 = g.reciprocity()
     x7 = mean(g.eccentricity())
+    
+    weights  = compute_edge_weight_based_on_edge_number(g)
+    
     x8 = clustering_coefficient(g, average=True)
-    x9 = edge_betweenness(g, average=True)
+    x9 = edge_betweenness(g, average=True, weights=weights)
 
 
     data = [x0, x10,x1, x2, x3, x4,  x6, x7, x8, x9]
