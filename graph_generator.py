@@ -44,14 +44,12 @@ root_dir = 'C:\\Users\\bugl2301\\Documents\\generated_graphs'
 # Compute metrics for the generated graphs
 
 i =0 
-for walk_dir, sub_dir, files in os.walk(root_dir):
-    
+for walk_dir, sub_dir, files in os.walk(root_dir):    
     if len(sub_dir) == 0 and ('metrics.xlsx' not in files or os.stat(walk_dir+'\\metrics.xlsx').st_size < 1024):
         print('Calculating metrics of '+ str(i + 1)+'/122\n')
-        # print(walk_dir)
-        # # break
+        
         i = i + 1
-        cmd = f'python graph_metrics/main.py -i={walk_dir} -o={walk_dir}\\metrics.xlsx -s={30}'
+        cmd = f'python graph_metrics/main.py -i={walk_dir} -o={walk_dir}\\metrics.xlsx -s={180}'
         print(cmd)
         os.system(cmd)
     # print(walk_dir)
