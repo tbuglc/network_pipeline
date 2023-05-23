@@ -2,7 +2,7 @@ import os
 import pandas as pd
 import numpy as np
 
-root_dir = 'C:\\Users\\lucbu\\projects\\school\\network_pipeline\\data\\metrics'
+root_dir = 'C:\\Users\\lucbu\\Documents\\generated_graphs_60'
 
 def convert_folder_name_to_dict(s):
     d = {}
