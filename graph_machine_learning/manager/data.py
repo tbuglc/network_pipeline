@@ -33,10 +33,10 @@ class DataManager:
         
         data = self.training_set.iloc[:,1:]
         # Extract the input features (pixels) and target variable (species) from the training data
-        x = np.array(self.training_set.iloc[:, 1:-3].values)
+        x = np.array(self.training_set.iloc[:, 3:-3].values)
 
         target = self.training_set.iloc[:,-3:].values
-
+       
         t = target
         # species = list(set(target))
 
