@@ -60,12 +60,14 @@ dataset = pd.DataFrame()
 for walk_dir, sub_dir, files in os.walk(root_dir):
     if len(sub_dir) == 0 and 'metrics.xlsx' in files and os.stat(walk_dir+'\\metrics.xlsx').st_size > 1024:        
         # 1. read global metrics 
-        # folder_name = walk_dir.split('\\')[-1]
+        folder_name = walk_dir.split('\\')[-1]
         
-        # fld_to_dict = convert_folder_name_to_dict(folder_name)
+        fld_to_dict = convert_folder_name_to_dict(folder_name)
         
-        # target = [fld_to_dict['r'], fld_to_dict['s'], fld_to_dict['d']]
+        target = [fld_to_dict['r'], fld_to_dict['s'], fld_to_dict['d']]
+        
         print(walk_dir)
+        
         df = pd.read_excel( walk_dir+'\\metrics.xlsx', sheet_name=None)
     
         result_df = df['Global Metrics'].loc[:, 'Value'].values.reshape(-1,)
@@ -78,8 +80,8 @@ for walk_dir, sub_dir, files in os.walk(root_dir):
 
         # print(sn_global_metric)
         # break
-        result_df = np.concatenate([result_df, sn_global_metric, r])
-        # result_df = np.concatenate([result_df, sn_global_metric, r, target])
+        # result_df = np.concatenate([result_df, sn_global_metric, r])
+        result_df = np.concatenate([result_df, sn_global_metric, r, target])
 
         
         dataset = pd.concat([dataset, pd.DataFrame([result_df])], ignore_index=True, axis=0)
@@ -108,11 +110,11 @@ for s  in range(max_snapshot):
 
 gbl_columns = ['Vertices','Edges','Diameter', 'Radius', 'Density', 'Average path lenght', 'Reciprocity', 'Eccentricity', 'Clustering coefficient', 'Edge betweenness']
 
-# all_columns = np.concatenate([gbl_columns, columns , ['target1', 'target2','target3']])
-all_columns = np.concatenate([gbl_columns, columns ])
+all_columns = np.concatenate([gbl_columns, columns , ['target1', 'target2','target3']])
+# all_columns = np.concatenate([gbl_columns, columns ])
 
 print(all_columns.shape, dataset.shape)
 
 dataset.columns = all_columns
 
-dataset.to_csv('accorderie.csv')
+dataset.to_csv('data.csv')
