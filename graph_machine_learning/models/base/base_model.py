@@ -77,15 +77,17 @@ class BaseModel(ABC):
         t_val (numpy.ndarray): The true labels of the validation data.
 
         Returns:
-        tuple: A tuple containing the predicted labels for the validation data and the accuracy score of the model.
+        tuple: A tuple containing the predicted labels for the validation data and the er score of the model.
         """
         # Train the model on the training data
         self.fit(x_train=x_train, t_train=t_train)
         # Use the trained model to predict the labels of the validation data
         t_pred = self.predict(x_val=x_val)
-        # Calculate the accuracy score of the model on the validation data
-        accuracy = self.error(t_val=t_val, t_pred=t_pred)
-        # Return the predicted labels and accuracy score
-        print('Accuracy: ', accuracy)
+        # Calculate the er score of the model on the validation data
+        er = self.error(t_val=t_val, t_pred=t_pred)
+
+        
+        # Return the predicted labels and er score
+        print('Error: ', er)
         
         return  self.model

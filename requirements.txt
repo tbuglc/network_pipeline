@@ -12,3 +12,5 @@ xlsxwriter
 InquirerPy
 python-dateutil
 pathlib
+seaborn
+scikit-learn
