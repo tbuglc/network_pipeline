@@ -1,6 +1,8 @@
 from abc import ABC, abstractmethod
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import GridSearchCV
+import pandas as pd
+import numpy as np
 
 class BaseModel(ABC):
     def __init__(self) -> None:
@@ -83,6 +85,11 @@ class BaseModel(ABC):
         self.fit(x_train=x_train, t_train=t_train)
         # Use the trained model to predict the labels of the validation data
         t_pred = self.predict(x_val=x_val)
+
+        d = pd.DataFrame(np.concatenate([t_val, np.zeros(t_val.shape),t_pred]))
+
+        print(d)
+
         # Calculate the error score of the model on the validation data
         err = self.error(t_val=t_val, t_pred=t_pred)
         # Return the predicted labels and error score
