@@ -16,7 +16,7 @@ class DataManager:
         - None.
         """
         # Load the training and testing data from CSV files into Pandas dataframes
-        self.training_set = pd.read_csv('data/dataset.csv', index_col=False)
+        self.training_set = pd.read_csv('data/data.csv', index_col=False)
         self.min_sample_label = min_sample_label
 
     def get_data(self) -> tuple:
@@ -30,14 +30,17 @@ class DataManager:
         - tuple: a tuple containing the training and validation data as numpy arrays,
         the list of class labels, and the minimum number of samples for each label.
         """
-        
+        self.training_set.fillna(0, inplace=True)
+
         data = self.training_set.iloc[:,1:]
+        # print(data.head())
         # Extract the input features (pixels) and target variable (species) from the training data
         x = np.array(self.training_set.iloc[:, 3:-3].values)
 
         target = self.training_set.iloc[:,-3:].values
        
         t = target
+        # print(t)
         # species = list(set(target))
 
         # Convert the target variable to integer labels (indices of species list)
