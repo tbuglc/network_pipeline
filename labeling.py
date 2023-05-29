@@ -6,6 +6,7 @@ root_dir = 'C:\\Users\\bugl2301\\projects\\school\\network_pipeline\\accorderie_
 
 def convert_folder_name_to_dict(s):
     d = {}
+    print(s)
     for kv in s.split('_'):
         k, v = kv.split('-')
         try:
@@ -53,68 +54,68 @@ def max_snapshot_count(curr, new_max):
         return new_max
     return curr    
 
-i = 0  
-max_snapshot = 1
+# i = 0  
+# max_snapshot = 1
 
-dataset = pd.DataFrame()
-for walk_dir, sub_dir, files in os.walk(root_dir):
-    if len(sub_dir) == 0 and 'metrics.xlsx' in files and os.stat(walk_dir+'\\metrics.xlsx').st_size > 1024:        
-        # 1. read global metrics 
-        folder_name = walk_dir.split('\\')[-1]
+# dataset = pd.DataFrame()
+# for walk_dir, sub_dir, files in os.walk(root_dir):
+#     if len(sub_dir) == 0 and 'metrics.xlsx' in files and os.stat(walk_dir+'\\metrics.xlsx').st_size > 1024:        
+#         # 1. read global metrics 
+#         folder_name = walk_dir.split('\\')[-1]
         
-        fld_to_dict = convert_folder_name_to_dict(folder_name)
+#         fld_to_dict = convert_folder_name_to_dict(folder_name)
         
-        target = [fld_to_dict['r'], fld_to_dict['s'], fld_to_dict['d']]
+#         target = [fld_to_dict['r'], fld_to_dict['s'], fld_to_dict['d']]
         
-        print(walk_dir)
+#         print(walk_dir)
         
-        df = pd.read_excel( walk_dir+'\\metrics.xlsx', sheet_name=None)
+#         df = pd.read_excel( walk_dir+'\\metrics.xlsx', sheet_name=None)
     
-        result_df = df['Global Metrics'].loc[:, 'Value'].values.reshape(-1,)
+#         result_df = df['Global Metrics'].loc[:, 'Value'].values.reshape(-1,)
         
-        sn_features_df = df['Snapshot Average Metrics']
+#         sn_features_df = df['Snapshot Average Metrics']
 
-        r = sn_features_df.iloc[:,1:].values.reshape(-1,)
-        # print(df['Snapshots Global Metrics'].iloc[:,1:3])
-        sn_global_metric = df['Snapshots Global Metrics'].iloc[:,1:3].values.reshape(-1,)
+#         r = sn_features_df.iloc[:,1:].values.reshape(-1,)
+#         # print(df['Snapshots Global Metrics'].iloc[:,1:3])
+#         sn_global_metric = df['Snapshots Global Metrics'].iloc[:,1:3].values.reshape(-1,)
 
-        # print(sn_global_metric)
-        # break
-        # result_df = np.concatenate([result_df, sn_global_metric, r])
-        result_df = np.concatenate([result_df, sn_global_metric, r, target])
+#         # print(sn_global_metric)
+#         # break
+#         # result_df = np.concatenate([result_df, sn_global_metric, r])
+#         result_df = np.concatenate([result_df, sn_global_metric, r, target])
 
         
-        dataset = pd.concat([dataset, pd.DataFrame([result_df])], ignore_index=True, axis=0)
+#         dataset = pd.concat([dataset, pd.DataFrame([result_df])], ignore_index=True, axis=0)
         
       
-        max_snapshot = max_snapshot_count(max_snapshot, sn_features_df.shape[0])
+#         max_snapshot = max_snapshot_count(max_snapshot, sn_features_df.shape[0])
 
-        # break
-        # break
-        # print(dataset)
-        # break
-        # if(i==50):
-        #     break     
+#         # break
+#         # break
+#         # print(dataset)
+#         # break
+#         # if(i==50):
+#         #     break     
         
-        i = i+1
-        print(i)
+#         i = i+1
+#         print(i)
 
-print('Done!')
+# print('Done!')
 
-print(max_snapshot)
-columns = []
-for s  in range(max_snapshot):
-    for k in ['Vertices','Edges', 'Degree' ,'Betweenness','Closeness','Page_Rank','Clustering_Coefficient','Eccentricity','Mincut','Edge_betweenness']:
-        columns.append(f's{s}_{k}')
+# print(max_snapshot)
+# columns = []
+# for s  in range(max_snapshot):
+#     for k in ['Vertices','Edges', 'Degree' ,'Betweenness','Closeness','Page_Rank','Clustering_Coefficient','Eccentricity','Mincut','Edge_betweenness']:
+#         columns.append(f's{s}_{k}')
 
 
-gbl_columns = ['Vertices','Edges','Diameter', 'Radius', 'Density', 'Average path lenght', 'Reciprocity', 'Eccentricity', 'Clustering coefficient', 'Edge betweenness']
+# gbl_columns = ['Vertices','Edges','Diameter', 'Radius', 'Density', 'Average path lenght', 'Reciprocity', 'Eccentricity', 'Clustering coefficient', 'Edge betweenness']
 
-all_columns = np.concatenate([gbl_columns, columns , ['target1', 'target2','target3']])
-# all_columns = np.concatenate([gbl_columns, columns ])
+# all_columns = np.concatenate([gbl_columns, columns , ['target1', 'target2','target3']])
+# # all_columns = np.concatenate([gbl_columns, columns ])
 
-print(all_columns.shape, dataset.shape)
+# print(all_columns.shape, dataset.shape)
 
-dataset.columns = all_columns
+# dataset.columns = all_columns
 
-dataset.to_csv('data.csv')
+# dataset.to_csv('data.csv')
