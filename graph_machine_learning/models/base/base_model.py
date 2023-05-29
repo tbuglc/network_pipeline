@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import GridSearchCV
+from sklearn.model_selection import GridSearchCV, cross_val_score, cross_val_predict, cross_validate
 import pandas as pd
 import numpy as np
 
@@ -97,3 +97,28 @@ class BaseModel(ABC):
         print('err: ', err)
         
         return  self.model
+    
+    def cross_validate_model_performance(self, x_train,  t_train, cv=10, scroring=None):
+        scores = cross_val_score(self.model, x_train, t_train, scoring=scroring, cv=cv)
+
+        print('Cross-validation scores: ', scores)
+
+        print("Mean accuracy: %0.2f (+/- %0.2f)" % (np.mean(scores), np.std(scores)))
+
+        return scores
+    
+    def cross_validate_prediction(self, x_val, t_val, cv=10):
+        predictions = cross_val_predict(self.model, x_val, t_val, cv=cv)
+
+        print(predictions)
+
+        return predictions
+    
+    def cross_validate_multi_scores(self, x_train, t_train, cv=10, scoring=None):
+        results = cross_validate(self.model, x_train, t_train, scoring=scoring, cv=5)
+        
+        print("Cross-validation results:")
+        for metric in results.keys():
+            print(metric, ": ", results[metric])
+        
+        return results
