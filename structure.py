@@ -47,6 +47,7 @@ def small_world_mean_distance(g):
 
 
 def giant_component(g):
+    print(g.vcount(), g.ecount())
     s_components = g.connected_components(mode='strong')
     w_components = g.connected_components(mode='weak')
     # print(s_components)
@@ -122,32 +123,33 @@ def homophily_nominal(g, attribute):
 
     return assortativity
 
-root_dir = 'C:\\Users\\bugl2301\\Documents\\generated_graphs'
-i =0 
-results = []
-for walk_dir, sub_dir, files in os.walk(root_dir):
-    print(walk_dir)
-    if len(sub_dir) == 0 and ('metrics.xlsx' in files or os.stat(walk_dir+'\\metrics.xlsx').st_size < 1024):
-        print('Calculating metrics of '+ str(i + 1))
+def main():
+    root_dir = 'C:\\Users\\bugl2301\\Documents\\generated_graphs'
+    i =0 
+    results = []
+    for walk_dir, sub_dir, files in os.walk(root_dir):
+        print(walk_dir)
+        if len(sub_dir) == 0 and ('metrics.xlsx' in files or os.stat(walk_dir+'\\metrics.xlsx').st_size < 1024):
+            print('Calculating metrics of '+ str(i + 1))
 
-        
-        folder_name = walk_dir.split('\\')[-1]
+            
+            folder_name = walk_dir.split('\\')[-1]
 
-        fld_to_dict = convert_folder_name_to_dict(folder_name)
-        
-        target = [fld_to_dict['r'], fld_to_dict['s'], fld_to_dict['d']]
-        
-        g = load_accorderie_network(f'{walk_dir}\\members.csv', f'{walk_dir}\\transactions.csv')
+            fld_to_dict = convert_folder_name_to_dict(folder_name)
+            
+            target = [fld_to_dict['r'], fld_to_dict['s'], fld_to_dict['d']]
+            
+            g = load_accorderie_network(f'{walk_dir}\\members.csv', f'{walk_dir}\\transactions.csv')
 
-        weakly, _ = giant_component(g)
-        l_cc, g_cc = clustering_coefficient(g)
+            weakly, _ = giant_component(g)
+            l_cc, g_cc = clustering_coefficient(g)
 
-        results.append(np.concatenate([[g.vcount(), g.ecount(), mean_degree(g), weakly, power_law_alpha(g), l_cc, g_cc, degree_assortativity(g)], target]))
-        
-        i = i + 1
+            results.append(np.concatenate([[g.vcount(), g.ecount(), mean_degree(g), weakly, power_law_alpha(g), l_cc, g_cc, degree_assortativity(g)], target]))
+            
+            i = i + 1
 
-df = pd.DataFrame(results)
-print(df.head(), df.shape)
-df.columns = ['Vertices', 'Edges', 'Mean degree', 'Size of weakly connected component', 'Power Law Alpha', 'Local clustering coefficient', 'Global clustering coefficient', 'Homophily by degree', 'Region', 'Sociability', 'Date']
+    df = pd.DataFrame(results)
+    print(df.head(), df.shape)
+    df.columns = ['Vertices', 'Edges', 'Mean degree', 'Size of weakly connected component', 'Power Law Alpha', 'Local clustering coefficient', 'Global clustering coefficient', 'Homophily by degree', 'Region', 'Sociability', 'Date']
 
-df.to_csv('structural_properties_for_graph.csv')
+    df.to_csv('structural_properties_for_graph.csv')
