@@ -9,11 +9,11 @@ root_dir = 'C:\\Users\\bugl2301\\Documents\\generated_graphs'
 # Generate graphs
 
             
-# for region_bias in np.arange(start=start_interval - 0.1 , stop=end_interval + step, step=step):
-#     for date_bias in np.arange(start=start_interval, stop=end_interval + step, step=step):
-#         for sociability_bias in np.arange(start=start_interval, stop=end_interval + step, step=step):
-#             cmd = f"node graph_generator/src/index.js -o {root_dir}\\r-{0}_s-{sociability_bias}_d-{2}  -u 633 -t 6865 -sd exp -s {sociability_bias} -r {0} -d {2}"
-#             os.system(cmd)
+for region_bias in np.arange(start=start_interval - 0.1 , stop=end_interval + step, step=step):
+    for date_bias in np.arange(start=start_interval, stop=end_interval + step, step=step):
+        for sociability_bias in np.arange(start=start_interval, stop=end_interval + step, step=step):
+            cmd = f"node graph_generator/src/index.js -o {root_dir}\\r-{0}_s-{sociability_bias}_d-{2}  -u 633 -t 6865 -sd exp -s {sociability_bias} -r {0} -d {2}"
+            os.system(cmd)
 
 # valid = [
 #     'r-0_s-rand_d-0.1',
