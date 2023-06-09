@@ -6,7 +6,7 @@ import powerlaw as pl
 from gensim.models import Word2Vec
 from node2vec import Node2Vec
 import networkx as nx
-from labeling import convert_folder_name_to_dict
+# from labeling import convert_folder_name_to_dict
 
 def data_loader(vertex_path, edge_path):
     # TODO: Should consider loading as stream for better memory usage in case of large dataset
@@ -49,10 +49,14 @@ def small_world_mean_distance(g):
 def giant_component(g):
     s_components = g.connected_components(mode='strong')
     w_components = g.connected_components(mode='weak')
+
+    print(s_components)
+    print('\n')
+    print(w_components)
     # print(s_components)
     S_s = len(max(s_components, key=len)) / g.vcount() # giant strongly component
     S_w = len(max(w_components, key=len)) / g.vcount() # giant weakly component
-
+    print(S_s, S_w)
     return S_s, S_w
 
 def power_law_alpha(g):
@@ -122,32 +126,36 @@ def homophily_nominal(g, attribute):
 
     return assortativity
 
-root_dir = 'C:\\Users\\bugl2301\\Documents\\generated_graphs'
+
+# print(homophily_nominal())
+
+root_dir = '.\\data\\sherbrooke\\data'
 i =0 
 results = []
 for walk_dir, sub_dir, files in os.walk(root_dir):
     print(walk_dir)
-    if len(sub_dir) == 0 and ('metrics.xlsx' in files or os.stat(walk_dir+'\\metrics.xlsx').st_size < 1024):
+    print('HERRERERE')
+    if len(sub_dir) == 0 and ('metrics.xlsx' not in files or os.stat(walk_dir+'\\metrics.xlsx').st_size < 1024):
         print('Calculating metrics of '+ str(i + 1))
 
         
-        folder_name = walk_dir.split('\\')[-1]
+        # folder_name = walk_dir.split('\\')[-1]
 
-        fld_to_dict = convert_folder_name_to_dict(folder_name)
+        # fld_to_dict = convert_folder_name_to_dict(folder_name)
         
-        target = [fld_to_dict['r'], fld_to_dict['s'], fld_to_dict['d']]
+        # target = [fld_to_dict['r'], fld_to_dict['s'], fld_to_dict['d']]
         
         g = load_accorderie_network(f'{walk_dir}\\members.csv', f'{walk_dir}\\transactions.csv')
 
-        weakly, _ = giant_component(g)
+        _, weakly = giant_component(g)
         l_cc, g_cc = clustering_coefficient(g)
-
-        results.append(np.concatenate([[g.vcount(), g.ecount(), mean_degree(g), weakly, power_law_alpha(g), l_cc, g_cc, degree_assortativity(g)], target]))
+        v,_ =small_world_mean_distance(g) 
+    results.append([g.vcount(), g.ecount(), v , mean_degree(g), weakly, power_law_alpha(g), l_cc, g_cc, degree_assortativity(g)])
         
-        i = i + 1
+    i = i + 1
 
 df = pd.DataFrame(results)
 print(df.head(), df.shape)
-df.columns = ['Vertices', 'Edges', 'Mean degree', 'Size of weakly connected component', 'Power Law Alpha', 'Local clustering coefficient', 'Global clustering coefficient', 'Homophily by degree', 'Region', 'Sociability', 'Date']
+df.columns = ['Vertices', 'Edges', 'Mean degree', 'Average path length', 'Size of weakly connected component', 'Power Law Alpha', 'Local clustering coefficient', 'Global clustering coefficient', 'Homophily by degree']
 
-df.to_csv('structural_properties_for_graph.csv')
+df.to_csv('accorderie_sherbrooke.csv')

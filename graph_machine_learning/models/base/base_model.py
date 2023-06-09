@@ -89,7 +89,7 @@ class BaseModel(ABC):
         # print(np.concatenate([t_pred, t_val], axis=1))
         d = pd.DataFrame(np.concatenate([t_val, np.ones(t_val.shape),t_pred], axis=1))
 
-        print(d.head())
+     
         d.to_csv('error_diff.csv')
         # Calculate the error score of the model on the validation data
         err = self.error(t_val=t_val, t_pred=t_pred)
@@ -110,6 +110,7 @@ class BaseModel(ABC):
     def cross_validate_prediction(self, x_val, t_val, cv=10):
         predictions = cross_val_predict(self.model, x_val, t_val, cv=cv)
 
+        print('\n CROSS VALIDATION PREDICTIONS \n')
         print(predictions)
 
         return predictions
