@@ -2,6 +2,8 @@
 from numpy import mean
 from igraph import Graph, rescale
 import pandas as pd
+import numpy as np
+import powerlaw as pl
 from utils import global_graph_indices
 
 def compute_edge_weight_based_on_edge_number(g):
@@ -86,13 +88,12 @@ def compute_graph_metrics(g=Graph):
     return result
 
 def global_graph_properties(g=Graph):
-    x0=g.vcount()
+    x0 = g.vcount()
     x10 = g.ecount()
     x1 = g.diameter(directed=True)
     x2 = g.radius()
     x3 = g.density()
     x4 = g.average_path_length(directed=True)
-    # x5 = g.girth()
     x6 = g.reciprocity()
     x7 = mean(g.eccentricity())
     
@@ -122,3 +123,97 @@ def compute_degree_distribution(g=Graph, degree_mode='out'):
                    g.degree_distribution(mode=degree_mode).bins()])
 
     return xa, ya
+
+
+def mean_degree(g):
+    return g.ecount() / g.vcount()
+
+def small_world_mean_distance(g):
+    shortest_paths_pairs = pd.DataFrame(g.shortest_paths())
+    
+    shortest_paths_pairs.replace([np.inf, -np.inf], 0, inplace=True)
+
+    total_distance = sum(sum(row) for row in shortest_paths_pairs.values)
+
+    l = total_distance / g.vcount()**2
+    log_mean_dist = np.log10(g.vcount())
+    print(g.vcount())
+    return l, log_mean_dist  
+
+
+def giant_component(g):
+    print(g.vcount(), g.ecount())
+    s_components = g.connected_components(mode='strong')
+    w_components = g.connected_components(mode='weak')
+    # print(s_components)
+    S_s = len(max(s_components, key=len)) / g.vcount() # giant strongly component
+    S_w = len(max(w_components, key=len)) / g.vcount() # giant weakly component
+
+    return S_s, S_w
+
+def power_law_alpha(g):
+    degrees = g.degree()
+
+    fit = pl.Fit(degrees)
+
+    alpha = fit.alpha
+
+    return alpha
+
+
+def clustering_coefficient(g):
+    l_cc = g.transitivity_undirected(mode="zero")
+
+    g_cc = g.transitivity_avglocal_undirected(mode="zero")
+
+    return l_cc, g_cc
+
+def degree_correlation(g):
+
+    degrees = g.degree()
+
+    # Initialize an empty list to store the degrees of connected vertices
+    connected_degrees = []
+
+    # Iterate over the edges of the graph
+    for edge in g.es():
+        source_degree = degrees[edge.source]
+        target_degree = degrees[edge.target]
+        connected_degrees.append((source_degree, target_degree))
+
+    # Calculate the degree correlation coefficient
+    d_c = np.corrcoef(connected_degrees, rowvar=False)[0, 1]
+
+    return d_c
+
+def degree_assortativity(g):
+    return g.assortativity_degree()
+
+
+def homophily_nominal(g, attribute):
+
+    if type(g.vs[attribute][0]) == int:
+        return g.assortativity_nominal(attribute, directed=True)
+
+
+    for v in g.vs:
+        # print(v[attribute])
+        if type(v[attribute]) == float or type(v[attribute]) == int:
+            v[attribute] = 'other'
+        
+    uni_val = np.unique(g.vs[attribute])
+
+    mapping = {}
+    for idx, uv in enumerate(uni_val):
+        mapping[uv] = idx
+
+    types = [mapping[att] for att in g.vs[attribute]]
+
+    numeric_label = f'{attribute}_numeric_types'
+    
+    g.vs[numeric_label] = types
+
+
+    assortativity = g.assortativity_nominal(numeric_label, directed=True)
+
+    return assortativity
