@@ -73,9 +73,9 @@ export function getRandomRegionInfo() {
 export function randomExponential(rate) {
   // http://en.wikipedia.org/wiki/Exponential_distribution#Generating_exponential_variates
   rate = rate || 1;
-
+  // console.log(rate)
   var U = Math.random();
-
+  // console.log(U)
   return -Math.log(U) / rate;
 }
 
