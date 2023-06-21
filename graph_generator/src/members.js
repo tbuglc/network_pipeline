@@ -79,5 +79,7 @@ export function getRandomUser(users, duree_attribute) {
 
     tmp_sum += w;
   }
+
+  return {}
 }
 

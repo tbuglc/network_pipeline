@@ -25,3 +25,8 @@ model = node2vec.fit(window=10, min_count=1)
 node_embeddings = model.wv
 
 
+
+
+
+
+

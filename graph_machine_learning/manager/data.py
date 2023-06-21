@@ -16,7 +16,7 @@ class DataManager:
         - None.
         """
         # Load the training and testing data from CSV files into Pandas dataframes
-        self.training_set = pd.read_csv('data/data.csv', index_col=False)
+        self.training_set = pd.read_csv('data/graph_90.csv', index_col=False)
         self.min_sample_label = min_sample_label
 
     def get_data(self) -> tuple:

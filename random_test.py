@@ -2,7 +2,8 @@ import networkx as nx
 import numpy as np
 import powerlaw as pl
 import igraph as ig 
-from structure import mean_degree, degree_assortativity, giant_component,clustering_coefficient
+import pandas as pd
+from structure import mean_degree, degree_assortativity, giant_component,clustering_coefficient, power_law_alpha as pla
 
 
 p = np.arange(0.015, 0.02 + 0.001, 0.001)
@@ -40,7 +41,7 @@ def random_grph():
     graphs = []
     for v in p:
         g = nx.gnp_random_graph(number_of_nodes, v, directed=True)
-        graphs.append(g)
+        graphs.append([g, np.nan, v, 'random'])
         degrees = degree_distribution(g)
         alpha = power_law_alpha(degrees)
 
@@ -53,7 +54,7 @@ def power_law_cluster():
     for v in pc:
         for mo in m:
             g = nx.powerlaw_cluster_graph(592, mo, v, 0)
-            graphs.append(g)
+            graphs.append([g, mo, v, 'power law with cluster'])
             degrees = degree_distribution(g)
             alpha = power_law_alpha(degrees)
 
@@ -64,7 +65,7 @@ def power_law():
     graphs = []
     for mo in m:
         g = nx.barabasi_albert_graph(592, mo)
-        graphs.append(g)
+        graphs.append([g, mo, np.nan, 'power law'])
         degrees = degree_distribution(g)
         alpha = power_law_alpha(degrees)
 
@@ -76,7 +77,7 @@ def small_world():
     graphs = []
     for mo in m:
         g = nx.barabasi_albert_graph(592, mo)
-        graphs.append(g)
+        graphs.append([g, mo, np.nan, 'small world'])
         degrees = degree_distribution(g)
         alpha = power_law_alpha(degrees)
 
@@ -91,12 +92,13 @@ def small_world():
 def compute_structural_properties(results, gs):
         
     for g in gs:
-        g = networkx_to_igraph(g)
+        g, *rest = g
+        ig_g = networkx_to_igraph(g)
         # print(g)
-        _, weakly = giant_component(g)
-        l_cc, g_cc = clustering_coefficient(g)
+        _, weakly = giant_component(ig_g)
+        l_cc, g_cc = clustering_coefficient(ig_g)
 
-        results.append([g.vcount(), g.ecount(), mean_degree(g), weakly, power_law_alpha(g), l_cc, g_cc, degree_assortativity(g)])
+        results.append(np.concatenate([rest,[ig_g.vcount(), ig_g.ecount(), mean_degree(ig_g), weakly, pla(ig_g), l_cc, g_cc, degree_assortativity(ig_g)]]))
 
     return results
 
@@ -114,9 +116,15 @@ def generator():
 
     rnd_graphs = power_law_cluster()
     results = compute_structural_properties(results=results, gs=rnd_graphs)
-   
-    print(results)
+    
+
+    df = pd.DataFrame(results)
+    df.columns = ['mo','probability','model','Vertices', 'Edges', 'Mean degree', 'Size of weakly connected component', 'Power Law Alpha', 'Local clustering coefficient', 'Global clustering coefficient', 'Homophily by degree']
+
+    df.to_excel('models_existant.xlsx')
+    # print(results)
     # data frame
     # excel 
+
 
 generator()
