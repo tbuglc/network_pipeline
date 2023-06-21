@@ -13,6 +13,8 @@ from utils import create_folder_if_not_exist, parse_output_dir, global_graph_ind
 import pandas as pd
 import matplotlib.pyplot as plt
 from pathlib import Path
+
+
 def main(span_days, input_dir, output_dir, g=None):
 
     start_date, end_date = get_start_and_end_date(input_dir=input_dir)
