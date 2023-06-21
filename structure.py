@@ -41,19 +41,19 @@ def small_world_mean_distance(g):
     total_distance = sum(sum(row) for row in shortest_paths_pairs.values)
 
     l = total_distance / g.vcount()**2
-    log_mean_dist = np.log10(g.vcount())
-    print(g.vcount())
-    return l, log_mean_dist  
+    
+    return l  
 
 
 def giant_component(g):
+    # print(g.vcount(), g.ecount())
     s_components = g.connected_components(mode='strong')
     w_components = g.connected_components(mode='weak')
 
-    print(s_components)
-    print('\n')
-    print(w_components)
     # print(s_components)
+    # print('\n')
+    # print(w_components)
+    # # print(s_components)
     S_s = len(max(s_components, key=len)) / g.vcount() # giant strongly component
     S_w = len(max(w_components, key=len)) / g.vcount() # giant weakly component
     print(S_s, S_w)
@@ -126,36 +126,58 @@ def homophily_nominal(g, attribute):
 
     return assortativity
 
+def main(root_dir):
+    root_dir = '.\\reduce_social'
+    i =0 
+    results = []
+    for walk_dir, sub_dir, files in os.walk(root_dir):
+        print(walk_dir, sub_dir, files)
+        if len(sub_dir) == 0 and 'members.csv' in files and 'transactions.csv' in files:
+            print('Calculating metrics of '+ str(i + 1))
 
-# print(homophily_nominal())
-
-root_dir = '.\\data\\sherbrooke\\data'
-i =0 
-results = []
-for walk_dir, sub_dir, files in os.walk(root_dir):
-    print(walk_dir)
-    print('HERRERERE')
-    if len(sub_dir) == 0 and ('metrics.xlsx' not in files or os.stat(walk_dir+'\\metrics.xlsx').st_size < 1024):
-        print('Calculating metrics of '+ str(i + 1))
-
-        
-        # folder_name = walk_dir.split('\\')[-1]
+            
+            # folder_name = walk_dir.split('\\')[-1]
 
         # fld_to_dict = convert_folder_name_to_dict(folder_name)
         
         # target = [fld_to_dict['r'], fld_to_dict['s'], fld_to_dict['d']]
         
-        g = load_accorderie_network(f'{walk_dir}\\members.csv', f'{walk_dir}\\transactions.csv')
+            g = load_accorderie_network(f'{walk_dir}\\members.csv', f'{walk_dir}\\transactions.csv')
 
-        _, weakly = giant_component(g)
-        l_cc, g_cc = clustering_coefficient(g)
-        v,_ =small_world_mean_distance(g) 
-    results.append([g.vcount(), g.ecount(), v , mean_degree(g), weakly, power_law_alpha(g), l_cc, g_cc, degree_assortativity(g)])
-        
-    i = i + 1
+            _, weakly = giant_component(g)
+            l_cc, g_cc = clustering_coefficient(g)
 
-df = pd.DataFrame(results)
-print(df.head(), df.shape)
-df.columns = ['Vertices', 'Edges', 'Mean degree', 'Average path length', 'Size of weakly connected component', 'Power Law Alpha', 'Local clustering coefficient', 'Global clustering coefficient', 'Homophily by degree']
+            results.append(np.concatenate([[g.vcount(), g.ecount(), mean_degree(g), weakly, power_law_alpha(g), l_cc, g_cc, degree_assortativity(g)]]))
+            
+            i = i + 1
 
-df.to_csv('accorderie_sherbrooke.csv')
+    df = pd.DataFrame(results)
+    print(df.head(), df.shape)
+    # df.columns = ['Vertices', 'Edges', 'Mean degree', 'Size of weakly connected component', 'Power Law Alpha', 'Local clustering coefficient', 'Global clustering coefficient', 'Homophily by degree']
+
+    # # df.to_csv('structural_properties_acc_sherbrooke.csv')
+
+# main()
+
+def calcule_structure_properties(path):
+    
+    g = None 
+    
+    try:
+        g =load_accorderie_network(f'{path}\\members.csv', f'{path}\\transactions.csv')
+    except:
+        pass
+    if g == None or g.vcount() == 0:  return []
+
+    strongly, weakly = giant_component(g)
+    l_cc, g_cc = clustering_coefficient(g)
+    age = homophily_nominal(g, 'age')
+    revenu = homophily_nominal(g, 'revenu')
+    ville = homophily_nominal(g, 'ville')
+    region = homophily_nominal(g, 'region')
+    arrondissement = homophily_nominal(g, 'arrondissement')
+    addresse = homophily_nominal(g, 'adresse')
+    average_length = small_world_mean_distance(g)
+    result = np.concatenate([[g.vcount(), g.ecount(), mean_degree(g), average_length, weakly, strongly, power_law_alpha(g), l_cc, g_cc, degree_assortativity(g), age ,revenu ,ville ,region ,arrondissement ,addresse ]])
+    
+    return result
