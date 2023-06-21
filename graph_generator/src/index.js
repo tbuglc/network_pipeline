@@ -121,23 +121,23 @@ if (doHelp) {
     social_param;
   console.log(msg);
 } else {
-  console.log(
-    "Generating " +
-      nbusers.toString() +
-      " users and " +
-      nbtransactions.toString() +
-      " transactions"
-  );
-  console.log(
-    "socialibility_distribution = " +
-      social_distrib +
-      "(" +
-      social_param +
-      "), region_bias = " +
-      region_bias +
-      ", date_bias = " +
-      date_bias_factor
-  );
+  // console.log(
+  //   "Generating " +
+  //     nbusers.toString() +
+  //     " users and " +
+  //     nbtransactions.toString() +
+  //     " transactions"
+  // );
+  // console.log(
+  //   "socialibility_distribution = " +
+  //     social_distrib +
+  //     "(" +
+  //     social_param +
+  //     "), region_bias = " +
+  //     region_bias +
+  //     ", date_bias = " +
+  //     date_bias_factor
+  // );
 
   main(
     nbusers,

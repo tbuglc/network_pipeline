@@ -1,0 +1,134 @@
+id,age,genre,revenu,ville,region,arrondissement,adresse,accorderie,mapid
+559,18-30,0,0-10000,Montréal,Montréal,Montréal-Nord,H1G,113,9909
+652,31-54,0,0-10000,Montréal,Montréal,Montréal-Nord,H1H,104,9821
+676,31-54,0,10001-20000,Montréal,Montréal,Montréal-Nord,H1G,113,9794
+685,31-54,0,10001-20000,Montréal,Montréal,Montréal-Nord,H1G,113,9786
+707,18-30,0,10001-20000,Montréal,Montréal,Montréal-Nord,H1G,113,9762
+709,31-54,0,0-10000,Montréal,Montréal,Montréal-Nord,H1G,113,9764
+811,18-30,1,20001-30000,Montréal,Montréal,Le Plateau-Mont-Royal,H2K,104,9660
+919,31-54,0,0,Montréal,Montréal,Montréal-Nord,H1H,104,9551
+1029,18-30,1,0-10000,Montréal-Est,Montréal,,H1J,113,9443
+1044,96-150,1,0-10000,Montréal-Est,Montréal,,H1G,113,9420
+1128,18-30,0,10001-20000,Montréal,Montréal,Le Plateau-Mont-Royal,H2T,113,9341
+2414,0,0,0,Montréal,Montréal,Montréal-Nord,H1H,104,8061
+2458,18-30,0,10001-20000,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1W,113,8001
+2469,31-54,0,0,Montréal,Montréal,Montréal-Nord,H1G,113,8781
+2687,55-65,0,50001-,Montréal,Montréal,Rivière-des-Prairies--Pointe-aux-Trembles,H1E,113,7780
+2692,55-65,0,0-10000,Montréal,Montréal,Montréal-Nord,H1H,104,7774
+3135,31-54,0,0-10000,Montréal,Montréal,Montréal-Nord,H1G,113,7337
+3459,66-80,0,0,Montréal,Montréal,Montréal-Nord,H1G,113,7007
+3460,0,0,50001-,Montréal,Montréal,Montréal-Nord,H1G,113,7008
+3470,81-95,1,20001-30000,Montréal-Est,Montréal,,H1G,113,6997
+3472,81-95,0,20001-30000,Montréal-Est,Montréal,,H1G,113,6998
+3473,55-65,0,20001-30000,Montréal,Montréal,Montréal-Nord,H1G,113,6999
+3483,55-65,0,0-10000,Montréal,Montréal,Montréal-Nord,H1R,113,6989
+3501,31-54,0,0,Montréal,Montréal,Montréal-Nord,H1H,113,6969
+3702,66-80,0,10001-20000,Montréal,Montréal,Montréal-Nord,H1G,113,6775
+3707,18-30,1,0-10000,Montréal,Montréal,Montréal-Nord,H1G,113,6767
+3759,0,0,0,Montréal,Montréal,Montréal-Nord,H1G,113,6697
+3760,66-80,0,10001-20000,Montréal,Montréal,Montréal-Nord,H1G,113,6698
+3921,55-65,0,0-10000,Montréal,Montréal,Montréal-Nord,H1G,113,6572
+3938,66-80,0,10001-20000,Montréal,Montréal,Montréal-Nord,H1G,113,6527
+3939,0,1,0,Montréal,Montréal,Montréal-Nord,H1G,113,6528
+3954,31-54,1,50001-,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1V,104,6513
+3964,55-65,0,0,Montréal,Montréal,Montréal-Nord,H1E,113,6502
+3965,31-54,0,30001-50000,Montréal,Montréal,Rosemont--La Petite-Patrie,H2G,113,6503
+4155,31-54,0,10001-20000,Montréal,Montréal,Montréal-Nord,H1G,104,6310
+4207,66-80,0,10001-20000,Montréal,Montréal,Montréal-Nord,H1G,113,6259
+4297,18-30,1,0-10000,Montréal,Montréal,Montréal-Nord,H1G,113,6164
+4341,0,0,10001-20000,Montréal,Montréal,Montréal-Nord,H1G,113,6121
+4342,55-65,1,10001-20000,Montréal,Montréal,Montréal-Nord,H1G,113,6124
+4343,66-80,0,0-10000,Montréal,Montréal,Montréal-Nord,H1G,113,6125
+4365,55-65,1,0-10000,Montréal,Montréal,Montréal-Nord,H1G,113,6092
+4380,81-95,0,0-10000,Montréal-Est,Montréal,,H1G,113,6089
+4381,81-95,0,20001-30000,Montréal-Est,Montréal,,H1G,113,6090
+4411,81-95,0,10001-20000,Montréal,Montréal,Montréal-Nord,H1G,113,6061
+4424,55-65,0,30001-50000,Montréal,Montréal,Saint-Léonard,H1V,113,6035
+4425,96-150,0,0-10000,Montréal,Montréal,Rivière-des-Prairies--Pointe-aux-Trembles,H1E,113,6036
+4441,0,0,0-10000,Montréal,Montréal,Montréal-Nord,H1G,113,6028
+4450,55-65,0,10001-20000,Montréal,Montréal,Montréal-Nord,H4N,113,6026
+4593,55-65,0,0-10000,Montréal,Montréal,Montréal-Nord,H1G,113,5881
+4643,31-54,1,0,Montréal,Montréal,Montréal-Nord,H1G,113,5825
+4653,55-65,1,10001-20000,Montréal,Montréal,Rivière-des-Prairies--Pointe-aux-Trembles,H1E,113,5810
+4678,31-54,0,0,Montréal,Montréal,Villeray--Saint-Michel--Parc-Extension,H2P,104,5792
+4709,66-80,0,30001-50000,Montréal,Montréal,Rivière-des-Prairies--Pointe-aux-Trembles,H1E,113,5760
+4829,81-95,0,10001-20000,Montréal,Montréal,Montréal-Nord,H1G,113,5643
+4831,66-80,1,10001-20000,Montréal,Montréal,Montréal-Nord,H1G,113,5645
+4876,31-54,1,0,Montréal,Montréal,Montréal-Nord,H1H,113,5586
+4877,66-80,0,0-10000,Montréal,Montréal,Montréal-Nord,H1G,113,5587
+4879,66-80,1,10001-20000,Montréal,Montréal,Montréal-Nord,H1G,113,5589
+4891,66-80,1,0,Winneway,Abitibi-Témiscamingue,,H1T,113,5577
+4897,66-80,0,0-10000,Montréal,Montréal,Montréal-Nord,H1G,113,5561
+4898,31-54,0,0,Montréal,Montréal,Rosemont--La Petite-Patrie,H2G,114,5562
+4900,66-80,0,0-10000,Montréal,Montréal,Montréal-Nord,H1G,113,5564
+4902,66-80,1,0-10000,Montréal,Montréal,Montréal-Nord,H1G,113,5566
+4905,66-80,0,0-10000,Montréal,Montréal,Montréal-Nord,H1G,113,5569
+4909,66-80,0,10001-20000,Montréal,Montréal,Montréal-Nord,H1G,113,5573
+4913,0,0,0,Montréal,Montréal,Montréal-Nord,H1G,113,5559
+4918,31-54,0,0,Montréal,Montréal,Montréal-Nord,H1G,113,5351
+4922,0,\N,,Montréal,Montréal,Montréal-Nord,H1G,113,5550
+4928,31-54,0,30001-50000,Montréal,Montréal,Montréal-Nord,H1H,113,5545
+4940,55-65,1,10001-20000,Laval,Laval,,H7A,113,5530
+4952,31-54,1,10001-20000,Montréal,Montréal,Montréal-Nord,H1G,113,5520
+5016,31-54,1,10001-20000,Montréal,Montréal,Mont-Royal,H3R,113,5446
+5017,31-54,0,50001-,Montréal,Montréal,Montréal-Nord,H1G,113,5447
+5051,31-54,1,30001-50000,Montréal,Montréal,Rosemont--La Petite-Patrie,H2G,114,5422
+5093,31-54,0,0-10000,Montréal,Montréal,Montréal-Nord,H1G,113,5380
+5094,31-54,0,50001-,Montréal,Montréal,Montréal-Nord,H1G,113,5381
+5207,55-65,1,10001-20000,Montréal,Montréal,Montréal-Nord,H1G,113,5247
+5208,31-54,1,0-10000,Montréal,Montréal,Montréal-Nord,H1G,113,5248
+5209,55-65,1,10001-20000,Montréal,Montréal,Montréal-Nord,H1G,113,5249
+5210,31-54,0,30001-50000,Montréal,Montréal,Montréal-Nord,H1G,113,5250
+5268,31-54,1,50001-,Montréal,Montréal,Montréal-Nord,H1H,113,5195
+5281,31-54,0,0-10000,Montréal,Montréal,Montréal-Nord,H1G,113,5192
+5357,55-65,0,10001-20000,Montréal,Montréal,Montréal-Nord,H1G,113,5122
+5358,55-65,0,30001-50000,Montréal,Montréal,Montréal-Nord,H1G,113,5123
+5409,31-54,0,0-10000,Montréal,Montréal,Montréal-Nord,H1H,113,5056
+5410,0,0,10001-20000,Montréal,Montréal,Montréal-Nord,H1G,113,5057
+5444,31-54,0,50001-,Montréal,Montréal,Villeray--Saint-Michel--Parc-Extension,H2R,104,5023
+5487,55-65,0,10001-20000,Montréal,Montréal,Montréal-Nord,H1G,113,4990
+5587,31-54,0,50001-,Montréal,Montréal,Montréal-Nord,H1H,113,4886
+5661,0,\N,,Montréal,Montréal,Montréal-Nord,H1G,113,4815
+5663,0,1,0,Montréal,Montréal,Montréal-Nord,H1G,113,4836
+5837,66-80,1,0,Montréal,Montréal,Saint-Léonard,H1R,88,4640
+6114,31-54,1,0-10000,Montréal,Montréal,Rivière-des-Prairies--Pointe-aux-Trembles,H1E,113,4365
+6175,66-80,0,20001-30000,Montréal,Montréal,Montréal-Nord,H1H,104,4326
+6209,81-95,0,20001-30000,Montréal,Montréal,Saint-Léonard,H1P,104,4275
+6592,66-80,0,30001-50000,Montréal,Montréal,Montréal-Nord,H1E,104,3881
+6658,31-54,0,20001-30000,Montréal,Montréal,Rosemont--La Petite-Patrie,H2S,104,3814
+6755,55-65,0,10001-20000,Montréal,Montréal,Montréal-Nord,H1G,104,3721
+6891,31-54,0,50001-,Montréal,Montréal,Rosemont--La Petite-Patrie,H2S,104,3577
+6946,0,0,0-10000,Montréal,Montréal,Montréal-Nord,H1G,104,3527
+6947,66-80,0,10001-20000,Montréal,Montréal,Montréal-Nord,H1H,104,3528
+7051,18-30,0,0-10000,Montréal,Montréal,Montréal-Nord,H1H,104,3432
+7248,31-54,0,30001-50000,Montréal,Montréal,Le Plateau-Mont-Royal,H2J,88,3223
+7249,55-65,1,50001-,Chambly,Montérégie,,J3L,113,3224
+7326,0,0,0,Montréal,Montréal,Montréal-Nord,H1H,88,927
+7327,0,\N,,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1V,88,2434
+7380,66-80,0,0-10000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1Y,114,3089
+7450,66-80,1,30001-50000,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1W,104,3024
+7807,0,\N,,Montréal,Montréal,Montréal-Nord,H1H,104,2659
+8072,31-54,0,10001-20000,Montréal,Montréal,Montréal-Nord,H1H,104,2382
+8254,55-65,0,0-10000,Montréal,Montréal,Ahuntsic-Cartierville,H7E,104,2197
+8264,31-54,0,10001-20000,Montréal,Montréal,Ahuntsic-Cartierville,H1Z,104,2191
+8265,55-65,1,20001-30000,Montréal,Montréal,Ahuntsic-Cartierville,H1G,113,2214
+8285,55-65,1,0-10000,Montréal,Montréal,Montréal-Nord,H1E,104,2166
+8303,55-65,1,0-10000,Montréal,Montréal,Montréal-Nord,H1H,104,2150
+8325,31-54,0,0-10000,Montréal,Montréal,Ville-Marie,H2K,104,2131
+8368,66-80,1,30001-50000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1Y,104,2082
+8395,81-95,1,0-10000,Montréal,Montréal,Montréal-Nord,H1G,104,2059
+8447,66-80,0,20001-30000,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1W,88,2006
+8467,55-65,0,10001-20000,Montréal,Montréal,Rivière-des-Prairies--Pointe-aux-Trembles,H1E,113,1987
+8490,55-65,0,0-10000,Montréal,Montréal,Saint-Léonard,H1P,104,1962
+8497,55-65,1,20001-30000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1T,104,1952
+8502,66-80,0,50001-,Montréal,Montréal,Montréal-Nord,H1H,104,1943
+8552,31-54,1,0,Montréal,Montréal,Montréal-Nord,H1H,104,1899
+8604,55-65,0,10001-20000,Montréal,Montréal,Montréal-Nord,H1H,104,1846
+8719,55-65,0,0-10000,Montréal,Montréal,Montréal-Nord,H1G,104,1733
+8736,31-54,1,50001-,Montréal,Montréal,Rosemont--La Petite-Patrie,H1W,104,1714
+8930,55-65,1,0,Montréal,Montréal,Ahuntsic-Cartierville,H1H,104,1525
+9020,55-65,1,0-10000,Montréal,Montréal,Villeray--Saint-Michel--Parc-Extension,H3N,104,1436
+9126,55-65,0,10001-20000,Montréal,Montréal,Montréal-Nord,H1G,113,1325
+9255,81-95,0,10001-20000,Montréal,Montréal,Montréal-Nord,H1H,104,1183
+9256,66-80,1,10001-20000,Montréal,Montréal,Montréal-Nord,H1H,104,1184
+10126,66-80,0,10001-20000,Beauceville,Chaudière-Appalaches,,G5X,104,612
