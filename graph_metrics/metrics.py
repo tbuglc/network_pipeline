@@ -99,10 +99,22 @@ def centralization(n, metrics=[], metric_name=''):
 def compute_average_metrics(g=Graph):
     weights = compute_edge_weight_based_on_edge_number(g)
 
-    return [degree(g=g, average=True), g.maxdegree(mode='in'), g.maxdegree(mode='out'), mean_degree(g), betweenness(
-        g=g, average=True, weights=weights), closeness(g, average=True, weights=weights), harmonic(g, average=True, weights=weights),  pagerank(g=g, average=True, weights=weights), clustering_coefficient(
-        g=g, average=True), global_clustering_coefficient(g), mean(g.eccentricity()),
-        edge_betweenness(g, average=True, weights=weights)]
+    averages = [
+        degree(g=g, average=True), 
+        g.maxdegree(mode='in'), 
+        g.maxdegree(mode='out'), 
+        betweenness(g=g, average=True, weights=weights), 
+        closeness(g, average=True, weights=weights), 
+        harmonic(g, average=True, weights=weights),  
+        pagerank(g=g, average=True, weights=weights), 
+        clustering_coefficient(g=g, average=True), 
+        global_clustering_coefficient(g), 
+        edge_betweenness(g, average=True, weights=weights)
+    ]
+
+    structural = global_graph_properties(g)
+
+    return np.concatenate([averages, structural])
 
 
 def compute_graph_metrics(g=Graph):
@@ -145,6 +157,10 @@ def global_graph_properties(g=Graph):
         g.maxdegree(mode='in', loops=True),
         g.maxdegree(mode='out', loops=True),
         mean_degree(g),
+        get_avg_in_out_degree(g),
+        get_avg_weighted_in_out_degree(g, field_name='duree'),
+        get_avg_in_out_disbalance(g),
+        get_unique_edges_vs_total(g),
         g.diameter(directed=True),
         g.radius(),
         g.density(),
@@ -167,7 +183,7 @@ def global_graph_properties(g=Graph):
         homophily_nominal(g, 'ville'),
         homophily_nominal(g, 'region'),
         homophily_nominal(g, 'arrondissement'),
-        homophily_nominal(g, 'address'),
+        homophily_nominal(g, 'adresse'),
     ]
 
     return data
@@ -288,3 +304,125 @@ def homophily_nominal(g, attribute):
     assortativity = g.assortativity_nominal(numeric_label, directed=True)
 
     return assortativity
+
+
+
+def duree_to_int(duree_str):
+    ret = 0
+    pz = duree_str.split(":")
+    ret += float(pz[0])
+    ret += float(pz[1]) / 60 * 100
+    return ret
+
+
+# average indeg / (indeg + outdeg).  Less than 0.5 => outdeg bias, higher => indeg bias
+def get_avg_in_out_degree(g):
+    
+    if len(g.vs) == 0:
+        return -1
+    
+    ratio_sum = 0
+    nb_isolated = 0
+    
+    for v in g.vs:
+        indeg = g.degree(v, mode='in')
+        outdeg = g.degree(v, mode='out')
+        
+        if outdeg == 0 and indeg == 0:
+            nb_isolated += 1
+        else:
+            ratio_sum += (indeg / (outdeg + indeg))
+    
+    return ratio_sum / (len(g.vs) - nb_isolated) 
+
+
+
+
+
+
+
+# average duree_in / (duree_in + duree_out).  Less than 0.5 => outdeg bias, higher => indeg bias
+def get_avg_weighted_in_out_degree(g, field_name='duree'):
+    
+    if len(g.vs) == 0:
+        return -1
+    
+    ratio_sum = 0
+    nb_isolated = 0
+    
+    for v in g.vs:
+        weight_in = 0
+        for e in g.es[g.incident(v, mode='in')]:
+            weight_in += duree_to_int(e['duree'])
+        
+        weight_out = 0
+        for e in g.es[g.incident(v, mode='out')]:
+            weight_out += duree_to_int(e['duree'])
+        
+        
+        
+        if weight_in == 0 and weight_out == 0:
+            nb_isolated += 1
+        else:
+            ratio_sum += (weight_in / (weight_in + weight_out))
+        
+    
+    return ratio_sum / (len(g.vs) - nb_isolated) 
+
+
+
+
+
+
+
+
+
+
+# average max of indeg / (indeg + outdeg) or 1 - that qty.  Minimum is 0.5, closer to 1 => quite disbalanced
+def get_avg_in_out_disbalance(g):
+    
+    if len(g.vs) == 0:
+        return -1
+    
+    disbalance_sum = 0
+    nb_isolated = 0
+    for v in g.vs:
+        indeg = g.degree(v, mode='in')
+        outdeg = g.degree(v, mode='out')
+        
+        if outdeg == 0 and indeg == 0:
+            nb_isolated += 1
+        else:
+            disbalance_sum += max(indeg / (indeg + outdeg), 1 - indeg/(indeg + outdeg))
+    
+    return disbalance_sum / (len(g.vs) - nb_isolated) 
+
+
+
+
+
+
+# ratio of unique edges / edges.  Under 1 => edges are repeated
+def get_unique_edges_vs_total(g):
+    
+    if len(g.es) == 0:
+        return -1
+    
+    nb_edges = len(g.es)
+    
+    unique_edges = set()
+    all_edges = list()
+    
+    for e in g.es:
+        et = e.tuple
+        if et not in unique_edges:
+            unique_edges.add(et)
+            
+        all_edges.append(et)
+
+    #all_edges.sort()
+    #print(all_edges)
+
+            
+    return len(unique_edges) / nb_edges
+

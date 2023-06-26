@@ -88,7 +88,6 @@ def main(span_days, input_dir, output_dir, g=None):
             'Degree', 
             'Max in-degree', 
             'Max out-degree', 
-            'Mean degree', 
             'Betweenness',
             'Closeness',
             'Harmonic distance',
@@ -100,7 +99,7 @@ def main(span_days, input_dir, output_dir, g=None):
             'Edge betweenness']
 
     pd_av_m = pd.DataFrame(
-        data=average_metrics, index=indices, columns=columns)
+        data=average_metrics, index=indices, columns=columns + global_graph_indices)
 
     # add sheets into excel
     add_sheet_to_xlsx(file_writer=file_writer, data=pd_av_m,

@@ -1,7 +1,11 @@
 import os 
+import sys
 import pandas as pd
 import numpy as np
-from structure import calcule_structure_properties
+# from structure import calcule_structure_properties
+from graph_metrics.metrics import global_graph_properties
+from graph_metrics.utils import global_graph_indices
+from graph_common.graph_loader import load_accorderie_network
 
 file_acc = pd.read_csv('data/raw/accorderie.csv', encoding='latin-1')
 
@@ -35,7 +39,12 @@ def calculate_structural_properties():
         # try:
         id = p.split('\\')[-1]
         
-        r = calcule_structure_properties(p)
+        try:
+            g =load_accorderie_network(f'{p}\\members.csv', f'{p}\\transactions.csv')
+        except Exception as e:
+            continue
+
+        r = global_graph_properties(g)
        
         results.append(np.concatenate([[id, accorderies[int(id)]],r]))
     # except Exception as e:
@@ -45,8 +54,8 @@ def calculate_structural_properties():
     df = pd.DataFrame(results)
     # print(df.head(), df.shape)
 
-    df.columns = ['AccorderieID','Name','Vertices', 'Edges', 'Average degree', 'Average path length', 'Weakly connected component(size)', 'Stongly connected component', 'Power law alpha', 'Local clustering coefficient', 'Global clustering coefficient', 'Homophily by degree', 'Homophily by age', 'Homophily by revenue', 'Homophily by city', 'Homophily by region', 'Homophily by (arrondissement)', 'Homophily by addresse']
-
+    # df.columns = ['AccorderieID','Name','Vertices', 'Edges', 'Average degree', 'Average path length', 'Weakly connected component(size)', 'Stongly connected component', 'Power law alpha', 'Local clustering coefficient', 'Global clustering coefficient', 'Homophily by degree', 'Homophily by age', 'Homophily by revenue', 'Homophily by city', 'Homophily by region', 'Homophily by (arrondissement)', 'Homophily by addresse']
+    df.columns = ['AccorderieID','Name'] + global_graph_indices
     df.to_csv('all_acc.csv')
     
 calculate_structural_properties()
