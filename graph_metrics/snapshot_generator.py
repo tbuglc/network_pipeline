@@ -4,7 +4,7 @@ from utils import filter_by_trans_date
 
 def create_snapshots(g, start_date, end_date, span_days):
     new_date_limit = start_date + timedelta(days=span_days)
-    print(span_days)
+    # print(span_days)
     
     snapshots = []
     while (new_date_limit <= end_date):

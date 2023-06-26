@@ -13,6 +13,8 @@ from utils import create_folder_if_not_exist, parse_output_dir, global_graph_ind
 import pandas as pd
 import matplotlib.pyplot as plt
 from pathlib import Path
+
+
 def main(span_days, input_dir, output_dir, g=None):
 
     start_date, end_date = get_start_and_end_date(input_dir=input_dir)
@@ -26,19 +28,17 @@ def main(span_days, input_dir, output_dir, g=None):
     if g is None:
         g = load_accorderie_network(input_dir=input_dir)
 
-   
     dest_dir, file_name = parse_output_dir(output_dir)
- 
-    create_folder_if_not_exist(dest_dir)
 
+    create_folder_if_not_exist(dest_dir)
 
     if not file_name.endswith('.xlsx'):
         raise ValueError('Output dir should end with file.xlsx')
-    
+
     file_writer = create_xlsx_file(output_dir)
 
     global_metrics = compute_global_properties_on_graph(g=g)
-    
+
     add_sheet_to_xlsx(file_writer=file_writer,
                       data=global_metrics, title='Global Metrics', index=True)
     print('Computed global metrics')
@@ -59,13 +59,13 @@ def main(span_days, input_dir, output_dir, g=None):
 
     #     add_sheet_to_xlsx(file_writer=file_writer,
     #                       data=metrics_row, title='from ' + snapshot['title'])
-    
+
     average_metrics = []
     indices = []
     global_metrics_on_snapshot = []
     for snapshot in snapshots:
         sub_graph = snapshot['subgraph']
-        
+
         global_metrics_on_snapshot.append(global_graph_properties(sub_graph))
 
         metrics_row = compute_graph_metrics(g=sub_graph)
@@ -75,7 +75,6 @@ def main(span_days, input_dir, output_dir, g=None):
 
         add_sheet_to_xlsx(file_writer=file_writer,
                           data=metrics_row, title='from '+snapshot['title'])
-    
 
     # gxa, gya = compute_degree_distribution(g)
 
@@ -84,9 +83,21 @@ def main(span_days, input_dir, output_dir, g=None):
 
     pdf_degree_distribution(
         complete_graph=g, snapshots=snapshots, folder_name=dest_dir+'/snapshots_degree_distribution')
-    
-    columns = ['Degree', 'Betweenness', 'Closeness',
-               'Page Rank', 'Clustering Coefficient', 'Eccentricity', 'Mincut', 'Edge betweenness']
+
+    columns = [
+            'Degree', 
+            'Max in-degree', 
+            'Max out-degree', 
+            'Mean degree', 
+            'Betweenness',
+            'Closeness',
+            'Harmonic distance',
+            # 'Eigenvector Centrality',
+            'Page Rank', 
+            'Average clustering coefficient', 
+            'Global clustering coefficient',
+            'Average eccentricity', 
+            'Edge betweenness']
 
     pd_av_m = pd.DataFrame(
         data=average_metrics, index=indices, columns=columns)
@@ -95,10 +106,12 @@ def main(span_days, input_dir, output_dir, g=None):
     add_sheet_to_xlsx(file_writer=file_writer, data=pd_av_m,
                       title='Snapshot Average Metrics', index=True)
 
-    sn_gb_m = pd.DataFrame(data=global_metrics_on_snapshot, index=indices, columns=global_graph_indices)
+    sn_gb_m = pd.DataFrame(data=global_metrics_on_snapshot,
+                           index=indices, columns=global_graph_indices)
 
-    add_sheet_to_xlsx(file_writer=file_writer, data=sn_gb_m, index=True, title="Snapshots Global Metrics")
-    
+    add_sheet_to_xlsx(file_writer=file_writer, data=sn_gb_m,
+                      index=True, title="Snapshots Global Metrics")
+
     print('Computed metrics on snapshots')
     # save file
     save_csv_file(file_writer=file_writer)
@@ -123,7 +136,6 @@ def main(span_days, input_dir, output_dir, g=None):
     elif '\\' in output_dir:
         path_dir = '\\'.join(output_dir.split('\\')[0:-1])
 
-
     fig.savefig(Path(path_dir+'/degree_distribution.pdf'), dpi=300)
     plt.close()
 
@@ -140,4 +152,5 @@ arg_parser.add_argument('-s', '--span', default=30, type=int)
 args = arg_parser.parse_args()
 
 filters = args.__dict__
-main(span_days=int(filters['span']), input_dir=filters['input'], output_dir=filters['output'])
+main(span_days=int(filters['span']),
+     input_dir=filters['input'], output_dir=filters['output'])
