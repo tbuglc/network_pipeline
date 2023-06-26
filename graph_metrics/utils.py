@@ -8,8 +8,36 @@ from pathlib import Path
 metrics_columns = ['Degree', 'Betweenness', 'Closeness',
                    'Page Rank', 'Clustering Coefficient']
 
-global_graph_indices = ['Vertices','Edges','Diameter', 'Radius', 'Density',
-               'Average path length', 'Reciprocity', 'Eccentricity', 'Clustering coefficient', 'Edge betweenness']
+global_graph_indices = [
+                        'Vertices', 
+                        'Edges', 
+                        'Max in-degree', 
+                        'Max out-degree', 
+                        'Mean degree', 
+                        'Diameter',
+                        'Radius', 
+                        'Density',
+                        'Average path length', 
+                        'Reciprocity', 
+                        'Average eccentricity', 
+                        'Weakly connected component', 
+                        'Strongly connected component', 
+                        'Power law alpha',
+                        'Global clustering coefficient',
+                        'Clustering coefficient',
+                        'Degree centralization',
+                        'Betweenness centralization',
+                        'Closeness centralization',
+                        'Harmonic distance centralization',
+                        'Average page rank',
+                        'Degree assortativity',
+                        'Homophily by age',
+                        'Homophily by revenu',
+                        'Homophily by ville',
+                        'Homophily by region',
+                        'Homophily by arrondissement',
+                        'Homophily by adresse',
+                    ]
 # FIXME: POTENTIAL DUPLICATE
 accorderies = {
     2: "Québec",
@@ -38,6 +66,7 @@ accorderies = {
 # FIXME: DUPLICATED FUNCTIONES
 '''
 
+
 def filter_by_trans_date(edge, start, end):
     # y, m, d = edge['date'].split('-')
     trans_date = parser.parse(edge['date'])
@@ -58,6 +87,7 @@ def create_folder_if_not_exist(input_dir):
     dir_exits = os.input_dir.exists(input_dir)
     if not dir_exits:
         os.mkdir(Path(input_dir))
+
 
 def create_xlsx_file(file_name: str):
     if (file_name == ''):
@@ -81,6 +111,7 @@ def create_folder_if_not_exist(path):
     if not dir_exits:
         os.mkdir(Path(path))
 
+
 def parse_output_dir(path):
     if path == '':
         raise 'Path is required'
@@ -89,14 +120,15 @@ def parse_output_dir(path):
         file_name = path.split('/')[-1]
     if '\\' in path:
         file_name = path.split('\\')[-1]
-    
+
     if '.' not in file_name:
         raise ValueError('file missing extension')
-    
+
     output_dir = path.split(file_name)[0]
 
     return output_dir, file_name
-        
+
+
 '''
 # FIXME: END OF DUPLICATE
 '''
