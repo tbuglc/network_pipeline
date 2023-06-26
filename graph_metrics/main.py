@@ -91,11 +91,9 @@ def main(span_days, input_dir, output_dir, g=None):
             'Betweenness',
             'Closeness',
             'Harmonic distance',
-            # 'Eigenvector Centrality',
             'Page Rank', 
             'Average clustering coefficient', 
-            'Global clustering coefficient',
-            'Average eccentricity', 
+            'Global clustering coefficient', 
             'Edge betweenness']
 
     pd_av_m = pd.DataFrame(
