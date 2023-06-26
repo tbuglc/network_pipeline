@@ -183,7 +183,7 @@ def global_graph_properties(g=Graph):
         homophily_nominal(g, 'ville'),
         homophily_nominal(g, 'region'),
         homophily_nominal(g, 'arrondissement'),
-        homophily_nominal(g, 'adresse'),
+        homophily_nominal(g, 'address'),
     ]
 
     return data
