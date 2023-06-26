@@ -309,9 +309,10 @@ def homophily_nominal(g, attribute):
 
 def duree_to_int(duree_str):
     ret = 0
-    pz = duree_str.split(":")
-    ret += float(pz[0])
-    ret += float(pz[1]) / 60 * 100
+    if duree_str and ':' in duree_str:
+        pz = duree_str.split(":")
+        ret += float(pz[0])
+        ret += float(pz[1]) / 60 * 100
     return ret
 
 

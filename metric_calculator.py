@@ -42,8 +42,7 @@ if __name__ == '__main__':
         if dirs:
             start_time = datetime.now()
            
-            with Pool(processes=None) as p:
-               
+            with Pool(processes=None) as p:    
                 p.map(compute_metrics_on_graph, dirs[:10])
                 p.close()
                 p.join()

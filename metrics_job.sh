@@ -3,9 +3,9 @@
 #SBATCH --account=def-mlafond
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=64
+#SBATCH --cpus-per-task=32
 #SBATCH --time=12:00:00           	# time limit (HH:MM:SS)
-#SBATCH --mail-user=manueul.lafond@usherbrooke.ca,bugl2301@Usherbrooke.ca
+#SBATCH --mail-user=bugl2301@Usherbrooke.ca
 #SBATCH --mail-type=BEGIN
 #SBATCH --mail-type=END
 #SBATCH --mail-type=FAIL
