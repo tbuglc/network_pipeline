@@ -34,6 +34,7 @@ if __name__ == '__main__':
     if input_dir:
         dirs = None
         try:
+            print('INPUT='+input_dir)
             dirs = os.listdir(input_dir)
         except Exception as e:
             print('Incorrect path as input directory')
