@@ -128,7 +128,7 @@ def global_graph_properties(g=Graph):
         g.vcount(),
         g.ecount(),
         g.diameter(directed=True),
-        g.radius(),
+        g.radius(mode='all'),
         g.density(),
         g.reciprocity(),
         mean_degree(g),
