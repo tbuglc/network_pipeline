@@ -162,7 +162,7 @@ def global_graph_properties(g=Graph):
         get_avg_in_out_disbalance(g),
         get_unique_edges_vs_total(g),
         g.diameter(directed=True),
-        g.radius(),
+        g.radius(mode='all'),
         g.density(),
         g.average_path_length(directed=True),
         g.reciprocity(ignore_loops=False),
@@ -337,8 +337,13 @@ def get_avg_in_out_degree(g):
         else:
             ratio_sum += (indeg / (outdeg + indeg))
     
-    return ratio_sum / (len(g.vs) - nb_isolated) 
+    result = 0
+    try:
+        result = ratio_sum / (len(g.vs) - nb_isolated) 
+    except Exception as e:
+        print('WARNING: Divide by zero error')
 
+    return result
 
 
 
@@ -368,18 +373,17 @@ def get_avg_weighted_in_out_degree(g, field_name='duree'):
         if weight_in == 0 and weight_out == 0:
             nb_isolated += 1
         else:
-            ratio_sum += (weight_in / (weight_in + weight_out))
-        
+            try:
+                ratio_sum += (weight_in / (weight_in + weight_out))
+            except Exception as e:
+                continue
+    result = 0    
+    try:
+        result = ratio_sum / (len(g.vs) - nb_isolated) 
+    except Exception as e:
+        print('WARNING: Divide by zero error')
     
-    return ratio_sum / (len(g.vs) - nb_isolated) 
-
-
-
-
-
-
-
-
+    return result
 
 
 # average max of indeg / (indeg + outdeg) or 1 - that qty.  Minimum is 0.5, closer to 1 => quite disbalanced
@@ -399,9 +403,14 @@ def get_avg_in_out_disbalance(g):
         else:
             disbalance_sum += max(indeg / (indeg + outdeg), 1 - indeg/(indeg + outdeg))
     
-    return disbalance_sum / (len(g.vs) - nb_isolated) 
 
+    result = 0
+    try:
+        result = disbalance_sum / (len(g.vs) - nb_isolated) 
+    except Exception as e:
+        print('WARNING: Divide by zero error')
 
+    return result
 
 
 
@@ -426,7 +435,11 @@ def get_unique_edges_vs_total(g):
 
     #all_edges.sort()
     #print(all_edges)
-
-            
-    return len(unique_edges) / nb_edges
-
+    
+    result = 0
+    try:
+        result = len(unique_edges) / nb_edges
+    except Exception as e:
+        print('WARNING: Divide by zero error')
+    
+    return result
