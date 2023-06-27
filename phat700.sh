@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=net-metrics
+#SBATCH --job-name=phat700
 #SBATCH --output=report/%x-%j.out
 #SBATCH --account=def-mlafond
 #SBATCH --nodes=8
