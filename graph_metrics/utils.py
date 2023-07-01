@@ -17,7 +17,7 @@ global_graph_indices = [
                         'Average in-out degree',
                         'Average weighted in-out degree',
                         'Average in-out disbalance',
-                        'Repeated edges',
+                        'Unique edges',
                         'Diameter',
                         'Radius', 
                         'Density',

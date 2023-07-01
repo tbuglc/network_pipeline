@@ -20,37 +20,50 @@ def compute_edge_weight_based_on_edge_number(g):
 def betweenness(g=Graph, average=False, weights=[]):
     if (average):
         return mean(g.betweenness(directed=True, weights=weights))
-    return g.betweenness(directed=True, weights=weights)
+    if len(weights) > 0:
+        return g.betweenness(directed=True, weights=weights)
+    return g.betweenness(directed=True)
 
 
-def degree(g=Graph, average=False):
+def degree(g=Graph, average=False, loops=False, mode='all'):
     if (average):
-        return mean(g.degree(mode='all', loops=True))
-    return g.degree(mode='all', loops=True)
+        return mean(g.degree(mode=mode, loops=loops))
+    return g.degree(mode=mode, loops=loops)
 
 
-def closeness(g=Graph, average=False, weights=[]):
+def closeness(g=Graph, average=False, weights=[], mode='all'):
     if (average):
-        return mean(g.closeness(mode='all', weights=weights))
-    return g.closeness(mode='all', weights=weights)
+        return mean(g.closeness(mode=mode, weights=weights))
+    if len(weights) > 0:
+        return g.closeness(mode=mode, weights=weights)
+    return g.closeness(mode=mode)
 
 
-def harmonic(g=Graph, average=False, weights=[]):
+def harmonic(g=Graph, average=False, weights=[], mode='all'):
     if (average):
-        return mean(g.harmonic_centrality(mode='all', weights=weights))
-    return g.harmonic_centrality(mode='all', weights=weights)
+        return mean(g.harmonic_centrality(mode=mode, weights=weights))
+    if len(weights) > 0:
+        return g.harmonic_centrality(mode=mode, weights=weights)
+    
+    return g.harmonic_centrality(mode=mode)
 
 
-def katz(g=Graph, average=False, weights=[]):
+def katz(g=Graph, average=False, weights=[], mode='all'):
     if (average):
-        return mean(g.harmonic_centrality(mode='all', weights=weights))
-    return g.harmonic_centrality(mode='all', weights=weights)
+        return mean(g.harmonic_centrality(mode=mode, weights=weights))
+    if len(weights) > 0:
+        return g.harmonic_centrality(mode=mode, weights=weights)
+    
+    return g.harmonic_centrality(mode=mode)
 
 
 def eigencentrality(g=Graph, average=False, weights=[]):
     if (average):
         return mean(g.eigenvector_centrality(directed=True, weights=weights))
-    return g.eigenvector_centrality(directed=True, weights=weights)
+    if len(weights) > 0:
+        return g.eigenvector_centrality(directed=True, weights=weights)
+    
+    return g.eigenvector_centrality(directed=True)
 
 
 def mincut(g=Graph, average=False):
@@ -60,7 +73,10 @@ def mincut(g=Graph, average=False):
 def edge_betweenness(g=Graph, average=False, weights=[]):
     if (average):
         return mean(g.edge_betweenness(directed=True, weights=weights))
-    return g.edge_betweenness(directed=True, weights=weights)
+    if len(weights) > 0:
+        return g.edge_betweenness(directed=True, weights=weights)
+    
+    return g.edge_betweenness(directed=True)
 
 
 def clustering_coefficient(g=Graph, average=False):
@@ -72,7 +88,10 @@ def clustering_coefficient(g=Graph, average=False):
 def pagerank(g=Graph, average=False,  weights=[]):
     if (average):
         return mean(g.pagerank(directed=True, weights=weights))
-    return g.pagerank(directed=True, weights=weights)
+    if len(weights) > 0:
+        return g.pagerank(directed=True, weights=weights)
+    
+    return g.pagerank(directed=True)
 
 
 def centralization(n, metrics=[], metric_name=''):
@@ -154,9 +173,12 @@ def global_graph_properties(g=Graph):
     data = [
         g.vcount(),
         g.ecount(),
+        # np.sum(g.degree(mode='in')),
+        # np.sum(g.degree(mode='out')),
         g.maxdegree(mode='in', loops=True),
         g.maxdegree(mode='out', loops=True),
         mean_degree(g),
+        # np.std(g.degree(mode='all')),
         get_avg_in_out_degree(g),
         get_avg_weighted_in_out_degree(g, field_name='duree'),
         get_avg_in_out_disbalance(g),
@@ -172,10 +194,10 @@ def global_graph_properties(g=Graph):
         power_law_alpha(g),
         global_clustering_coefficient(g),
         clustering_coefficient(g, average=True),
-        centralization(n, degree(g), 'degree'),
-        centralization(n, betweenness(g, weights=weights), 'betweenness'),
-        centralization(n, closeness(g, weights=weights), 'closeness'),
-        centralization(n, harmonic(g, weights=weights), 'harmonic'),
+        centralization(n, degree(g, mode='in'), 'degree'),
+        centralization(n, betweenness(g), 'betweenness'),
+        centralization(n, closeness(g), 'closeness'),
+        centralization(n, harmonic(g), 'harmonic'),
         pagerank(g, average=True, weights=weights),
         degree_assortativity(g),
         homophily_nominal(g, 'age'),
@@ -183,7 +205,7 @@ def global_graph_properties(g=Graph):
         homophily_nominal(g, 'ville'),
         homophily_nominal(g, 'region'),
         homophily_nominal(g, 'arrondissement'),
-        homophily_nominal(g, 'address'),
+        homophily_nominal(g, 'adresse'),
     ]
 
     return data
