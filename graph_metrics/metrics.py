@@ -5,6 +5,19 @@ import pandas as pd
 import numpy as np
 import powerlaw as pl
 from utils import global_graph_indices
+from dateutil import parser
+import sys
+
+from datetime import datetime, timedelta
+import os
+graph_filter_path = 'C:\\Users\\bugl2301\\projects\\school\\network_pipeline'
+# graph_common_path = 'C:\\Users\\bugl2301\\projects\\school\\network_pipeline\\graph'
+
+if graph_filter_path not in sys.path:
+    sys.path.append(graph_filter_path)
+    # print(sys.path)
+
+from graph_filter.filters import perform_filter_on_graph
 
 
 def compute_edge_weight_based_on_edge_number(g):
@@ -44,7 +57,7 @@ def harmonic(g=Graph, average=False, weights=[], mode='all'):
         return mean(g.harmonic_centrality(mode=mode, weights=weights))
     if len(weights) > 0:
         return g.harmonic_centrality(mode=mode, weights=weights)
-    
+
     return g.harmonic_centrality(mode=mode)
 
 
@@ -53,7 +66,7 @@ def katz(g=Graph, average=False, weights=[], mode='all'):
         return mean(g.harmonic_centrality(mode=mode, weights=weights))
     if len(weights) > 0:
         return g.harmonic_centrality(mode=mode, weights=weights)
-    
+
     return g.harmonic_centrality(mode=mode)
 
 
@@ -62,7 +75,7 @@ def eigencentrality(g=Graph, average=False, weights=[]):
         return mean(g.eigenvector_centrality(directed=True, weights=weights))
     if len(weights) > 0:
         return g.eigenvector_centrality(directed=True, weights=weights)
-    
+
     return g.eigenvector_centrality(directed=True)
 
 
@@ -75,7 +88,7 @@ def edge_betweenness(g=Graph, average=False, weights=[]):
         return mean(g.edge_betweenness(directed=True, weights=weights))
     if len(weights) > 0:
         return g.edge_betweenness(directed=True, weights=weights)
-    
+
     return g.edge_betweenness(directed=True)
 
 
@@ -90,7 +103,7 @@ def pagerank(g=Graph, average=False,  weights=[]):
         return mean(g.pagerank(directed=True, weights=weights))
     if len(weights) > 0:
         return g.pagerank(directed=True, weights=weights)
-    
+
     return g.pagerank(directed=True)
 
 
@@ -119,15 +132,15 @@ def compute_average_metrics(g=Graph):
     weights = compute_edge_weight_based_on_edge_number(g)
 
     averages = [
-        degree(g=g, average=True), 
-        g.maxdegree(mode='in'), 
-        g.maxdegree(mode='out'), 
-        betweenness(g=g, average=True, weights=weights), 
-        closeness(g, average=True, weights=weights), 
-        harmonic(g, average=True, weights=weights),  
-        pagerank(g=g, average=True, weights=weights), 
-        clustering_coefficient(g=g, average=True), 
-        global_clustering_coefficient(g), 
+        degree(g=g, average=True),
+        g.maxdegree(mode='in'),
+        g.maxdegree(mode='out'),
+        betweenness(g=g, average=True, weights=weights),
+        closeness(g, average=True, weights=weights),
+        harmonic(g, average=True, weights=weights),
+        pagerank(g=g, average=True, weights=weights),
+        clustering_coefficient(g=g, average=True),
+        global_clustering_coefficient(g),
         edge_betweenness(g, average=True, weights=weights)
     ]
 
@@ -328,7 +341,6 @@ def homophily_nominal(g, attribute):
     return assortativity
 
 
-
 def duree_to_int(duree_str):
     ret = 0
     if type(duree_str) == str:
@@ -343,55 +355,49 @@ def duree_to_int(duree_str):
 
 # average indeg / (indeg + outdeg).  Less than 0.5 => outdeg bias, higher => indeg bias
 def get_avg_in_out_degree(g):
-    
+
     if len(g.vs) == 0:
         return -1
-    
+
     ratio_sum = 0
     nb_isolated = 0
-    
+
     for v in g.vs:
         indeg = g.degree(v, mode='in')
         outdeg = g.degree(v, mode='out')
-        
+
         if outdeg == 0 and indeg == 0:
             nb_isolated += 1
         else:
             ratio_sum += (indeg / (outdeg + indeg))
-    
+
     result = 0
     try:
-        result = ratio_sum / (len(g.vs) - nb_isolated) 
+        result = ratio_sum / (len(g.vs) - nb_isolated)
     except Exception as e:
         print('WARNING: Divide by zero error')
 
     return result
 
 
-
-
-
-
 # average duree_in / (duree_in + duree_out).  Less than 0.5 => outdeg bias, higher => indeg bias
 def get_avg_weighted_in_out_degree(g, field_name='duree'):
-    
+
     if len(g.vs) == 0:
         return -1
-    
+
     ratio_sum = 0
     nb_isolated = 0
-    
+
     for v in g.vs:
         weight_in = 0
         for e in g.es[g.incident(v, mode='in')]:
             weight_in += duree_to_int(e['duree'])
-        
+
         weight_out = 0
         for e in g.es[g.incident(v, mode='out')]:
             weight_out += duree_to_int(e['duree'])
-        
-        
-        
+
         if weight_in == 0 and weight_out == 0:
             nb_isolated += 1
         else:
@@ -399,69 +405,132 @@ def get_avg_weighted_in_out_degree(g, field_name='duree'):
                 ratio_sum += (weight_in / (weight_in + weight_out))
             except Exception as e:
                 continue
-    result = 0    
+    result = 0
     try:
-        result = ratio_sum / (len(g.vs) - nb_isolated) 
+        result = ratio_sum / (len(g.vs) - nb_isolated)
     except Exception as e:
         print('WARNING: Divide by zero error')
-    
+
     return result
 
 
 # average max of indeg / (indeg + outdeg) or 1 - that qty.  Minimum is 0.5, closer to 1 => quite disbalanced
 def get_avg_in_out_disbalance(g):
-    
+
     if len(g.vs) == 0:
         return -1
-    
+
     disbalance_sum = 0
     nb_isolated = 0
     for v in g.vs:
         indeg = g.degree(v, mode='in')
         outdeg = g.degree(v, mode='out')
-        
+
         if outdeg == 0 and indeg == 0:
             nb_isolated += 1
         else:
-            disbalance_sum += max(indeg / (indeg + outdeg), 1 - indeg/(indeg + outdeg))
-    
+            disbalance_sum += max(indeg / (indeg + outdeg),
+                                  1 - indeg/(indeg + outdeg))
 
     result = 0
     try:
-        result = disbalance_sum / (len(g.vs) - nb_isolated) 
+        result = disbalance_sum / (len(g.vs) - nb_isolated)
     except Exception as e:
         print('WARNING: Divide by zero error')
 
     return result
 
 
-
-
 # ratio of unique edges / edges.  Under 1 => edges are repeated
 def get_unique_edges_vs_total(g):
-    
+
     if len(g.es) == 0:
         return -1
-    
+
     nb_edges = len(g.es)
-    
+
     unique_edges = set()
     all_edges = list()
-    
+
     for e in g.es:
         et = e.tuple
         if et not in unique_edges:
             unique_edges.add(et)
-            
+
         all_edges.append(et)
 
-    #all_edges.sort()
-    #print(all_edges)
-    
+    # all_edges.sort()
+    # print(all_edges)
+
     result = 0
     try:
         result = len(unique_edges) / nb_edges
     except Exception as e:
         print('WARNING: Divide by zero error')
-    
+
+    return result
+
+
+def perform_filter(g, start_date, window_date):
+    filters = {
+        'age': '',
+        'adresse': '',
+        'arrondissement': '',
+        'ville': '',
+        'genre': '',
+        'revenu': '',
+        'date': '',
+        'duree': '',
+        'service': '',
+        'accorderie': '',
+    }
+    filters['date'] = f':{start_date.strftime("%Y-%m-%d")},{window_date.strftime("%Y-%m-%d")}'
+
+    snapshot = perform_filter_on_graph(g, filters=filters)
+
+    return snapshot
+
+
+def new_nodes_vs_existing_nodes(g, sn_size, start_date, end_date):
+    if len(g.vs) == 0:
+        return np.nan
+
+    # start_date = start_date.strftime("%y/%m/%d")
+    # end_date = end_date.strftime("%y/%m/%d")
+
+    window_date = start_date + timedelta(sn_size)
+
+    total_sum = 0
+    while window_date < end_date:
+        if window_date - timedelta(sn_size) == start_date:
+            window_date = window_date + timedelta(sn_size)
+            continue
+
+        # cummulative snapshot subgraph
+        cm_snp_g = perform_filter(
+            g,  start_date, window_date - timedelta(sn_size))
+        # current snapshot subgrap
+        cr_snp_g = perform_filter(
+            g, window_date - timedelta(sn_size), window_date)
+
+        df_cm = cm_snp_g.get_vertex_dataframe()['id'].unique()
+        df_cr = cr_snp_g.get_vertex_dataframe()['id'].unique()
+
+        if len(df_cm) == 0 or len(df_cr) == 0:
+            window_date = window_date + timedelta(sn_size)
+
+            continue
+
+        diff = set(df_cr) - set(df_cm)
+        print(diff)
+        ratio_diff = len(diff)/(len(df_cm) + len(df_cr))
+        print(ratio_diff)
+        total_sum = total_sum + ratio_diff
+
+        window_date = window_date + timedelta(sn_size)
+   
+    norm = (end_date - start_date)/sn_size
+    print('norm: '+str(norm)+' total sum: '+ str(total_sum))
+    result = (1/norm.days)*total_sum
+
     return result
