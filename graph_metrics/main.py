@@ -6,7 +6,7 @@ from utils import get_start_and_end_date,  add_sheet_to_xlsx, create_xlsx_file, 
 from graph_loader import load_accorderie_network
 from datetime import date
 from snapshot_generator import create_snapshots
-from metrics import compute_global_properties_on_graph, compute_graph_metrics, compute_average_metrics, global_graph_properties
+from metrics import compute_global_properties_on_graph, compute_graph_metrics, compute_average_metrics, global_graph_properties, new_nodes_vs_existing_nodes
 import argparse
 from pathlib import Path
 from utils import create_folder_if_not_exist, parse_output_dir, global_graph_indices
@@ -27,7 +27,12 @@ def main(span_days, input_dir, output_dir, g=None):
 
     if g is None:
         g = load_accorderie_network(input_dir=input_dir)
+    # start test 
 
+    metric = new_nodes_vs_existing_nodes(g, span_days, start_date, end_date)
+    print(metric)
+    # end test
+    return 
     dest_dir, file_name = parse_output_dir(output_dir)
 
     create_folder_if_not_exist(dest_dir)
@@ -139,15 +144,17 @@ def main(span_days, input_dir, output_dir, g=None):
     return
 
 
-arg_parser = argparse.ArgumentParser()
-arg_parser.add_argument('-i', '--input', required=True)
-arg_parser.add_argument('-o', '--output', required=True)
+# arg_parser = argparse.ArgumentParser()
+# arg_parser.add_argument('-i', '--input', required=True)
+# arg_parser.add_argument('-o', '--output', required=True)
 
-arg_parser.add_argument('-s', '--span', default=30, type=int)
+# arg_parser.add_argument('-s', '--span', default=30, type=int)
 
 
-args = arg_parser.parse_args()
+# args = arg_parser.parse_args()
 
-filters = args.__dict__
-main(span_days=int(filters['span']),
-     input_dir=filters['input'], output_dir=filters['output'])
+# filters = args.__dict__
+# main(span_days=int(filters['span']),
+#      input_dir=filters['input'], output_dir=filters['output'])
+
+main(30, 'C:\\Users\\bugl2301\\projects\\school\\network_pipeline\\data\\sherbrooke\\data', './')
