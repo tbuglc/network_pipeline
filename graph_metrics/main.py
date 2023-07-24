@@ -6,7 +6,7 @@ from utils import get_start_and_end_date,  add_sheet_to_xlsx, create_xlsx_file, 
 from graph_loader import load_accorderie_network
 from datetime import date
 from snapshot_generator import create_snapshots
-from metrics import compute_global_properties_on_graph, compute_graph_metrics, compute_average_metrics, global_graph_properties, new_nodes_vs_existing_nodes
+from metrics import compute_global_properties_on_graph, compute_graph_metrics, compute_average_metrics, global_graph_properties, new_edges_vs_existing_edges, new_nodes_vs_existing_nodes, new_nodes_deg_vs_existing_nodes_deg
 import argparse
 from pathlib import Path
 from utils import create_folder_if_not_exist, parse_output_dir, global_graph_indices
@@ -29,10 +29,12 @@ def main(span_days, input_dir, output_dir, g=None):
         g = load_accorderie_network(input_dir=input_dir)
     # start test 
 
-    metric = new_nodes_vs_existing_nodes(g, span_days, start_date, end_date)
+    # metric = new_nodes_deg_vs_existing_nodes_deg(g, span_days, start_date, end_date)
+    # print('\n\n EDGES\n\n')
+    metric = new_edges_vs_existing_edges(g, span_days, start_date, end_date)
     print(metric)
     # end test
-    return 
+    return  
     dest_dir, file_name = parse_output_dir(output_dir)
 
     create_folder_if_not_exist(dest_dir)
@@ -157,4 +159,4 @@ def main(span_days, input_dir, output_dir, g=None):
 # main(span_days=int(filters['span']),
 #      input_dir=filters['input'], output_dir=filters['output'])
 
-main(30, 'C:\\Users\\bugl2301\\projects\\school\\network_pipeline\\data\\sherbrooke\\data', './')
+main(365, 'C:\\Users\\bugl2301\\projects\\school\\network_pipeline\\data\\accorderies\\109', './')

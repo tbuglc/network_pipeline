@@ -19,7 +19,6 @@ if graph_filter_path not in sys.path:
 
 from graph_filter.filters import perform_filter_on_graph
 
-
 def compute_edge_weight_based_on_edge_number(g):
     weights = []
     for e in g.es:
@@ -107,25 +106,42 @@ def pagerank(g=Graph, average=False,  weights=[]):
     return g.pagerank(directed=True)
 
 
-def centralization(n, metrics=[], metric_name=''):
+def centralization(n, d=1, metrics=[], metric_name=''):
     denominator_factor = None
 
     if not metric_name:
         return np.nan
 
+    
+
     if metric_name == 'degree':
-        denominator_factor = n**2 - 3*n + 2
+        denominator_factor = d*(n-1)*(n-2)
     elif metric_name == 'betweenness':
-        denominator_factor = n**3 - 4*n**2 + 5*n - 2
+        denominator_factor = (n - 1)**2 * (n - 2)
     elif metric_name == 'harmonic':
-        denominator_factor = (2*n**2 - 6*n + 4)/(2*n - 3)
+        denominator_factor = (n -3)/2
     elif metric_name == 'closeness':
-        denominator_factor = (n**2 - 3*n + 2)/(2*n - 3)
+        denominator_factor = ((n-1)*(n-2))/(2*n - 3)
 
     if not denominator_factor:
         return np.nan
 
-    return np.sum((np.max(metrics) - np.array(metrics))) / denominator_factor
+    # print(metrics)
+    metrics = list(filter(lambda m: m > 0, metrics))
+
+    max_node = np.max(metrics)
+    numerator = (max_node - np.array(metrics))
+    total_sum = 0
+    for v in metrics:
+        diff = (max_node - v)
+        print(diff)
+        total_sum += diff
+
+    sum_num = np.sum(numerator)
+
+    result = sum_num / denominator_factor
+
+    return result
 
 
 def compute_average_metrics(g=Graph):
@@ -490,6 +506,15 @@ def perform_filter(g, start_date, window_date):
 
     return snapshot
 
+# def new_edges_vs_existing_edges(g, sn_size, start_date, end_date):
+#      if len(g.vs) == 0:
+#         return np.nan
+
+#     # start_date = start_date.strftime("%y/%m/%d")
+#     # end_date = end_date.strftime("%y/%m/%d")
+
+#     window_date = start_date + timedelta(sn_size)
+
 
 def new_nodes_vs_existing_nodes(g, sn_size, start_date, end_date):
     if len(g.vs) == 0:
@@ -499,6 +524,8 @@ def new_nodes_vs_existing_nodes(g, sn_size, start_date, end_date):
     # end_date = end_date.strftime("%y/%m/%d")
 
     window_date = start_date + timedelta(sn_size)
+
+    print(g.count_multiple())
 
     total_sum = 0
     while window_date < end_date:
@@ -522,15 +549,125 @@ def new_nodes_vs_existing_nodes(g, sn_size, start_date, end_date):
             continue
 
         diff = set(df_cr) - set(df_cm)
-        print(diff)
-        ratio_diff = len(diff)/(len(df_cm) + len(df_cr))
+        # print(diff)
+        ratio_diff = len(diff) / len(df_cr)
         print(ratio_diff)
         total_sum = total_sum + ratio_diff
 
         window_date = window_date + timedelta(sn_size)
-   
+
     norm = (end_date - start_date)/sn_size
-    print('norm: '+str(norm)+' total sum: '+ str(total_sum))
+    print('norm: '+str(norm)+' total sum: ' + str(total_sum))
+    result = (1/norm.days)*total_sum
+
+    return result
+
+
+def new_nodes_deg_vs_existing_nodes_deg(g, sn_size, start_date, end_date):
+    if len(g.vs) == 0:
+        return np.nan
+
+    # start_date = start_date.strftime("%y/%m/%d")
+    # end_date = end_date.strftime("%y/%m/%d")
+
+    window_date = start_date + timedelta(sn_size)
+
+    total_sum = 0
+    while window_date < end_date:
+        if window_date - timedelta(sn_size) == start_date:
+            window_date = window_date + timedelta(sn_size)
+            continue
+
+        # cummulative snapshot subgraph
+        cm_snp_g = perform_filter(
+            g,  start_date, window_date - timedelta(sn_size))
+        # current snapshot subgrap
+        cr_snp_g = perform_filter(
+            g, window_date - timedelta(sn_size), window_date)
+
+        print(cm_snp_g.get_vertex_dataframe().head(10))
+        print(cr_snp_g.get_vertex_dataframe().head(10))
+
+        df_cm = cm_snp_g.get_vertex_dataframe()['id'].unique()
+        df_cr = cr_snp_g.get_vertex_dataframe()['id'].unique()
+
+        if len(df_cm) == 0 or len(df_cr) == 0:
+            window_date = window_date + timedelta(sn_size)
+
+            continue
+       
+        
+        diff = set(df_cr).difference(set(df_cm))
+        
+        # print(diff)
+
+        # deg =cr_snp_g.degree(list(diff), mode='in')
+
+        diff_g = cr_snp_g.vs.select(id_in=diff)
+
+        
+
+        print(diff_g.degree(mode='in'))
+        # get node by thier ids
+
+        ratio_diff = np.sum(diff_g.degree(mode='in')) / \
+            np.sum(cr_snp_g.degree(mode='in'))
+        print(ratio_diff)
+        total_sum = total_sum + ratio_diff
+
+        window_date = window_date + timedelta(sn_size)
+
+    norm = (end_date - start_date)/sn_size
+    print('norm: '+str(norm)+' total sum: ' + str(total_sum))
+    result = (1/norm.days)*total_sum
+
+    return result
+
+
+def new_edges_vs_existing_edges(g, sn_size, start_date, end_date):
+    if len(g.vs) == 0:
+        return np.nan
+
+    # start_date = start_date.strftime("%y/%m/%d")
+    # end_date = end_date.strftime("%y/%m/%d")
+
+    window_date = start_date + timedelta(sn_size)
+
+    total_sum = 0
+    while window_date < end_date:
+        if window_date - timedelta(sn_size) == start_date:
+            window_date = window_date + timedelta(sn_size)
+            continue
+
+        # cummulative snapshot subgraph
+        cm_snp_g = perform_filter(
+            g,  start_date, window_date - timedelta(sn_size))
+        # current snapshot subgrap
+        cr_snp_g = perform_filter(
+            g, window_date - timedelta(sn_size), window_date)
+
+        df_cm = cm_snp_g.get_edgelist()
+        df_cr = cr_snp_g.get_edgelist()
+
+        diff = set(df_cr) - set(df_cm)
+
+        print('cummulative ,diff, curr: '+str(len(df_cm)) +
+              '|'+str(len(diff)) + '|' + str(len(df_cr)))
+
+        # if len(df_cr) == 0:
+        #     window_date = window_date + timedelta(sn_size)
+
+        #     continue
+
+        ratio_diff = len(diff) / len(df_cr)
+
+        print(ratio_diff)
+        total_sum = total_sum + ratio_diff
+
+        window_date = window_date + timedelta(sn_size)
+
+    norm = (end_date - start_date)/sn_size
+    print('norm: '+str(norm)+' total sum: ' + str(total_sum))
     result = (1/norm.days)*total_sum
 
     return result

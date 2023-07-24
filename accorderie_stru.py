@@ -3,9 +3,15 @@ import sys
 import pandas as pd
 import numpy as np
 # from structure import calcule_structure_properties
+
+import sys
+import os
+sys.path.append(os.curdir)
+
 from graph_metrics.metrics import global_graph_properties
 from graph_metrics.utils import global_graph_indices
 from graph_common.graph_loader import load_accorderie_network
+
 
 file_acc = pd.read_csv('data/raw/accorderie.csv', encoding='latin-1')
 
