@@ -2,7 +2,7 @@ import os
 import pandas as pd
 import numpy as np
 
-root_dir = 'C:\\Users\\bugl2301\\Downloads\\graphs_90-120\\generated_graphs_120'
+root_dir = 'D:\Compute Metrics\data_30\generated_graphs'
 
 def convert_folder_name_to_dict(s):
     d = {}
@@ -64,8 +64,10 @@ for walk_dir, sub_dir, files in os.walk(root_dir):
         
         fld_to_dict = convert_folder_name_to_dict(folder_name)
         
-        target = [fld_to_dict['r'], fld_to_dict['s'], fld_to_dict['d']]
-        
+        target = [fld_to_dict['r'], fld_to_dict['sp'], fld_to_dict['d']]
+        print('target: ', target)
+        print('\n')
+
         print(walk_dir)
         
         df = pd.read_excel( walk_dir+'\\metrics.xlsx', sheet_name=None)
@@ -93,7 +95,7 @@ for walk_dir, sub_dir, files in os.walk(root_dir):
         # break
         # print(dataset)
         # break
-        # if(i==50):
+        # if(i==20):
         #     break     
         
         i = i+1
@@ -101,20 +103,56 @@ for walk_dir, sub_dir, files in os.walk(root_dir):
 
 print('Done!')
 
+
+
 print(max_snapshot)
-columns = []
-for s  in range(max_snapshot):
-    for k in ['Vertices','Edges', 'Degree' ,'Betweenness','Closeness','Page_Rank','Clustering_Coefficient','Eccentricity','Mincut','Edge_betweenness']:
-        columns.append(f's{s}_{k}')
+# columns = []
+# for s  in range(max_snapshot):
+#     for k in ["Degree","Max in-degree","Max out-degree","Betweenness","Closeness","Harmonic distance","Page Rank","Average clustering coefficient","Global clustering coefficient","Edge betweenness","Vertices","Edges","Max in-degree","Max out-degree","Mean degree","Average in-out degree","Average weighted in-out degree","Average in-out disbalance","Unique edges","Diameter","Radius","Density","Average path length","Reciprocity","Average eccentricity","Weakly connected component","Strongly connected component","Power law alpha","Global clustering coefficient","Clustering coefficient","Degree centralization","Betweenness centralization","Closeness centralization","Harmonic distance centralization","Average page rank","Degree assortativity","Homophily by age","Homophily by revenu","Homophily by ville","Homophily by region","Homophily by arrondissement","Homophily by adresse"]
+#         columns.append(f's{s}_{k}')
+gbl_columns = [
+"Vertices",
+"Edges",
+"Max in-degree",
+"Max out-degree",
+"Mean degree",
+"Average in-out degree",
+"Average weighted in-out degree",
+"Average in-out disbalance",
+"Unique edges",
+"Diameter",
+"Radius",
+"Density",
+"Average path length",
+"Reciprocity",
+"Average eccentricity",
+"Weakly connected component",
+"Strongly connected component",
+"Power law alpha",
+"Global clustering coefficient",
+"Clustering coefficient",
+"Degree centralization",
+"Betweenness centralization",
+"Closeness centralization",
+"Harmonic distance centralization",
+"Average page rank",
+"Degree assortativity",
+"Homophily by age",
+"Homophily by revenu",
+"Homophily by ville",
+"Homophily by region",
+"Homophily by arrondissement",
+"Homophily by adresse"]
 
+# gbl_columns =["Vertices", "Edges", "Max in-degree", "Max out-degree", "Mean degree", "Average in-out degree", "Average weighted in-out degree", "Average in-out disbalance", "Unique edges", "Diameter", "Radius", "Density", "Average path length", "Reciprocity", "Average eccentricity", "Weakly connected component", "Strongly connected component", "Power law alpha", "Global clustering coefficient", "Clustering coefficient", "Degree centralization", "Betweenness centralization", "Closeness centralization", "Harmonic distance centralization", "Average page rank", "Degree assortativity", "Homophily by age", "Homophily by revenu", "Homophily by ville", "Homophily by region", "Homophily by arrondissement", "Homophily by adresse"]
 
-gbl_columns = ['Vertices','Edges','Diameter', 'Radius', 'Density', 'Average path lenght', 'Reciprocity', 'Eccentricity', 'Clustering coefficient', 'Edge betweenness']
+# gbl_columns = ['Vertices','Edges','Diameter', 'Radius', 'Density', 'Average path lenght', 'Reciprocity', 'Eccentricity', 'Clustering coefficient', 'Edge betweenness']
 
-all_columns = np.concatenate([gbl_columns, columns , ['target1', 'target2','target3']])
+# all_columns = np.concatenate([gbl_columns, columns , ['target1', 'target2','target3']])
 # all_columns = np.concatenate([gbl_columns, columns ])
 
-print(all_columns.shape, dataset.shape)
+# print(all_columns.shape, dataset.shape)
 
-dataset.columns = all_columns
+# dataset.columns = all_columns
 
 dataset.to_csv('graph_120.csv')
