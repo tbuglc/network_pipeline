@@ -6,7 +6,7 @@ from utils import get_start_and_end_date,  add_sheet_to_xlsx, create_xlsx_file, 
 from graph_loader import load_accorderie_network
 from datetime import date
 from snapshot_generator import create_snapshots
-from metrics import compute_global_properties_on_graph, compute_graph_metrics, compute_average_metrics, global_graph_properties, new_edges_vs_existing_edges, new_nodes_vs_existing_nodes, new_nodes_deg_vs_existing_nodes_deg
+from metrics import compute_global_properties_on_graph, compute_graph_metrics, compute_average_metrics, global_graph_properties
 import argparse
 from pathlib import Path
 from utils import create_folder_if_not_exist, parse_output_dir, global_graph_indices
@@ -29,12 +29,14 @@ def main(span_days, input_dir, output_dir, g=None):
         g = load_accorderie_network(input_dir=input_dir)
     # start test 
 
-    # metric = new_nodes_deg_vs_existing_nodes_deg(g, span_days, start_date, end_date)
+    # metric = weighted_node_novelty(g, span_days, start_date, end_date)
     # print('\n\n EDGES\n\n')
-    metric = new_edges_vs_existing_edges(g, span_days, start_date, end_date)
-    print(metric)
+    # metric = edge_novelty(g, span_days, start_date, end_date)
+    # print(metric)
+    # node_count = degree_threshold(g, 0.5)
+    # print(node_count)
     # end test
-    return  
+    # return  
     dest_dir, file_name = parse_output_dir(output_dir)
 
     create_folder_if_not_exist(dest_dir)
@@ -88,8 +90,8 @@ def main(span_days, input_dir, output_dir, g=None):
     # plot_degree_distribution(
     #     gxa, gya, folder_name=dest_dir+'/graph_degree_distribution', title='Graph degree distribution')
 
-    pdf_degree_distribution(
-        complete_graph=g, snapshots=snapshots, folder_name=dest_dir+'/snapshots_degree_distribution')
+    # pdf_degree_distribution(
+    #     complete_graph=g, snapshots=snapshots, folder_name=dest_dir+'/snapshots_degree_distribution')
 
     columns = [
             'Degree', 
@@ -120,43 +122,43 @@ def main(span_days, input_dir, output_dir, g=None):
     # save file
     save_csv_file(file_writer=file_writer)
 
-    fig, ax = plt.subplots()
+    # fig, ax = plt.subplots()
 
-    # degree_seq = g.degree()
+    # # degree_seq = g.degree()
 
-    xa, ya = zip(*[(int(left), count) for left, _, count in
-                   g.degree_distribution().bins()])
+    # xa, ya = zip(*[(int(left), count) for left, _, count in
+    #                g.degree_distribution().bins()])
 
-    # plot the degree distribution
-    ax.loglog(xa, ya)
-    ax.set_xlabel('Degree')
-    ax.set_ylabel('Count')
-    ax.set_title('Degree Distribution')
+    # # plot the degree distribution
+    # ax.loglog(xa, ya)
+    # ax.set_xlabel('Degree')
+    # ax.set_ylabel('Count')
+    # ax.set_title('Degree Distribution')
 
-    # FIXME: create a reusable block of code below
-    path_dir = ''
-    if '/' in output_dir:
-        path_dir = '/'.join(output_dir.split('/')[0:-1])
-    elif '\\' in output_dir:
-        path_dir = '\\'.join(output_dir.split('\\')[0:-1])
+    # # FIXME: create a reusable block of code below
+    # path_dir = ''
+    # if '/' in output_dir:
+    #     path_dir = '/'.join(output_dir.split('/')[0:-1])
+    # elif '\\' in output_dir:
+    #     path_dir = '\\'.join(output_dir.split('\\')[0:-1])
 
-    fig.savefig(Path(path_dir+'/degree_distribution.pdf'), dpi=300)
-    plt.close()
+    # fig.savefig(Path(path_dir+'/degree_distribution.pdf'), dpi=300)
+    # plt.close()
 
     return
 
 
-# arg_parser = argparse.ArgumentParser()
-# arg_parser.add_argument('-i', '--input', required=True)
-# arg_parser.add_argument('-o', '--output', required=True)
+arg_parser = argparse.ArgumentParser()
+arg_parser.add_argument('-i', '--input', required=True)
+arg_parser.add_argument('-o', '--output', required=True)
 
-# arg_parser.add_argument('-s', '--span', default=30, type=int)
+arg_parser.add_argument('-s', '--span', default=30, type=int)
 
 
-# args = arg_parser.parse_args()
+args = arg_parser.parse_args()
 
-# filters = args.__dict__
-# main(span_days=int(filters['span']),
-#      input_dir=filters['input'], output_dir=filters['output'])
+filters = args.__dict__
+main(span_days=int(filters['span']),
+     input_dir=filters['input'], output_dir=filters['output'])
 
-main(365, 'C:\\Users\\bugl2301\\projects\\school\\network_pipeline\\data\\accorderies\\109', './')
+# main(365, 'C:\\Users\\bugl2301\\projects\\school\\network_pipeline\\data\\accorderies\\109', './')

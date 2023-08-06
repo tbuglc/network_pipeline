@@ -10,14 +10,14 @@ import sys
 
 from datetime import datetime, timedelta
 import os
-graph_filter_path = 'C:\\Users\\bugl2301\\projects\\school\\network_pipeline'
+# graph_filter_path = 'C:\\Users\\bugl2301\\projects\\school\\network_pipeline'
 # graph_common_path = 'C:\\Users\\bugl2301\\projects\\school\\network_pipeline\\graph'
 
-if graph_filter_path not in sys.path:
-    sys.path.append(graph_filter_path)
-    # print(sys.path)
+# if graph_filter_path not in sys.path:
+#     sys.path.append(graph_filter_path)
+#     # print(sys.path)
 
-from graph_filter.filters import perform_filter_on_graph
+from utils import perform_filter_on_graph
 
 def compute_edge_weight_based_on_edge_number(g):
     weights = []
@@ -112,29 +112,31 @@ def centralization(n, d=1, metrics=[], metric_name=''):
     if not metric_name:
         return np.nan
 
-    
-
     if metric_name == 'degree':
         denominator_factor = d*(n-1)*(n-2)
     elif metric_name == 'betweenness':
         denominator_factor = (n - 1)**2 * (n - 2)
     elif metric_name == 'harmonic':
-        denominator_factor = (n -3)/2
+        denominator_factor = d*(n -3)/2
     elif metric_name == 'closeness':
-        denominator_factor = ((n-1)*(n-2))/(2*n - 3)
+        denominator_factor = (d*(n-1)*(n-2))/(2*n - 3)
 
     if not denominator_factor:
         return np.nan
 
-    # print(metrics)
+
     metrics = list(filter(lambda m: m > 0, metrics))
 
+    if len(metrics) == 0:
+        return 0
+   
     max_node = np.max(metrics)
+   
     numerator = (max_node - np.array(metrics))
     total_sum = 0
     for v in metrics:
         diff = (max_node - v)
-        print(diff)
+        # print(diff)
         total_sum += diff
 
     sum_num = np.sum(numerator)
@@ -199,6 +201,8 @@ def global_graph_properties(g=Graph):
 
     weak_size, strong_size = giant_component(g)
 
+    d = np.max(g.count_multiple())
+
     data = [
         g.vcount(),
         g.ecount(),
@@ -223,10 +227,10 @@ def global_graph_properties(g=Graph):
         power_law_alpha(g),
         global_clustering_coefficient(g),
         clustering_coefficient(g, average=True),
-        centralization(n, degree(g, mode='in'), 'degree'),
-        centralization(n, betweenness(g), 'betweenness'),
-        centralization(n, closeness(g), 'closeness'),
-        centralization(n, harmonic(g), 'harmonic'),
+        centralization(n=n, d=d, metrics=degree(g, mode='in'), metric_name='degree'),
+        centralization(n=n, d=d, metrics=betweenness(g), metric_name='betweenness'),
+        centralization(n=n, d=d, metrics=closeness(g), metric_name='closeness'),
+        centralization(n=n, d=d, metrics=harmonic(g), metric_name='harmonic'),
         pagerank(g, average=True, weights=weights),
         degree_assortativity(g),
         homophily_nominal(g, 'age'),
@@ -234,7 +238,7 @@ def global_graph_properties(g=Graph):
         homophily_nominal(g, 'ville'),
         homophily_nominal(g, 'region'),
         homophily_nominal(g, 'arrondissement'),
-        homophily_nominal(g, 'adresse'),
+        homophily_nominal(g, 'address'),
     ]
 
     return data
@@ -506,168 +510,92 @@ def perform_filter(g, start_date, window_date):
 
     return snapshot
 
-# def new_edges_vs_existing_edges(g, sn_size, start_date, end_date):
-#      if len(g.vs) == 0:
-#         return np.nan
-
-#     # start_date = start_date.strftime("%y/%m/%d")
-#     # end_date = end_date.strftime("%y/%m/%d")
-
-#     window_date = start_date + timedelta(sn_size)
 
 
-def new_nodes_vs_existing_nodes(g, sn_size, start_date, end_date):
+def graph_novelty(g, sn_size, start_date, end_date, weighted=False, subset='NODE', degree_mode='all'):
     if len(g.vs) == 0:
         return np.nan
 
-    # start_date = start_date.strftime("%y/%m/%d")
-    # end_date = end_date.strftime("%y/%m/%d")
-
     window_date = start_date + timedelta(sn_size)
 
-    print(g.count_multiple())
-
+    result = []
     total_sum = 0
     while window_date < end_date:
         if window_date - timedelta(sn_size) == start_date:
             window_date = window_date + timedelta(sn_size)
             continue
 
-        # cummulative snapshot subgraph
-        cm_snp_g = perform_filter(
+
+        cummulative_snapshots = perform_filter(
             g,  start_date, window_date - timedelta(sn_size))
-        # current snapshot subgrap
-        cr_snp_g = perform_filter(
+
+        current_snapshot = perform_filter(
             g, window_date - timedelta(sn_size), window_date)
 
-        df_cm = cm_snp_g.get_vertex_dataframe()['id'].unique()
-        df_cr = cr_snp_g.get_vertex_dataframe()['id'].unique()
+        dataframe_cummulative_snapshots = []
+        dataframe_current_snapshot = []
 
-        if len(df_cm) == 0 or len(df_cr) == 0:
-            window_date = window_date + timedelta(sn_size)
-
-            continue
-
-        diff = set(df_cr) - set(df_cm)
-        # print(diff)
-        ratio_diff = len(diff) / len(df_cr)
-        print(ratio_diff)
-        total_sum = total_sum + ratio_diff
-
-        window_date = window_date + timedelta(sn_size)
-
-    norm = (end_date - start_date)/sn_size
-    print('norm: '+str(norm)+' total sum: ' + str(total_sum))
-    result = (1/norm.days)*total_sum
-
-    return result
+        if subset == 'EDGE':
+            dataframe_cummulative_snapshots = cummulative_snapshots.get_edgelist()
+            dataframe_current_snapshot = current_snapshot.get_edgelist()
+        elif subset == 'NODE':
+            dataframe_cummulative_snapshots = cummulative_snapshots.get_vertex_dataframe()['id'].unique()
+            dataframe_current_snapshot = current_snapshot.get_vertex_dataframe()['id'].unique()
+        else:
+            break
 
 
-def new_nodes_deg_vs_existing_nodes_deg(g, sn_size, start_date, end_date):
-    if len(g.vs) == 0:
-        return np.nan
-
-    # start_date = start_date.strftime("%y/%m/%d")
-    # end_date = end_date.strftime("%y/%m/%d")
-
-    window_date = start_date + timedelta(sn_size)
-
-    total_sum = 0
-    while window_date < end_date:
-        if window_date - timedelta(sn_size) == start_date:
-            window_date = window_date + timedelta(sn_size)
-            continue
-
-        # cummulative snapshot subgraph
-        cm_snp_g = perform_filter(
-            g,  start_date, window_date - timedelta(sn_size))
-        # current snapshot subgrap
-        cr_snp_g = perform_filter(
-            g, window_date - timedelta(sn_size), window_date)
-
-        print(cm_snp_g.get_vertex_dataframe().head(10))
-        print(cr_snp_g.get_vertex_dataframe().head(10))
-
-        df_cm = cm_snp_g.get_vertex_dataframe()['id'].unique()
-        df_cr = cr_snp_g.get_vertex_dataframe()['id'].unique()
-
-        if len(df_cm) == 0 or len(df_cr) == 0:
+        if len(dataframe_cummulative_snapshots) == 0 or len(dataframe_current_snapshot) == 0:
             window_date = window_date + timedelta(sn_size)
 
             continue
        
         
-        diff = set(df_cr).difference(set(df_cm))
+        diff = set(dataframe_current_snapshot) - (set(dataframe_cummulative_snapshots))
         
-        # print(diff)
+        ratio_diff = 0
 
-        # deg =cr_snp_g.degree(list(diff), mode='in')
+        if weighted and subset == 'NODE':
+            diff_g = current_snapshot.vs.select(id_in=diff)
+            ratio_diff = np.sum(diff_g.degree(mode=degree_mode)) / np.sum(current_snapshot.degree(mode=degree_mode))
+        else:
+             ratio_diff = len(diff) / len(dataframe_current_snapshot)
 
-        diff_g = cr_snp_g.vs.select(id_in=diff)
+        # result.append((window_date.strftime("%d/%m/%y"), ratio_diff))
+        result.append(ratio_diff)
 
-        
-
-        print(diff_g.degree(mode='in'))
-        # get node by thier ids
-
-        ratio_diff = np.sum(diff_g.degree(mode='in')) / \
-            np.sum(cr_snp_g.degree(mode='in'))
-        print(ratio_diff)
         total_sum = total_sum + ratio_diff
 
         window_date = window_date + timedelta(sn_size)
 
     norm = (end_date - start_date)/sn_size
-    print('norm: '+str(norm)+' total sum: ' + str(total_sum))
-    result = (1/norm.days)*total_sum
+   
+    average = (1/norm.days)*total_sum
 
-    return result
+    return average, sn_size, result
 
 
-def new_edges_vs_existing_edges(g, sn_size, start_date, end_date):
-    if len(g.vs) == 0:
-        return np.nan
+def super_stars_count(g, threshold=.5, mode='all'):
 
-    # start_date = start_date.strftime("%y/%m/%d")
-    # end_date = end_date.strftime("%y/%m/%d")
+    degree_seq = g.degree(mode=mode)
+    degree_seq.sort(reverse=True)
 
-    window_date = start_date + timedelta(sn_size)
+    degree_total = np.sum(degree_seq)
+    
+    node_sum = 0
+    node_count = 0
 
-    total_sum = 0
-    while window_date < end_date:
-        if window_date - timedelta(sn_size) == start_date:
-            window_date = window_date + timedelta(sn_size)
-            continue
+    result = []
 
-        # cummulative snapshot subgraph
-        cm_snp_g = perform_filter(
-            g,  start_date, window_date - timedelta(sn_size))
-        # current snapshot subgrap
-        cr_snp_g = perform_filter(
-            g, window_date - timedelta(sn_size), window_date)
+    for max_deg in degree_seq:
+        node_sum += max_deg
+        
+        node_count+=1
 
-        df_cm = cm_snp_g.get_edgelist()
-        df_cr = cr_snp_g.get_edgelist()
-
-        diff = set(df_cr) - set(df_cm)
-
-        print('cummulative ,diff, curr: '+str(len(df_cm)) +
-              '|'+str(len(diff)) + '|' + str(len(df_cr)))
-
-        # if len(df_cr) == 0:
-        #     window_date = window_date + timedelta(sn_size)
-
-        #     continue
-
-        ratio_diff = len(diff) / len(df_cr)
-
-        print(ratio_diff)
-        total_sum = total_sum + ratio_diff
-
-        window_date = window_date + timedelta(sn_size)
-
-    norm = (end_date - start_date)/sn_size
-    print('norm: '+str(norm)+' total sum: ' + str(total_sum))
-    result = (1/norm.days)*total_sum
-
+        ratio = node_sum / degree_total
+        result.append(max_deg/degree_total)
+        # print(str(degree_total) +" - "+ str(node_sum) +" - "+ str(node_count) +" - "+ str(ratio) + " - "+ str(threshold))
+        if ratio > threshold:
+            break
+    
     return result

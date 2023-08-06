@@ -108,3 +108,85 @@ for group_name in groups:
 
 
 
+
+
+
+# def node_novelty(g, sn_size, start_date, end_date):
+#     if len(g.vs) == 0:
+#         return np.nan
+
+
+#     window_date = start_date + timedelta(sn_size)
+
+
+#     total_sum = 0
+#     while window_date < end_date:
+#         if window_date - timedelta(sn_size) == start_date:
+#             window_date = window_date + timedelta(sn_size)
+#             continue
+
+#         # cummulative snapshot subgraph
+#         cm_snp_g = perform_filter(
+#             g,  start_date, window_date - timedelta(sn_size))
+#         # current snapshot subgrap
+#         cr_snp_g = perform_filter(
+#             g, window_date - timedelta(sn_size), window_date)
+
+#         df_cm = cm_snp_g.get_vertex_dataframe()['id'].unique()
+#         df_cr = cr_snp_g.get_vertex_dataframe()['id'].unique()
+
+#         if len(df_cm) == 0 or len(df_cr) == 0:
+#             window_date = window_date + timedelta(sn_size)
+
+#             continue
+
+#         diff = set(df_cr) - set(df_cm)
+       
+#         ratio_diff = len(diff) / len(df_cr)
+       
+#         total_sum = total_sum + ratio_diff
+
+#         window_date = window_date + timedelta(sn_size)
+
+#     norm = (end_date - start_date)/sn_size
+    
+#     result = (1/norm.days)*total_sum
+
+#     return result
+
+
+# def edge_novelty(g, sn_size, start_date, end_date):
+#     if len(g.vs) == 0:
+#         return np.nan
+
+#     window_date = start_date + timedelta(sn_size)
+
+#     total_sum = 0
+#     while window_date < end_date:
+#         if window_date - timedelta(sn_size) == start_date:
+#             window_date = window_date + timedelta(sn_size)
+#             continue
+
+#         # cummulative snapshot subgraph
+#         cm_snp_g = perform_filter(
+#             g,  start_date, window_date - timedelta(sn_size))
+#         # current snapshot subgrap
+#         cr_snp_g = perform_filter(
+#             g, window_date - timedelta(sn_size), window_date)
+
+#         df_cm = cm_snp_g.get_edgelist()
+#         df_cr = cr_snp_g.get_edgelist()
+
+#         diff = set(df_cr) - set(df_cm)
+
+#         ratio_diff = len(diff) / len(df_cr)
+
+#         total_sum = total_sum + ratio_diff
+
+#         window_date = window_date + timedelta(sn_size)
+
+#     norm = (end_date - start_date)/sn_size
+  
+#     result = ( 1/ norm.days ) * total_sum
+
+#     return result
