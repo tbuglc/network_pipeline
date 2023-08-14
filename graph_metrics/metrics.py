@@ -397,6 +397,7 @@ def get_avg_in_out_degree(g):
     except Exception as e:
         print('WARNING: Divide by zero error')
 
+    # print(f'get_avg_in_out_degree: {result}')
     return result
 
 
@@ -431,6 +432,7 @@ def get_avg_weighted_in_out_degree(g, field_name='duree'):
     except Exception as e:
         print('WARNING: Divide by zero error')
 
+    # print(f'get_avg_weighted_in_out_degree: {result}')
     return result
 
 
@@ -457,6 +459,8 @@ def get_avg_in_out_disbalance(g):
         result = disbalance_sum / (len(g.vs) - nb_isolated)
     except Exception as e:
         print('WARNING: Divide by zero error')
+
+    # print(f'get_avg_in_out_disbalance: {result}')
 
     return result
 
@@ -545,15 +549,22 @@ def graph_novelty(g, sn_size, start_date, end_date, weighted=False, subset='NODE
             break
 
 
+        ratio_diff = 0
+
         if len(dataframe_cummulative_snapshots) == 0 or len(dataframe_current_snapshot) == 0:
             window_date = window_date + timedelta(sn_size)
+            result.append((window_date.strftime("%Y/%m/%d"), ratio_diff))
 
             continue
        
-        
+        # print('current snapshot', dataframe_current_snapshot)
+        # print('cummulative snapshot', dataframe_cummulative_snapshots)
+
         diff = set(dataframe_current_snapshot) - (set(dataframe_cummulative_snapshots))
+        # print('====')
+        # print(len(dataframe_current_snapshot), len(dataframe_cummulative_snapshots), len(diff))
+        # print('diff', diff)
         
-        ratio_diff = 0
 
         if weighted and subset == 'NODE':
             diff_g = current_snapshot.vs.select(id_in=diff)
@@ -561,8 +572,7 @@ def graph_novelty(g, sn_size, start_date, end_date, weighted=False, subset='NODE
         else:
              ratio_diff = len(diff) / len(dataframe_current_snapshot)
 
-        # result.append((window_date.strftime("%d/%m/%y"), ratio_diff))
-        result.append(ratio_diff)
+        result.append((window_date.strftime("%Y/%m/%d"), ratio_diff))
 
         total_sum = total_sum + ratio_diff
 
@@ -577,6 +587,7 @@ def graph_novelty(g, sn_size, start_date, end_date, weighted=False, subset='NODE
 
 def super_stars_count(g, threshold=.5, mode='all'):
 
+    node_total = len(g.vs)
     degree_seq = g.degree(mode=mode)
     degree_seq.sort(reverse=True)
 
@@ -597,5 +608,9 @@ def super_stars_count(g, threshold=.5, mode='all'):
         # print(str(degree_total) +" - "+ str(node_sum) +" - "+ str(node_count) +" - "+ str(ratio) + " - "+ str(threshold))
         if ratio > threshold:
             break
-    
-    return result
+    # if mode =='in':
+    #     print('in super star count')
+    #     print(degree_total)
+    #     print(degree_seq)  
+    # print(result)
+    return node_total, node_count, result
