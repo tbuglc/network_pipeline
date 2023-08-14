@@ -14,6 +14,8 @@ import numpy as np
 from math import ceil
 from matplotlib.backends.backend_pdf import PdfPages
 from dateutil import parser
+import igraph as ig
+from matplotlib.colors import Normalize, to_hex
 
 
 def compute_bias_metrics(input_dir_path, net_ids=[], s_date='', e_date='', snapshot_size = 365, super_star_threshold=.5):
@@ -40,6 +42,7 @@ def compute_bias_metrics(input_dir_path, net_ids=[], s_date='', e_date='', snaps
     result["Super Stars Sum"] = {"plt": "bar_label", "data": [], "scale": []}
     result["Super Stars In-deg"] = {"plt": "bar_label", "data": [], "scale": []}
     result["Super Stars Out-deg"] = {"plt": "bar_label", "data": [], "scale": []}
+    result["Node Attribute Distances"] = {"plt": "graph", "data": [], "scale": []}
 
     start_date = None
     end_date = None
@@ -80,11 +83,11 @@ def compute_bias_metrics(input_dir_path, net_ids=[], s_date='', e_date='', snaps
             g = load_accorderie_network(os.path.join(input_dir_path, fd))
             
 
-            ress = node_attribute_variance(g)
+            # ress = node_attribute_variance(g)
 
-            print(ress)
+            # print(ress)
 
-            return
+            # return
             # TODO: REMOVE
             # 
             print('\nNode Novelty')
@@ -116,7 +119,7 @@ def compute_bias_metrics(input_dir_path, net_ids=[], s_date='', e_date='', snaps
             result['Super Stars Sum']["data"].append(super_star_sum)
             result['Super Stars In-deg']["data"].append(super_star_in)
             result['Super Stars Out-deg']["data"].append(super_star_out)
-
+            result["Node Attribute Distances"]["data"].append(node_attribute_variance(g))
         except Exception as e:
             print(e)
             break
@@ -194,7 +197,35 @@ def bias_report(metrics_data):
 
                 plt.ylabel('Proportion')
                 plt.xlabel('Accorderies')
-                
+            elif plt_key == 'graph':
+                ax = None
+                if len(data) > 1:
+                    _, ax = plt.subplots(ceil(len(data) /2) ,2)
+                else:
+                    _, ax = plt.subplots()
+                axes = ax.flatten()
+
+                for idx, gd in enumerate(data):
+                    layout = gd.layout('fr')
+                    edge_weights = gd.es["weight"]
+                    norm = Normalize(vmin=min(edge_weights), vmax=max(edge_weights))
+
+                    # Create a colormap from the normalized edge weights
+                    cmap = plt.cm.viridis
+
+                    # Map normalized edge weights to colors in the colormap
+                    edge_colors = [to_hex(cmap(norm(weight))) for weight in edge_weights]
+
+                    
+                    ig.plot(
+                        gd,
+                        target=axes[idx],
+                        vertex_label=gd.vs['name'],
+                        edge_width=np.array(gd.es['weight']) * 10,
+                         edge_color=edge_colors, 
+                        layout=layout
+                    )
+
             plt.tight_layout()
             pdf.savefig()
             plt.close()
@@ -226,7 +257,7 @@ all_accorderies = {
 #     for sh in ['109']:
 res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/2015', net_ids=['109', '112'], snapshot_size = 365, super_star_threshold=.5)
 
-# bias_report(res)
+bias_report(res)
 
 
 
