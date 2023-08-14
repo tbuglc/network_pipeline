@@ -5,7 +5,7 @@ import json
 from graph_loader import data_loader, load_accorderie_network
 from snapshot_generator import create_snapshots
 from utils import get_start_and_end_date,  add_sheet_to_xlsx, create_xlsx_file, save_csv_file, accorderies
-from metrics import graph_novelty, super_stars_count, get_avg_in_out_degree, get_avg_in_out_disbalance, get_avg_weighted_in_out_degree, get_unique_edges_vs_total
+from metrics import graph_novelty, super_stars_count, get_avg_in_out_degree, get_avg_in_out_disbalance, get_avg_weighted_in_out_degree, get_unique_edges_vs_total, node_attribute_variance
 # accept input folder
 from collections import OrderedDict
 from matplotlib.backends.backend_pdf import PdfPages
@@ -16,6 +16,223 @@ from matplotlib.backends.backend_pdf import PdfPages
 from dateutil import parser
 
 
+def compute_bias_metrics(input_dir_path, net_ids=[], s_date='', e_date='', snapshot_size = 365, super_star_threshold=.5):
+    '''
+        net_ids: serves as a filter
+    '''    
+    result = OrderedDict()
+    result["metadata"] = {}
+
+    prob_scale = np.arange(0,1.1,0.1)
+    result["metadata"]["snapshot_size"] = snapshot_size
+    result["metadata"]["super_star_threshold"] = super_star_threshold
+    result["metadata"]["accorderies"] = []
+    result["metadata"]["dates"] = {} # key: accorderie, value is an array of start and end date
+  
+    result["Node Novelty"] = {"plt": "plot", "data": [], "scale": prob_scale}
+    result["Edge Novelty"] = {"plt": "plot", "data": [], "scale": prob_scale}
+    result["Weighted Node Novelty"] = {"plt": "plot", "data": [], "scale": prob_scale}
+    result["In-Out Degree"] = {"plt": "bar", "data": [], "scale": prob_scale}
+    result["In-Out Weigthed(hours) Degree"] = {"plt": "bar", "data": [], "scale": prob_scale}
+    result["Disbalance"] = {"plt": "bar", "data": [], "scale": prob_scale[5:]}
+    result["Unique Edges"] = {"plt": "bar", "data": [], "scale": []}
+
+    result["Super Stars Sum"] = {"plt": "bar_label", "data": [], "scale": []}
+    result["Super Stars In-deg"] = {"plt": "bar_label", "data": [], "scale": []}
+    result["Super Stars Out-deg"] = {"plt": "bar_label", "data": [], "scale": []}
+
+    start_date = None
+    end_date = None
+
+    folders = os.listdir(input_dir_path)
+    
+    for fd in folders:
+
+        if len(net_ids) > 0 and fd not in net_ids:
+            # skip network not in net_ids
+            continue
+            
+        if s_date and not e_date:
+            start_date =  parser.parse(s_date)
+            _ , end_date = get_start_and_end_date(input_dir=os.path.join(input_dir_path, fd))
+        elif e_date and not s_date:
+            end_date =  parser.parse(e_date)
+            start_date, _ = get_start_and_end_date(input_dir=os.path.join(input_dir_path, fd))
+        elif not s_date and not e_date:
+            start_date, end_date = get_start_and_end_date(input_dir=os.path.join(input_dir_path, fd))
+        elif s_date and e_date:
+            start_date =  parser.parse(s_date)
+            end_date =  parser.parse(e_date)
+        else:
+            print('Nothing')
+            return 
+
+        accorderie_name  = accorderies[int(fd)]
+    
+        print(f"Name: {accorderie_name}, date: {start_date} - {end_date}")
+
+
+        result["metadata"]["accorderies"].append(accorderie_name)
+        result["metadata"]["dates"][accorderie_name] = [start_date, end_date]
+
+        try:
+            
+            g = load_accorderie_network(os.path.join(input_dir_path, fd))
+            
+
+            ress = node_attribute_variance(g)
+
+            print(ress)
+
+            return
+            # TODO: REMOVE
+            # 
+            print('\nNode Novelty')
+            _, _, node_novelty = graph_novelty(g, sn_size=snapshot_size, start_date=start_date, end_date=end_date)
+            print('\nEdge Novelty')
+            _, _, edge_novelty = graph_novelty(g, sn_size=snapshot_size, start_date=start_date, end_date=end_date, subset='EDGE')
+
+            print('\nWeighted Node Novelty')
+            _, _, weighted_node_novelty = graph_novelty(g, sn_size=snapshot_size, start_date=start_date, end_date=end_date, weighted=True)
+
+            print('Super Start Sum')
+            super_star_sum = super_stars_count(g, super_star_threshold, mode='all')
+            print('Super Start In')
+            super_star_in = super_stars_count(g, super_star_threshold, mode='in')
+            print('Super Start Out')
+            super_star_out = super_stars_count(g, super_star_threshold, mode='out')
+
+
+            result['Node Novelty']["data"].append(node_novelty)
+            result['Edge Novelty']["data"].append(edge_novelty)
+            result['Weighted Node Novelty']["data"].append(weighted_node_novelty)
+
+            print('Average In-Out, Duree Average In-Out, Disbalance, Unique Edges')
+            result["In-Out Degree"]["data"].append(get_avg_in_out_degree(g=g))
+            result["In-Out Weigthed(hours) Degree"]["data"].append(get_avg_in_out_disbalance(g=g) )
+            result["Disbalance"]["data"].append(get_avg_weighted_in_out_degree(g=g) )
+            result["Unique Edges"]["data"].append(get_unique_edges_vs_total(g=g))
+
+            result['Super Stars Sum']["data"].append(super_star_sum)
+            result['Super Stars In-deg']["data"].append(super_star_in)
+            result['Super Stars Out-deg']["data"].append(super_star_out)
+
+        except Exception as e:
+            print(e)
+            break
+    return result
+
+
+def bias_report(metrics_data):
+    if not metrics_data:
+        return 
+    
+    accorderies = metrics_data['metadata']["accorderies"]
+    report_name = '_'.join(accorderies).lower()
+    
+    with PdfPages(f'new_{report_name}_bias_report.pdf') as pdf:
+        for key in metrics_data:
+
+            if key == 'metadata':
+                continue
+
+            print(f'Key: {key}')
+            plt_key = metrics_data[key]["plt"]
+
+            data = metrics_data[key]["data"]
+            # scale = metrics_data[key]["scale"]
+
+            # _key = key.lower()
+
+            width = 0.5  # the width of the bars: can also be len(x) sequence
+            
+            plt.title(key)
+
+            if plt_key == 'plot':
+                for idx, d in enumerate(data):
+                    labels = [k[0] for k in d ]  
+                    X = [k[1] for k in d ]  
+                   
+                    X_label = np.arange(len(d)) 
+                    plt.plot(X_label, X, label=accorderies[idx])
+                    
+                    tick_positions = np.arange(0, 1.1, 0.1)
+                    plt.yticks(tick_positions)
+                    plt.xticks(X_label, labels=labels, rotation=45, ha='right')
+                plt.legend()
+            elif plt_key == 'bar_label':
+                ax = None
+                if len(data) > 1:
+                    _, ax = plt.subplots(ceil(len(data) /2) ,2)
+                else:
+                    _, ax = plt.subplots()
+                axes = ax.flatten()
+
+                for idx, (total, count, result) in enumerate(data):
+                    title = f'#nodes={count}, total={total}'
+                    axes[idx].bar(np.arange(len(result)) + 1,result)
+                    axes[idx].set_yticks(np.arange(0,1.1, 0.1))
+                    if len(result) < 5:
+                        axes[idx].set_xticks(np.arange(len(result)) + 1)
+
+                    axes[idx].set_title(f'{accorderies[idx]}\n{key}')
+                    axes[idx].set_xlabel(title)
+                    axes[idx].set_ylabel('Proportion')
+            
+            elif plt_key == 'bar':
+                for i,d in enumerate(data):
+                    X = np.arange(len([d]))
+                    X_new = X + (i - 1) * width
+                    
+                    plt.bar(X_new ,[d], width=width, label=accorderies[i])
+
+                tick_positions = np.arange(0, 1.1, 0.1)
+
+                plt.yticks(tick_positions)
+                x_ticks_pos = np.arange(-width, len(data), width)
+                plt.xticks(x_ticks_pos[:len(accorderies) ], accorderies)
+
+                plt.ylabel('Proportion')
+                plt.xlabel('Accorderies')
+                
+            plt.tight_layout()
+            pdf.savefig()
+            plt.close()
+
+all_accorderies = {
+    2: "Québec",
+    121: "Yukon",
+    117: "La Manicouagan",
+    86: "Trois-Rivières",
+    88: "Mercier-Hochelaga-M.",
+    92: "Shawinigan",
+    113: "Montréal-Nord secteur Nord-Est",
+    111: "Portneuf",
+    104: "Montréal-Nord",
+    108: "Rimouski-Neigette",
+    109: "Sherbrooke",
+    110: "La Matanie",
+    112: "Granit",
+    114: "Rosemont",
+    115: "Longueuil",
+    116: "Réseau Accorderie (du Qc)",
+    118: "La Matapédia",
+    119: "Grand Gaspé",
+    120: "Granby et région",
+}
+
+# for ac in all_accorderies:
+#     # print(ac)
+#     for sh in ['109']:
+res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/2015', net_ids=['109', '112'], snapshot_size = 365, super_star_threshold=.5)
+
+# bias_report(res)
+
+
+
+
+
+# print(res['In-Out Weigthed(hours) Degree'])
 
 # def compute_bias_metrics_per_page(input_dir_path, s_date='', e_date='', net_ids=[],  snapshot_size = 365, super_star_threshold=.5):
 #     '''
@@ -289,260 +506,6 @@ from dateutil import parser
             
 #             pdf.savefig()
 #             plt.close()
-
-
-
-def compute_bias_metrics(input_dir_path, net_ids=[], s_date='', e_date='', snapshot_size = 365, super_star_threshold=.5):
-    '''
-        net_ids: serves as a filter
-    '''    
-    result = OrderedDict()
-    result["metadata"] = {}
-
-    prob_scale = np.arange(0,1.1,0.1)
-    result["metadata"]["snapshot_size"] = snapshot_size
-    result["metadata"]["super_star_threshold"] = super_star_threshold
-    result["metadata"]["accorderies"] = []
-    result["metadata"]["dates"] = {} # key: accorderie, value is an array of start and end date
-  
-    result["Node Novelty"] = {"plt": "plot", "data": [], "scale": prob_scale}
-    result["Edge Novelty"] = {"plt": "plot", "data": [], "scale": prob_scale}
-    result["Weighted Node Novelty"] = {"plt": "plot", "data": [], "scale": prob_scale}
-    # result["Global Metrics"] = {"plt": "bar", "data": [], "scale": []}
-    result["In-Out Degree"] = {"plt": "bar", "data": [], "scale": prob_scale}
-    result["In-Out Weigthed(hours) Degree"] = {"plt": "bar", "data": [], "scale": prob_scale}
-    result["Disbalance"] = {"plt": "bar", "data": [], "scale": prob_scale[5:]}
-    result["Unique Edges"] = {"plt": "bar", "data": [], "scale": []}
-
-    result["Super Stars Sum"] = {"plt": "bar_label", "data": [], "scale": []}
-    result["Super Stars In-deg"] = {"plt": "bar_label", "data": [], "scale": []}
-    result["Super Stars Out-deg"] = {"plt": "bar_label", "data": [], "scale": []}
-
-    start_date = None
-    end_date = None
-
-    folders = os.listdir(input_dir_path)
-    
-    for fd in folders:
-
-        if len(net_ids) > 0 and fd not in net_ids:
-            # skip network not in net_ids
-            continue
-            
-        if s_date and not e_date:
-            # print('start date only', s_date)
-            # print('end', e_date)
-            start_date =  parser.parse(s_date)
-            _ , end_date = get_start_and_end_date(input_dir=os.path.join(input_dir_path, fd))
-        elif e_date and not s_date:
-            # print('end date only')
-
-            end_date =  parser.parse(e_date)
-            start_date, _ = get_start_and_end_date(input_dir=os.path.join(input_dir_path, fd))
-        elif not s_date and not e_date:
-            # print('not both date only')
-            start_date, end_date = get_start_and_end_date(input_dir=os.path.join(input_dir_path, fd))
-        elif s_date and e_date:
-            # print('both', start_date, end_date)
-            start_date =  parser.parse(s_date)
-            end_date =  parser.parse(e_date)
-
-        else:
-            print('Nothing')
-            return 
-
-        accorderie_name  = accorderies[int(fd)]
-    
-        print(f"Name: {accorderie_name}, date: {start_date} - {end_date}")
-
-
-        result["metadata"]["accorderies"].append(accorderie_name)
-        result["metadata"]["dates"][accorderie_name] = [start_date, end_date]
-
-        try:
-            
-            g = load_accorderie_network(os.path.join(input_dir_path, fd))
-            
-            print('\nNode Novelty')
-            _, sn_size, node_novelty = graph_novelty(g, sn_size=snapshot_size, start_date=start_date, end_date=end_date)
-            print('\nEdge Novelty')
-            _, sn_size, edge_novelty = graph_novelty(g, sn_size=snapshot_size, start_date=start_date, end_date=end_date, subset='EDGE')
-
-            print('\nWeighted Node Novelty')
-            _, sn_size, weighted_node_novelty = graph_novelty(g, sn_size=snapshot_size, start_date=start_date, end_date=end_date, weighted=True)
-
-            print('Super Start Sum')
-            super_star_sum = super_stars_count(g, super_star_threshold, mode='all')
-            print('Super Start In')
-            super_star_in = super_stars_count(g, super_star_threshold, mode='in')
-            print('Super Start Out')
-            super_star_out = super_stars_count(g, super_star_threshold, mode='out')
-
-
-            result['Node Novelty']["data"].append(node_novelty)
-            result['Edge Novelty']["data"].append(edge_novelty)
-            result['Weighted Node Novelty']["data"].append(weighted_node_novelty)
-
-            print('Average In-Out, Duree Average In-Out, Disbalance, Unique Edges')
-            result["In-Out Degree"]["data"].append(get_avg_in_out_degree(g=g))
-            result["In-Out Weigthed(hours) Degree"]["data"].append(get_avg_in_out_disbalance(g=g) )
-            result["Disbalance"]["data"].append(get_avg_weighted_in_out_degree(g=g) )
-            result["Unique Edges"]["data"].append(get_unique_edges_vs_total(g=g))
-
-            result['Super Stars Sum']["data"].append(super_star_sum)
-            result['Super Stars In-deg']["data"].append(super_star_in)
-            result['Super Stars Out-deg']["data"].append(super_star_out)
-
-        except Exception as e:
-            print(e)
-            break
-    return result
-
-
-
-def bias_report(metrics_data):
-
-    if not metrics_data:
-        return 
-    
-    accorderies = metrics_data['metadata']["accorderies"]
-
-    report_name = '_'.join(accorderies).lower()
-    
-    
-    with PdfPages(f'new_{report_name}_bias_report.pdf') as pdf:
-        for key in metrics_data:
-
-            if key == 'metadata':
-                continue
-
-            print(f'Key: {key}')
-            plt_key = metrics_data[key]["plt"]
-
-            data = metrics_data[key]["data"]
-            scale = metrics_data[key]["scale"]
-
-            _key = key.lower()
-            # target = getattr(plt, plt_key)
-            width = 0.5  # the width of the bars: can also be len(x) sequence
-            
-            plt.title(key)
-            print(key)
-            print(data)
-            print('\n\n\n')
-            if plt_key == 'plot':
-                for idx, d in enumerate(data):
-                    labels = [k[0] for k in d ]  
-                    X = [k[1] for k in d ]  
-                   
-                    X_label = np.arange(len(d)) 
-                    plt.plot(X_label, X, label=accorderies[idx])
-                    
-                    tick_positions = np.arange(0, 1.1, 0.1)
-                    plt.yticks(tick_positions)
-                    plt.xticks(X_label, labels=labels, rotation=45, ha='right')
-                plt.legend()
-                
-
-            elif plt_key == 'bar_label':
-                
-                fig = None 
-                ax = None
-
-                if len(data) > 1:
-                    fig, ax = plt.subplots(ceil(len(data) /2) ,2)
-                else:
-                    fig, ax = plt.subplots()
-                
-                axes = ax.flatten()
-
-                for idx, (total, count, result) in enumerate(data):
-                    title = f'#nodes={count}, total={total}'
-
-                    axes[idx].bar(np.arange(len(result)) + 1,result)
-                    axes[idx].set_yticks(np.arange(0,1.1, 0.1))
-                    if len(result) < 5:
-                        axes[idx].set_xticks(np.arange(len(result)) + 1)
-                        
-                    axes[idx].set_title(f'{accorderies[idx]}\n{key}')
-                    axes[idx].set_xlabel(title)
-                    axes[idx].set_ylabel('Proportion')
-                    
-                # get caterogies for 
-                # X = []
-                # labels = []
-
-                # for d in data:
-                #     total, count, result = d
-                #     labels.append(f'{count}/{total}')
-                #     X.append(result)
-
-
-                # X = {idx: value for idx, value in enumerate(d)}
-                # # fig, ax = plt.subplots()
-                # bottom = np.zeros(3)
-
-                # for node, node_count in X.items():
-                #     p = plt.bar(labels, node_count, width, label=node, bottom=bottom)
-                #     bottom += node_count
-
-                #     plt.bar_label(p, label_type='center')
-
-                # plt.title('Number of penguins by node')
-            
-            elif plt_key == 'bar':
-                for i,d in enumerate(data):
-                    X = np.arange(len([d]))
-                    X_new = X + (i - 1) * width
-                    
-                    plt.bar(X_new ,[d], width=width, label=accorderies[i])
-                    # plt.xticks(X_new, X_ticks)
-                tick_positions = np.arange(0, 1.1, 0.1)
-                    # if 'disbalance' in _key:
-                    #     tick_positions = np.arange(0.5, 1.1, 0.1)
-                plt.yticks(tick_positions)
-                x_ticks_pos = np.arange(-width, len(data), width)
-                plt.xticks(x_ticks_pos[:len(accorderies) ], accorderies)
-
-                plt.ylabel('Proportion')
-                plt.xlabel('Accorderies')
-                
-            plt.tight_layout()
-            pdf.savefig()
-            plt.close()
-
-
-all_accorderies = {
-    2: "Québec",
-    121: "Yukon",
-    117: "La Manicouagan",
-    86: "Trois-Rivières",
-    88: "Mercier-Hochelaga-M.",
-    92: "Shawinigan",
-    113: "Montréal-Nord secteur Nord-Est",
-    111: "Portneuf",
-    104: "Montréal-Nord",
-    108: "Rimouski-Neigette",
-    109: "Sherbrooke",
-    110: "La Matanie",
-    112: "Granit",
-    114: "Rosemont",
-    115: "Longueuil",
-    116: "Réseau Accorderie (du Qc)",
-    118: "La Matapédia",
-    119: "Grand Gaspé",
-    120: "Granby et région",
-}
-
-# for ac in all_accorderies:
-#     # print(ac)
-#     for sh in ['109']:
-res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/2015', net_ids=['109', '112'], snapshot_size = 365, super_star_threshold=.5)
-
-# print(res['In-Out Weigthed(hours) Degree'])
-bias_report(res)
-
-
 
 
 # idx = None

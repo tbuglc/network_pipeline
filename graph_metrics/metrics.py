@@ -1,12 +1,13 @@
 
 from numpy import mean
-from igraph import Graph
+from igraph import Graph, plot
 import pandas as pd
 import numpy as np
 import powerlaw as pl
 from utils import global_graph_indices
 from dateutil import parser
 import sys
+from matplotlib.backends.backend_pdf import PdfPages
 
 from datetime import datetime, timedelta
 import os
@@ -614,3 +615,105 @@ def super_stars_count(g, threshold=.5, mode='all'):
     #     print(degree_seq)  
     # print(result)
     return node_total, node_count, result
+
+def euclidean_distance(vector1, vector2):
+    squared_diff = (vector1 - vector2) ** 2
+    sum_squared_diff = np.sum(squared_diff)
+    return np.sqrt(sum_squared_diff/len(vector1))
+
+def node_attribute_variance(g):
+    # age,genre,revenu,ville,region,arrondissement,adresse
+    # detailservice
+    result = []
+    
+    for node in g.vs:
+        age_count = 0
+        genre_count = 0
+        revenu_count = 0
+        ville_count = 0
+        region_count = 0
+        arrondissement_count = 0
+        addresse_count = 0
+
+        neighbors = g.neighbors(node)
+        
+        total_neighbor = len(neighbors)
+
+        for neighbor_idx in neighbors:
+            neighbor = g.vs[neighbor_idx]
+            
+            # print(node, neighbor)
+            if neighbor['age'] == node['age']:
+                # print('incrementing age')
+                age_count+=1
+            if neighbor['genre'] == node['genre']:
+                # print('incrementing genre')
+                genre_count+=1
+            if neighbor['revenu'] == node['revenu']:
+                # print('incrementing revenu')
+                revenu_count+=1
+            if neighbor['ville'] == node['ville']:
+                # print('incrementing ville')
+                ville_count+=1
+            if neighbor['region'] == node['region']:
+                # print('incrementing region')
+                region_count+=1
+            if neighbor['arrondissement'] == node['arrondissement']:
+                # print('incrementing arrondissement')
+                arrondissement_count+=1
+            if neighbor['adresse'] == node['adresse']:
+                # print('incrementing adresse')
+                addresse_count+=1
+        
+        result.append([
+            age_count/total_neighbor, 
+            genre_count/total_neighbor, 
+            revenu_count/total_neighbor, 
+            ville_count/total_neighbor, 
+            region_count/total_neighbor,
+            arrondissement_count/total_neighbor,
+            addresse_count/total_neighbor
+        ])
+    
+    
+    result = np.array(result)
+
+    num_columns = result.shape[1]
+
+    distances = []
+    for i in range(num_columns):
+        row= []
+        for j in range(num_columns):
+            distance = euclidean_distance(result[:, i], result[:,j])
+            # print(f"Euclidean distance between rows {i} and {j}: {distance:.2f}")
+
+            row.append(distance)
+        distances.append(row)
+    
+    # construct an igraph 
+    # print(np.array(distances)) 
+    # Vertex attribute names
+    attribute_names = ['age', 'genre', 'revenu', 'ville', 'region', 'arrondissement', 'adresse']
+
+    gd = Graph()
+
+    # Add vertices to the graph
+    num_vertices = len(distances)
+    gd.add_vertices(num_vertices)
+    gd.vs['name'] = attribute_names
+    # Add edges to the graph based on the adjacency matrix
+    for i in range(num_vertices):
+        for j in range(i + 1, num_vertices):
+            if distances[i][j] != 0:
+                gd.add_edge(i, j, weight=distances[i][j])
+
+    # Print the graph summary
+    layout = gd.layout("fr")  # Fruchterman-Reingold layout
+    # plot(gd, layout=layout, vertex_label=gd.vs["name"], vertex_label_color="black", edge_label=gd.es["weight"])
+    # plot.show()
+    # layout = g.layout("fr")  # Fruchterman-Reingold layout
+    visual_style = {}
+    visual_style["vertex_label"] = gd.vs["name"]  # Using "adresse" attribute for vertex labels
+    visual_style["vertex_label_color"] = "black"
+    visual_style["edge_label"] = gd.es["weight"]  # Using "weight" attribute for edge labels
+    plot(gd, target="plot.png", layout=layout, **visual_style)
