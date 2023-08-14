@@ -707,13 +707,14 @@ def node_attribute_variance(g):
             if distances[i][j] != 0:
                 gd.add_edge(i, j, weight=distances[i][j])
 
+    return gd
     # Print the graph summary
-    layout = gd.layout("fr")  # Fruchterman-Reingold layout
-    # plot(gd, layout=layout, vertex_label=gd.vs["name"], vertex_label_color="black", edge_label=gd.es["weight"])
-    # plot.show()
-    # layout = g.layout("fr")  # Fruchterman-Reingold layout
-    visual_style = {}
-    visual_style["vertex_label"] = gd.vs["name"]  # Using "adresse" attribute for vertex labels
-    visual_style["vertex_label_color"] = "black"
-    visual_style["edge_label"] = gd.es["weight"]  # Using "weight" attribute for edge labels
-    plot(gd, target="plot.png", layout=layout, **visual_style)
+    # layout = gd.layout("fr")  # Fruchterman-Reingold layout
+    # # plot(gd, layout=layout, vertex_label=gd.vs["name"], vertex_label_color="black", edge_label=gd.es["weight"])
+    # # plot.show()
+    # # layout = g.layout("fr")  # Fruchterman-Reingold layout
+    # visual_style = {}
+    # visual_style["vertex_label"] = gd.vs["name"]  # Using "adresse" attribute for vertex labels
+    # visual_style["vertex_label_color"] = "black"
+    # visual_style["edge_label"] = gd.es["weight"]  # Using "weight" attribute for edge labels
+    # plot(gd, target="plot.png", layout=layout, **visual_style)
