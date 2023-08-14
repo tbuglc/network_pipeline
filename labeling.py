@@ -65,10 +65,10 @@ for walk_dir, sub_dir, files in os.walk(root_dir):
         fld_to_dict = convert_folder_name_to_dict(folder_name)
         
         target = [fld_to_dict['r'], fld_to_dict['sp'], fld_to_dict['d']]
-        print('target: ', target)
-        print('\n')
+        # print('target: ', target)
+        # print('\n')
 
-        print(walk_dir)
+        # print(walk_dir)
         
         df = pd.read_excel( walk_dir+'\\metrics.xlsx', sheet_name=None)
     
