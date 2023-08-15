@@ -47,14 +47,33 @@ def compute_bias_metrics(input_dir_path, net_ids=[], s_date='', e_date='', snaps
     start_date = None
     end_date = None
 
-    folders = os.listdir(input_dir_path)
+    # folders = None
     
-    for fd in folders:
+    if len(net_ids) == 0:
+        net_ids = os.listdir(input_dir_path)
 
-        if len(net_ids) > 0 and fd not in net_ids:
-            # skip network not in net_ids
-            continue
+    for fd in net_ids:
+        print(f'\n====== {fd} ====== \n')
+        count_super = 0
+
+        if  '-' in fd:
+            split_fd = fd.split('-')
             
+            # incase -- are put infront
+            split_fd.sort(reverse=True)
+
+            count_super = len(split_fd[1:])
+            fd = ''.join(split_fd[:1])
+
+
+
+        # validate fd to avoid errors while reading graphs 
+        if fd not in os.listdir(input_dir_path):
+            print(f'skipping invalid folder id: {fd}')
+            # skip ids not in folder of graphs
+            # this may happen if the input id is not correct or by user error
+            continue
+
         if s_date and not e_date:
             start_date =  parser.parse(s_date)
             _ , end_date = get_start_and_end_date(input_dir=os.path.join(input_dir_path, fd))
@@ -68,28 +87,28 @@ def compute_bias_metrics(input_dir_path, net_ids=[], s_date='', e_date='', snaps
             end_date =  parser.parse(e_date)
         else:
             print('Nothing')
-            return 
+            continue 
 
         accorderie_name  = accorderies[int(fd)]
     
         print(f"Name: {accorderie_name}, date: {start_date} - {end_date}")
 
+        if count_super > 0:
+            result["metadata"]["accorderies"].append(f'{accorderie_name} #nodes - {count_super}')
+        else:
+            result["metadata"]["accorderies"].append(accorderie_name)
 
-        result["metadata"]["accorderies"].append(accorderie_name)
         result["metadata"]["dates"][accorderie_name] = [start_date, end_date]
 
-        try:
-            
+        try:    
             g = load_accorderie_network(os.path.join(input_dir_path, fd))
-            
 
-            # ress = node_attribute_variance(g)
+            if count_super > 0:
+                for i in range(count_super):
+                    degrees = g.degree()
+                    node_with_highest_degree = degrees.index(max(degrees))
+                    g.delete_vertices(node_with_highest_degree)
 
-            # print(ress)
-
-            # return
-            # TODO: REMOVE
-            # 
             print('\nNode Novelty')
             _, _, node_novelty = graph_novelty(g, sn_size=snapshot_size, start_date=start_date, end_date=end_date)
             print('\nEdge Novelty')
@@ -110,18 +129,25 @@ def compute_bias_metrics(input_dir_path, net_ids=[], s_date='', e_date='', snaps
             result['Edge Novelty']["data"].append(edge_novelty)
             result['Weighted Node Novelty']["data"].append(weighted_node_novelty)
 
-            print('Average In-Out, Duree Average In-Out, Disbalance, Unique Edges')
+            print('Average In-Out')
             result["In-Out Degree"]["data"].append(get_avg_in_out_degree(g=g))
+            print('In-Out Weigthed(hours) Degree')
             result["In-Out Weigthed(hours) Degree"]["data"].append(get_avg_in_out_disbalance(g=g) )
+            print('Disbalance')
             result["Disbalance"]["data"].append(get_avg_weighted_in_out_degree(g=g) )
+            print('Unique Edges')
             result["Unique Edges"]["data"].append(get_unique_edges_vs_total(g=g))
-
+            
+            print('ss sum')
             result['Super Stars Sum']["data"].append(super_star_sum)
+            print('ss in')
             result['Super Stars In-deg']["data"].append(super_star_in)
+            print('ss out')
             result['Super Stars Out-deg']["data"].append(super_star_out)
+            print('ss node attribute')
             result["Node Attribute Distances"]["data"].append(node_attribute_variance(g))
         except Exception as e:
-            print(e)
+            print(f'compute_bias_metrics error: {e}')
             break
     return result
 
@@ -144,6 +170,8 @@ def bias_report(metrics_data):
 
             data = metrics_data[key]["data"]
             # scale = metrics_data[key]["scale"]
+            if len(data) == 0:
+                continue
 
             # _key = key.lower()
 
@@ -152,16 +180,23 @@ def bias_report(metrics_data):
             plt.title(key)
 
             if plt_key == 'plot':
+                tick_labels = []
+                tick_X_label = []
+                tick_positions = np.arange(0, 1.1, 0.1)
                 for idx, d in enumerate(data):
                     labels = [k[0] for k in d ]  
                     X = [k[1] for k in d ]  
-                   
+                    
                     X_label = np.arange(len(d)) 
+                   
                     plt.plot(X_label, X, label=accorderies[idx])
                     
-                    tick_positions = np.arange(0, 1.1, 0.1)
-                    plt.yticks(tick_positions)
-                    plt.xticks(X_label, labels=labels, rotation=45, ha='right')
+                    if len(labels) > len(tick_labels):
+                        tick_labels = labels
+                        tick_X_label = X_label
+
+                plt.yticks(tick_positions)
+                plt.xticks(tick_X_label, labels=tick_labels, rotation=45, ha='right')
                 plt.legend()
             elif plt_key == 'bar_label':
                 ax = None
@@ -206,23 +241,29 @@ def bias_report(metrics_data):
                 axes = ax.flatten()
 
                 for idx, gd in enumerate(data):
+                    
                     layout = gd.layout('fr')
+
                     edge_weights = gd.es["weight"]
+                    
+                    axes[idx].set_title(accorderies[idx])
+
                     norm = Normalize(vmin=min(edge_weights), vmax=max(edge_weights))
 
-                    # Create a colormap from the normalized edge weights
+                    # # Create a colormap from the normalized edge weights
                     cmap = plt.cm.viridis
 
-                    # Map normalized edge weights to colors in the colormap
+                    # # Map normalized edge weights to colors in the colormap
                     edge_colors = [to_hex(cmap(norm(weight))) for weight in edge_weights]
 
-                    
+
                     ig.plot(
                         gd,
                         target=axes[idx],
                         vertex_label=gd.vs['name'],
                         edge_width=np.array(gd.es['weight']) * 10,
                          edge_color=edge_colors, 
+                        #  vertex_size=np.array(gd.degree()) / 10,
                         layout=layout
                     )
 
@@ -255,7 +296,7 @@ all_accorderies = {
 # for ac in all_accorderies:
 #     # print(ac)
 #     for sh in ['109']:
-res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/2015', net_ids=['109', '112'], snapshot_size = 365, super_star_threshold=.5)
+res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/2015', net_ids=['109', '109-', '112'], snapshot_size = 365, super_star_threshold=.5)
 
 bias_report(res)
 

@@ -473,7 +473,7 @@ def get_unique_edges_vs_total(g):
         return -1
 
     nb_edges = len(g.es)
-
+    print(f'number of edges: {nb_edges}')
     unique_edges = set()
     all_edges = list()
 
@@ -492,7 +492,7 @@ def get_unique_edges_vs_total(g):
         result = len(unique_edges) / nb_edges
     except Exception as e:
         print('WARNING: Divide by zero error')
-
+    print(f'returned value: {result}')
     return result
 
 
@@ -638,7 +638,9 @@ def node_attribute_variance(g):
         neighbors = g.neighbors(node)
         
         total_neighbor = len(neighbors)
-
+        if total_neighbor == 0:
+            continue
+        
         for neighbor_idx in neighbors:
             neighbor = g.vs[neighbor_idx]
             
