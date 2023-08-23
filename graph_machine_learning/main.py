@@ -15,29 +15,40 @@ from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 from matplotlib.backends.backend_pdf import PdfPages
 
-data = pd.read_csv('combined_data.csv',header=None)
-targets = pd.read_csv('combined_targets.csv',header=None)
+data = pd.read_csv('./combined_data.csv',header=None, nrows=1000)
+targets = pd.read_csv('./combined_targets.csv',header=None, nrows=1000)
 
+data.fillna(0, inplace=True)
+
+scaler = StandardScaler()
+normalized_data = scaler.fit_transform(data)
+
+normalized_targets = scaler.fit_transform(targets)
 
 def data_plot_with_pca():
     # Standardize the data
     with PdfPages(f'snapshot_30_data_visualization.pdf') as pdf:
         try:
-        
-                
-            scaler = StandardScaler()
-            X_scaled = scaler.fit_transform(data)
-
-
             # Create a PCA instance and fit to the standardized data
             pca = PCA(n_components=2)  # We'll reduce to 2 dimensions for visualization
-            X_pca = pca.fit_transform(X_scaled)
+            X_pca = pca.fit_transform(normalized_data)
 
             # Visualize Results with Multi-Dimensional Numerical Targets
             plt.figure(figsize=(10, 6))
+            # Create a color map based on the target values
+            cmap = plt.get_cmap('viridis')
 
-            # Use color to represent different dimensions of the targets
-            plt.scatter(X_pca[:, 0], X_pca[:, 1], c=targets, cmap='viridis', s=100)
+            # Normalize the target values for color mapping
+            n_targets = (normalized_targets - np.min(normalized_targets)) / (np.max(normalized_targets) - np.min(normalized_targets))
+
+            # Iterate over each target dimension and plot
+            for i in range(targets.shape[1]):
+                cmap = plt.get_cmap('Accent')
+                colors = cmap(n_targets[:, i])  # Get colors based on normalized target values
+                
+                plt.scatter(
+                    X_pca[:, 0], X_pca[:, 1], c=colors, s=100,
+                    label=f'Target {i+1}')  # Add a label to identify each target dimension
 
             # Add a colorbar to show the scale of the target dimensions
             colorbar = plt.colorbar()
@@ -46,16 +57,19 @@ def data_plot_with_pca():
             plt.xlabel('Principal Component 1')
             plt.ylabel('Principal Component 2')
             plt.title('PCA Scatter Plot with Multi-Dimensional Targets')
-            
-            plt.savefig()
+
+            # Specify the filename and extension to save the figure
+            plt.savefig('pca_scatter_plot_with_legend.pdf', format='pdf')  # Save as PDF
+
+            # Close the figure to release resources
             plt.close()
+
         except Exception as e:
             print('from data visualization')
             print(e)
-            plt.savefig()
+            pdf.savefig()
             plt.close()
             print('end of data visualization')
-        
     return
 
 
@@ -63,7 +77,7 @@ def main():
 
     try:
 
-        x_train, x_val, t_train, t_val = train_test_split(data, targets, test_size=0.2, random_state=42)
+        x_train, x_val, t_train, t_val = train_test_split(normalized_data, normalized_targets, test_size=0.2, random_state=42)
 
         print(x_train.shape, x_val.shape, t_train.shape, t_val.shape)
 
@@ -96,7 +110,7 @@ def main():
         pred = model.predict(x_val=accorderie)
         print(pred)
         
-        result.append(pred)
+        result.append(pred[0])
 
         model = RegressionFactory.get_model(RegressionModels.RANDOM_FOREST)
 
@@ -104,7 +118,7 @@ def main():
         pred = model.predict(x_val=accorderie)
         print(pred)
 
-        result.append(pred)
+        result.append(pred[0])
 
         df = pd.DataFrame(result)
 

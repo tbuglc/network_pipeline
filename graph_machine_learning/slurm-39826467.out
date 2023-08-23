@@ -1,0 +1,19 @@
+Start running at: $(date)
+from data visualization
+RGBA values should be within 0-1 range
+end of data visualization
+(50542, 9096) (12636, 9096) (50542, 3) (12636, 3)
+(1, 1520)
+9096 1520
+7576
+(1, 9096) (50542, 9096)
+DecisionTreeRegression
+err:  0.08151049910308772
+[[0.9 0.2 0.1]]
+RandomForestRegression
+err:  0.06230922232774033
+[[0.97  0.14  0.152]]
+from main
+Must pass 2-d input. shape=(2, 1, 3)
+end of main
+Finishing run at: $(date)

@@ -1,6 +1,6 @@
 
 from numpy import mean
-from igraph import Graph, plot
+from igraph import Graph, plot, ADJ_DIRECTED
 import pandas as pd
 import numpy as np
 import powerlaw as pl
@@ -19,6 +19,7 @@ import os
 #     # print(sys.path)
 
 from utils import perform_filter_on_graph
+
 
 def compute_edge_weight_based_on_edge_number(g):
     weights = []
@@ -118,21 +119,20 @@ def centralization(n, d=1, metrics=[], metric_name=''):
     elif metric_name == 'betweenness':
         denominator_factor = (n - 1)**2 * (n - 2)
     elif metric_name == 'harmonic':
-        denominator_factor = d*(n -3)/2
+        denominator_factor = d*(n - 3)/2
     elif metric_name == 'closeness':
         denominator_factor = (d*(n-1)*(n-2))/(2*n - 3)
 
     if not denominator_factor:
         return np.nan
 
-
     metrics = list(filter(lambda m: m > 0, metrics))
 
     if len(metrics) == 0:
         return 0
-   
+
     max_node = np.max(metrics)
-   
+
     numerator = (max_node - np.array(metrics))
     total_sum = 0
     for v in metrics:
@@ -228,9 +228,12 @@ def global_graph_properties(g=Graph):
         power_law_alpha(g),
         global_clustering_coefficient(g),
         clustering_coefficient(g, average=True),
-        centralization(n=n, d=d, metrics=degree(g, mode='in'), metric_name='degree'),
-        centralization(n=n, d=d, metrics=betweenness(g), metric_name='betweenness'),
-        centralization(n=n, d=d, metrics=closeness(g), metric_name='closeness'),
+        centralization(n=n, d=d, metrics=degree(
+            g, mode='in'), metric_name='degree'),
+        centralization(n=n, d=d, metrics=betweenness(g),
+                       metric_name='betweenness'),
+        centralization(n=n, d=d, metrics=closeness(g),
+                       metric_name='closeness'),
         centralization(n=n, d=d, metrics=harmonic(g), metric_name='harmonic'),
         pagerank(g, average=True, weights=weights),
         degree_assortativity(g),
@@ -516,7 +519,6 @@ def perform_filter(g, start_date, window_date):
     return snapshot
 
 
-
 def graph_novelty(g, sn_size, start_date, end_date, weighted=False, subset='NODE', degree_mode='all'):
     if len(g.vs) == 0:
         return np.nan
@@ -529,7 +531,6 @@ def graph_novelty(g, sn_size, start_date, end_date, weighted=False, subset='NODE
         if window_date - timedelta(sn_size) == start_date:
             window_date = window_date + timedelta(sn_size)
             continue
-
 
         cummulative_snapshots = perform_filter(
             g,  start_date, window_date - timedelta(sn_size))
@@ -544,11 +545,12 @@ def graph_novelty(g, sn_size, start_date, end_date, weighted=False, subset='NODE
             dataframe_cummulative_snapshots = cummulative_snapshots.get_edgelist()
             dataframe_current_snapshot = current_snapshot.get_edgelist()
         elif subset == 'NODE':
-            dataframe_cummulative_snapshots = cummulative_snapshots.get_vertex_dataframe()['id'].unique()
-            dataframe_current_snapshot = current_snapshot.get_vertex_dataframe()['id'].unique()
+            dataframe_cummulative_snapshots = cummulative_snapshots.get_vertex_dataframe()[
+                'id'].unique()
+            dataframe_current_snapshot = current_snapshot.get_vertex_dataframe()[
+                'id'].unique()
         else:
             break
-
 
         ratio_diff = 0
 
@@ -557,21 +559,22 @@ def graph_novelty(g, sn_size, start_date, end_date, weighted=False, subset='NODE
             result.append((window_date.strftime("%Y/%m/%d"), ratio_diff))
 
             continue
-       
+
         # print('current snapshot', dataframe_current_snapshot)
         # print('cummulative snapshot', dataframe_cummulative_snapshots)
 
-        diff = set(dataframe_current_snapshot) - (set(dataframe_cummulative_snapshots))
+        diff = set(dataframe_current_snapshot) - \
+            (set(dataframe_cummulative_snapshots))
         # print('====')
         # print(len(dataframe_current_snapshot), len(dataframe_cummulative_snapshots), len(diff))
         # print('diff', diff)
-        
 
         if weighted and subset == 'NODE':
             diff_g = current_snapshot.vs.select(id_in=diff)
-            ratio_diff = np.sum(diff_g.degree(mode=degree_mode)) / np.sum(current_snapshot.degree(mode=degree_mode))
+            ratio_diff = np.sum(diff_g.degree(mode=degree_mode)) / \
+                np.sum(current_snapshot.degree(mode=degree_mode))
         else:
-             ratio_diff = len(diff) / len(dataframe_current_snapshot)
+            ratio_diff = len(diff) / len(dataframe_current_snapshot)
 
         result.append((window_date.strftime("%Y/%m/%d"), ratio_diff))
 
@@ -580,7 +583,7 @@ def graph_novelty(g, sn_size, start_date, end_date, weighted=False, subset='NODE
         window_date = window_date + timedelta(sn_size)
 
     norm = (end_date - start_date)/sn_size
-   
+
     average = (1/norm.days)*total_sum
 
     return average, sn_size, result
@@ -593,7 +596,7 @@ def super_stars_count(g, threshold=.5, mode='all'):
     degree_seq.sort(reverse=True)
 
     degree_total = np.sum(degree_seq)
-    
+
     node_sum = 0
     node_count = 0
 
@@ -601,8 +604,8 @@ def super_stars_count(g, threshold=.5, mode='all'):
 
     for max_deg in degree_seq:
         node_sum += max_deg
-        
-        node_count+=1
+
+        node_count += 1
 
         ratio = node_sum / degree_total
         result.append(max_deg/degree_total)
@@ -612,93 +615,34 @@ def super_stars_count(g, threshold=.5, mode='all'):
     # if mode =='in':
     #     print('in super star count')
     #     print(degree_total)
-    #     print(degree_seq)  
+    #     print(degree_seq)
     # print(result)
     return node_total, node_count, result
+
 
 def euclidean_distance(vector1, vector2):
     squared_diff = (vector1 - vector2) ** 2
     sum_squared_diff = np.sum(squared_diff)
     return np.sqrt(sum_squared_diff/len(vector1))
 
-def node_attribute_variance(g):
-    # age,genre,revenu,ville,region,arrondissement,adresse
-    # detailservice
+
+def count_node_attribute_categories(nodes, atr, categories):
+    # print('nodes: ', nodes)
+    # print('atr: ', atr)
+    # print('categories: ', categories)
+    
     result = []
-    
-    for node in g.vs:
-        age_count = 0
-        genre_count = 0
-        revenu_count = 0
-        ville_count = 0
-        region_count = 0
-        arrondissement_count = 0
-        addresse_count = 0
+    for c in categories:
+        count = 0
+        for n in nodes:
+            if n[atr] == c:
+                count += 1
+        result.append(count)
 
-        neighbors = g.neighbors(node)
-        
-        total_neighbor = len(neighbors)
-        if total_neighbor == 0:
-            continue
-        
-        for neighbor_idx in neighbors:
-            neighbor = g.vs[neighbor_idx]
-            
-            # print(node, neighbor)
-            if neighbor['age'] == node['age']:
-                # print('incrementing age')
-                age_count+=1
-            if neighbor['genre'] == node['genre']:
-                # print('incrementing genre')
-                genre_count+=1
-            if neighbor['revenu'] == node['revenu']:
-                # print('incrementing revenu')
-                revenu_count+=1
-            if neighbor['ville'] == node['ville']:
-                # print('incrementing ville')
-                ville_count+=1
-            if neighbor['region'] == node['region']:
-                # print('incrementing region')
-                region_count+=1
-            if neighbor['arrondissement'] == node['arrondissement']:
-                # print('incrementing arrondissement')
-                arrondissement_count+=1
-            if neighbor['adresse'] == node['adresse']:
-                # print('incrementing adresse')
-                addresse_count+=1
-        
-        result.append([
-            age_count/total_neighbor, 
-            genre_count/total_neighbor, 
-            revenu_count/total_neighbor, 
-            ville_count/total_neighbor, 
-            region_count/total_neighbor,
-            arrondissement_count/total_neighbor,
-            addresse_count/total_neighbor
-        ])
-    
-    
-    result = np.array(result)
+    return result
 
-    num_columns = result.shape[1]
-
-    distances = []
-    for i in range(num_columns):
-        row= []
-        for j in range(num_columns):
-            distance = euclidean_distance(result[:, i], result[:,j])
-            # print(f"Euclidean distance between rows {i} and {j}: {distance:.2f}")
-
-            row.append(distance)
-        distances.append(row)
-    
-    # construct an igraph 
-    # print(np.array(distances)) 
-    # Vertex attribute names
-    attribute_names = ['age', 'genre', 'revenu', 'ville', 'region', 'arrondissement', 'adresse']
-
+def construct_graph(distances, attribute_names):
     gd = Graph()
-
     # Add vertices to the graph
     num_vertices = len(distances)
     gd.add_vertices(num_vertices)
@@ -708,15 +652,148 @@ def node_attribute_variance(g):
         for j in range(i + 1, num_vertices):
             if distances[i][j] != 0:
                 gd.add_edge(i, j, weight=distances[i][j])
-
     return gd
-    # Print the graph summary
-    # layout = gd.layout("fr")  # Fruchterman-Reingold layout
-    # # plot(gd, layout=layout, vertex_label=gd.vs["name"], vertex_label_color="black", edge_label=gd.es["weight"])
-    # # plot.show()
-    # # layout = g.layout("fr")  # Fruchterman-Reingold layout
-    # visual_style = {}
-    # visual_style["vertex_label"] = gd.vs["name"]  # Using "adresse" attribute for vertex labels
-    # visual_style["vertex_label_color"] = "black"
-    # visual_style["edge_label"] = gd.es["weight"]  # Using "weight" attribute for edge labels
-    # plot(gd, target="plot.png", layout=layout, **visual_style)
+
+def node_attribute_variance(g):
+    ages = np.unique(g.vs["age"])
+    # print("ages", ages)
+
+    genres = np.unique(g.vs["genre"])
+    # print("genres", genres)
+
+    revenus = np.unique(g.vs["revenu"])
+    # print("revenus", revenus)
+
+    villes = np.unique(g.vs["ville"])
+    # print("villes", villes)
+
+    regions = np.unique(g.vs["region"])
+    # print("regions", regions)
+
+    arrondissements = np.unique(g.vs["arrondissement"])
+    # print("arrondissements", arrondissements)
+
+    addresses = np.unique(g.vs["adresse"])
+    # print("addresses", addresses)
+
+    ages_atr_count = []
+    genres_atr_count = []
+    revenus_atr_count = []
+    villes_atr_count = []
+    regions_atr_count = []
+    arrondissements_atr_count = []
+    addresses_atr_count = []
+
+    for node in g.vs:
+        neighbor_idxs = g.neighbors(node)
+        neighbors = g.vs[neighbor_idxs]
+        
+        # print('NODE: ', node)
+        # print('NEIGHBORS ', neighbors)
+        nodes = np.concatenate([[node], neighbors])
+
+        nd_nghb_atr_count = count_node_attribute_categories(nodes, 'age', ages)
+        ages_atr_count.append(nd_nghb_atr_count)
+
+        nd_nghb_atr_count = count_node_attribute_categories(
+            nodes, 'genre', genres)
+        genres_atr_count.append(nd_nghb_atr_count)
+
+        nd_nghb_atr_count = count_node_attribute_categories(
+            nodes, 'revenu', revenus)
+        revenus_atr_count.append(nd_nghb_atr_count)
+
+        nd_nghb_atr_count = count_node_attribute_categories(
+            nodes, 'ville', villes)
+        villes_atr_count.append(nd_nghb_atr_count)
+
+        nd_nghb_atr_count = count_node_attribute_categories(
+            nodes, 'region', regions)
+        regions_atr_count.append(nd_nghb_atr_count)
+
+        nd_nghb_atr_count = count_node_attribute_categories(
+            nodes, 'arrondissement', arrondissements)
+        arrondissements_atr_count.append(nd_nghb_atr_count)
+
+        nd_nghb_atr_count = count_node_attribute_categories(
+            nodes, 'adresse', addresses)
+        addresses_atr_count.append(nd_nghb_atr_count)
+
+    corr_ages_atr_count = np.dot(
+        np.array(ages_atr_count).T, np.array(ages_atr_count))
+    # print("corr_ages_atr_count: ", corr_ages_atr_count)
+    print(corr_ages_atr_count.shape)
+    corr_genres_atr_count = np.dot(
+        np.array(genres_atr_count).T, np.array(genres_atr_count))
+    # print("corr_genres_atr_count: ", corr_genres_atr_count)
+    print(corr_genres_atr_count.shape)
+    corr_revenus_atr_count = np.dot(
+        np.array(revenus_atr_count).T, np.array(revenus_atr_count))
+    # print("corr_revenus_atr_count: ", corr_revenus_atr_count)
+    print(corr_revenus_atr_count.shape)
+    corr_villes_atr_count = np.dot(
+        np.array(villes_atr_count).T, np.array(villes_atr_count))
+    # print("corr_villes_atr_count: ", corr_villes_atr_count)
+    print(corr_villes_atr_count.shape)
+    corr_regions_atr_count = np.dot(
+        np.array(regions_atr_count).T, np.array(regions_atr_count))
+    # print("corr_regions_atr_count: ", corr_regions_atr_count)
+    print(corr_regions_atr_count.shape)
+    corr_arrondissements_atr_count = np.dot(
+        np.array(arrondissements_atr_count).T, np.array(arrondissements_atr_count))
+    # print("corr_arrondissements_atr_count: ", corr_arrondissements_atr_cou)
+    print(corr_arrondissements_atr_count.shape)
+    corr_addresses_atr_count = np.dot(
+        np.array(addresses_atr_count).T, np.array(addresses_atr_count))
+    # print("corr_addresses_atr_count: ", corr_addresses_atr_count)
+    print(corr_addresses_atr_count.shape)
+    # g_corr_ages_atr_count = Graph.Adjacency(
+    #     corr_ages_atr_count.tolist(), mode=ADJ_DIRECTED)
+    # # print("g_corr_ages_atr_count summary: ", g_corr_ages_atr_count.summary)
+    # g_corr_ages_atr_count.vs["name"] = ages
+    # g_corr_ages_atr_count.es["weight"] = np.zeros(len(ages))
+
+    # g_corr_genres_atr_count = Graph.Adjacency(
+    #     corr_genres_atr_count.tolist(), mode=ADJ_DIRECTED)
+    # # print("g_corr_genres_atr_count summary: ",
+    #     #   g_corr_genres_atr_count.summary())
+    # g_corr_genres_atr_count.vs["name"] = genres
+    # g_corr_genres_atr_count.es["weight"] = np.zeros(len(genres))
+
+    # g_corr_revenus_atr_count = Graph.Adjacency(
+    #     corr_revenus_atr_count.tolist(), mode=ADJ_DIRECTED)
+    # # print("g_corr_revenus_atr_count summary: ",
+    #     #   g_corr_revenus_atr_count.summary())
+    # g_corr_revenus_atr_count.vs["name"] = revenus
+    # g_corr_revenus_atr_count.es["weight"] = np.zeros(len(revenus))
+
+    # g_corr_villes_atr_count = Graph.Adjacency(
+    #     corr_villes_atr_count.tolist(), mode=ADJ_DIRECTED)
+    # # print("g_corr_villes_atr_count summary: ",
+    #     #   g_corr_villes_atr_count.summary())
+    # g_corr_villes_atr_count.vs["name"] = villes
+    # g_corr_villes_atr_count.es["weight"] = np.zeros(len(villes))
+
+    # g_corr_regions_atr_count = Graph.Adjacency(
+    #     corr_regions_atr_count.tolist(), mode=ADJ_DIRECTED)
+    # # print("g_corr_regions_atr_count summary: ",
+    #     #   g_corr_regions_atr_count.summary())
+    # g_corr_regions_atr_count.vs["name"] = regions
+    # g_corr_regions_atr_count.es["weight"] = np.zeros(len(regions))
+
+    # g_corr_arrondissements_atr_count = Graph.Adjacency(
+    #     corr_arrondissements_atr_count.tolist(), mode=ADJ_DIRECTED)
+    # # print("g_corr_arrondissements_atr_count summary: ",
+    #     #   g_corr_arrondissements_atr_count.summary())
+    # g_corr_arrondissements_atr_count.vs["name"] = arrondissements
+    # g_corr_arrondissements_atr_count.es["weight"] = np.zeros(len(arrondissements))
+
+    # g_corr_addresses_atr_count = Graph.Adjacency(
+    #     corr_addresses_atr_count.tolist(), mode=ADJ_DIRECTED)
+    # # print("g_corr_addresses_atr_count summary: ",
+    #     #   g_corr_addresses_atr_count.summary())
+    # g_corr_addresses_atr_count.vs["name"] = addresses
+    # g_corr_addresses_atr_count.es["weight"] = np.zeros(len(addresses))
+
+    # return [g_corr_ages_atr_count, g_corr_genres_atr_count, g_corr_revenus_atr_count, g_corr_villes_atr_count, g_corr_regions_atr_count, g_corr_arrondissements_atr_count, g_corr_addresses_atr_count]
+    return None

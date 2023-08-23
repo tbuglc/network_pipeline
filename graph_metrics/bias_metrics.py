@@ -100,55 +100,55 @@ def compute_bias_metrics(input_dir_path, net_ids=[], s_date='', e_date='', snaps
 
         result["metadata"]["dates"][accorderie_name] = [start_date, end_date]
 
-        try:    
-            g = load_accorderie_network(os.path.join(input_dir_path, fd))
+        # try:    
+        g = load_accorderie_network(os.path.join(input_dir_path, fd))
 
-            if count_super > 0:
-                for i in range(count_super):
-                    degrees = g.degree()
-                    node_with_highest_degree = degrees.index(max(degrees))
-                    g.delete_vertices(node_with_highest_degree)
+        if count_super > 0:
+            for i in range(count_super):
+                degrees = g.degree()
+                node_with_highest_degree = degrees.index(max(degrees))
+                g.delete_vertices(node_with_highest_degree)
 
-            print('\nNode Novelty')
-            _, _, node_novelty = graph_novelty(g, sn_size=snapshot_size, start_date=start_date, end_date=end_date)
-            print('\nEdge Novelty')
-            _, _, edge_novelty = graph_novelty(g, sn_size=snapshot_size, start_date=start_date, end_date=end_date, subset='EDGE')
+        print('\nNode Novelty')
+        _, _, node_novelty = graph_novelty(g, sn_size=snapshot_size, start_date=start_date, end_date=end_date)
+        print('\nEdge Novelty')
+        _, _, edge_novelty = graph_novelty(g, sn_size=snapshot_size, start_date=start_date, end_date=end_date, subset='EDGE')
 
-            print('\nWeighted Node Novelty')
-            _, _, weighted_node_novelty = graph_novelty(g, sn_size=snapshot_size, start_date=start_date, end_date=end_date, weighted=True)
+        print('\nWeighted Node Novelty')
+        _, _, weighted_node_novelty = graph_novelty(g, sn_size=snapshot_size, start_date=start_date, end_date=end_date, weighted=True)
 
-            print('Super Start Sum')
-            super_star_sum = super_stars_count(g, super_star_threshold, mode='all')
-            print('Super Start In')
-            super_star_in = super_stars_count(g, super_star_threshold, mode='in')
-            print('Super Start Out')
-            super_star_out = super_stars_count(g, super_star_threshold, mode='out')
+        print('Super Start Sum')
+        super_star_sum = super_stars_count(g, super_star_threshold, mode='all')
+        print('Super Start In')
+        super_star_in = super_stars_count(g, super_star_threshold, mode='in')
+        print('Super Start Out')
+        super_star_out = super_stars_count(g, super_star_threshold, mode='out')
 
 
-            result['Node Novelty']["data"].append(node_novelty)
-            result['Edge Novelty']["data"].append(edge_novelty)
-            result['Weighted Node Novelty']["data"].append(weighted_node_novelty)
+        result['Node Novelty']["data"].append(node_novelty)
+        result['Edge Novelty']["data"].append(edge_novelty)
+        result['Weighted Node Novelty']["data"].append(weighted_node_novelty)
 
-            print('Average In-Out')
-            result["In-Out Degree"]["data"].append(get_avg_in_out_degree(g=g))
-            print('In-Out Weigthed(hours) Degree')
-            result["In-Out Weigthed(hours) Degree"]["data"].append(get_avg_in_out_disbalance(g=g) )
-            print('Disbalance')
-            result["Disbalance"]["data"].append(get_avg_weighted_in_out_degree(g=g) )
-            print('Unique Edges')
-            result["Unique Edges"]["data"].append(get_unique_edges_vs_total(g=g))
-            
-            print('ss sum')
-            result['Super Stars Sum']["data"].append(super_star_sum)
-            print('ss in')
-            result['Super Stars In-deg']["data"].append(super_star_in)
-            print('ss out')
-            result['Super Stars Out-deg']["data"].append(super_star_out)
-            print('ss node attribute')
-            result["Node Attribute Distances"]["data"].append(node_attribute_variance(g))
-        except Exception as e:
-            print(f'compute_bias_metrics error: {e}')
-            break
+        print('Average In-Out')
+        result["In-Out Degree"]["data"].append(get_avg_in_out_degree(g=g))
+        print('In-Out Weigthed(hours) Degree')
+        result["In-Out Weigthed(hours) Degree"]["data"].append(get_avg_in_out_disbalance(g=g) )
+        print('Disbalance')
+        result["Disbalance"]["data"].append(get_avg_weighted_in_out_degree(g=g) )
+        print('Unique Edges')
+        result["Unique Edges"]["data"].append(get_unique_edges_vs_total(g=g))
+        
+        print('ss sum')
+        result['Super Stars Sum']["data"].append(super_star_sum)
+        print('ss in')
+        result['Super Stars In-deg']["data"].append(super_star_in)
+        print('ss out')
+        result['Super Stars Out-deg']["data"].append(super_star_out)
+        print('ss node attribute')
+        result["Node Attribute Distances"]["data"].append(node_attribute_variance(g))
+        # except Exception as e:
+        #     print(f'compute_bias_metrics error: {e}')
+        #     break
     return result
 
 
@@ -200,12 +200,14 @@ def bias_report(metrics_data):
                 plt.legend()
             elif plt_key == 'bar_label':
                 ax = None
+                axes = []
                 if len(data) > 1:
                     _, ax = plt.subplots(ceil(len(data) /2) ,2)
+                    axes = ax.flatten()
                 else:
                     _, ax = plt.subplots()
-                axes = ax.flatten()
-
+                    axes.append(ax)
+            
                 for idx, (total, count, result) in enumerate(data):
                     title = f'#nodes={count}, total={total}'
                     axes[idx].bar(np.arange(len(result)) + 1,result)
@@ -234,38 +236,44 @@ def bias_report(metrics_data):
                 plt.xlabel('Accorderies')
             elif plt_key == 'graph':
                 ax = None
-                if len(data) > 1:
-                    _, ax = plt.subplots(ceil(len(data) /2) ,2)
-                else:
-                    _, ax = plt.subplots()
-                axes = ax.flatten()
+                axes = []
+                print(data)
+                for dt in data:
+                    for d in dt:
+                        print('graph: ',d.summary())
+                        if len(d) > 1:
+                            _, ax = plt.subplots(ceil(len(d) /2) ,2)
+                            axes = ax.flatten()
+                        else:
+                            _, ax = plt.subplots()
+                            axes.append(ax)
 
-                for idx, gd in enumerate(data):
-                    
-                    layout = gd.layout('fr')
+                        for idx, gd in enumerate(d):
+                            
+                            layout = gd.layout('fr')
 
-                    edge_weights = gd.es["weight"]
-                    
-                    axes[idx].set_title(accorderies[idx])
+                            edge_weights = gd.es["weight"]
+                            
+                            axes[idx].set_title(accorderies[idx])
 
-                    norm = Normalize(vmin=min(edge_weights), vmax=max(edge_weights))
+                            norm = Normalize(vmin=min(edge_weights), vmax=max(edge_weights))
 
-                    # # Create a colormap from the normalized edge weights
-                    cmap = plt.cm.viridis
+                            # # Create a colormap from the normalized edge weights
+                            cmap = plt.cm.viridis
 
-                    # # Map normalized edge weights to colors in the colormap
-                    edge_colors = [to_hex(cmap(norm(weight))) for weight in edge_weights]
+                            # # Map normalized edge weights to colors in the colormap
+                            edge_colors = [to_hex(cmap(norm(weight))) for weight in edge_weights]
 
 
-                    ig.plot(
-                        gd,
-                        target=axes[idx],
-                        vertex_label=gd.vs['name'],
-                        edge_width=np.array(gd.es['weight']) * 10,
-                         edge_color=edge_colors, 
-                        #  vertex_size=np.array(gd.degree()) / 10,
-                        layout=layout
-                    )
+                            ig.plot(
+                                gd,
+                                target=axes[idx],
+                                vertex_label=gd.vs['name'],
+                                edge_width=np.array(gd.es['weight']) * 10,
+                                edge_color=edge_colors, 
+                                #  vertex_size=np.array(gd.degree()) / 10,
+                                layout=layout
+                            )
 
             plt.tight_layout()
             pdf.savefig()
@@ -296,9 +304,9 @@ all_accorderies = {
 # for ac in all_accorderies:
 #     # print(ac)
 #     for sh in ['109']:
-res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/2015', net_ids=['109', '109-', '112'], snapshot_size = 365, super_star_threshold=.5)
+res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/2015', net_ids=['109'], snapshot_size = 365, super_star_threshold=.5)
 
-bias_report(res)
+# bias_report(res)
 
 
 
