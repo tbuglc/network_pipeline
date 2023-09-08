@@ -401,7 +401,7 @@ def get_avg_in_out_degree(g):
     except Exception as e:
         print('WARNING: Divide by zero error')
 
-    # print(f'get_avg_in_out_degree: {result}')
+    print(f'get_avg_in_out_degree: {result}')
     return result
 
 
@@ -436,7 +436,7 @@ def get_avg_weighted_in_out_degree(g, field_name='duree'):
     except Exception as e:
         print('WARNING: Divide by zero error')
 
-    # print(f'get_avg_weighted_in_out_degree: {result}')
+    print(f'get_avg_weighted_in_out_degree: {result}')
     return result
 
 
@@ -455,17 +455,22 @@ def get_avg_in_out_disbalance(g):
         if outdeg == 0 and indeg == 0:
             nb_isolated += 1
         else:
-            disbalance_sum += max(indeg / (indeg + outdeg),
-                                  1 - indeg/(indeg + outdeg))
+            disb_value = max(indeg / (indeg + outdeg),
+                             1 - indeg/(indeg + outdeg))
+            # print('disb_value', disb_value)
+            disbalance_sum += disb_value
 
     result = 0
     try:
+        print('LEN.G ', len(g.vs))
+        print('ISOLATED ', nb_isolated)
+
         result = disbalance_sum / (len(g.vs) - nb_isolated)
     except Exception as e:
         print('WARNING: Divide by zero error')
 
-    # print(f'get_avg_in_out_disbalance: {result}')
-
+    print(f'get_avg_in_out_disbalance: {result}')
+    # print('DISBALANCE: ', result)
     return result
 
 
@@ -519,7 +524,7 @@ def perform_filter(g, start_date, window_date):
     return snapshot
 
 
-def graph_novelty(g, sn_size, start_date, end_date, weighted=False, subset='NODE', degree_mode='all'):
+def graph_novelty(g, sn_size, start_date, end_date, id, weighted=False, subset='NODE', degree_mode='all',):
     if len(g.vs) == 0:
         return np.nan
 
@@ -545,10 +550,18 @@ def graph_novelty(g, sn_size, start_date, end_date, weighted=False, subset='NODE
             dataframe_cummulative_snapshots = cummulative_snapshots.get_edgelist()
             dataframe_current_snapshot = current_snapshot.get_edgelist()
         elif subset == 'NODE':
-            dataframe_cummulative_snapshots = cummulative_snapshots.get_vertex_dataframe()[
-                'id'].unique()
-            dataframe_current_snapshot = current_snapshot.get_vertex_dataframe()[
-                'id'].unique()
+            dataframe_cummulative_snapshots = cummulative_snapshots.get_vertex_dataframe()
+            # [
+            #     'id'].unique()
+            dataframe_current_snapshot = current_snapshot.get_vertex_dataframe()
+            # [
+            #     'id'].unique()
+            dataframe_cummulative_snapshots = dataframe_cummulative_snapshots.loc[dataframe_cummulative_snapshots['accorderie'].astype(
+                int) == id]["id"].unique()
+            dataframe_current_snapshot = dataframe_current_snapshot.loc[dataframe_current_snapshot['accorderie'].astype(
+                int) == id]["id"].unique()
+            # print("cumm", dataframe_cummulative_snapshots)
+            # print("curr", dataframe_current_snapshot)
         else:
             break
 
@@ -617,6 +630,7 @@ def super_stars_count(g, threshold=.5, mode='all'):
     #     print(degree_total)
     #     print(degree_seq)
     # print(result)
+    # result.append(threshold)
     return node_total, node_count, result
 
 
@@ -630,7 +644,7 @@ def count_node_attribute_categories(nodes, atr, categories):
     # print('nodes: ', nodes)
     # print('atr: ', atr)
     # print('categories: ', categories)
-    
+
     result = []
     for c in categories:
         count = 0
@@ -640,6 +654,7 @@ def count_node_attribute_categories(nodes, atr, categories):
         result.append(count)
 
     return result
+
 
 def construct_graph(distances, attribute_names):
     gd = Graph()
@@ -654,7 +669,104 @@ def construct_graph(distances, attribute_names):
                 gd.add_edge(i, j, weight=distances[i][j])
     return gd
 
-def node_attribute_variance(g):
+
+def transform_array_to_obj(arr):
+    result = {}
+
+    for i, v in enumerate(arr):
+        result[v] = i
+
+    return result
+
+
+def convert_matrix_to_graph(name, data, attribute_names):
+    p = pd.DataFrame(data)
+    p.columns = attribute_names
+
+    p.to_csv(f'{name}.csv')
+    matrx = []
+    for row in data:
+        row_sum = np.sum(row)
+        if row_sum > 0:
+            matrx.append(np.array(row)/row_sum)
+        else:
+            matrx.append(row)
+
+    g = Graph()
+
+    # Add vertices to the graph
+    num_vertices = len(matrx)
+    g.add_vertices(num_vertices)
+    g.vs['indices'] = [k for k in range(num_vertices)]
+    g.vs['name'] = attribute_names
+    # Add edges to the graph based on the adjacency matrix
+    for i in range(num_vertices):
+        for j in range(i + 1, num_vertices):
+            if matrx[i][j] != 0:
+                g.add_edge(i, j, weight=matrx[i][j])
+
+    return g
+
+
+def node_attribute_variance(g, accorderie_name):
+    ages = transform_array_to_obj(np.unique(g.vs["age"]))
+    genres = transform_array_to_obj(np.unique(g.vs["genre"]))
+    revenus = transform_array_to_obj(np.unique(g.vs["revenu"]))
+    villes = transform_array_to_obj(np.unique(g.vs["ville"]))
+    regions = transform_array_to_obj(np.unique(g.vs["region"]))
+    arrondissements = transform_array_to_obj(np.unique(g.vs["arrondissement"]))
+    addresses = transform_array_to_obj(np.unique(g.vs["adresse"]))
+
+    ages_matrx = np.zeros((len(ages), len(ages)))
+    genres_matrx = np.zeros((len(genres), len(genres)))
+    revenus_matrx = np.zeros((len(revenus), len(revenus)))
+    villes_matrx = np.zeros((len(villes), len(villes)))
+    regions_matrx = np.zeros((len(regions), len(regions)))
+    arrondissements_matrx = np.zeros(
+        (len(arrondissements), len(arrondissements)))
+    addresses_matrx = np.zeros((len(addresses), len(addresses)))
+
+    for e in g.es:
+
+        u, v = g.vs[e.source], g.vs[e.target]
+
+        ages_matrx[ages[str(u['age'])], ages[str(v['age'])]] += 1
+
+        genres_matrx[genres[str(u['genre'])], genres[str(v['genre'])]] += 1
+
+        revenus_matrx[revenus[str(u['revenu'])],
+                      revenus[str(v['revenu'])]] += 1
+
+        villes_matrx[villes[str(u['ville'])], villes[str(v['ville'])]] += 1
+
+        regions_matrx[regions[str(u['region'])],
+                      regions[str(v['region'])]] += 1
+
+        arrondissements_matrx[arrondissements[str(
+            u['arrondissement'])], arrondissements[str(v['arrondissement'])]] += 1
+
+        addresses_matrx[addresses[str(u['adresse'])],
+                        addresses[str(v['adresse'])]] += 1
+
+    return [
+        {"ages": convert_matrix_to_graph(f"{accorderie_name}_ages", ages_matrx, [
+                                         k for (_, k) in ages.items()])},
+        {"genres": convert_matrix_to_graph(f"{accorderie_name}_genres", genres_matrx, [
+                                           k for (_, k) in genres.items()])},
+        {"revenus": convert_matrix_to_graph(f"{accorderie_name}_revenus", revenus_matrx, [
+                                            k for (_, k) in revenus.items()])},
+        {"villes": convert_matrix_to_graph(f"{accorderie_name}_villes", villes_matrx, [
+                                           k for (_, k) in villes.items()])},
+        {"regions": convert_matrix_to_graph(f"{accorderie_name}_regions", regions_matrx, [
+                                            k for (_, k) in regions.items()])},
+        {"arrondissements": convert_matrix_to_graph(f"{accorderie_name}_arrondissements", arrondissements_matrx, [
+                                                    k for (_, k) in arrondissements.items()])},
+        {"addresses": convert_matrix_to_graph(f"{accorderie_name}_addresses", addresses_matrx, [
+                                              k for (_, k) in addresses.items()])},
+    ]
+
+
+def node_attribute_variance_(g):
     ages = np.unique(g.vs["age"])
     # print("ages", ages)
 
@@ -687,7 +799,7 @@ def node_attribute_variance(g):
     for node in g.vs:
         neighbor_idxs = g.neighbors(node)
         neighbors = g.vs[neighbor_idxs]
-        
+
         # print('NODE: ', node)
         # print('NEIGHBORS ', neighbors)
         nodes = np.concatenate([[node], neighbors])

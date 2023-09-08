@@ -7,6 +7,29 @@ import os
 import numpy as np
 import argparse
 
+accorderies = {
+    2: "Québec",
+    121: "Yukon",
+    117: "La Manicouagan",
+    86: "Trois-Rivières",
+    88: "Mercier-Hochelaga-M.",
+    92: "Shawinigan",
+    113: "Montréal-Nord secteur Nord-Est",
+    111: "Portneuf",
+    104: "Montréal-Nord",
+    108: "Rimouski-Neigette",
+    109: "Sherbrooke",
+    110: "La Matanie",
+    112: "Granit",
+    114: "Rosemont",
+    115: "Longueuil",
+    116: "Réseau Accorderie (du Qc)",
+    118: "La Matapédia",
+    119: "Grand Gaspé",
+    120: "Granby et région",
+}
+
+
 pandas2ri.activate()
 
 cran_repo_url = "https://mirror.csclub.uwaterloo.ca/CRAN/"
@@ -23,7 +46,14 @@ perform_ergm_fitting <- function(members=NULL, transactions=NULL){
     
     g_network <- network(transactions, loops=TRUE, directed=TRUE, multiple=TRUE, vertex.attr = new_members)
 
-    ergm_fit <- ergm(formula= g_network ~ nodematch('degrees') + nodematch('betweenness') + nodematch('harmonic_centrality') + nodematch('transitivity_undirected') + nodematch('pagerank') + nodematch('eccentricity'), control = control.ergm())
+    ergm_fit <- ergm(formula= g_network ~ 
+        nodematch('degrees') + 
+        nodematch('betweenness') + 
+        nodematch('harmonic_centrality') + 
+        nodematch('transitivity_undirected') + 
+        nodematch('pagerank') + 
+        nodematch('eccentricity'), 
+    control = control.ergm())
 
     coefficients <- coef(ergm_fit)
 
@@ -60,10 +90,10 @@ def convert_folder_name_to_dict(s):
 
 def process_folder(walk_dir):
     print(walk_dir)
-    folder_name = walk_dir.split('/')[-1]
+    folder_name = walk_dir.split('\\')[-1]
 
-    fld_to_dict = convert_folder_name_to_dict(folder_name)
-    target = [fld_to_dict['r'], fld_to_dict['sp'], fld_to_dict['d']]
+    # fld_to_dict = convert_folder_name_to_dict(folder_name)
+    # target = [fld_to_dict['r'], fld_to_dict['sp'], fld_to_dict['d']]
 
     members = pd.read_csv(f'{walk_dir}/members.csv', encoding='latin-1')
     transactions = pd.read_csv(
@@ -103,7 +133,7 @@ def process_folder(walk_dir):
     with open(f'{FILE_NAME}.csv', 'a') as file:
         # Convert the numpy array to a string and write to the file
         file.write(','.join(map(str, np.concatenate(
-            [coefficients, target, [folder_name]]))) + '\n')
+            [coefficients, [folder_name], [accorderies[int(folder_name)]] ] ))) + '\n')
 
 
 arg_parser = argparse.ArgumentParser()

@@ -18,56 +18,61 @@ import igraph as ig
 from matplotlib.colors import Normalize, to_hex
 
 
-def compute_bias_metrics(input_dir_path, net_ids=[], s_date='', e_date='', snapshot_size = 365, super_star_threshold=.5):
+def compute_bias_metrics(input_dir_path, net_ids=[], s_date='', e_date='', snapshot_size=365, super_star_threshold=.5):
     '''
         net_ids: serves as a filter
-    '''    
+    '''
     result = OrderedDict()
     result["metadata"] = {}
 
-    prob_scale = np.arange(0,1.1,0.1)
+    prob_scale = np.arange(0, 1.1, 0.1)
     result["metadata"]["snapshot_size"] = snapshot_size
     result["metadata"]["super_star_threshold"] = super_star_threshold
     result["metadata"]["accorderies"] = []
-    result["metadata"]["dates"] = {} # key: accorderie, value is an array of start and end date
-  
+    # key: accorderie, value is an array of start and end date
+    result["metadata"]["dates"] = {}
+
     result["Node Novelty"] = {"plt": "plot", "data": [], "scale": prob_scale}
+
+    result["Weighted Node Novelty"] = {
+        "plt": "plot", "data": [], "scale": prob_scale}
     result["Edge Novelty"] = {"plt": "plot", "data": [], "scale": prob_scale}
-    result["Weighted Node Novelty"] = {"plt": "plot", "data": [], "scale": prob_scale}
     result["In-Out Degree"] = {"plt": "bar", "data": [], "scale": prob_scale}
-    result["In-Out Weigthed(hours) Degree"] = {"plt": "bar", "data": [], "scale": prob_scale}
+    result["In-Out Weigthed(hours) Degree"] = {"plt": "bar",
+                                               "data": [], "scale": prob_scale}
     result["Disbalance"] = {"plt": "bar", "data": [], "scale": prob_scale[5:]}
     result["Unique Edges"] = {"plt": "bar", "data": [], "scale": []}
 
-    result["Super Stars Sum"] = {"plt": "bar_label", "data": [], "scale": []}
-    result["Super Stars In-deg"] = {"plt": "bar_label", "data": [], "scale": []}
-    result["Super Stars Out-deg"] = {"plt": "bar_label", "data": [], "scale": []}
-    result["Node Attribute Distances"] = {"plt": "graph", "data": [], "scale": []}
+    result["Super Stars Sum"] = {"plt": "pie", "data": [], "scale": []}
+    result["Super Stars In-deg"] = {"plt": "pie",
+                                    "data": [], "scale": []}
+    result["Super Stars Out-deg"] = {"plt": "pie",
+                                     "data": [], "scale": []}
+    result["Node Attribute Distances"] = {
+        "plt": "graph", "data": [], "scale": []}
 
     start_date = None
     end_date = None
 
     # folders = None
-    
+
     if len(net_ids) == 0:
         net_ids = os.listdir(input_dir_path)
-
+        print('NET IDS', net_ids)
     for fd in net_ids:
         print(f'\n====== {fd} ====== \n')
         count_super = 0
 
-        if  '-' in fd:
+        if '-' in fd:
             split_fd = fd.split('-')
-            
+
             # incase -- are put infront
             split_fd.sort(reverse=True)
 
             count_super = len(split_fd[1:])
             fd = ''.join(split_fd[:1])
 
-
-
-        # validate fd to avoid errors while reading graphs 
+        # validate fd to avoid errors while reading graphs
         if fd not in os.listdir(input_dir_path):
             print(f'skipping invalid folder id: {fd}')
             # skip ids not in folder of graphs
@@ -75,47 +80,54 @@ def compute_bias_metrics(input_dir_path, net_ids=[], s_date='', e_date='', snaps
             continue
 
         if s_date and not e_date:
-            start_date =  parser.parse(s_date)
-            _ , end_date = get_start_and_end_date(input_dir=os.path.join(input_dir_path, fd))
+            start_date = parser.parse(s_date)
+            _, end_date = get_start_and_end_date(
+                input_dir=os.path.join(input_dir_path, fd))
         elif e_date and not s_date:
-            end_date =  parser.parse(e_date)
-            start_date, _ = get_start_and_end_date(input_dir=os.path.join(input_dir_path, fd))
+            end_date = parser.parse(e_date)
+            start_date, _ = get_start_and_end_date(
+                input_dir=os.path.join(input_dir_path, fd))
         elif not s_date and not e_date:
-            start_date, end_date = get_start_and_end_date(input_dir=os.path.join(input_dir_path, fd))
+            start_date, end_date = get_start_and_end_date(
+                input_dir=os.path.join(input_dir_path, fd))
         elif s_date and e_date:
-            start_date =  parser.parse(s_date)
-            end_date =  parser.parse(e_date)
+            start_date = parser.parse(s_date)
+            end_date = parser.parse(e_date)
         else:
             print('Nothing')
-            continue 
+            continue
 
-        accorderie_name  = accorderies[int(fd)]
-    
+        accorderie_name = accorderies[int(fd)]
+
         print(f"Name: {accorderie_name}, date: {start_date} - {end_date}")
 
         if count_super > 0:
-            result["metadata"]["accorderies"].append(f'{accorderie_name} #nodes - {count_super}')
+            accorderie_name = f'{accorderie_name} #nodes - {count_super}'
+            result["metadata"]["accorderies"].append(accorderie_name)
         else:
             result["metadata"]["accorderies"].append(accorderie_name)
 
         result["metadata"]["dates"][accorderie_name] = [start_date, end_date]
 
-        # try:    
+        # try:
         g = load_accorderie_network(os.path.join(input_dir_path, fd))
 
         if count_super > 0:
-            for i in range(count_super):
+            for _ in range(count_super):
                 degrees = g.degree()
                 node_with_highest_degree = degrees.index(max(degrees))
                 g.delete_vertices(node_with_highest_degree)
 
         print('\nNode Novelty')
-        _, _, node_novelty = graph_novelty(g, sn_size=snapshot_size, start_date=start_date, end_date=end_date)
+        _, _, node_novelty = graph_novelty(
+            g, sn_size=snapshot_size, start_date=start_date, end_date=end_date, id=int(fd))
         print('\nEdge Novelty')
-        _, _, edge_novelty = graph_novelty(g, sn_size=snapshot_size, start_date=start_date, end_date=end_date, subset='EDGE')
+        _, _, edge_novelty = graph_novelty(
+            g, sn_size=snapshot_size, start_date=start_date, end_date=end_date, id=int(fd), subset='EDGE')
 
         print('\nWeighted Node Novelty')
-        _, _, weighted_node_novelty = graph_novelty(g, sn_size=snapshot_size, start_date=start_date, end_date=end_date, weighted=True)
+        _, _, weighted_node_novelty = graph_novelty(
+            g, sn_size=snapshot_size, start_date=start_date, end_date=end_date, id=int(fd), weighted=True)
 
         print('Super Start Sum')
         super_star_sum = super_stars_count(g, super_star_threshold, mode='all')
@@ -124,48 +136,60 @@ def compute_bias_metrics(input_dir_path, net_ids=[], s_date='', e_date='', snaps
         print('Super Start Out')
         super_star_out = super_stars_count(g, super_star_threshold, mode='out')
 
-
         result['Node Novelty']["data"].append(node_novelty)
         result['Edge Novelty']["data"].append(edge_novelty)
         result['Weighted Node Novelty']["data"].append(weighted_node_novelty)
 
-        print('Average In-Out')
+        print("Average In-Out")
         result["In-Out Degree"]["data"].append(get_avg_in_out_degree(g=g))
-        print('In-Out Weigthed(hours) Degree')
-        result["In-Out Weigthed(hours) Degree"]["data"].append(get_avg_in_out_disbalance(g=g) )
-        print('Disbalance')
-        result["Disbalance"]["data"].append(get_avg_weighted_in_out_degree(g=g) )
+
+        print("Disbalance")
+        result["Disbalance"]["data"].append(
+            get_avg_in_out_disbalance(g=g))
+
+        print("In-Out Weigthed(hours) Degree")
+        result["In-Out Weigthed(hours) Degree"]["data"].append(
+            get_avg_weighted_in_out_degree(g=g))
+
         print('Unique Edges')
         result["Unique Edges"]["data"].append(get_unique_edges_vs_total(g=g))
-        
-        print('ss sum')
+
+        print('Super Stars Sum')
         result['Super Stars Sum']["data"].append(super_star_sum)
-        print('ss in')
+        print('Super Stars In-deg')
         result['Super Stars In-deg']["data"].append(super_star_in)
-        print('ss out')
+        print('Super Stars Out-deg')
         result['Super Stars Out-deg']["data"].append(super_star_out)
-        print('ss node attribute')
-        result["Node Attribute Distances"]["data"].append(node_attribute_variance(g))
+        print('Node Attribute Distances')
+        result["Node Attribute Distances"]["data"].append(
+            node_attribute_variance(g, accorderie_name))
         # except Exception as e:
         #     print(f'compute_bias_metrics error: {e}')
         #     break
     return result
 
 
+def custom_autopct(pct):
+    if pct > 2.5:
+        return f'{pct:.1f}%'
+    else:
+        return ''
+
+
 def bias_report(metrics_data):
     if not metrics_data:
-        return 
-    
+        return
+
     accorderies = metrics_data['metadata']["accorderies"]
     report_name = '_'.join(accorderies).lower()
-    
+
     with PdfPages(f'new_{report_name}_bias_report.pdf') as pdf:
         for key in metrics_data:
 
             if key == 'metadata':
                 continue
 
-            print(f'Key: {key}')
+            # print(f'Key: {key}')
             plt_key = metrics_data[key]["plt"]
 
             data = metrics_data[key]["data"]
@@ -176,7 +200,7 @@ def bias_report(metrics_data):
             # _key = key.lower()
 
             width = 0.5  # the width of the bars: can also be len(x) sequence
-            
+
             plt.title(key)
 
             if plt_key == 'plot':
@@ -184,100 +208,117 @@ def bias_report(metrics_data):
                 tick_X_label = []
                 tick_positions = np.arange(0, 1.1, 0.1)
                 for idx, d in enumerate(data):
-                    labels = [k[0] for k in d ]  
-                    X = [k[1] for k in d ]  
-                    
-                    X_label = np.arange(len(d)) 
-                   
+                    labels = [k[0] for k in d]
+                    X = [k[1] for k in d]
+
+                    X_label = np.arange(len(d))
+
                     plt.plot(X_label, X, label=accorderies[idx])
-                    
+
                     if len(labels) > len(tick_labels):
                         tick_labels = labels
                         tick_X_label = X_label
 
                 plt.yticks(tick_positions)
-                plt.xticks(tick_X_label, labels=tick_labels, rotation=45, ha='right')
+                plt.xticks(tick_X_label, labels=tick_labels,
+                           rotation=45, ha='right')
                 plt.legend()
-            elif plt_key == 'bar_label':
-                ax = None
+            elif plt_key == 'pie':
                 axes = []
-                if len(data) > 1:
-                    _, ax = plt.subplots(ceil(len(data) /2) ,2)
-                    axes = ax.flatten()
-                else:
-                    _, ax = plt.subplots()
-                    axes.append(ax)
-            
-                for idx, (total, count, result) in enumerate(data):
-                    title = f'#nodes={count}, total={total}'
-                    axes[idx].bar(np.arange(len(result)) + 1,result)
-                    axes[idx].set_yticks(np.arange(0,1.1, 0.1))
-                    if len(result) < 5:
-                        axes[idx].set_xticks(np.arange(len(result)) + 1)
 
-                    axes[idx].set_title(f'{accorderies[idx]}\n{key}')
-                    axes[idx].set_xlabel(title)
-                    axes[idx].set_ylabel('Proportion')
-            
+                for idx, (total, count, result) in enumerate(data):
+                    fig, axes = plt.subplots()
+
+                    title = f'#nodes={count}, total={total}'
+                    explode = np.zeros(len(result))
+                    explode[0] = 0.1
+                    explode[len(result) - 1] = 0.1
+                    labels = ['' for _ in result]
+
+                    axes.pie(result, explode=explode,
+                             labels=labels,
+                             labeldistance=.25,
+                             shadow=True, startangle=135, autopct=custom_autopct, pctdistance=1.2)
+
+                    axes.set_title(f'{accorderies[idx]}\n{key}')
+
+                    axes.set_xlabel(title)
+                    artists = axes.get_children()
+                    if len(artists) != 0:
+
+                        pdf.savefig()
+                    plt.close()
+
             elif plt_key == 'bar':
-                for i,d in enumerate(data):
+                for i, d in enumerate(data):
                     X = np.arange(len([d]))
                     X_new = X + (i - 1) * width
-                    
-                    plt.bar(X_new ,[d], width=width, label=accorderies[i])
+
+                    plt.bar(X_new, [d], width=width, label=accorderies[i])
 
                 tick_positions = np.arange(0, 1.1, 0.1)
 
+                if 'disbalance' in key.lower():
+                    tick_positions = np.arange(0.5, 1.1, .1)
+
+                    plt.ylim(0.5, 1.1)
+
                 plt.yticks(tick_positions)
                 x_ticks_pos = np.arange(-width, len(data), width)
-                plt.xticks(x_ticks_pos[:len(accorderies) ], accorderies)
+                plt.xticks(x_ticks_pos[:len(accorderies)], accorderies)
 
                 plt.ylabel('Proportion')
                 plt.xlabel('Accorderies')
             elif plt_key == 'graph':
-                ax = None
-                axes = []
-                print(data)
-                for dt in data:
-                    for d in dt:
-                        print('graph: ',d.summary())
-                        if len(d) > 1:
-                            _, ax = plt.subplots(ceil(len(d) /2) ,2)
-                            axes = ax.flatten()
-                        else:
-                            _, ax = plt.subplots()
-                            axes.append(ax)
+                for idt, dt in enumerate(data):
+                    axes = []
 
-                        for idx, gd in enumerate(d):
-                            
-                            layout = gd.layout('fr')
+                    for idx, ob in enumerate(dt):
+                        fig, axes = plt.subplots()
+                        t, gd = ob.popitem()
+                        layout = gd.layout('kk')
 
-                            edge_weights = gd.es["weight"]
-                            
-                            axes[idx].set_title(accorderies[idx])
+                        try:
+                            if len(gd.es['weight']) > 0:
+                                edge_weights = gd.es["weight"]
+                        except Exception as e:
+                            pass
 
-                            norm = Normalize(vmin=min(edge_weights), vmax=max(edge_weights))
+                        axes.set_title(f'{accorderies[idt]} {t.title()}')
+
+                        edge_colors = []
+                        if len(edge_weights) > 0:
+                            norm = Normalize(
+                                vmin=min(edge_weights), vmax=max(edge_weights))
 
                             # # Create a colormap from the normalized edge weights
                             cmap = plt.cm.viridis
 
                             # # Map normalized edge weights to colors in the colormap
-                            edge_colors = [to_hex(cmap(norm(weight))) for weight in edge_weights]
+                            edge_colors = [to_hex(cmap(norm(weight)))
+                                           for weight in edge_weights]
+                        # print(f'{accorderies[idt]} {t.title()}')
+                        # print(gd.vs['name'])
+                        ig.plot(
+                            gd,
+                            target=axes,
+                            vertex_label=gd.vs['name'],
+                            edge_width=edge_weights,
+                            # edge_color=edge_colors,
+                            # vertex_size=1,
+                            # vertex_label_size=.8,
+                            layout=layout
+                        )
 
+                        pdf.savefig()
+                        plt.close()
 
-                            ig.plot(
-                                gd,
-                                target=axes[idx],
-                                vertex_label=gd.vs['name'],
-                                edge_width=np.array(gd.es['weight']) * 10,
-                                edge_color=edge_colors, 
-                                #  vertex_size=np.array(gd.degree()) / 10,
-                                layout=layout
-                            )
+                plt.close()
 
             plt.tight_layout()
             pdf.savefig()
             plt.close()
+
 
 all_accorderies = {
     2: "Québec",
@@ -301,23 +342,19 @@ all_accorderies = {
     120: "Granby et région",
 }
 
-# for ac in all_accorderies:
-#     # print(ac)
-#     for sh in ['109']:
-res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/2015', net_ids=['109'], snapshot_size = 365, super_star_threshold=.5)
 
-# bias_report(res)
+res = compute_bias_metrics(input_dir_path='data\\accorderies',
+                           net_ids=[], snapshot_size=365, super_star_threshold=.5)
 
-
-
-
+# print('RESULT', res["Node Attribute Distances"]["data"])
+bias_report(res)
 
 # print(res['In-Out Weigthed(hours) Degree'])
 
 # def compute_bias_metrics_per_page(input_dir_path, s_date='', e_date='', net_ids=[],  snapshot_size = 365, super_star_threshold=.5):
 #     '''
 #         net_ids: serves as a filter
-#     '''    
+#     '''
 #     result = OrderedDict()
 #     result["first_page"] = {
 #         "plt": 'plot',
@@ -363,7 +400,7 @@ res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/201
 #         folders = net_ids
 #     else:
 #         folders = os.listdir(input_dir_path)
-    
+
 #     # print(folders, net_ids)
 #     for fd in folders:
 #         if len(net_ids) > 0 and fd not in net_ids:
@@ -403,14 +440,14 @@ res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/201
 
 #             else:
 #                 print('Nothing')
-#                 return 
-            
+#                 return
+
 #             g = load_accorderie_network(os.path.join(input_dir_path, fd))
-            
+
 #             result["first_page"]["data"]["metadata"].append({"start_date": start_date, "end_date": end_date })
 #             result["second_page"]["data"]["metadata"].append({"start_date": start_date, "end_date": end_date })
 #             result["third_page"]["data"]["metadata"].append({"start_date": start_date, "end_date": end_date })
-            
+
 #             _, sn_size, node_novelty = graph_novelty(g, sn_size=snapshot_size, start_date=start_date, end_date=end_date)
 #             print('\nnode')
 #             _, sn_size, edge_novelty = graph_novelty(g, sn_size=snapshot_size, start_date=start_date, end_date=end_date, subset='EDGE')
@@ -424,20 +461,20 @@ res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/201
 #             super_star_out = super_stars_count(g=g, threshold=super_star_threshold, mode='out')
 #             print('super stars')
 
-            
+
 #             global_metrics =[get_avg_in_out_degree(g=g) ,get_avg_in_out_disbalance(g=g) ,get_avg_weighted_in_out_degree(g=g) ,get_unique_edges_vs_total(g=g)]
-            
+
 #             result["first_page"]["data"]["labels"].append([nn[0] for nn in node_novelty])
 #             result["first_page"]["data"]["Node Novelty"].append([nn[1] for nn in node_novelty])
 #             result["first_page"]["data"]["Edge Novelty"].append([en[1] for en in edge_novelty])
 #             result["first_page"]["data"]["Weighted Node Novelty"].append([wn[1] for wn in weighted_node_novelty])
-            
+
 #             result["second_page"]["data"]["Global Metrics"].append(global_metrics)
 #             # print(accorderie_name, super_star_sum)
 #             result["third_page"]["data"]["Super Stars Sum"].append(super_star_sum)
 #             result["third_page"]["data"]["Super Stars In-deg"].append(super_star_in)
 #             result["third_page"]["data"]["Super Stars Out-deg"].append(super_star_out)
-            
+
 
 #         except Exception as e:
 #             print(e)
@@ -446,12 +483,11 @@ res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/201
 #     return result
 
 
-
 # def bias_report_per_page(metrics_data):
 #     # print(metrics_data)
 #     if not metrics_data:
-#         return 
-    
+#         return
+
 #     accorderies = metrics_data['first_page']["accorderies"]
 
 #     report_name = '_'.join(accorderies)
@@ -464,7 +500,7 @@ res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/201
 #             labels = metrics_data[key]["data"]["labels"]
 #             titles = metrics_data[key]["titles"]
 #             accorderies = metrics_data[key]["accorderies"]
-            
+
 
 #             idx = None
 #             if plt_key == 'plot':
@@ -480,8 +516,8 @@ res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/201
 #                     if len(label) > len(label[max_label_idx]):
 #                         max_label_idx = i
 #                         # label_idx = i
-                
-                
+
+
 #                 axes = axes.flatten()
 #                 idx = 0
 #                 for kd in data:
@@ -493,7 +529,7 @@ res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/201
 #                     axes[idx].set_title(titles[idx])
 #                     for i,d in enumerate(data[kd]):
 #                         X = np.arange(len(d))
-                       
+
 #                         axes[idx].plot(X,d)
 #                     axes[idx].set_ylabel('Proportion')
 #                     axes[idx].set_xlabel('Nodes''Days')
@@ -504,9 +540,9 @@ res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/201
 
 #             if plt_key == 'bar':
 #                 row = ceil(len(data) - 1.01/ 2)
-                
+
 #                 col = len(metrics_data[key]["titles"])
-            
+
 #                 fig, axes = plt.subplots(row, col)
 
 #                 axes = axes.flatten()
@@ -515,18 +551,18 @@ res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/201
 #                 for kd in data:
 #                     if len(data[kd]) == 0:
 #                         continue
-                    
+
 #                     if kd == 'metadata':
 #                         continue
-             
+
 #                     axes[idx].set_title(titles[idx])
 #                     for i,d in enumerate(data[kd]):
 #                         X = np.arange(len(d))
 #                         X_new = X + (i - 1) * width
-                        
+
 #                         axes[idx].bar(X_new ,d, width=width)
 #                         axes[idx].set_xticks(X_new, X_ticks)
-                    
+
 #                     axes[idx].set_ylabel('Proportion')
 #                     axes[idx].set_xlabel('Nodes''Days')
 #                     axes[idx].set_xlabel('Nodes''Days')
@@ -535,14 +571,14 @@ res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/201
 
 #             if plt_key == 'pie':
 #                 row = len(accorderies)
-                
+
 #                 col = len(titles)
-            
+
 #                 fig, axes = plt.subplots(row, col)
-                
+
 #                 axes = axes.flatten()
 
-                
+
 #                 idx = 0
 #                 for iter in range(row):
 #                     # print(iter)
@@ -560,7 +596,7 @@ res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/201
 #                         explode = np.zeros(len(data[kd][iter]))
 #                         explode[0] = 0.1
 #                         axes[idx].set_title(titles[title_i])
-                        
+
 #                         wedges, texts, _ = axes[idx].pie(data[kd][iter], explode=tuple(explode), autopct='%1.1f%%', startangle=90)
 
 #                         # Check if there are multiple wedges to create the annotations
@@ -583,7 +619,7 @@ res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/201
 #                         idx+=1
 #             plt.subplots_adjust(bottom=0.20)
 #             plt.tight_layout()
-            
+
 #             pdf.savefig()
 #             plt.close()
 
@@ -602,8 +638,8 @@ res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/201
 #         if len(label) > len(label[max_label_idx]):
 #             max_label_idx = i
 #             # label_idx = i
-    
-    
+
+
 #     axes = axes.flatten()
 #     idx = 0
 #     for kd in data:
@@ -615,7 +651,7 @@ res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/201
 #         axes[idx].set_title(titles[idx])
 #         for i,d in enumerate(data[kd]):
 #             X = np.arange(len(d))
-            
+
 #             axes[idx].plot(X,d)
 #         axes[idx].set_ylabel('Proportion')
 #         axes[idx].set_xlabel('Nodes''Days')
@@ -626,7 +662,7 @@ res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/201
 
 # if plt_key == 'bar':
 #     row = ceil(len(data) - 1.01/ 2)
-    
+
 #     col = len(metrics_data[key]["titles"])
 
 #     fig, axes = plt.subplots(row, col)
@@ -637,18 +673,18 @@ res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/201
 #     for kd in data:
 #         if len(data[kd]) == 0:
 #             continue
-        
+
 #         if kd == 'metadata':
 #             continue
-    
+
 #         axes[idx].set_title(titles[idx])
 #         for i,d in enumerate(data[kd]):
 #             X = np.arange(len(d))
 #             X_new = X + (i - 1) * width
-            
+
 #             axes[idx].bar(X_new ,d, width=width)
 #             axes[idx].set_xticks(X_new, X_ticks)
-        
+
 #         axes[idx].set_ylabel('Proportion')
 #         axes[idx].set_xlabel('Nodes''Days')
 #         axes[idx].set_xlabel('Nodes''Days')
@@ -657,14 +693,14 @@ res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/201
 
 # if plt_key == 'pie':
 #     row = len(accorderies)
-    
+
 #     col = len(titles)
 
 #     fig, axes = plt.subplots(row, col)
-    
+
 #     axes = axes.flatten()
 
-    
+
 #     idx = 0
 #     for iter in range(row):
 #         # print(iter)
@@ -682,7 +718,7 @@ res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/201
 #             explode = np.zeros(len(data[kd][iter]))
 #             explode[0] = 0.1
 #             axes[idx].set_title(titles[title_i])
-            
+
 #             wedges, texts, _ = axes[idx].pie(data[kd][iter], explode=tuple(explode), autopct='%1.1f%%', startangle=90)
 
 # Check if there are multiple wedges to create the annotations
@@ -705,23 +741,6 @@ res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/201
 # idx+=1
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # arg_parser = argparse.ArgumentParser()
 
 # arg_parser.add_argument('-i', '--input', required=True)
@@ -738,7 +757,7 @@ res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/201
 # def compute_bias_metrics_og(input_dir_path, net_ids=[], snapshot_size = 365, super_star_threshold=.5):
 #     '''
 #         net_ids: serves as a filter
-#     '''    
+#     '''
 
 #     # result = {
 #     #     "Snapshot Size": snapshot_size,
@@ -764,7 +783,7 @@ res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/201
 #         folders = net_ids
 #     else:
 #         folders = os.listdir(input_dir_path)
-    
+
 #     for fd in folders:
 
 #         if len(net_ids) > 0 and fd not in net_ids:
@@ -772,14 +791,14 @@ res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/201
 
 #         print('\n\n\n\nFOLDER: '+ fd)
 #         accorderie_name  = accorderies[int(fd)]
-    
+
 #         print("Name: " + accorderie_name)
 #         # result[accorderie_name] = {}
 
 #         try:
 #             start_date, end_date = get_start_and_end_date(input_dir=os.path.join(input_dir_path, fd))
 #             g = load_accorderie_network(os.path.join(input_dir_path, fd))
-            
+
 #             # print(g.vs[0:10])
 
 #             _, sn_size, node_novelty = graph_novelty(g, sn_size=snapshot_size, start_date=start_date, end_date=end_date)
@@ -830,11 +849,11 @@ res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/201
 
 #     row = 0
 #     col = 0
-    
+
 #     for key in metrics_data:
 #         if key == 'metadata' or key == 'Global Metrics':
 #             continue
-        
+
 #                 # row+=1
 #         if col == 2:
 #             col = 0
@@ -843,7 +862,7 @@ res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/201
 #         data = metrics_data[key]['data']
 #         plt_key = metrics_data[key]['plt']
 #         Y = []
-        
+
 #         # mod = row % 2
 #         target = ax[row,col]
 
@@ -852,9 +871,9 @@ res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/201
 #                 target = ax[row + i , ( i + col )%2]
 
 #                 target.pie(d)
-               
-#             # row+=1                  
-#         else: 
+
+#             # row+=1
+#         else:
 #             for d in data:
 #                 if plt_key == 'bar':
 #                     Y = np.arange(0, 1, .1)
@@ -865,7 +884,7 @@ res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/201
 #             target.set_ylabel('Proportion')
 #             target.set_xlabel('Nodes''Days')
 #             target.set_xlabel('Nodes''Days')
-        
+
 #         col+=1
 
 #     global_metrics = metrics_data['Global Metrics']['data']
@@ -876,8 +895,8 @@ res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date='01/01/201
 #         X = np.arange(len(gm)) + width
 #         if idx == 0:
 #             X = X - width
-        
+
 #         plt.bar(X + width, gm)
-        
+
 #     plt.savefig('./sherbrooke_bias_metrics.pdf', dpi=300)
 #     plt.close()

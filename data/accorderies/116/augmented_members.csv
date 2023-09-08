@@ -1,0 +1,4 @@
+,id,age,genre,revenu,ville,region,arrondissement,adresse,accorderie,mapid,degrees,betweenness,harmonic_centrality,transitivity_undirected,pagerank,eccentricity
+0,4757,0,1,20001-30000,Sainte-Thérèse,Laurentides,,J7E,114,5707,1,0.0,0.75,0.0,0.37012987012987014,0.0
+1,4819,0,1,0,Parisville,Centre-du-Québec,,G1K,116,5659,2,0.0,1.0,0.0,0.2597402597402597,1.0
+2,6152,0,0,10001-20000,Québec,Capitale-Nationale,Les Rivières,G2K,2,4322,1,0.0,0.75,0.0,0.37012987012987014,0.0
