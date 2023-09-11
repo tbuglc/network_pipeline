@@ -683,7 +683,8 @@ def convert_matrix_to_graph(name, data, attribute_names):
     p = pd.DataFrame(data)
     p.columns = attribute_names
 
-    p.to_csv(f'{name}.csv')
+    p.to_csv(f'./distances/{name}_raw.csv')
+    # print('DATA MATRIX: ', data)
     matrx = []
     for row in data:
         row_sum = np.sum(row)
@@ -691,6 +692,11 @@ def convert_matrix_to_graph(name, data, attribute_names):
             matrx.append(np.array(row)/row_sum)
         else:
             matrx.append(row)
+
+    p = pd.DataFrame(matrx)
+    p.columns = attribute_names
+
+    p.to_csv(f'./distances/{name}_percent.csv')
 
     g = Graph()
 

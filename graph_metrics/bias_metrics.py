@@ -189,17 +189,14 @@ def bias_report(metrics_data):
             if key == 'metadata':
                 continue
 
-            # print(f'Key: {key}')
             plt_key = metrics_data[key]["plt"]
 
             data = metrics_data[key]["data"]
-            # scale = metrics_data[key]["scale"]
+
             if len(data) == 0:
                 continue
 
-            # _key = key.lower()
-
-            width = 0.5  # the width of the bars: can also be len(x) sequence
+            width = 0.5
 
             plt.title(key)
 
@@ -223,6 +220,11 @@ def bias_report(metrics_data):
                 plt.xticks(tick_X_label, labels=tick_labels,
                            rotation=45, ha='right')
                 plt.legend()
+
+                plt.tight_layout()
+                pdf.savefig()
+                plt.close()
+
             elif plt_key == 'pie':
                 axes = []
 
@@ -232,21 +234,21 @@ def bias_report(metrics_data):
                     title = f'#nodes={count}, total={total}'
                     explode = np.zeros(len(result))
                     explode[0] = 0.1
-                    explode[len(result) - 1] = 0.1
-                    labels = ['' for _ in result]
+                    # explode[len(result) - 1] = 0.1
+                    labels = ["{:.2f}%".format(
+                        rt * 100) if rt*100 > 2.5 else '' for rt in result]
 
                     axes.pie(result, explode=explode,
                              labels=labels,
-                             labeldistance=.25,
-                             shadow=True, startangle=135, autopct=custom_autopct, pctdistance=1.2)
+                             labeldistance=1.1,
+                             shadow=True, startangle=135)
 
                     axes.set_title(f'{accorderies[idx]}\n{key}')
 
                     axes.set_xlabel(title)
-                    artists = axes.get_children()
-                    if len(artists) != 0:
 
-                        pdf.savefig()
+                    plt.tight_layout()
+                    pdf.savefig()
                     plt.close()
 
             elif plt_key == 'bar':
@@ -269,6 +271,10 @@ def bias_report(metrics_data):
 
                 plt.ylabel('Proportion')
                 plt.xlabel('Accorderies')
+
+                plt.tight_layout()
+                pdf.savefig()
+                plt.close()
             elif plt_key == 'graph':
                 for idt, dt in enumerate(data):
                     axes = []
@@ -310,14 +316,11 @@ def bias_report(metrics_data):
                             layout=layout
                         )
 
+                        plt.tight_layout()
                         pdf.savefig()
                         plt.close()
 
                 plt.close()
-
-            plt.tight_layout()
-            pdf.savefig()
-            plt.close()
 
 
 all_accorderies = {
@@ -343,8 +346,8 @@ all_accorderies = {
 }
 
 
-res = compute_bias_metrics(input_dir_path='data\\accorderies',
-                           net_ids=[], snapshot_size=365, super_star_threshold=.5)
+res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date="01/01/2018",
+                           net_ids=['109', '112'], snapshot_size=365, super_star_threshold=.5)
 
 # print('RESULT', res["Node Attribute Distances"]["data"])
 bias_report(res)
