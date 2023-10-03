@@ -9,39 +9,39 @@ metrics_columns = ['Degree', 'Betweenness', 'Closeness',
                    'Page Rank', 'Clustering Coefficient']
 
 global_graph_indices = [
-                        'Vertices', 
-                        'Edges', 
-                        'Max in-degree', 
-                        'Max out-degree', 
-                        'Mean degree', 
-                        'Average in-out degree',
-                        'Average weighted in-out degree',
-                        'Average in-out disbalance',
-                        'Unique edges',
-                        'Diameter',
-                        'Radius', 
-                        'Density',
-                        'Average path length', 
-                        'Reciprocity', 
-                        'Average eccentricity', 
-                        'Weakly connected component', 
-                        'Strongly connected component', 
-                        'Power law alpha',
-                        'Global clustering coefficient',
-                        'Clustering coefficient',
-                        'Degree centralization',
-                        'Betweenness centralization',
-                        'Closeness centralization',
-                        'Harmonic distance centralization',
-                        'Average page rank',
-                        'Degree assortativity',
-                        'Homophily by age',
-                        'Homophily by revenu',
-                        'Homophily by ville',
-                        'Homophily by region',
-                        'Homophily by arrondissement',
-                        'Homophily by adresse',
-                    ]
+    'Vertices',
+    'Edges',
+    'Max in-degree',
+    'Max out-degree',
+    'Mean degree',
+    'Average in-out degree',
+    'Average weighted in-out degree',
+    'Average in-out disbalance',
+    'Unique edges',
+    'Diameter',
+    'Radius',
+    'Density',
+    'Average path length',
+    'Reciprocity',
+    'Average eccentricity',
+    'Weakly connected component',
+    'Strongly connected component',
+    'Power law alpha',
+    'Global clustering coefficient',
+    'Clustering coefficient',
+    'Degree centralization',
+    'Betweenness centralization',
+    'Closeness centralization',
+    'Harmonic distance centralization',
+    'Average page rank',
+    'Degree assortativity',
+    'Homophily by age',
+    'Homophily by revenu',
+    'Homophily by ville',
+    'Homophily by region',
+    'Homophily by arrondissement',
+    'Homophily by adresse',
+]
 # FIXME: POTENTIAL DUPLICATE
 accorderies = {
     2: "Québec",
@@ -138,70 +138,81 @@ def parse_output_dir(path):
 '''
 
 # DUPLICATED
+
+
 def perform_filter_on_graph(g, filters):
     if (not filters):
         return None
 
     # vertices properties filter
-    if (filters["age"]):
+    if filters.get("age", None):
         print("Filtering by age, value= "+str(filters["age"]))
         g = g.induced_subgraph(g.vs.select(age_in=filters["age"]))
 
-    if (filters["adresse"]):
+    if filters.get("m_acc_id", None):
+        accs = [int(ac) for ac in filters['m_acc_id']]
+        print("Filtering by member accorderie id, value= " +
+              str(filters["m_acc_id"]))
+        g = g.induced_subgraph(g.vs.select(accorderie_in=accs))
+
+    if filters.get("adresse", None):
         print("Filtering by adresse, value= "+str(filters["adresse"]))
         g = g.induced_subgraph(g.vs.select(adresse_in=filters["adresse"]))
 
-    if (filters["arrondissement"]):
+    if filters.get("arrondissement", None):
         print("Filtering by arrondissement, value= " +
               str(filters["arrondissement"]))
         g = g.induced_subgraph(g.vs.select(
             arrondissement_in=filters["arrondissement"]))
 
-    if (filters["ville"]):
+    if filters.get("ville", None):
         print("Filtering by ville, value= "+str(filters["ville"]))
         g = g.induced_subgraph(g.vs.select(aville_in=filters["ville"]))
 
-    if (filters["genre"]):
+    if filters.get("genre", None):
         print("Filtering by genre, value= "+str(filters["genre"]))
         g = g.induced_subgraph(g.vs.select(
             genre_in=[int(j) for j in filters["genre"]]))
 
-    if (filters["revenu"]):
+    if filters.get("revenu", None):
         rev = {''+filters["revenu"][0]: filters["revenu"][1]}
         print("Filtering by revenu, value= "+str(filters["revenu"]))
         g = g.induced_subgraph(g.vs(**rev))
     # edges properties
-    if (filters["date"]):
+    if filters.get("date", None):
         print("Filtering by date, value= "+str(filters["date"]))
 
         date_filter = filters['date']
         if date_filter[0] == '<':
-            g = g.subgraph_edges(g.es.select(lambda e: False if e['date'] == '0000-00-00' else parser.parse(e['date']) <= parser.parse(date_filter[1:])))
+            g = g.subgraph_edges(g.es.select(
+                lambda e: False if e['date'] == '0000-00-00' else parser.parse(e['date']) <= parser.parse(date_filter[1:])))
         elif date_filter[0] == '>':
-            g = g.subgraph_edges(g.es.select(lambda e: False if e['date'] == '0000-00-00' else parser.parse(e['date']) >= parser.parse(date_filter[1:])))
+            g = g.subgraph_edges(g.es.select(
+                lambda e: False if e['date'] == '0000-00-00' else parser.parse(e['date']) >= parser.parse(date_filter[1:])))
         elif date_filter[0] == ':':
             date_intervals = date_filter[1:].split(',')
-            g = g.subgraph_edges(g.es.select(lambda e: False if e['date'] == '0000-00-00' else parser.parse(e['date']) >= parser.parse(date_intervals[0]) and parser.parse(e['date']) <= parser.parse(date_intervals[1])))
+            g = g.subgraph_edges(g.es.select(lambda e: False if e['date'] == '0000-00-00' else parser.parse(
+                e['date']) >= parser.parse(date_intervals[0]) and parser.parse(e['date']) <= parser.parse(date_intervals[1])))
         else:
             g = g.subgraph_edges(g.es.select(date_in=[date_filter]))
 
-    if (filters["duree"]):
+    if filters.get("duree", None):
         for i, d in enumerate(filters['duree']):
             splitted_d = d.split(':')
             if len(splitted_d[0]) < 2:
-                filters['duree'][i] = '0' + filters['duree'][i] 
-        
+                filters['duree'][i] = '0' + filters['duree'][i]
+
         print("Filtering by duree, value= "+str(filters["duree"]))
         g = g.subgraph_edges(g.es.select(duree_in=filters['duree']))
-        
 
-    if (filters["service"]):
+    if filters.get("service", None):
         print("Filtering by service, value= "+str(filters["service"]))
         g = g.subgraph_edges(g.es.select(service_in=filters["service"]))
 
-    if (filters["accorderie"]):
+    if filters.get("accorderie", None):
         filters['accorderie'] = [int(x) for x in filters['accorderie']]
-        print("Filtering by accorderie, value= "+str(filters["accorderie"]))
+        print("Filtering by edge accorderie, value= " +
+              str(filters["accorderie"]))
         g = g.subgraph_edges(g.es.select(accorderie_in=filters["accorderie"]))
 
     return g

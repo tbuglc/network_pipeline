@@ -35,9 +35,8 @@ export function timeRandomizer(start = 0, end = 6) {
 
 export function fakePostCode() {
   //FORMAT: ANA NAN
-  return `${alpha[randomizer(0, 23)]}${randomizer(1, 9)}${
-    alpha[randomizer(0, 23)]
-  } ${randomizer(1, 9)}${alpha[randomizer(0, 23)]}${randomizer(1, 9)}`;
+  return `${alpha[randomizer(0, 23)]}${randomizer(1, 9)}${alpha[randomizer(0, 23)]
+    } ${randomizer(1, 9)}${alpha[randomizer(0, 23)]}${randomizer(1, 9)}`;
 }
 
 export function getRandomNumberInInterval(min, max) {
@@ -74,11 +73,25 @@ export function randomExponential(rate) {
   // http://en.wikipedia.org/wiki/Exponential_distribution#Generating_exponential_variates
   rate = rate || 1;
   // console.log(rate)
+  // var U = 0.37;
+  // var U = 0.37;
   var U = Math.random();
+  console.log('U: ', U)
+  console.log('U* rate: ', U * rate)
   // console.log(U)
-  return -Math.log(U) / rate;
+  const res = -Math.log(1 - U) / rate;
+  // const res = Math.exp(-U * rate);
+  console.log('random exponential: ', res)
+  return res
 }
+function generatePowerLawValues(xmin = 1, alpha) {
 
+  const u = Math.random();
+  const x = xmin * Math.pow(1 - u, -1 / (alpha - 1));
+
+
+  return x;
+}
 /**
     The sociability of an individual is an integer that durees the probability of being the endpoint of an edge
     distribution can either be "exp" for exponential, or anything else, which defaults to uniform 
@@ -86,7 +99,10 @@ export function randomExponential(rate) {
   **/
 export function getRandomSociability(distribution = "exp", param = 1) {
   if (distribution == "exponential" || distribution == "exp") {
-    return Math.ceil(randomExponential(param) + 0.0001);
+    const r = generatePowerLawValues(0.1, param)
+    // const r = Math.min()
+    console.log('got rnd soc: ', r)
+    return r
   } else {
     return 1;
   }
@@ -112,7 +128,7 @@ export async function excelGenerator(data, sheetLabel, columns, path) {
   ws.addRows(data);
 
   // create folder if does not exist
-  if(!fs.existsSync(path))
+  if (!fs.existsSync(path))
     fs.mkdirSync(join(path))
 
   await wb.csv.writeFile(

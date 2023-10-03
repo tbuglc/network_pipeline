@@ -30,6 +30,7 @@ export function generateUsers(
     const user = {
       id: index,
       //TODO: Adjust user age from here
+      mapid: index,
       age: findAgeRange(
         dateRandomizer(moment("1987-01-01"), moment("1940-01-01"))
       ),
@@ -57,25 +58,34 @@ export function generateUsers(
 
 /**
   Choose a user based on their durees.  duree_attribute is the name of the user attribute 
-  to use as a duree (intended to be either 'sociability_out' or 'sociability_in').
+  to use as a duree (intended to be either sociability_out' or 'sociability_in').
 **/
 export function getRandomUser(users, duree_attribute) {
   //the idea is to choose a random number r between 0 and the sum of durees.
   //we then go through the users and the first one whose sum reaches r is chosen.
   //todo: explain better
   //todo: find a better sampling strategy
+  console.log(`# of users for [${duree_attribute}]: `, (users || []).length)
+
   let attr_sum = 0;
   for (let i = 0; i < users.length; i++) {
+    // console.log(`${duree_attribute}: `, users[i][duree_attribute])
     attr_sum += users[i][duree_attribute];
   }
+  console.log(`print attribute sum for [${duree_attribute}]: `, attr_sum)
 
   let r = getRandomNumberInInterval(0, attr_sum - 1);
-
+  console.log(`picked r for [${duree_attribute}]: `, r)
   let tmp_sum = 0;
   for (let i = 0; i < users.length; i++) {
     let w = users[i][duree_attribute];
 
-    if (tmp_sum + w > r) return users[i];
+    if (tmp_sum + w > r) {
+      console.log(`temp_sum [${duree_attribute}]: `, tmp_sum + w)
+      console.log(`index of user picked for [${duree_attribute}]: `, i);
+      console.log("\n\n\n")
+      return users[i];
+    }
 
     tmp_sum += w;
   }

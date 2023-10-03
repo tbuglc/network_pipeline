@@ -1,4 +1,5 @@
 import argparse
+from functools import reduce
 import os
 import sys
 import json
@@ -18,7 +19,7 @@ import igraph as ig
 from matplotlib.colors import Normalize, to_hex
 
 
-def compute_bias_metrics(input_dir_path, net_ids=[], s_date='', e_date='', snapshot_size=365, super_star_threshold=.5):
+def compute_bias_metrics(net_ids=[], alias=[], s_date='', e_date='', snapshot_size=365, super_star_threshold=.5):
     '''
         net_ids: serves as a filter
     '''
@@ -32,15 +33,28 @@ def compute_bias_metrics(input_dir_path, net_ids=[], s_date='', e_date='', snaps
     # key: accorderie, value is an array of start and end date
     result["metadata"]["dates"] = {}
 
+    # result["Node Scatter"] = {"plt": "scatter",
+    #                           "data": [], "scale": prob_scale}
+    # result["Edge Scatter"] = {"plt": "scatter",
+    #                           "data": [], "scale": prob_scale}
+    # result["Weighted Scatter"] = {
+    #     "plt": "scatter", "data": [], "scale": prob_scale}
+
     result["Node Novelty"] = {"plt": "plot", "data": [], "scale": prob_scale}
 
     result["Weighted Node Novelty"] = {
         "plt": "plot", "data": [], "scale": prob_scale}
+
     result["Edge Novelty"] = {"plt": "plot", "data": [], "scale": prob_scale}
+    result["Interactions Trend"] = {
+        "plt": "plot", "data": [], "scale": prob_scale}
     result["In-Out Degree"] = {"plt": "bar", "data": [], "scale": prob_scale}
+
     result["In-Out Weigthed(hours) Degree"] = {"plt": "bar",
                                                "data": [], "scale": prob_scale}
+
     result["Disbalance"] = {"plt": "bar", "data": [], "scale": prob_scale[5:]}
+
     result["Unique Edges"] = {"plt": "bar", "data": [], "scale": []}
 
     result["Super Stars Sum"] = {"plt": "pie", "data": [], "scale": []}
@@ -49,17 +63,16 @@ def compute_bias_metrics(input_dir_path, net_ids=[], s_date='', e_date='', snaps
     result["Super Stars Out-deg"] = {"plt": "pie",
                                      "data": [], "scale": []}
     result["Node Attribute Distances"] = {
-        "plt": "graph", "data": [], "scale": []}
+        "plt": "heatmap", "data": [], "scale": []}
 
     start_date = None
     end_date = None
 
-    # folders = None
-
     if len(net_ids) == 0:
-        net_ids = os.listdir(input_dir_path)
-        print('NET IDS', net_ids)
-    for fd in net_ids:
+        # net_ids = os.listdir(input_dir_path)
+        # print('NET IDS', net_ids)
+        raise 'No network to compute metrics for'
+    for fidx, fd in enumerate(net_ids):
         print(f'\n====== {fd} ====== \n')
         count_super = 0
 
@@ -72,24 +85,17 @@ def compute_bias_metrics(input_dir_path, net_ids=[], s_date='', e_date='', snaps
             count_super = len(split_fd[1:])
             fd = ''.join(split_fd[:1])
 
-        # validate fd to avoid errors while reading graphs
-        if fd not in os.listdir(input_dir_path):
-            print(f'skipping invalid folder id: {fd}')
-            # skip ids not in folder of graphs
-            # this may happen if the input id is not correct or by user error
-            continue
-
         if s_date and not e_date:
             start_date = parser.parse(s_date)
             _, end_date = get_start_and_end_date(
-                input_dir=os.path.join(input_dir_path, fd))
+                input_dir=os.path.join(fd))
         elif e_date and not s_date:
             end_date = parser.parse(e_date)
             start_date, _ = get_start_and_end_date(
-                input_dir=os.path.join(input_dir_path, fd))
+                input_dir=os.path.join(fd))
         elif not s_date and not e_date:
             start_date, end_date = get_start_and_end_date(
-                input_dir=os.path.join(input_dir_path, fd))
+                input_dir=os.path.join(fd))
         elif s_date and e_date:
             start_date = parser.parse(s_date)
             end_date = parser.parse(e_date)
@@ -97,7 +103,7 @@ def compute_bias_metrics(input_dir_path, net_ids=[], s_date='', e_date='', snaps
             print('Nothing')
             continue
 
-        accorderie_name = accorderies[int(fd)]
+        accorderie_name = alias[fidx]
 
         print(f"Name: {accorderie_name}, date: {start_date} - {end_date}")
 
@@ -110,7 +116,11 @@ def compute_bias_metrics(input_dir_path, net_ids=[], s_date='', e_date='', snaps
         result["metadata"]["dates"][accorderie_name] = [start_date, end_date]
 
         # try:
-        g = load_accorderie_network(os.path.join(input_dir_path, fd))
+        g = load_accorderie_network(os.path.join(fd))
+
+        # Skip empty graphs
+        if len(g.vs) == 0 or len(g.es) == 0:
+            continue
 
         if count_super > 0:
             for _ in range(count_super):
@@ -118,17 +128,26 @@ def compute_bias_metrics(input_dir_path, net_ids=[], s_date='', e_date='', snaps
                 node_with_highest_degree = degrees.index(max(degrees))
                 g.delete_vertices(node_with_highest_degree)
 
+        # get accorderie id if exist
+        if '\\' in fd:
+            acc_id = fd.split('\\')[-1:]
+        elif '/' in fd:
+            acc_id = fd.split('/')[-1:]
+        else:
+            acc_id = ""
+
         print('\nNode Novelty')
-        _, _, node_novelty = graph_novelty(
-            g, sn_size=snapshot_size, start_date=start_date, end_date=end_date, id=int(fd))
+        _, _, node_novelty, raw_node_result = graph_novelty(
+            g, sn_size=snapshot_size, start_date=start_date, end_date=end_date, id=acc_id)
+        print(node_novelty, raw_node_result)
         print('\nEdge Novelty')
-        _, _, edge_novelty = graph_novelty(
-            g, sn_size=snapshot_size, start_date=start_date, end_date=end_date, id=int(fd), subset='EDGE')
-
+        _, _, edge_novelty, raw_edge_result = graph_novelty(
+            g, sn_size=snapshot_size, start_date=start_date, end_date=end_date, id=acc_id, subset='EDGE')
+        print(edge_novelty, raw_edge_result)
         print('\nWeighted Node Novelty')
-        _, _, weighted_node_novelty = graph_novelty(
-            g, sn_size=snapshot_size, start_date=start_date, end_date=end_date, id=int(fd), weighted=True)
-
+        _, _, weighted_node_novelty, raw_weighted_result = graph_novelty(
+            g, sn_size=snapshot_size, start_date=start_date, end_date=end_date, id=acc_id, weighted=True)
+        print(weighted_node_novelty, raw_weighted_result)
         print('Super Start Sum')
         super_star_sum = super_stars_count(g, super_star_threshold, mode='all')
         print('Super Start In')
@@ -136,8 +155,25 @@ def compute_bias_metrics(input_dir_path, net_ids=[], s_date='', e_date='', snaps
         print('Super Start Out')
         super_star_out = super_stars_count(g, super_star_threshold, mode='out')
 
+        # result['Node Scatter']["data"].append(raw_node_result)
+        # result['Edge Scatter']["data"].append(raw_edge_result)
+        # result['Weighted Scatter']["data"].append(raw_weighted_result)
+
         result['Node Novelty']["data"].append(node_novelty)
         result['Edge Novelty']["data"].append(edge_novelty)
+        edg_count = [(d, e) for _, e, d in raw_edge_result]
+        # num_edg_count = [e for _, e, d in raw_edge_result]
+        # nec_max = np.max(num_edg_count)
+        # nec_min = np.min(num_edg_count)
+        # num_edg_count = (np.array(num_edg_count) -
+        #                  nec_min) / (nec_max - nec_min)
+        # edg_count = [(label_edg_count[i], num_edg_count[i])
+        #              for i in range(len(num_edg_count))]
+        print("EDGE COUNT", edg_count)
+        # print('EDGE COUNT NORMALIZED', edg_count)
+
+        result['Interactions Trend']["data"].append(edg_count
+                                                    )
         result['Weighted Node Novelty']["data"].append(weighted_node_novelty)
 
         print("Average In-Out")
@@ -161,11 +197,18 @@ def compute_bias_metrics(input_dir_path, net_ids=[], s_date='', e_date='', snaps
         print('Super Stars Out-deg')
         result['Super Stars Out-deg']["data"].append(super_star_out)
         print('Node Attribute Distances')
-        result["Node Attribute Distances"]["data"].append(
-            node_attribute_variance(g, accorderie_name))
+
+        if 'random' not in accorderie_name.lower():
+            result["Node Attribute Distances"]["data"].append(
+                node_attribute_variance(g, accorderie_name))
+
         # except Exception as e:
         #     print(f'compute_bias_metrics error: {e}')
         #     break
+
+    # rescale novelties to have the same date
+    # 1. find the lowest date
+    # 2. fill in missing values
     return result
 
 
@@ -215,8 +258,11 @@ def bias_report(metrics_data):
                     if len(labels) > len(tick_labels):
                         tick_labels = labels
                         tick_X_label = X_label
+                # X_bool = [True if z <= 1 else False for z in X]
 
-                plt.yticks(tick_positions)
+                if reduce(lambda v, w: v & w, [True if z <= 1 else False for z in X]):
+                    plt.yticks(tick_positions)
+
                 plt.xticks(tick_X_label, labels=tick_labels,
                            rotation=45, ha='right')
                 plt.legend()
@@ -224,14 +270,76 @@ def bias_report(metrics_data):
                 plt.tight_layout()
                 pdf.savefig()
                 plt.close()
+            elif plt_key == 'heatmap':
+                for dt_indx, dta in enumerate(data):
+                    for dt in dta:
+                        # print(dt)
+                        d = dt["data"]
+                        labls = dt["labels"]
+                        title = dt["title"]
+                        # 'viridis' is a colormap; choose one you prefer
+                        plt.imshow(d, cmap='Reds', aspect='auto')
 
+                        # Add a colorbar to the plot
+                        cbar = plt.colorbar()
+                        cbar.set_label('Color Scale')  # Label for the colorbar
+
+                        # Annotations for the legend
+                        # plt.annotate('Low Value', (0, -0.5), color='black', fontsize=10)
+                        # plt.annotate('High Value', (9, -0.5), color='black', fontsize=10)
+
+                        # Label the x-axis values
+                        plt.xticks(range(d.shape[1]), labls, rotation=45)
+
+                        # Label the y-axis values
+                        plt.yticks(range(d.shape[0]), labls, rotation=45)
+
+                        # Set the title
+                        plt.title(f'{accorderies[dt_indx]}-{title}')
+
+                        # plt.legend()
+
+                        plt.tight_layout()
+                        pdf.savefig()
+                        plt.close()
+
+            elif plt_key == 'scatter':
+                for idx, d in enumerate(data):
+
+                    X = []
+                    Y = []
+                    L = []
+                    for x, y, l in d:
+                        X.append(x)
+                        Y.append(y)
+                        L.append(l)
+
+                    # Add labels for specific points
+                    for i in range(len(X)):
+                        plt.text(X[i], Y[i], L[i], fontsize=12,
+                                 ha='center', va='bottom', rotation=90)
+
+                    plt.scatter(X, Y, label=accorderies[idx])
+
+                    # if len(labels) > len(tick_labels):
+                    #     tick_labels = labels
+                    #     tick_X_label = X_label
+
+                # plt.yticks(tick_positions)
+                # plt.xticks(tick_X_label, labels=tick_labels,
+                #            rotation=45, ha='right')
+                plt.legend()
+
+                plt.tight_layout()
+                pdf.savefig()
+                plt.close()
             elif plt_key == 'pie':
                 axes = []
 
-                for idx, (total, count, result) in enumerate(data):
+                for idx, (total, count, result, threshold) in enumerate(data):
                     fig, axes = plt.subplots()
 
-                    title = f'#nodes={count}, total={total}'
+                    title = f'#nodes={count}, total={total}, threshold={threshold}'
                     explode = np.zeros(len(result))
                     explode[0] = 0.1
                     # explode[len(result) - 1] = 0.1
@@ -239,8 +347,7 @@ def bias_report(metrics_data):
                         rt * 100) if rt*100 > 2.5 else '' for rt in result]
 
                     axes.pie(result, explode=explode,
-                             labels=labels,
-                             labeldistance=1.1,
+                             autopct=custom_autopct,
                              shadow=True, startangle=135)
 
                     axes.set_title(f'{accorderies[idx]}\n{key}')
@@ -309,14 +416,14 @@ def bias_report(metrics_data):
                             gd,
                             target=axes,
                             vertex_label=gd.vs['name'],
-                            edge_width=edge_weights,
+                            # edge_width=edge_weights,
                             # edge_color=edge_colors,
                             # vertex_size=1,
                             # vertex_label_size=.8,
                             layout=layout
                         )
 
-                        plt.tight_layout()
+                        # plt.tight_layout()
                         pdf.savefig()
                         plt.close()
 
@@ -345,9 +452,9 @@ all_accorderies = {
     120: "Granby et région",
 }
 
-
-res = compute_bias_metrics(input_dir_path='data\\accorderies', s_date="01/01/2018",
-                           net_ids=['109', '112'], snapshot_size=365, super_star_threshold=.5)
+#  s_date='01/01/2014', e_date='01/01/2022'
+res = compute_bias_metrics(
+    net_ids=['data\\accorderies\\109', 'data\\accorderies\\109---'], s_date='01/01/2010', e_date='01/01/2022', alias=["Sherbrooke ratio", "Sherbrooke - node"], snapshot_size=365, super_star_threshold=.5)
 
 # print('RESULT', res["Node Attribute Distances"]["data"])
 bias_report(res)

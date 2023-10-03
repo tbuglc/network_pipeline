@@ -385,7 +385,7 @@ def get_avg_in_out_degree(g):
 
     ratio_sum = 0
     nb_isolated = 0
-
+    all_ratio = []
     for v in g.vs:
         indeg = g.degree(v, mode='in')
         outdeg = g.degree(v, mode='out')
@@ -394,14 +394,25 @@ def get_avg_in_out_degree(g):
             nb_isolated += 1
         else:
             ratio_sum += (indeg / (outdeg + indeg))
-
+            all_ratio.append(indeg / (outdeg + indeg))
     result = 0
+
+    pd.DataFrame(all_ratio).to_csv('ratios__.csv')
     try:
+        print('ISOLATED: ', nb_isolated)
+
         result = ratio_sum / (len(g.vs) - nb_isolated)
     except Exception as e:
         print('WARNING: Divide by zero error')
 
     print(f'get_avg_in_out_degree: {result}')
+
+    # FIXME:
+    std_in = np.std(g.degree(mode='in'))
+    std_out = np.std(g.degree(mode='out'))
+
+    result = std_in / (std_in + std_out)
+    print('RESULT IN-OUT ', result)
     return result
 
 
@@ -413,7 +424,8 @@ def get_avg_weighted_in_out_degree(g, field_name='duree'):
 
     ratio_sum = 0
     nb_isolated = 0
-
+    total_weigh_in = []
+    total_weigh_out = []
     for v in g.vs:
         weight_in = 0
         for e in g.es[g.incident(v, mode='in')]:
@@ -422,6 +434,9 @@ def get_avg_weighted_in_out_degree(g, field_name='duree'):
         weight_out = 0
         for e in g.es[g.incident(v, mode='out')]:
             weight_out += duree_to_int(e['duree'])
+
+        total_weigh_in.append(weight_in)
+        total_weigh_out.append(weight_out)
 
         if weight_in == 0 and weight_out == 0:
             nb_isolated += 1
@@ -437,6 +452,10 @@ def get_avg_weighted_in_out_degree(g, field_name='duree'):
         print('WARNING: Divide by zero error')
 
     print(f'get_avg_weighted_in_out_degree: {result}')
+    total_weigh_in = np.std(total_weigh_in)
+    total_weigh_out = np.std(total_weigh_out)
+
+    result = total_weigh_in / (total_weigh_in + total_weigh_out)
     return result
 
 
@@ -504,7 +523,7 @@ def get_unique_edges_vs_total(g):
     return result
 
 
-def perform_filter(g, start_date, window_date):
+def perform_filter(g, start_date, window_date, acc_id=None):
     filters = {
         'age': '',
         'adresse': '',
@@ -517,6 +536,9 @@ def perform_filter(g, start_date, window_date):
         'service': '',
         'accorderie': '',
     }
+    if acc_id:
+        filters['accorderie'] = acc_id
+        filters['m_acc_id'] = acc_id
     filters['date'] = f':{start_date.strftime("%Y-%m-%d")},{window_date.strftime("%Y-%m-%d")}'
 
     snapshot = perform_filter_on_graph(g, filters=filters)
@@ -528,20 +550,23 @@ def graph_novelty(g, sn_size, start_date, end_date, id, weighted=False, subset='
     if len(g.vs) == 0:
         return np.nan
 
-    window_date = start_date + timedelta(sn_size)
+    window_date = start_date + timedelta(sn_size * 2)
 
     result = []
+    raw_result = []
     total_sum = 0
     while window_date < end_date:
-        if window_date - timedelta(sn_size) == start_date:
-            window_date = window_date + timedelta(sn_size)
-            continue
+        # if window_date - timedelta(sn_size) == start_date:
+        #     window_date = window_date + timedelta(sn_size)
+        #     continue
 
+        # start from start date up to beginning of current snapshot.
+        # This exclude current snapshot in the cummulative
         cummulative_snapshots = perform_filter(
-            g,  start_date, window_date - timedelta(sn_size))
-
+            g,  start_date, window_date - timedelta(sn_size), acc_id=id)
+        # current snapshot: start date = end of cumm, end date = cummulative end + snapshot size
         current_snapshot = perform_filter(
-            g, window_date - timedelta(sn_size), window_date)
+            g, window_date - timedelta(sn_size), window_date, acc_id=id)
 
         dataframe_cummulative_snapshots = []
         dataframe_current_snapshot = []
@@ -550,16 +575,15 @@ def graph_novelty(g, sn_size, start_date, end_date, id, weighted=False, subset='
             dataframe_cummulative_snapshots = cummulative_snapshots.get_edgelist()
             dataframe_current_snapshot = current_snapshot.get_edgelist()
         elif subset == 'NODE':
-            dataframe_cummulative_snapshots = cummulative_snapshots.get_vertex_dataframe()
-            # [
-            #     'id'].unique()
-            dataframe_current_snapshot = current_snapshot.get_vertex_dataframe()
-            # [
-            #     'id'].unique()
-            dataframe_cummulative_snapshots = dataframe_cummulative_snapshots.loc[dataframe_cummulative_snapshots['accorderie'].astype(
-                int) == id]["id"].unique()
-            dataframe_current_snapshot = dataframe_current_snapshot.loc[dataframe_current_snapshot['accorderie'].astype(
-                int) == id]["id"].unique()
+            dataframe_cummulative_snapshots = cummulative_snapshots.get_vertex_dataframe()[
+                'mapid']
+            dataframe_current_snapshot = current_snapshot.get_vertex_dataframe()[
+                'mapid']
+
+            # dataframe_cummulative_snapshots = dataframe_cummulative_snapshots.loc[dataframe_cummulative_snapshots['accorderie'].astype(
+            #     int) == id]["id"].unique()
+            # dataframe_current_snapshot = dataframe_current_snapshot.loc[dataframe_current_snapshot['accorderie'].astype(
+            #     int) == id]["id"].unique()
             # print("cumm", dataframe_cummulative_snapshots)
             # print("curr", dataframe_current_snapshot)
         else:
@@ -583,13 +607,24 @@ def graph_novelty(g, sn_size, start_date, end_date, id, weighted=False, subset='
         # print('diff', diff)
 
         if weighted and subset == 'NODE':
-            diff_g = current_snapshot.vs.select(id_in=diff)
+            # print('DIFF', diff)
+            diff_g = current_snapshot.vs.select(mapid_in=diff)
+            # print('filtered graph: ', diff_g)
+            # print('DIFF VS CURR DEGREES: ', diff_g.degree(
+            #     mode=degree_mode), current_snapshot.degree(mode=degree_mode))
             ratio_diff = np.sum(diff_g.degree(mode=degree_mode)) / \
                 np.sum(current_snapshot.degree(mode=degree_mode))
+            # print('ratio weighted: ', ratio_diff)
         else:
             ratio_diff = len(diff) / len(dataframe_current_snapshot)
 
-        result.append((window_date.strftime("%Y/%m/%d"), ratio_diff))
+        raw_result.append(
+            (len(diff), len(dataframe_current_snapshot),
+                ((window_date - timedelta(sn_size)).strftime("%Y/%m/%d")))
+        )
+
+        result.append(
+            ((window_date - timedelta(sn_size)).strftime("%Y/%m/%d"), ratio_diff))
 
         total_sum = total_sum + ratio_diff
 
@@ -599,7 +634,7 @@ def graph_novelty(g, sn_size, start_date, end_date, id, weighted=False, subset='
 
     average = (1/norm.days)*total_sum
 
-    return average, sn_size, result
+    return average, sn_size, result, raw_result
 
 
 def super_stars_count(g, threshold=.5, mode='all'):
@@ -631,7 +666,7 @@ def super_stars_count(g, threshold=.5, mode='all'):
     #     print(degree_seq)
     # print(result)
     # result.append(threshold)
-    return node_total, node_count, result
+    return node_total, node_count, result, threshold
 
 
 def euclidean_distance(vector1, vector2):
@@ -670,35 +705,46 @@ def construct_graph(distances, attribute_names):
     return gd
 
 
-def transform_array_to_obj(arr):
+def transform_array_to_obj(prop, arr):
     result = {}
-
-    for i, v in enumerate(arr):
-        result[v] = i
-
+    # print('BEFORE TRANSFORMATION: ', arr)
+    i = 0
+    for v in arr:
+        if v not in ['nan', 0, '0'] and ('' or prop).lower() != 'genre':
+            result[v] = i
+            i += 1
+        elif ('' or prop).lower() == 'genre' and ('N' not in v):
+            result[v] = i
+            i += 1
+        else:
+            # skip aberrant values
+            pass
+    # print('AFTER TRANSFORMATION: ', result)
     return result
 
 
 def convert_matrix_to_graph(name, data, attribute_names):
-    p = pd.DataFrame(data)
-    p.columns = attribute_names
+    # p = pd.DataFrame(data)
+    # p.columns = attribute_names
 
-    p.to_csv(f'./distances/{name}_raw.csv')
+    # p.to_csv(f'./distances/{name}_raw.csv')
     # print('DATA MATRIX: ', data)
+
     matrx = []
     for row in data:
         row_sum = np.sum(row)
         if row_sum > 0:
-            matrx.append(np.array(row)/row_sum)
+            matrx.append(
+                (np.array(row)/row_sum) * 100)
         else:
             matrx.append(row)
 
-    p = pd.DataFrame(matrx)
-    p.columns = attribute_names
+    # p = pd.DataFrame(matrx)
+    # p.columns = attribute_names
 
-    p.to_csv(f'./distances/{name}_percent.csv')
+    # p.to_csv(f'./distances/{name}_percent.csv')
 
-    g = Graph()
+    g = Graph(directed=True)
 
     # Add vertices to the graph
     num_vertices = len(matrx)
@@ -714,62 +760,114 @@ def convert_matrix_to_graph(name, data, attribute_names):
     return g
 
 
-def node_attribute_variance(g, accorderie_name):
-    ages = transform_array_to_obj(np.unique(g.vs["age"]))
-    genres = transform_array_to_obj(np.unique(g.vs["genre"]))
-    revenus = transform_array_to_obj(np.unique(g.vs["revenu"]))
-    villes = transform_array_to_obj(np.unique(g.vs["ville"]))
-    regions = transform_array_to_obj(np.unique(g.vs["region"]))
-    arrondissements = transform_array_to_obj(np.unique(g.vs["arrondissement"]))
-    addresses = transform_array_to_obj(np.unique(g.vs["adresse"]))
+def normalize_matrix(matrix):
+    # min_value = matrix.min()
+    # max_value = matrix.max()
+
+    # # Normalize the matrix to [0, 1]
+    # normalized_matrix = (matrix - min_value) / (max_value - min_value)
+    # print('normalization matrix start ', matrix)
+    for r in range(np.array(matrix).shape[0]):
+        # print('row before scaling', matrix[r])
+        if sum(matrix[r]) > 0:
+            matrix[r] = np.array(matrix[r])/sum(matrix[r])
+        # print('row after scaling', matrix[r])
+
+    # print('normalization matrix end ', matrix)
+    return matrix
+
+
+def count_interactions(matrx, ob, source_prop, target_prop):
+    if ob.get(source_prop, None) and ob.get(target_prop, None):
+        matrx[ob[source_prop], ob[target_prop]] += 1
+    # return matrx
+
+
+def node_attribute_variance(g, accorderie_name=''):
+
+    ages = transform_array_to_obj('age', np.unique(g.vs["age"]))
+    genres = transform_array_to_obj("genre", np.unique(g.vs["genre"]))
+    revenus = transform_array_to_obj("revenu", np.unique(g.vs["revenu"]))
+    # villes = transform_array_to_obj("ville", np.unique(g.vs["ville"]))
+    regions = transform_array_to_obj("region", np.unique(g.vs["region"]))
+
+    # try:
+    #     addresses = transform_array_to_obj(
+    #         "adresse", np.unique(g.vs["adresse"]))
+    # except:
+    #     addresses = transform_array_to_obj(
+    #         "address", np.unique(g.vs["address"]))
+
+    # arrondissements = transform_array_to_obj(
+    # "arrondissement", np.unique(g.vs["arrondissement"]))
 
     ages_matrx = np.zeros((len(ages), len(ages)))
     genres_matrx = np.zeros((len(genres), len(genres)))
     revenus_matrx = np.zeros((len(revenus), len(revenus)))
-    villes_matrx = np.zeros((len(villes), len(villes)))
+    # villes_matrx = np.zeros((len(villes), len(villes)))
     regions_matrx = np.zeros((len(regions), len(regions)))
-    arrondissements_matrx = np.zeros(
-        (len(arrondissements), len(arrondissements)))
-    addresses_matrx = np.zeros((len(addresses), len(addresses)))
+    # arrondissements_matrx = np.zeros(
+    #     (len(arrondissements), len(arrondissements)))
+    # addresses_matrx = np.zeros((len(addresses), len(addresses)))
 
     for e in g.es:
-
         u, v = g.vs[e.source], g.vs[e.target]
-
-        ages_matrx[ages[str(u['age'])], ages[str(v['age'])]] += 1
-
-        genres_matrx[genres[str(u['genre'])], genres[str(v['genre'])]] += 1
-
-        revenus_matrx[revenus[str(u['revenu'])],
-                      revenus[str(v['revenu'])]] += 1
-
-        villes_matrx[villes[str(u['ville'])], villes[str(v['ville'])]] += 1
-
-        regions_matrx[regions[str(u['region'])],
-                      regions[str(v['region'])]] += 1
-
-        arrondissements_matrx[arrondissements[str(
-            u['arrondissement'])], arrondissements[str(v['arrondissement'])]] += 1
-
-        addresses_matrx[addresses[str(u['adresse'])],
-                        addresses[str(v['adresse'])]] += 1
-
+        # ages_matrx[ages[str(u['age'])], ages[str(v['age'])]] += 1
+        count_interactions(ages_matrx, ages, str(v['age']), str(u['age']))
+        # genres_matrx[genres[str(u['genre'])], genres[str(v['genre'])]] += 1
+        count_interactions(genres_matrx, genres,
+                           str(u['genre']), str(v['genre']))
+        # revenus_matrx[revenus[str(u['revenu'])],
+        #               revenus[str(v['revenu'])]] += 1
+        count_interactions(revenus_matrx, revenus,
+                           str(u['revenu']), str(v['revenu']))
+        # villes_matrx[villes[str(u['ville'])], villes[str(v['ville'])]] += 1
+        # count_interactions(villes_matrx, villes,
+        #                    str(u['ville']), str(v['ville']))
+        # regions_matrx[regions[str(u['region'])],
+        #               regions[str(v['region'])]] += 1
+        count_interactions(regions_matrx, regions,
+                           str(u['region']), str(v['region']))
+        # arrondissements_matrx[arrondissements[str(
+        #     u['arrondissement'])], arrondissements[str(v['arrondissement'])]] += 1
+        # count_interactions(arrondissements_matrx, arrondissements, str(
+        #     u['arrondissement']), str(v['arrondissement']))
+        # addresses_matrx[addresses[str(u['adresse'])],
+        #                 addresses[str(v['adresse'])]] += 1
+        # count_interactions(addresses_matrx, addresses,
+        #                    str(u['adresse'] or u['address']), str(v['adresse'] or v['address']))
     return [
-        {"ages": convert_matrix_to_graph(f"{accorderie_name}_ages", ages_matrx, [
-                                         k for (_, k) in ages.items()])},
-        {"genres": convert_matrix_to_graph(f"{accorderie_name}_genres", genres_matrx, [
-                                           k for (_, k) in genres.items()])},
-        {"revenus": convert_matrix_to_graph(f"{accorderie_name}_revenus", revenus_matrx, [
-                                            k for (_, k) in revenus.items()])},
-        {"villes": convert_matrix_to_graph(f"{accorderie_name}_villes", villes_matrx, [
-                                           k for (_, k) in villes.items()])},
-        {"regions": convert_matrix_to_graph(f"{accorderie_name}_regions", regions_matrx, [
-                                            k for (_, k) in regions.items()])},
-        {"arrondissements": convert_matrix_to_graph(f"{accorderie_name}_arrondissements", arrondissements_matrx, [
-                                                    k for (_, k) in arrondissements.items()])},
-        {"addresses": convert_matrix_to_graph(f"{accorderie_name}_addresses", addresses_matrx, [
-                                              k for (_, k) in addresses.items()])},
+        {"data": normalize_matrix(ages_matrx), "title": "Ages", "labels": [
+            k for (k, _) in ages.items()]},
+        {"data": normalize_matrix(genres_matrx), "title": "Genres", "labels": [
+            k for (k, _) in genres.items()]},
+        {"data": normalize_matrix(revenus_matrx), "title": "Revenus", "labels": [
+            k for (k, _) in revenus.items()]},
+        # {"data": normalize_matrix(villes_matrx), "title": "Villes", "labels": [
+        #     k for (k, _) in villes.items()]},
+        {"data": normalize_matrix(regions_matrx), "title": "Regions", "labels": [
+            k for (k, _) in regions.items()]},
+        # {"data": normalize_matrix(arrondissements_matrx), "title": "Arrondissements", "labels": [
+        #     k for (k, _) in arrondissements.items()]},
+        # {"data": normalize_matrix(addresses_matrx), "title": "Adresses", "labels": [
+        #     k for (k, _) in addresses.items()]},
     ]
+    # return [
+    #     {"ages": convert_matrix_to_graph(f"{accorderie_name}_ages", ages_matrx, [
+    #                                      k for (_, k) in ages.items()])},
+    #     {"genres": convert_matrix_to_graph(f"{accorderie_name}_genres", genres_matrx, [
+    #                                        k for (_, k) in genres.items()])},
+    #     {"revenus": convert_matrix_to_graph(f"{accorderie_name}_revenus", revenus_matrx, [
+    #                                         k for (_, k) in revenus.items()])},
+    #     {"villes": convert_matrix_to_graph(f"{accorderie_name}_villes", villes_matrx, [
+    #                                        k for (_, k) in villes.items()])},
+    #     {"regions": convert_matrix_to_graph(f"{accorderie_name}_regions", regions_matrx, [
+    #                                         k for (_, k) in regions.items()])},
+    #     {"arrondissements": convert_matrix_to_graph(f"{accorderie_name}_arrondissements", arrondissements_matrx, [
+    #                                                 k for (_, k) in arrondissements.items()])},
+    #     {"addresses": convert_matrix_to_graph(f"{accorderie_name}_addresses", addresses_matrx, [
+    #                                           k for (_, k) in addresses.items()])},
+    # ]
 
 
 def node_attribute_variance_(g):
