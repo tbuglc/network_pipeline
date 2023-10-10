@@ -101,7 +101,7 @@ export function getRandomSociability(distribution = "exp", param = 1) {
   if (distribution == "exponential" || distribution == "exp") {
     const r = generatePowerLawValues(0.1, param)
     // const r = Math.min()
-    console.log('got rnd soc: ', r)
+    // console.log('got rnd soc: ', r)
     return r
   } else {
     return 1;

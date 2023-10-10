@@ -36,7 +36,7 @@ export function generateUsers(
       ),
       address: fakePostCode().slice(-3),
       region: regionInfo[0],
-      revenu: revenus[randomizer(0, revenus.length)],
+      revenu: revenus[randomizer(0, revenus.length - 1)],
       longitude: regionInfo[1],
       latitude: regionInfo[2],
       genre: faker.name.sex(true) === "female" ? 0 : 1,
@@ -44,6 +44,7 @@ export function generateUsers(
         sociability_distribution,
         sociability_params
       ),
+      accorderie: 109,
       sociability_in: getRandomSociability(
         sociability_distribution,
         sociability_params
@@ -65,25 +66,25 @@ export function getRandomUser(users, duree_attribute) {
   //we then go through the users and the first one whose sum reaches r is chosen.
   //todo: explain better
   //todo: find a better sampling strategy
-  console.log(`# of users for [${duree_attribute}]: `, (users || []).length)
+  // console.log(`# of users for [${duree_attribute}]: `, (users || []).length)
 
   let attr_sum = 0;
   for (let i = 0; i < users.length; i++) {
     // console.log(`${duree_attribute}: `, users[i][duree_attribute])
     attr_sum += users[i][duree_attribute];
   }
-  console.log(`print attribute sum for [${duree_attribute}]: `, attr_sum)
+  // console.log(`print attribute sum for [${duree_attribute}]: `, attr_sum)
 
   let r = getRandomNumberInInterval(0, attr_sum - 1);
-  console.log(`picked r for [${duree_attribute}]: `, r)
+  // console.log(`picked r for [${duree_attribute}]: `, r)
   let tmp_sum = 0;
   for (let i = 0; i < users.length; i++) {
     let w = users[i][duree_attribute];
 
     if (tmp_sum + w > r) {
-      console.log(`temp_sum [${duree_attribute}]: `, tmp_sum + w)
-      console.log(`index of user picked for [${duree_attribute}]: `, i);
-      console.log("\n\n\n")
+      // console.log(`temp_sum [${duree_attribute}]: `, tmp_sum + w)
+      // console.log(`index of user picked for [${duree_attribute}]: `, i);
+      // console.log("\n\n\n")
       return users[i];
     }
 

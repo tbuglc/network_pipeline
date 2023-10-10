@@ -1,6 +1,6 @@
 import { serviceAccorderie } from "./data.js";
 import { getRandomUser } from './members.js'
-import { randomizer , formatDate, timeRandomizer} from "./utils.js";
+import { randomizer, formatDate, timeRandomizer } from "./utils.js";
 import { regions } from "./constants.js";
 
 /**
@@ -46,19 +46,53 @@ export function generateTransactionSourceAndTarget(users, region_bias) {
 
   return [target, source];
 }
+// Function to generate a random date with a user-defined bias factor
+function generateRandomDateWithBias(startDate, endDate, userBiasFactor) {
+  // console.log(startDate, endDate, userBiasFactor)
+  // If userBiasFactor is 0, return a completely random date
+  if (userBiasFactor === 0) {
+    const randomTimestamp = startDate + Math.random() * (endDate - startDate);
+    return new Date(randomTimestamp);
+  }
+
+  // Define the range of biasFactor (-1 to 1)
+  const minBiasFactor = -1; // Bias towards startDate
+  const maxBiasFactor = 1;  // Bias towards endDate
+
+  // Ensure userBiasFactor is within the valid range (-1 to 1)
+  const biasFactor = Math.min(maxBiasFactor, Math.max(minBiasFactor, userBiasFactor));
+
+  // Generate a random number between 0 and 1
+  const random = Math.random();
+
+  // Apply the bias to the random number
+  const biasedRandom = 1 - Math.pow(random, Math.abs(biasFactor));
+
+  // Calculate the random timestamp biased towards startDate or endDate
+  const randomTimestamp = startDate + (biasedRandom * (endDate - startDate));
+  // console.log(randomTimestamp)
+  // Create a new Date object from the random timestamp
+  const randomDate = new Date(randomTimestamp);
+  // console.log(randomDate)
+  return randomDate;
+}
 
 /**
   Generates a random date in the desired interval.
   If biasfactor = 1, should return a date uniformly.  If > 1, favors dates closer to startdate, and if < 1, favors dates closer to enddate
   **/
-export function generateTransactionDate(startdate, enddate, biasfactor = 1) {
+export function generateTransactionDate(startdate, enddate, biasfactor = 0) {
+  // console.log(startdate, enddate)
   //convert to milliseconds, choose randomly millis within the time interval, convert to date, and return
-  let mintime = startdate.getTime();
-  let maxtime = enddate.getTime();
+  // let mintime = startdate.getTime();
+  // let maxtime = enddate.getTime();
 
-  let time = mintime + (maxtime - mintime) * Math.pow(Math.random(), biasfactor);
+  // let time = mintime + (maxtime - mintimet) * Math.pow(Math.random(), biasfactor);
 
-  return new Date(time);
+  // return new Date(time);
+  const result = generateRandomDateWithBias(startdate.getTime(), enddate.getTime(), biasfactor)
+  // console.log('result', result)
+  return result
 }
 
 /**
@@ -96,6 +130,8 @@ export function generateTransactions(
         serviceAccorderie[(0, randomizer(0, serviceAccorderie.length - 1))],
       source: source.id,
       target: target.id,
+      accorderie: 109,
+      id: index,
       date: formatDate(transaction_date),
       duree: timeRandomizer(),
     };
