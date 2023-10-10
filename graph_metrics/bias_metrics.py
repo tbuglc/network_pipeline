@@ -114,7 +114,7 @@ def compute_bias_metrics(net_ids=[], alias=[], s_date='', e_date='', snapshot_si
             result["metadata"]["accorderies"].append(accorderie_name)
 
         result["metadata"]["dates"][accorderie_name] = [start_date, end_date]
-
+        print('START DATE: ', start_date, 'END DATE: ', end_date)
         # try:
         g = load_accorderie_network(os.path.join(fd))
 
@@ -139,15 +139,18 @@ def compute_bias_metrics(net_ids=[], alias=[], s_date='', e_date='', snapshot_si
         print('\nNode Novelty')
         _, _, node_novelty, raw_node_result = graph_novelty(
             g, sn_size=snapshot_size, start_date=start_date, end_date=end_date, id=acc_id)
-        print(node_novelty, raw_node_result)
+        print('ratio: ', node_novelty)
+        print('raw: ', raw_node_result)
         print('\nEdge Novelty')
         _, _, edge_novelty, raw_edge_result = graph_novelty(
             g, sn_size=snapshot_size, start_date=start_date, end_date=end_date, id=acc_id, subset='EDGE')
-        print(edge_novelty, raw_edge_result)
+        print('ratio: ', edge_novelty)
+        print('raw: ', raw_edge_result)
         print('\nWeighted Node Novelty')
         _, _, weighted_node_novelty, raw_weighted_result = graph_novelty(
             g, sn_size=snapshot_size, start_date=start_date, end_date=end_date, id=acc_id, weighted=True)
-        print(weighted_node_novelty, raw_weighted_result)
+        print('ratio: ', weighted_node_novelty)
+        print('raw: ', raw_weighted_result)
         print('Super Start Sum')
         super_star_sum = super_stars_count(g, super_star_threshold, mode='all')
         print('Super Start In')
@@ -169,7 +172,7 @@ def compute_bias_metrics(net_ids=[], alias=[], s_date='', e_date='', snapshot_si
         #                  nec_min) / (nec_max - nec_min)
         # edg_count = [(label_edg_count[i], num_edg_count[i])
         #              for i in range(len(num_edg_count))]
-        print("EDGE COUNT", edg_count)
+        # print("EDGE COUNT", edg_count)
         # print('EDGE COUNT NORMALIZED', edg_count)
 
         result['Interactions Trend']["data"].append(edg_count
@@ -226,7 +229,7 @@ def bias_report(metrics_data):
     accorderies = metrics_data['metadata']["accorderies"]
     report_name = '_'.join(accorderies).lower()
 
-    with PdfPages(f'new_{report_name}_bias_report.pdf') as pdf:
+    with PdfPages(f'selected_accorderies_bias_report.pdf') as pdf:
         for key in metrics_data:
 
             if key == 'metadata':
@@ -346,6 +349,13 @@ def bias_report(metrics_data):
                     labels = ["{:.2f}%".format(
                         rt * 100) if rt*100 > 2.5 else '' for rt in result]
 
+                    print('\n')
+                    print(result, explode)
+                    if np.sum(result) == 0:
+                        explode = np.zeros(len(result))
+                    print('\n')
+                    print(result, explode)
+
                     axes.pie(result, explode=explode,
                              autopct=custom_autopct,
                              shadow=True, startangle=135)
@@ -362,7 +372,7 @@ def bias_report(metrics_data):
                 for i, d in enumerate(data):
                     X = np.arange(len([d]))
                     X_new = X + (i - 1) * width
-
+                    print('KEY: ', key, 'value: ', d)
                     plt.bar(X_new, [d], width=width, label=accorderies[i])
 
                 tick_positions = np.arange(0, 1.1, 0.1)
@@ -374,7 +384,10 @@ def bias_report(metrics_data):
 
                 plt.yticks(tick_positions)
                 x_ticks_pos = np.arange(-width, len(data), width)
-                plt.xticks(x_ticks_pos[:len(accorderies)], accorderies)
+                #  plt.xticks(tick_X_label, labels=tick_labels,
+                #            rotation=45, ha='right')
+                plt.xticks(x_ticks_pos[:len(accorderies)],
+                           accorderies,  rotation=45, ha='right')
 
                 plt.ylabel('Proportion')
                 plt.xlabel('Accorderies')
@@ -454,7 +467,55 @@ all_accorderies = {
 
 #  s_date='01/01/2014', e_date='01/01/2022'
 res = compute_bias_metrics(
-    net_ids=['data\\accorderies\\109', 'data\\accorderies\\109---'], s_date='01/01/2010', e_date='01/01/2022', alias=["Sherbrooke ratio", "Sherbrooke - node"], snapshot_size=365, super_star_threshold=.5)
+    net_ids=[
+        'data\\accorderies\\2',
+        # 'data\\accorderies\\2-',
+        'data\\accorderies\\86',
+        # 'data\\accorderies\\86-',
+        'data\\accorderies\\92',
+        # 'data\\accorderies\\92-',
+        'data\\accorderies\\113',
+        # 'data\\accorderies\\113-',
+        'data\\accorderies\\104',
+        # 'data\\accorderies\\104-',
+        'data\\accorderies\\109',
+        # 'data\\accorderies\\109-',
+        'data\\accorderies\\114',
+        # 'data\\accorderies\\114-',
+        'data\\accorderies\\115',
+        # 'data\\accorderies\\115-',
+        # 'data\\accorderies\\116',
+        # 'data\\accorderies\\116-',
+        'data\\accorderies\\119',
+        # 'data\\accorderies\\119-',
+        'data\\accorderies\\120',
+        # 'data\\accorderies\\120-',
+    ], s_date='01/01/2012',
+    e_date='01/01/2023',
+    alias=[
+        "Québec",
+        # "Québec - 1 super star",
+        "Trois-Rivières",
+        # "Trois-Rivières - 1 super star",
+        "Shawinigan",
+        # "Shawinigan - 1 super star",
+        "Montréal-Nord secteur Nord-Est",
+        # "Montréal-Nord secteur Nord-Est - 1 super star",
+        "Montréal-Nord",
+        # "Montréal-Nord - 1 super star",
+        "Sherbrooke",
+        # "Sherbrooke - 1 super star",
+        "Rosemont",
+        # "Rosemont - 1 super star",
+        "Longueuil",
+        # "Longueuil - 1 super star",
+        # "Réseau Accorderie (du Qc)",
+        # "Réseau Accorderie (du Qc) - 1 super star",
+        "Grand Gaspé",
+        # "Grand Gaspé - 1 super star",
+        "Granby et région",
+        # "Granby et région - 1 super star",
+    ], snapshot_size=365, super_star_threshold=.5)
 
 # print('RESULT', res["Node Attribute Distances"]["data"])
 bias_report(res)

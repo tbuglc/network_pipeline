@@ -410,7 +410,9 @@ def get_avg_in_out_degree(g):
     # FIXME:
     std_in = np.std(g.degree(mode='in'))
     std_out = np.std(g.degree(mode='out'))
-
+    # print('in', g.degree(mode='in'), 'out', g.degree(mode='out'))
+    print('std_in: ', std_in)
+    print('std_out: ', std_out)
     result = std_in / (std_in + std_out)
     print('RESULT IN-OUT ', result)
     return result
@@ -555,16 +557,18 @@ def graph_novelty(g, sn_size, start_date, end_date, id, weighted=False, subset='
     result = []
     raw_result = []
     total_sum = 0
-    while window_date < end_date:
+    while (window_date - timedelta(sn_size)) < end_date:
         # if window_date - timedelta(sn_size) == start_date:
         #     window_date = window_date + timedelta(sn_size)
         #     continue
 
         # start from start date up to beginning of current snapshot.
         # This exclude current snapshot in the cummulative
+        print('cummulative snapshots')
         cummulative_snapshots = perform_filter(
             g,  start_date, window_date - timedelta(sn_size), acc_id=id)
         # current snapshot: start date = end of cumm, end date = cummulative end + snapshot size
+        print('current snapshot')
         current_snapshot = perform_filter(
             g, window_date - timedelta(sn_size), window_date, acc_id=id)
 
@@ -590,10 +594,14 @@ def graph_novelty(g, sn_size, start_date, end_date, id, weighted=False, subset='
             break
 
         ratio_diff = 0
-
+        diff = set()
         if len(dataframe_cummulative_snapshots) == 0 or len(dataframe_current_snapshot) == 0:
+            result.append(((window_date - timedelta(sn_size)
+                            ).strftime("%Y/%m/%d"), ratio_diff))
+            raw_result.append(
+                (len(dataframe_cummulative_snapshots), len(dataframe_current_snapshot), ((window_date - timedelta(sn_size)).strftime("%Y/%m/%d"))))
+
             window_date = window_date + timedelta(sn_size)
-            result.append((window_date.strftime("%Y/%m/%d"), ratio_diff))
 
             continue
 
@@ -619,9 +627,7 @@ def graph_novelty(g, sn_size, start_date, end_date, id, weighted=False, subset='
             ratio_diff = len(diff) / len(dataframe_current_snapshot)
 
         raw_result.append(
-            (len(diff), len(dataframe_current_snapshot),
-                ((window_date - timedelta(sn_size)).strftime("%Y/%m/%d")))
-        )
+            (len(diff), len(dataframe_current_snapshot), ((window_date - timedelta(sn_size)).strftime("%Y/%m/%d"))))
 
         result.append(
             ((window_date - timedelta(sn_size)).strftime("%Y/%m/%d"), ratio_diff))
@@ -654,7 +660,12 @@ def super_stars_count(g, threshold=.5, mode='all'):
         node_sum += max_deg
 
         node_count += 1
-
+        if node_sum == 0 and degree_total == 0:
+            result.append(0)
+            continue
+        elif degree_total == 0:
+            result.append(0)
+            continue
         ratio = node_sum / degree_total
         result.append(max_deg/degree_total)
         # print(str(degree_total) +" - "+ str(node_sum) +" - "+ str(node_count) +" - "+ str(ratio) + " - "+ str(threshold))
@@ -713,7 +724,7 @@ def transform_array_to_obj(prop, arr):
         if v not in ['nan', 0, '0'] and ('' or prop).lower() != 'genre':
             result[v] = i
             i += 1
-        elif ('' or prop).lower() == 'genre' and ('N' not in v):
+        elif ('' or prop).lower() == 'genre' and ('N' not in [c.upper() for c in str(v)]):
             result[v] = i
             i += 1
         else:
