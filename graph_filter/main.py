@@ -19,7 +19,6 @@ def main(filters={}):
         print('Not transactions and members found!')
         return
 
-
     output_dir = filters['output']
 
     create_folder_if_not_exist(output_dir)
@@ -45,15 +44,14 @@ arg_parser.add_argument('--date')
 arg_parser.add_argument('--duree', action="append")
 arg_parser.add_argument('--service', action="append")
 
-arg_parser.add_argument('--accorderie', action="append")
-
+arg_parser.add_argument('--accorderie_edge', action="append")
+arg_parser.add_argument('--accorderie_node', action="append")
 
 args = arg_parser.parse_args()
 
 if (args is not None):
     filters = args.__dict__
+    print(filters)
     main(filters)
 else:
     print("Missing filters")
-
-

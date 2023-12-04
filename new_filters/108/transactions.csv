@@ -1,0 +1,2024 @@
+source,target,duree,date,service,detailservice,accorderie,id
+262,261,03:30:00,2007-08-30,Achat regroupé,Partage des commandes,108.0,2408
+264,273,07:30:00,2007-12-21,Arts / Culture / Éducation,Transfert VHS à DVD,108.0,7085
+264,260,01:30:00,2007-12-02,Arts / Culture / Éducation,Transfert VHS à DVD,108.0,7087
+264,269,01:00:00,2007-08-11,Santé / Maternité / Esthétique,Reiki,108.0,4674
+264,269,02:00:00,2007-08-14,Santé / Maternité / Esthétique,Reiki,108.0,4676
+264,269,02:00:00,2007-08-20,Santé / Maternité / Esthétique,Reiki,108.0,4677
+264,269,02:00:00,2007-09-03,Santé / Maternité / Esthétique,Reiki,108.0,4679
+264,269,02:00:00,2007-08-27,Santé / Maternité / Esthétique,Reiki,108.0,4681
+264,269,02:30:00,2007-09-17,Santé / Maternité / Esthétique,Reiki,108.0,4682
+264,261,01:00:00,2007-09-13,Autres transactions,Bon cadeau,108.0,5367
+264,260,02:00:00,2007-08-16,Arts / Culture / Éducation,Transfert VHS à DVD,108.0,5379
+264,266,13:00:00,2007-10-30,Arts / Culture / Éducation,Transfert VHS à DVD,108.0,6514
+264,263,02:00:00,2007-12-14,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous médicaux,108.0,7086
+264,268,01:30:00,2007-12-11,Santé / Maternité / Esthétique,Reiki,108.0,7088
+264,261,03:30:00,2007-11-29,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,7100
+264,261,02:30:00,2007-09-25,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,7276
+264,273,12:30:00,2008-05-04,Arts / Culture / Éducation,Transfert VHS à DVD,108.0,9108
+264,261,05:00:00,2007-12-01,Échanges associatifs,Tâches cléricales pour L'Accorderie,108.0,9338
+264,261,02:00:00,2008-04-02,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,9339
+264,261,04:00:00,2008-03-28,Échanges associatifs,Tâches cléricales pour L'Accorderie,108.0,9340
+264,261,06:30:00,2008-03-04,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,9341
+264,261,01:00:00,2008-03-06,Échanges associatifs,Tâches cléricales pour L'Accorderie,108.0,9342
+264,261,05:30:00,2008-03-08,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,9343
+264,261,02:00:00,2008-03-16,Échanges associatifs,Mise à jour de la liste des membres,108.0,9344
+264,256,01:30:00,2008-09-11,Santé / Maternité / Esthétique,Reiki,108.0,10331
+264,261,01:30:00,2008-12-14,Échanges associatifs,Tâches cléricales pour L'Accorderie,108.0,11540
+264,261,00:30:00,2009-01-25,Échanges associatifs,Tâches cléricales pour L'Accorderie,108.0,11826
+264,261,08:00:00,2009-01-28,Échanges associatifs,Tâches cléricales pour L'Accorderie,108.0,11834
+264,257,01:00:00,2009-03-23,,,108.0,12442
+264,265,01:00:00,2009-03-23,,,108.0,12443
+264,259,01:00:00,2009-03-23,,,108.0,12444
+264,255,01:00:00,2009-03-23,,,108.0,12445
+264,269,01:00:00,2009-03-23,,,108.0,12447
+264,258,01:00:00,2009-03-23,,,108.0,12448
+264,261,03:00:00,2009-04-17,Échanges associatifs,Tâches cléricales pour L'Accorderie,108.0,12756
+264,261,01:30:00,2009-05-21,Échanges associatifs,Tâches cléricales pour L'Accorderie,108.0,13273
+264,265,02:00:00,2009-08-03,Santé / Maternité / Esthétique,Reiki,108.0,14110
+264,265,01:00:00,2009-04-20,,,108.0,15981
+264,259,01:00:00,2009-04-20,,,108.0,15982
+264,255,01:00:00,2009-04-20,,,108.0,15983
+264,269,01:00:00,2009-04-20,,,108.0,15984
+264,250,01:00:00,2010-06-22,Santé / Maternité / Esthétique,"Compréhension maladie, corps, médicament",108.0,18830
+264,250,01:30:00,2010-07-05,Santé / Maternité / Esthétique,Reiki,108.0,18957
+264,252,04:00:00,2010-08-26,Accompagnement / Gardiennage / Animaux,Garde d'animaux à votre maison,108.0,19445
+264,253,00:30:00,2010-11-19,,,108.0,20759
+264,247,00:30:00,2010-11-19,,,108.0,20760
+264,267,00:30:00,2010-11-19,,,108.0,20761
+264,252,00:30:00,2010-11-19,,,108.0,20762
+264,265,00:30:00,2010-11-19,,,108.0,20763
+264,269,00:30:00,2010-11-19,,,108.0,20764
+264,265,01:30:00,2010-11-28,Informatique / Bureautique,Dépannage disque dur,108.0,20902
+264,265,01:30:00,2010-11-28,Santé / Maternité / Esthétique,Reiki,108.0,20904
+264,269,02:00:00,2010-12-26,Accompagnement / Gardiennage / Animaux,Visite maison lors d'absence,108.0,21516
+264,244,01:00:00,2011-01-30,Santé / Maternité / Esthétique,Méditation,108.0,21619
+264,265,01:00:00,2011-03-03,Transport / Déménagement,Transport besoins divers,108.0,22280
+264,252,07:30:00,2011-03-21,Accompagnement / Gardiennage / Animaux,Garde d'animaux à votre maison,108.0,22633
+264,265,06:00:00,2011-07-10,Accompagnement / Gardiennage / Animaux,Garde d'animaux à votre maison,108.0,24497
+264,254,02:00:00,2011-11-11,,,108.0,26727
+264,271,01:00:00,2011-11-11,,,108.0,26321
+264,238,01:00:00,2011-11-11,,,108.0,26323
+264,254,02:00:00,2011-11-30,Santé / Maternité / Esthétique,Méditation,108.0,26666
+264,272,01:00:00,2011-12-09,,,108.0,26913
+264,243,01:00:00,2011-12-09,,,108.0,26914
+264,265,01:30:00,2012-05-02,Santé / Maternité / Esthétique,Reiki,108.0,29230
+264,265,01:30:00,2012-05-07,Santé / Maternité / Esthétique,Reiki,108.0,29234
+264,246,02:00:00,2012-11-12,Santé / Maternité / Esthétique,Méditation,108.0,32671
+217,211,02:00:00,2013-02-05,Cuisine / Alimentation,Cuisine crue,108.0,34018
+223,198,01:00:00,2013-02-10,,,108.0,34101
+223,199,01:00:00,2013-02-10,,,108.0,34102
+223,183,01:00:00,2013-02-10,,,108.0,34103
+223,200,01:00:00,2013-02-10,,,108.0,34104
+223,232,06:00:00,2013-02-13,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,37654
+198,232,02:00:00,2013-02-13,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,37658
+201,232,02:00:00,2013-02-13,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,37657
+225,232,02:00:00,2013-02-13,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,37667
+207,232,02:00:00,2013-02-13,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,37651
+209,232,02:00:00,2013-02-13,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,37675
+196,232,03:00:00,2013-02-13,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,37656
+185,232,01:00:00,2013-02-13,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,37668
+210,232,01:00:00,2013-02-13,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,37671
+182,232,05:00:00,2013-02-13,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,37670
+184,232,05:00:00,2013-02-13,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,37669
+208,232,01:00:00,2013-04-16,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,37685
+223,232,02:30:00,2013-02-23,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,37655
+186,232,01:30:00,2013-04-16,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,37641
+188,232,02:00:00,2013-02-23,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,37647
+220,232,06:00:00,2013-04-13,Échanges associatifs,Foire d'échange / Salon des services de L'Accorderie,108.0,37645
+203,232,02:00:00,2013-02-23,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,37686
+264,265,07:00:00,2013-03-03,Accompagnement / Gardiennage / Animaux,Garde d'animaux à votre maison,108.0,34671
+192,230,01:30:00,2013-03-16,,,108.0,34899
+178,199,01:00:00,2013-03-16,Transport / Déménagement,Des bras pour gros déménagement,108.0,34924
+192,202,00:30:00,2013-03-16,,,108.0,34925
+264,261,02:00:00,2013-03-15,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,34931
+225,244,01:00:00,2013-03-23,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,34997
+178,172,02:00:00,2013-03-24,Transport / Déménagement,Des bras pour gros déménagement,108.0,35014
+186,232,02:00:00,2013-03-23,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,37640
+220,232,01:30:00,2013-04-16,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,37644
+225,208,01:00:00,2013-03-27,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,35035
+218,201,04:00:00,2013-03-23,Travaux / Entretien / Jardinage,Aide pour rénovation,108.0,35042
+172,178,02:00:00,2013-04-02,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,35147
+225,208,01:00:00,2013-04-09,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,35321
+195,172,01:00:00,2013-04-02,Travaux / Entretien / Jardinage,Réparation électroménagers,108.0,35401
+244,172,01:00:00,2013-04-09,Transport / Déménagement,Des bras pour petit déménagement,108.0,35402
+180,229,03:00:00,2013-03-14,Accompagnement / Gardiennage / Animaux,Garde d'enfants à votre maison,108.0,35403
+180,245,01:00:00,2013-04-04,Transport / Déménagement,Des bras pour moyen déménagement,108.0,35472
+193,178,02:00:00,2013-04-10,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,35548
+220,178,01:00:00,2013-04-11,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,35549
+193,178,01:00:00,2013-04-10,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,35572
+220,178,01:00:00,2013-04-11,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,35573
+188,232,01:30:00,2013-04-13,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,37646
+160,232,02:00:00,2013-04-13,Échanges associatifs,Foire d'échange / Salon des services de L'Accorderie,108.0,37652
+216,232,03:30:00,2013-04-13,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,37676
+214,232,03:30:00,2013-04-13,Accompagnement / Gardiennage / Animaux,Accompagnement personnes immigrantes,108.0,37677
+192,232,03:30:00,2013-04-13,Échanges associatifs,Foire d'échange / Salon des services de L'Accorderie,108.0,37672
+171,232,03:30:00,2013-04-13,Échanges associatifs,Foire d'échange / Salon des services de L'Accorderie,108.0,37673
+186,232,02:00:00,2013-02-23,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,37639
+220,232,02:00:00,2013-03-23,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,37643
+208,232,01:00:00,2013-02-23,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,37684
+208,232,04:00:00,2013-04-13,Échanges associatifs,Foire d'échange / Salon des services de L'Accorderie,108.0,37683
+186,232,03:00:00,2013-04-13,Échanges associatifs,Foire d'échange / Salon des services de L'Accorderie,108.0,37638
+220,232,02:00:00,2013-02-23,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,37642
+186,224,01:30:00,2013-04-17,Artisanat / Couture / Vêtements,Initiation cuir ciselé,108.0,35634
+230,178,02:00:00,2013-04-19,Transport / Déménagement,Transport besoins divers,108.0,35692
+195,178,01:30:00,2013-04-22,Transport / Déménagement,Transport besoins divers,108.0,35698
+175,232,01:30:00,2013-04-25,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,37682
+220,166,03:00:00,2013-04-16,Informatique / Bureautique,Initiation Linux et logiciels libres,108.0,35702
+225,213,01:00:00,2013-05-01,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,35920
+180,162,01:00:00,2013-04-21,Arts / Culture / Éducation,Apprentissage de la guitare,108.0,36026
+175,232,02:00:00,2013-04-06,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,37681
+173,232,02:00:00,2013-04-06,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,37679
+219,211,01:00:00,2013-05-08,Artisanat / Couture / Vêtements,Petites réparations vêtements,108.0,36243
+194,175,15:00:00,2013-05-09,Langues / Littérature,Correction textes en français,108.0,36244
+225,213,01:00:00,2013-05-14,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,36399
+180,237,05:00:00,2013-04-17,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,36476
+166,207,02:30:00,2013-05-21,Travaux / Entretien / Jardinage,Aide pour rénovation,108.0,36595
+156,232,02:00:00,2013-05-08,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,37649
+153,232,01:00:00,2013-05-08,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,37687
+164,232,04:00:00,2013-05-13,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,37648
+151,232,04:30:00,2013-05-13,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,37650
+264,265,03:00:00,2013-05-19,Accompagnement / Gardiennage / Animaux,Garde d'animaux à votre maison,108.0,36632
+212,199,01:00:00,2013-06-14,Sports / Loisirs / Animation,Initiation tennis,108.0,37241
+173,166,01:00:00,2013-06-10,Travaux / Entretien / Jardinage,Arboriculture et service d'arbres,108.0,37046
+225,224,01:00:00,2013-06-12,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,37184
+194,176,03:00:00,2013-06-15,Sports / Loisirs / Animation,Initiation observation des oiseaux,108.0,37242
+212,192,02:30:00,2013-06-20,Langues / Littérature,Correction textes en français,108.0,37406
+180,237,02:00:00,2013-06-19,Échanges associatifs,Rencontre de travail comité gestion,108.0,37412
+264,265,03:30:00,2013-06-19,Accompagnement / Gardiennage / Animaux,Garde d'animaux à votre maison,108.0,37503
+212,192,01:30:00,2013-06-25,Langues / Littérature,Correction textes en français,108.0,37515
+231,181,04:00:00,2013-06-20,Travaux / Entretien / Jardinage,Peinture extérieure,108.0,37526
+157,187,03:00:00,2013-06-25,Travaux / Entretien / Jardinage,Restauration ou fabrication de petits meubles,108.0,37564
+220,175,02:00:00,2013-07-01,Informatique / Bureautique,Initiation Linux et logiciels libres,108.0,37565
+225,224,01:00:00,2013-07-01,Santé / Maternité / Esthétique,Réflexologie,108.0,37580
+157,193,01:00:00,2013-07-03,Travaux / Entretien / Jardinage,Restauration ou fabrication de petits meubles,108.0,37628
+187,232,02:00:00,2013-04-13,Échanges associatifs,Foire d'échange / Salon des services de L'Accorderie,108.0,37653
+198,232,01:30:00,2013-06-20,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,37659
+187,232,01:30:00,2013-06-20,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,37660
+210,232,01:00:00,2013-06-20,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,37662
+157,232,01:00:00,2013-06-20,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,37663
+202,232,01:00:00,2013-06-20,Informatique / Bureautique,Initiation générale à l'informatique,108.0,37664
+185,232,01:00:00,2013-06-20,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,37665
+212,232,00:30:00,2013-06-20,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,37666
+194,232,03:30:00,2013-04-13,Échanges associatifs,Foire d'échange / Salon des services de L'Accorderie,108.0,37678
+155,156,03:30:00,2013-05-27,Travaux / Entretien / Jardinage,Aide pour rénovation,108.0,37706
+155,187,03:30:00,2013-05-30,Travaux / Entretien / Jardinage,Aide pour rénovation,108.0,37707
+155,152,07:00:00,2013-06-21,Travaux / Entretien / Jardinage,Aide pour rénovation,108.0,37708
+231,181,01:30:00,2013-07-09,Travaux / Entretien / Jardinage,Peinture extérieure,108.0,37758
+220,189,02:00:00,2013-07-12,Informatique / Bureautique,Dépannage pour ordinateurs P.C.,108.0,37865
+264,265,00:30:00,2013-07-12,Accompagnement / Gardiennage / Animaux,Garde d'animaux à votre maison,108.0,38047
+180,237,06:00:00,2013-07-20,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,38232
+180,237,02:00:00,2013-07-22,Échanges associatifs,Rencontre de travail comité gestion,108.0,38233
+164,143,02:00:00,2013-07-23,Arts / Culture / Éducation,Apprentissage du violon,108.0,38340
+152,242,04:00:00,2013-07-25,Travaux / Entretien / Jardinage,Lavage vitres,108.0,38341
+164,143,01:00:00,2013-08-02,Arts / Culture / Éducation,Apprentissage du violon,108.0,38342
+190,155,04:00:00,2013-08-08,Artisanat / Couture / Vêtements,Petites réparations vêtements,108.0,38405
+164,191,01:00:00,2013-08-14,Santé / Maternité / Esthétique,Massothérapie de détente,108.0,38430
+164,143,01:00:00,2013-08-20,Arts / Culture / Éducation,Apprentissage du violon,108.0,38579
+168,270,02:30:00,2013-07-21,,,108.0,38662
+208,156,03:00:00,2013-07-28,Sports / Loisirs / Animation,Animation fêtes d'enfants,108.0,38703
+208,188,01:00:00,2013-07-30,Sports / Loisirs / Animation,Animation fêtes d'enfants,108.0,38704
+180,237,08:00:00,2013-08-31,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,38895
+180,237,02:00:00,2013-08-31,,,108.0,38971
+155,190,02:30:00,2013-08-25,Travaux / Entretien / Jardinage,Aide pour rénovation,108.0,39013
+146,153,00:30:00,2013-09-06,Cuisine / Alimentation,Cuisine plats algériens,108.0,39014
+146,224,00:30:00,2013-09-06,Cuisine / Alimentation,Cuisine plats algériens,108.0,39015
+146,139,00:30:00,2013-09-06,Cuisine / Alimentation,Cuisine plats algériens,108.0,39017
+146,155,00:30:00,2013-09-06,Cuisine / Alimentation,Cuisine plats algériens,108.0,39018
+146,149,00:30:00,2013-09-06,Cuisine / Alimentation,Cuisine plats algériens,108.0,39019
+146,190,00:30:00,2013-09-06,Cuisine / Alimentation,Cuisine plats algériens,108.0,39020
+146,222,00:30:00,2013-09-06,Cuisine / Alimentation,Cuisine plats algériens,108.0,39021
+146,230,00:30:00,2013-09-06,Cuisine / Alimentation,Cuisine plats algériens,108.0,39022
+156,232,03:30:00,2013-08-24,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,39024
+168,232,01:00:00,2013-08-24,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,39026
+190,224,01:00:00,2013-09-08,Artisanat / Couture / Vêtements,Petites réparations vêtements,108.0,39050
+225,213,01:30:00,2013-09-13,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,39106
+138,144,01:00:00,2013-09-13,Travaux / Entretien / Jardinage,Aiguisage couteaux ou outils,108.0,39107
+208,232,02:00:00,2013-09-12,Échanges associatifs,Comité contact communautaire,108.0,39109
+210,232,02:00:00,2013-09-12,Échanges associatifs,Comité contact communautaire,108.0,39110
+139,232,02:00:00,2013-09-12,Échanges associatifs,Comité contact communautaire,108.0,39765
+225,224,01:00:00,2013-09-17,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,39116
+190,242,01:00:00,2013-09-17,Artisanat / Couture / Vêtements,Petites réparations vêtements,108.0,39165
+180,237,01:00:00,2013-09-13,Réseau Accorderie,Tâches manuelles pour le Réseau,108.0,39166
+180,165,02:00:00,2013-07-01,Transport / Déménagement,Des bras pour moyen déménagement,108.0,39227
+164,143,01:00:00,2013-09-26,Arts / Culture / Éducation,Apprentissage du violon,108.0,39380
+155,232,09:00:00,2013-09-21,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,39263
+168,232,02:00:00,2013-09-21,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,39264
+180,237,00:30:00,2013-09-18,Échanges associatifs,Développement d'outils pour L'Accorderie,108.0,39286
+220,242,02:00:00,2013-09-02,Informatique / Bureautique,Dépannage pour ordinateurs P.C.,108.0,39297
+179,169,01:00:00,2013-09-21,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,39388
+244,169,01:00:00,2013-07-28,Travaux / Entretien / Jardinage,Aide pour jardinage,108.0,39389
+142,230,01:00:00,2013-09-26,Informatique / Bureautique,Initiation conception de site web,108.0,39474
+135,199,01:00:00,2013-10-01,Administration / Emploi / Organisation,Pratique d'entrevue,108.0,39477
+172,232,01:30:00,2013-10-02,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,39486
+166,193,02:30:00,2013-09-29,Travaux / Entretien / Jardinage,Aide pour jardinage,108.0,39532
+225,224,01:00:00,2013-10-02,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,39534
+157,187,03:00:00,2013-08-25,Travaux / Entretien / Jardinage,Aménagement paysager,108.0,39572
+157,187,05:00:00,2013-07-05,Travaux / Entretien / Jardinage,Aide pour rénovation,108.0,39573
+157,145,20:00:00,2013-07-21,Travaux / Entretien / Jardinage,Aide pour rénovation,108.0,39574
+156,155,01:00:00,2013-10-03,Cuisine / Alimentation,Préparation soupe maison,108.0,39576
+208,155,01:00:00,2013-10-03,Travaux / Entretien / Jardinage,Aide pour rénovation,108.0,39577
+220,230,02:30:00,2013-10-08,Informatique / Bureautique,Conception site web,108.0,39718
+139,232,01:30:00,2013-10-10,Échanges associatifs,Comité contact communautaire,108.0,39723
+208,232,01:30:00,2013-10-10,Échanges associatifs,Comité contact communautaire,108.0,39725
+139,232,02:00:00,2013-10-15,Échanges associatifs,Comité contact communautaire,108.0,39762
+139,232,01:30:00,2013-10-14,Échanges associatifs,Comité contact communautaire,108.0,39763
+139,232,03:00:00,2013-10-15,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,39764
+153,140,00:30:00,2013-10-16,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,39784
+153,172,00:30:00,2013-10-16,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,39785
+220,230,01:00:00,2013-10-17,Informatique / Bureautique,Conception site web,108.0,39823
+220,232,01:00:00,2013-10-17,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,39824
+225,166,01:00:00,2013-10-17,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,39877
+193,156,07:00:00,2013-10-19,Accompagnement / Gardiennage / Animaux,Garde d'enfants à votre maison,108.0,39897
+152,232,03:00:00,2013-10-19,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,39926
+130,232,05:00:00,2013-10-19,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,39927
+192,232,02:00:00,2013-10-19,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,39928
+131,232,03:00:00,2013-10-19,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,39929
+164,232,05:00:00,2013-10-19,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,39930
+174,232,02:00:00,2013-10-19,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,39931
+208,232,02:30:00,2013-10-19,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,39932
+180,236,02:00:00,2013-10-21,Réseau Accorderie,Tâches manuelles pour le Réseau,108.0,39954
+264,241,29:00:00,2013-10-26,Arts / Culture / Éducation,Transfert VHS à DVD,108.0,40112
+131,166,01:00:00,2013-10-27,Administration / Emploi / Organisation,Conseils Curriculum vitae,108.0,40120
+136,232,05:00:00,2013-10-26,Échanges associatifs,Comité contact communautaire,108.0,40123
+136,232,02:00:00,2013-10-02,Échanges associatifs,Comité contact communautaire,108.0,40124
+168,232,05:00:00,2013-10-26,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,40125
+235,232,03:00:00,2013-10-28,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,40127
+140,232,04:00:00,2013-10-28,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,40128
+225,224,01:00:00,2013-10-24,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,40166
+187,193,01:00:00,2013-10-24,Cuisine / Alimentation,Préparation granola,108.0,40226
+203,130,00:30:00,2013-11-13,Santé / Maternité / Esthétique,"Compréhension maladie, corps, médicament",108.0,40756
+193,124,03:00:00,2013-11-05,Accompagnement / Gardiennage / Animaux,Garde d'enfants à votre maison,108.0,40390
+235,148,00:30:00,2013-11-05,,,108.0,40391
+235,149,00:30:00,2013-11-05,,,108.0,40392
+235,222,00:30:00,2013-11-05,,,108.0,40394
+235,149,00:30:00,2013-11-05,,,108.0,40395
+235,176,00:30:00,2013-11-05,,,108.0,40396
+235,224,00:30:00,2013-11-05,,,108.0,40397
+235,187,00:30:00,2013-11-05,,,108.0,40398
+176,235,01:30:00,2013-09-25,Artisanat / Couture / Vêtements,Leçons de tricot,108.0,40418
+153,135,00:30:00,2013-11-06,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,41096
+212,192,02:00:00,2013-11-12,Langues / Littérature,Correction textes en français,108.0,40640
+215,166,01:30:00,2013-11-12,Administration / Emploi / Organisation,Choix de carrière,108.0,40714
+174,193,06:00:00,2013-11-08,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,41151
+153,193,00:30:00,2013-11-13,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,40729
+153,136,00:30:00,2013-11-13,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,40731
+203,149,00:30:00,2013-11-13,Santé / Maternité / Esthétique,"Compréhension maladie, corps, médicament",108.0,40753
+194,224,02:00:00,2013-11-19,Informatique / Bureautique,Initiation traitement photo et image,108.0,41001
+153,224,00:30:00,2013-11-20,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,41002
+225,224,01:00:00,2013-11-14,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,41003
+203,224,00:30:00,2013-11-13,Santé / Maternité / Esthétique,"Compréhension maladie, corps, médicament",108.0,41004
+180,204,00:30:00,2013-11-03,Sports / Loisirs / Animation,Interprétation nature en ville,108.0,41085
+180,228,00:30:00,2013-11-03,Sports / Loisirs / Animation,Interprétation nature en ville,108.0,41086
+180,141,00:30:00,2013-11-03,Sports / Loisirs / Animation,Interprétation nature en ville,108.0,41087
+180,205,00:30:00,2013-11-03,Sports / Loisirs / Animation,Interprétation nature en ville,108.0,41088
+180,251,00:30:00,2013-11-11,Sports / Loisirs / Animation,Interprétation nature en ville,108.0,41089
+180,141,00:30:00,2013-11-11,Sports / Loisirs / Animation,Interprétation nature en ville,108.0,41090
+225,218,01:00:00,2013-11-28,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,41193
+225,224,01:00:00,2013-11-27,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,41242
+180,240,00:30:00,2013-12-02,Divers,Aide et conseils récupération / recyclage,108.0,41306
+180,141,00:30:00,2013-12-02,Divers,Aide et conseils récupération / recyclage,108.0,41307
+180,163,00:30:00,2013-12-02,Divers,Aide et conseils récupération / recyclage,108.0,41308
+180,239,00:30:00,2013-12-02,Divers,Aide et conseils récupération / recyclage,108.0,41309
+180,141,00:30:00,2013-11-30,Divers,Aide et conseils récupération / recyclage,108.0,41310
+123,118,02:00:00,2013-12-03,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,41318
+191,220,01:00:00,2013-12-22,Sports / Loisirs / Animation,Sculpture de ballons,108.0,42131
+118,232,03:00:00,2014-01-21,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,42132
+244,193,01:00:00,2013-12-27,Travaux / Entretien / Jardinage,Petit déneigement,108.0,42136
+166,225,03:30:00,2014-01-09,Travaux / Entretien / Jardinage,Aide pour rénovation,108.0,42142
+195,193,01:00:00,2014-01-21,Transport / Déménagement,Transport besoins divers,108.0,42146
+153,232,01:00:00,2014-01-22,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,42157
+164,232,05:30:00,2014-01-23,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,42269
+206,148,01:00:00,2013-12-07,Accompagnement / Gardiennage / Animaux,Promenade chien,108.0,42275
+218,156,03:00:00,2014-01-22,Travaux / Entretien / Jardinage,Aide pour rénovation,108.0,42278
+214,210,00:30:00,2014-02-04,Artisanat / Couture / Vêtements,Fabrication vêtements au crochet,108.0,42486
+193,124,03:00:00,2014-01-18,Accompagnement / Gardiennage / Animaux,Garde d'enfants à votre maison,108.0,42615
+193,124,03:00:00,2014-02-06,Accompagnement / Gardiennage / Animaux,Garde d'enfants à votre maison,108.0,42617
+225,164,01:00:00,2014-02-12,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,42650
+139,232,03:00:00,2014-02-13,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,42782
+225,176,01:00:00,2014-02-24,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,42955
+212,192,02:00:00,2014-02-20,Langues / Littérature,Correction textes en français,108.0,42979
+123,148,01:00:00,2014-03-03,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,43131
+225,164,02:00:00,2014-03-03,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,43133
+225,118,01:00:00,2014-03-06,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,43321
+193,124,03:00:00,2014-02-25,Accompagnement / Gardiennage / Animaux,Garde d'enfants à votre maison,108.0,43327
+166,156,05:00:00,2014-03-04,Travaux / Entretien / Jardinage,Aide pour rénovation,108.0,43329
+156,155,02:30:00,2014-03-10,Cuisine / Alimentation,Préparation soupe maison,108.0,43333
+156,232,04:30:00,2014-03-10,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,43334
+231,234,14:00:00,2014-03-06,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,43348
+180,237,06:00:00,2013-04-25,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,43373
+123,118,01:30:00,2013-12-01,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,43381
+123,118,01:30:00,2014-03-11,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,43382
+123,118,01:30:00,2014-03-11,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,43383
+139,232,02:00:00,2014-03-12,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,43384
+180,170,22:30:00,2014-03-18,,,108.0,43494
+123,148,01:30:00,2014-03-12,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,43495
+195,172,02:00:00,2014-03-19,Transport / Déménagement,Transport avec remorque,108.0,43515
+220,172,03:00:00,2014-03-19,Informatique / Bureautique,Initiation traitement photo et image,108.0,43516
+177,242,01:00:00,2014-03-03,Travaux / Entretien / Jardinage,Aménagement de l'espace maison,108.0,43517
+180,237,00:30:00,2014-03-18,Échanges associatifs,Développement d'outils pour L'Accorderie,108.0,43523
+155,224,01:00:00,2014-03-19,Travaux / Entretien / Jardinage,Aide pour rénovation,108.0,43736
+225,118,01:00:00,2014-03-26,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,43737
+134,242,01:30:00,2014-03-25,Informatique / Bureautique,Dépannage pour ordinateurs P.C.,108.0,43741
+220,232,03:00:00,2014-03-31,Informatique / Bureautique,Dépannage pour ordinateurs P.C.,108.0,43748
+123,148,01:30:00,2014-03-26,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,43752
+164,143,01:00:00,2014-03-31,Arts / Culture / Éducation,Apprentissage du violon,108.0,43754
+118,232,01:00:00,2014-03-27,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,43818
+195,193,03:00:00,2014-03-27,Transport / Déménagement,Transport besoins divers,108.0,43823
+190,156,06:00:00,2014-04-01,Artisanat / Couture / Vêtements,Petites réparations vêtements,108.0,43825
+218,156,02:00:00,2014-04-01,Travaux / Entretien / Jardinage,Aide pour rénovation,108.0,43826
+190,155,10:00:00,2014-03-31,Artisanat / Couture / Vêtements,Petites réparations vêtements,108.0,43829
+155,190,05:00:00,2014-02-24,Travaux / Entretien / Jardinage,Aide pour rénovation,108.0,43830
+156,113,01:30:00,2014-04-02,Cuisine / Alimentation,Préparation soupe maison,108.0,43868
+118,232,00:30:00,2014-04-07,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,44023
+123,148,01:30:00,2014-04-07,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,44040
+155,190,06:30:00,2014-04-10,Travaux / Entretien / Jardinage,Aide pour rénovation,108.0,44110
+156,190,02:30:00,2014-04-10,Santé / Maternité / Esthétique,Massothérapie de détente,108.0,44111
+199,164,01:00:00,2014-04-15,Sports / Loisirs / Animation,Conditionnement physique sans matériel de gym,108.0,44143
+220,123,04:00:00,2014-04-15,Informatique / Bureautique,Initiation Linux et logiciels libres,108.0,44163
+220,103,02:30:00,2014-04-11,Informatique / Bureautique,Dépannage pour ordinateurs P.C.,108.0,44167
+123,118,01:30:00,2014-04-16,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,44189
+215,166,04:00:00,2014-04-25,Administration / Emploi / Organisation,Choix de carrière,108.0,44513
+225,123,01:00:00,2014-04-23,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,44515
+220,109,02:00:00,2014-04-23,Informatique / Bureautique,Conception site web,108.0,44516
+113,149,02:00:00,2014-04-24,Cuisine / Alimentation,Cuisine plats ou repas,108.0,44517
+220,232,01:00:00,2014-04-29,Informatique / Bureautique,Dépannage pour ordinateurs P.C.,108.0,44587
+146,155,01:00:00,2013-09-06,Cuisine / Alimentation,Cuisine plats algériens,108.0,44605
+164,149,00:30:00,2014-05-03,Langues / Littérature,Apprentissage de l&#8217;espéranto,108.0,44800
+215,133,02:00:00,2014-04-24,Accompagnement / Gardiennage / Animaux,Garde d'enfants à ma maison avec les miens,108.0,44802
+194,242,01:00:00,2014-05-02,Informatique / Bureautique,Initiation Excel,108.0,44809
+127,242,01:30:00,2014-05-07,Artisanat / Couture / Vêtements,Coud bas de pantalon,108.0,45056
+208,107,01:30:00,2014-05-12,Travaux / Entretien / Jardinage,Création ou élaboration d'un potager,108.0,45263
+193,115,03:00:00,2014-05-16,Accompagnement / Gardiennage / Animaux,Accompagnement magasinage,108.0,45309
+193,115,03:00:00,2014-05-16,Accompagnement / Gardiennage / Animaux,Accompagnement magasinage,108.0,45310
+106,107,01:00:00,2014-05-20,Cuisine / Alimentation,Confection macarons (pâtisserie),108.0,45382
+164,232,03:30:00,2014-04-03,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,45385
+139,232,03:30:00,2014-05-07,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,45393
+156,232,03:30:00,2014-05-08,Accompagnement / Gardiennage / Animaux,Garde d'enfants à ma maison avec les miens,108.0,45397
+113,149,02:00:00,2014-05-13,Accompagnement / Gardiennage / Animaux,Accompagnement démarches gouvernement,108.0,45409
+113,149,02:00:00,2014-05-13,Cuisine / Alimentation,Cuisine plats ou repas,108.0,45410
+104,242,01:00:00,2014-05-25,Informatique / Bureautique,Initiation générale à l'informatique,108.0,45486
+106,156,01:00:00,2014-05-20,Cuisine / Alimentation,Confection macarons (pâtisserie),108.0,45487
+106,193,01:00:00,2014-05-25,Cuisine / Alimentation,Confection macarons (pâtisserie),108.0,45501
+156,139,01:00:00,2014-06-04,Cuisine / Alimentation,Préparation soupe maison,108.0,45858
+198,210,06:00:00,2014-06-26,Accompagnement / Gardiennage / Animaux,Garde d'enfants à votre maison,108.0,46691
+174,193,01:30:00,2014-06-18,Travaux / Entretien / Jardinage,Aide pour jardinage,108.0,46693
+156,139,01:00:00,2014-06-16,Cuisine / Alimentation,Préparation soupe maison,108.0,46694
+226,232,02:30:00,2014-06-11,Achat regroupé,Tâches cléricales pour achat regroupé,108.0,46696
+220,242,01:00:00,2014-06-13,Informatique / Bureautique,Dépannage pour ordinateurs P.C.,108.0,46697
+174,98,03:00:00,2014-05-31,Travaux / Entretien / Jardinage,Peinture extérieure,108.0,46698
+174,98,03:00:00,2014-06-07,Travaux / Entretien / Jardinage,Peinture extérieure,108.0,46699
+104,242,02:00:00,2014-05-31,Informatique / Bureautique,Dépannage pour ordinateurs P.C.,108.0,46701
+174,98,03:00:00,2014-06-03,Travaux / Entretien / Jardinage,Peinture extérieure,108.0,46702
+156,232,03:30:00,2014-06-19,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,46987
+156,232,03:30:00,2014-06-12,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,46988
+174,156,25:00:00,2014-10-01,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,48902
+104,118,02:00:00,2014-09-16,Informatique / Bureautique,Initiation générale à l'informatique,108.0,48905
+139,232,03:00:00,2014-09-19,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,48911
+190,155,01:00:00,2014-10-01,Artisanat / Couture / Vêtements,Petites réparations vêtements,108.0,48913
+104,169,01:30:00,2014-10-01,Informatique / Bureautique,Dépannage pour ordinateurs P.C.,108.0,48914
+152,98,02:30:00,2014-06-07,Travaux / Entretien / Jardinage,Entretien de plates-bandes,108.0,49075
+152,98,02:30:00,2014-06-24,Travaux / Entretien / Jardinage,Entretien de plates-bandes,108.0,49076
+152,98,03:00:00,2014-06-26,Travaux / Entretien / Jardinage,Entretien de plates-bandes,108.0,49077
+152,232,03:30:00,2014-10-17,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,49430
+152,232,03:00:00,2014-10-21,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,49510
+164,232,03:00:00,2014-10-15,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,49512
+164,232,03:00:00,2014-10-22,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,49513
+225,193,02:00:00,2014-10-21,Santé / Maternité / Esthétique,Réflexologie,108.0,49624
+139,232,03:00:00,2014-10-24,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,49625
+89,232,01:30:00,2014-10-24,Échanges associatifs,Communications pour L'Accorderie,108.0,49626
+193,232,03:00:00,2014-10-24,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,49627
+98,224,10:00:00,2014-10-24,Travaux / Entretien / Jardinage,Menus travaux ébénisterie,108.0,49628
+150,232,03:00:00,2014-10-21,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,49632
+152,232,03:00:00,2014-10-28,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,49633
+225,118,01:30:00,2014-10-28,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,49730
+225,199,01:00:00,2014-10-29,Santé / Maternité / Esthétique,Réflexologie,108.0,49751
+139,232,03:00:00,2014-10-31,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,49896
+225,193,02:00:00,2014-11-03,Santé / Maternité / Esthétique,Réflexologie,108.0,49897
+169,232,03:00:00,2014-10-30,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,49899
+89,232,03:30:00,2014-10-30,Échanges associatifs,Communications pour L'Accorderie,108.0,49900
+164,225,06:00:00,2014-10-16,Arts / Culture / Éducation,Accordeur de piano,108.0,49934
+225,164,01:00:00,2014-11-04,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,49935
+152,193,02:00:00,2014-11-04,Travaux / Entretien / Jardinage,Aide pour entretien de plantes,108.0,50047
+152,232,03:00:00,2014-11-04,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,50049
+193,232,03:00:00,2014-11-07,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,50200
+106,198,01:00:00,2014-11-09,Cuisine / Alimentation,Cuisine plats ou repas,108.0,50204
+150,232,03:00:00,2014-10-02,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,50213
+152,232,03:00:00,2014-11-11,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,50271
+225,164,01:00:00,2014-11-10,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,50279
+85,185,02:30:00,2014-11-08,Travaux / Entretien / Jardinage,Lavage vitres,108.0,50300
+157,232,25:00:00,2014-11-11,Travaux / Entretien / Jardinage,Restauration ou fabrication de petits meubles,108.0,50301
+193,232,03:00:00,2014-10-31,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,50392
+193,232,03:00:00,2014-11-14,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,50393
+169,232,03:00:00,2014-11-13,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,50395
+99,198,06:00:00,2014-11-03,Arts / Culture / Éducation,Modèles simples publicité et promotion,108.0,50399
+152,232,03:30:00,2014-11-18,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,50411
+132,232,01:00:00,2014-11-06,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,50546
+132,232,03:00:00,2014-11-20,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,50547
+152,232,03:00:00,2014-11-20,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,50548
+264,249,01:00:00,2014-11-20,Arts / Culture / Éducation,Transfert VHS à DVD,108.0,50626
+139,232,03:00:00,2014-11-21,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,50646
+139,232,02:30:00,2014-11-14,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,50647
+152,232,02:00:00,2014-11-25,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,50654
+225,164,02:00:00,2014-11-26,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,50661
+152,232,03:30:00,2014-12-16,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,51530
+225,89,01:00:00,2014-11-26,Santé / Maternité / Esthétique,Réflexologie,108.0,50821
+139,232,03:00:00,2014-11-28,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,50822
+193,232,03:00:00,2014-11-28,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,50823
+193,232,03:00:00,2014-11-21,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,50824
+169,232,03:00:00,2014-11-27,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,50825
+152,232,03:30:00,2014-12-02,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,50849
+225,164,06:00:00,2014-12-03,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,50857
+169,232,03:00:00,2014-12-04,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,51052
+139,232,03:30:00,2014-12-05,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,51053
+105,248,01:30:00,2014-11-30,Transport / Déménagement,Transport pour les courses,108.0,51074
+152,232,02:00:00,2014-12-04,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,51138
+152,232,03:30:00,2014-12-09,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,51139
+193,232,03:00:00,2014-12-05,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,51496
+193,232,03:00:00,2014-12-12,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,51497
+89,232,03:00:00,2014-12-11,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,51498
+264,263,67:00:00,2014-12-15,Arts / Culture / Éducation,Transfert VHS à DVD,108.0,51727
+139,232,03:00:00,2014-12-18,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,51807
+80,232,01:00:00,2014-12-19,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,51808
+80,232,01:30:00,2014-12-16,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,51809
+80,232,01:30:00,2014-12-14,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,51810
+80,232,01:00:00,2014-12-09,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,51811
+80,232,02:00:00,2014-11-21,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,51812
+80,232,02:00:00,2014-12-02,Échanges associatifs,Entretien ménager des locaux,108.0,51813
+169,232,03:00:00,2014-12-18,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,51814
+104,242,01:00:00,2014-12-15,Informatique / Bureautique,Dépannage pour ordinateurs P.C.,108.0,51815
+185,226,01:00:00,2014-12-10,Administration / Emploi / Organisation,Conseils lettre de présentation,108.0,51817
+152,232,03:00:00,2015-01-06,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,51822
+89,232,03:00:00,2015-01-07,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,52051
+193,232,03:00:00,2015-01-09,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,52050
+112,220,01:00:00,2015-01-06,Sports / Loisirs / Animation,Fartage ski de fond,108.0,52056
+152,232,03:00:00,2015-01-13,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,52060
+235,232,02:00:00,2015-01-14,Achat regroupé,Rencontre de travail achat regroupé,108.0,52070
+130,206,02:00:00,2014-07-14,Travaux / Entretien / Jardinage,Ménage léger,108.0,52083
+130,206,02:00:00,2014-07-15,Travaux / Entretien / Jardinage,Ménage léger,108.0,52085
+153,149,01:00:00,2015-01-20,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,52268
+193,232,03:00:00,2015-01-15,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,52270
+152,232,03:00:00,2015-01-20,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,52286
+139,232,03:00:00,2015-01-15,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,52290
+193,232,03:00:00,2015-01-16,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,52291
+206,232,12:00:00,2015-01-21,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,52304
+88,93,05:00:00,2015-01-20,Cuisine / Alimentation,Aide pour cuisiner,108.0,52439
+104,242,00:30:00,2015-01-18,Informatique / Bureautique,Initiation générale à l'informatique,108.0,52440
+93,232,02:30:00,2015-01-15,Échanges associatifs,Communications pour L'Accorderie,108.0,52443
+93,232,02:30:00,2015-01-16,Échanges associatifs,Communications pour L'Accorderie,108.0,52444
+122,232,03:00:00,2014-10-09,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,52445
+122,232,03:00:00,2014-10-16,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,52446
+122,232,03:00:00,2014-10-23,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,52447
+122,232,03:00:00,2014-10-30,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,52448
+122,232,03:00:00,2014-11-06,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,52449
+122,232,03:00:00,2014-11-13,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,52450
+122,232,03:00:00,2014-11-27,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,52451
+122,232,02:00:00,2015-01-22,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,52452
+152,232,03:00:00,2015-01-27,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,52453
+232,164,02:00:00,2015-01-28,Achat regroupé,Commande au groupe d'achats,108.0,52559
+232,101,02:00:00,2015-01-28,Achat regroupé,Commande au groupe d'achats,108.0,52562
+232,248,02:00:00,2015-01-28,Achat regroupé,Commande au groupe d'achats,108.0,52563
+232,70,02:00:00,2015-01-28,Achat regroupé,Commande au groupe d'achats,108.0,52564
+232,262,02:00:00,2015-01-28,Achat regroupé,Commande au groupe d'achats,108.0,52565
+232,197,02:00:00,2015-01-28,Achat regroupé,Commande au groupe d'achats,108.0,52566
+232,89,02:00:00,2015-01-28,Achat regroupé,Commande au groupe d'achats,108.0,52567
+232,75,02:00:00,2015-01-28,Achat regroupé,Commande au groupe d'achats,108.0,52568
+232,206,02:00:00,2015-01-28,Achat regroupé,Commande au groupe d'achats,108.0,52569
+232,226,02:00:00,2015-01-28,Achat regroupé,Commande au groupe d'achats,108.0,52570
+232,221,02:00:00,2015-01-28,Achat regroupé,Commande au groupe d'achats,108.0,52571
+232,122,02:00:00,2015-01-28,Achat regroupé,Commande au groupe d'achats,108.0,52572
+232,147,02:00:00,2015-01-28,Achat regroupé,Commande au groupe d'achats,108.0,52573
+232,210,02:00:00,2015-01-28,Achat regroupé,Commande au groupe d'achats,108.0,52574
+232,235,02:00:00,2015-01-28,Achat regroupé,Commande au groupe d'achats,108.0,52575
+232,193,02:00:00,2015-01-28,Achat regroupé,Commande au groupe d'achats,108.0,52576
+232,97,02:00:00,2015-01-28,Achat regroupé,Commande au groupe d'achats,108.0,52577
+232,125,02:00:00,2015-01-28,Achat regroupé,Commande au groupe d'achats,108.0,52578
+232,185,02:00:00,2015-01-28,Achat regroupé,Commande au groupe d'achats,108.0,52579
+232,86,02:00:00,2015-01-28,Achat regroupé,Commande au groupe d'achats,108.0,52580
+232,79,02:00:00,2015-01-28,Achat regroupé,Commande au groupe d'achats,108.0,52581
+232,130,02:00:00,2015-01-28,Achat regroupé,Commande au groupe d'achats,108.0,52582
+232,198,02:00:00,2015-01-28,Achat regroupé,Commande au groupe d'achats,108.0,52583
+232,76,02:00:00,2015-01-28,Achat regroupé,Commande au groupe d'achats,108.0,52584
+232,113,02:00:00,2015-01-28,Achat regroupé,Commande au groupe d'achats,108.0,52585
+232,74,02:00:00,2015-01-28,Achat regroupé,Commande au groupe d'achats,108.0,52586
+232,77,02:00:00,2015-01-28,Achat regroupé,Commande au groupe d'achats,108.0,52588
+193,232,03:00:00,2015-01-29,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,52715
+139,232,03:30:00,2015-01-29,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,52716
+139,232,04:00:00,2015-02-03,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,52717
+193,232,03:00:00,2015-01-22,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,52718
+174,94,01:00:00,2015-01-29,Transport / Déménagement,Des bras pour petit déménagement,108.0,52719
+193,232,03:00:00,2015-02-10,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,52940
+139,232,03:30:00,2015-02-09,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,52941
+174,94,01:00:00,2015-02-04,Transport / Déménagement,Des bras pour petit déménagement,108.0,52942
+153,193,01:00:00,2015-02-03,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,52943
+153,193,02:00:00,2015-02-10,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,52944
+93,232,03:00:00,2015-01-30,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,52945
+93,232,03:00:00,2015-02-06,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,52946
+70,95,00:30:00,2015-02-04,Transport / Déménagement,Transport besoins divers,108.0,52951
+193,232,03:00:00,2015-02-05,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,52956
+220,185,03:00:00,2015-02-15,Santé / Maternité / Esthétique,Apprentissage de la méthode RCR,108.0,53170
+113,185,02:30:00,2015-02-08,Cuisine / Alimentation,Cuisine plats ou repas,108.0,53171
+193,232,03:00:00,2015-02-12,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,53183
+128,232,04:00:00,2015-02-12,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,53185
+93,232,03:00:00,2015-02-13,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,53186
+93,232,01:00:00,2015-02-12,Échanges associatifs,Communications pour L'Accorderie,108.0,53187
+78,67,01:30:00,2015-02-14,Travaux / Entretien / Jardinage,Aide cordage de bois,108.0,53189
+61,184,03:00:00,2015-02-19,Santé / Maternité / Esthétique,Apprentissage de la méthode RCR,108.0,53224
+93,73,01:00:00,2015-02-17,Langues / Littérature,Conversation français/anglais,108.0,53225
+220,149,00:30:00,2015-02-19,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,53512
+193,232,03:00:00,2015-02-25,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,53519
+73,193,03:00:00,2015-02-20,Travaux / Entretien / Jardinage,Ménage léger,108.0,53520
+193,232,03:00:00,2015-02-19,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,53521
+264,249,10:00:00,2015-02-26,Arts / Culture / Éducation,Transfert VHS à DVD,108.0,53525
+174,232,02:00:00,2015-02-02,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,53529
+174,232,02:00:00,2015-02-25,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,53530
+107,232,02:00:00,2015-03-18,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,54186
+82,170,08:00:00,2015-02-24,Informatique / Bureautique,Transcription enregistrement audio (verbatim),108.0,53769
+195,93,02:00:00,2015-03-09,Travaux / Entretien / Jardinage,Réparation électroménagers,108.0,53914
+128,232,04:00:00,2015-02-26,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,53995
+75,232,02:30:00,2015-02-06,Achat regroupé,Commande au groupe d'achats,108.0,54187
+193,232,03:00:00,2015-03-12,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,54197
+153,119,01:00:00,2015-03-11,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,54200
+179,149,00:30:00,2015-03-05,Informatique / Bureautique,Initiation à Internet et courriel,108.0,54204
+193,248,01:00:00,2015-02-15,Accompagnement / Gardiennage / Animaux,Accompagnement magasinage,108.0,54205
+153,73,01:00:00,2015-03-03,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,54207
+73,232,04:00:00,2015-03-03,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,54208
+220,103,01:00:00,2015-03-02,Informatique / Bureautique,Dépannage pour ordinateurs P.C.,108.0,54209
+193,248,01:00:00,2015-02-22,Transport / Déménagement,Covoiturage dans la ville de Québec,108.0,54210
+153,53,02:00:00,2015-03-11,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,54212
+153,93,01:00:00,2015-03-11,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,54214
+153,139,01:00:00,2015-03-17,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,54217
+153,93,01:30:00,2015-03-17,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,54218
+153,119,01:30:00,2015-03-17,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,54219
+199,193,02:00:00,2015-03-13,Sports / Loisirs / Animation,Conditionnement physique sans matériel de gym,108.0,54220
+139,232,04:00:00,2015-03-17,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,54221
+174,74,01:00:00,2015-03-14,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,54222
+58,232,04:30:00,2015-03-13,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,54223
+139,232,03:30:00,2015-03-10,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,54224
+58,232,03:30:00,2015-03-10,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,54225
+58,232,03:00:00,2015-03-06,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,54226
+73,232,07:00:00,2015-03-05,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,54227
+93,232,03:00:00,2015-02-27,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,54228
+93,232,04:00:00,2015-02-25,Échanges associatifs,Communications pour L'Accorderie,108.0,54229
+193,174,01:00:00,2015-03-14,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,54230
+158,174,01:00:00,2015-03-16,Sports / Loisirs / Animation,Transport et accompagnement sorties plein air,108.0,54231
+198,232,01:00:00,2015-03-13,Échanges associatifs,Communications pour L'Accorderie,108.0,54232
+78,185,03:00:00,2015-03-14,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,54233
+71,248,01:30:00,2015-03-06,Transport / Déménagement,Transport besoins divers,108.0,54236
+128,232,04:00:00,2015-03-12,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,54239
+58,232,03:00:00,2015-03-20,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,54364
+85,232,01:00:00,2015-03-20,Travaux / Entretien / Jardinage,Lavage vitres,108.0,54368
+85,174,01:00:00,2015-03-21,Transport / Déménagement,Transport besoins divers,108.0,54369
+128,232,04:00:00,2015-03-19,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,54371
+107,101,01:00:00,2015-03-22,,,108.0,54373
+81,232,02:00:00,2015-03-24,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,54374
+153,119,01:00:00,2015-03-17,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,54514
+153,91,01:00:00,2015-03-24,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,54515
+112,220,01:30:00,2015-03-15,Sports / Loisirs / Animation,Initiation ski de fond,108.0,54518
+112,220,01:30:00,2015-03-15,Sports / Loisirs / Animation,Fartage ski de fond,108.0,54520
+107,232,02:30:00,2015-03-25,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,54532
+153,60,01:00:00,2015-03-24,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,54526
+58,232,02:30:00,2015-03-25,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,54533
+174,232,02:30:00,2015-03-25,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,54534
+153,119,01:00:00,2015-03-24,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,54535
+152,232,03:30:00,2015-03-25,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,54575
+85,232,01:00:00,2015-03-27,Travaux / Entretien / Jardinage,Lavage vitres,108.0,54589
+107,232,06:00:00,2015-03-17,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,54697
+83,232,06:00:00,2015-03-24,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,54698
+193,232,02:00:00,2015-03-26,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,54704
+193,232,03:00:00,2015-03-19,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,54705
+58,232,03:00:00,2015-03-27,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,54706
+152,232,03:30:00,2015-03-31,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,54715
+107,232,03:00:00,2015-03-26,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,54716
+153,68,01:00:00,2015-03-31,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,54803
+153,139,01:00:00,2015-03-31,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,54804
+222,232,04:00:00,2015-04-01,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,54809
+93,232,03:00:00,2015-04-01,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,54810
+179,232,02:30:00,2014-09-24,Échanges associatifs,Comptabilité de L'Accorderie,108.0,54846
+179,232,02:00:00,2014-09-25,Échanges associatifs,Comptabilité de L'Accorderie,108.0,54848
+179,232,01:00:00,2014-09-26,Échanges associatifs,Comptabilité de L'Accorderie,108.0,54849
+179,232,01:30:00,2014-09-27,Échanges associatifs,Comptabilité de L'Accorderie,108.0,54850
+179,232,01:00:00,2014-10-01,Échanges associatifs,Comptabilité de L'Accorderie,108.0,54852
+179,232,01:30:00,2014-10-08,Échanges associatifs,Comptabilité de L'Accorderie,108.0,54853
+179,232,02:00:00,2014-10-09,Échanges associatifs,Comptabilité de L'Accorderie,108.0,54855
+179,232,01:30:00,2014-10-14,Échanges associatifs,Comptabilité de L'Accorderie,108.0,54857
+179,232,02:30:00,2014-10-15,Échanges associatifs,Comptabilité de L'Accorderie,108.0,54858
+179,232,01:30:00,2014-10-23,Échanges associatifs,Comptabilité de L'Accorderie,108.0,54861
+179,232,02:00:00,2014-12-05,Échanges associatifs,Comptabilité de L'Accorderie,108.0,54862
+179,232,01:30:00,2015-01-05,Échanges associatifs,Comptabilité de L'Accorderie,108.0,54865
+179,232,01:30:00,2015-01-07,Échanges associatifs,Comptabilité de L'Accorderie,108.0,54866
+179,232,02:00:00,2015-01-08,Échanges associatifs,Comptabilité de L'Accorderie,108.0,54867
+179,232,02:30:00,2015-01-11,Échanges associatifs,Comptabilité de L'Accorderie,108.0,54868
+179,232,02:30:00,2015-01-12,Échanges associatifs,Comptabilité de L'Accorderie,108.0,54869
+179,232,03:30:00,2015-02-18,Échanges associatifs,Comptabilité de L'Accorderie,108.0,54870
+64,74,03:00:00,2015-03-25,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,54894
+64,74,03:00:00,2015-03-26,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,54895
+64,74,02:00:00,2015-03-27,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,54896
+64,74,01:00:00,2015-03-28,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,54897
+144,93,01:00:00,2015-02-15,Langues / Littérature,Correction textes en français,108.0,54898
+105,93,03:00:00,2015-02-28,Accompagnement / Gardiennage / Animaux,Accompagnement magasinage,108.0,54899
+83,244,08:00:00,2015-02-19,Travaux / Entretien / Jardinage,Bricoleur pour petits travaux,108.0,54901
+83,244,02:00:00,2015-02-20,Travaux / Entretien / Jardinage,Bricoleur pour petits travaux,108.0,54902
+93,198,03:00:00,2015-03-10,Artisanat / Couture / Vêtements,Peinture sur bois,108.0,54903
+93,232,03:00:00,2015-03-16,Échanges associatifs,Communications pour L'Accorderie,108.0,54904
+93,232,06:00:00,2015-03-23,Échanges associatifs,Communications pour L'Accorderie,108.0,54906
+128,232,04:00:00,2015-04-02,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,54992
+54,232,03:30:00,2015-04-02,Administration / Emploi / Organisation,Coaching gestion des affaires,108.0,54993
+232,101,02:00:00,2015-04-02,Achat regroupé,Commande au groupe d'achats,108.0,55114
+232,164,02:00:00,2015-04-02,Achat regroupé,Commande au groupe d'achats,108.0,55115
+232,70,02:00:00,2015-04-02,Achat regroupé,Commande au groupe d'achats,108.0,55116
+232,262,02:00:00,2015-04-02,Achat regroupé,Commande au groupe d'achats,108.0,55117
+232,167,02:00:00,2015-04-02,Achat regroupé,Commande au groupe d'achats,108.0,55118
+232,73,02:00:00,2015-04-02,Achat regroupé,Commande au groupe d'achats,108.0,55119
+232,75,02:00:00,2015-04-02,Achat regroupé,Commande au groupe d'achats,108.0,55120
+232,206,02:00:00,2015-04-02,Achat regroupé,Commande au groupe d'achats,108.0,55121
+232,52,02:00:00,2015-04-02,Achat regroupé,Commande au groupe d'achats,108.0,55122
+232,56,02:00:00,2015-04-02,Achat regroupé,Commande au groupe d'achats,108.0,55123
+232,191,02:00:00,2015-04-02,Achat regroupé,Commande au groupe d'achats,108.0,55124
+232,122,02:00:00,2015-04-02,Achat regroupé,Commande au groupe d'achats,108.0,55125
+232,62,02:00:00,2015-04-02,Achat regroupé,Commande au groupe d'achats,108.0,55126
+232,147,02:00:00,2015-04-02,Achat regroupé,Commande au groupe d'achats,108.0,55127
+232,210,02:00:00,2015-04-02,Achat regroupé,Commande au groupe d'achats,108.0,55128
+232,220,02:00:00,2015-04-02,Achat regroupé,Commande au groupe d'achats,108.0,55129
+232,125,02:00:00,2015-04-02,Achat regroupé,Commande au groupe d'achats,108.0,55130
+232,185,02:00:00,2015-04-02,Achat regroupé,Commande au groupe d'achats,108.0,55131
+232,86,02:00:00,2015-04-02,Achat regroupé,Commande au groupe d'achats,108.0,55132
+232,58,02:00:00,2015-04-02,Achat regroupé,Commande au groupe d'achats,108.0,55133
+232,107,02:00:00,2015-04-02,Achat regroupé,Commande au groupe d'achats,108.0,55134
+232,76,02:00:00,2015-04-02,Achat regroupé,Commande au groupe d'achats,108.0,55135
+232,65,02:00:00,2015-04-02,Achat regroupé,Commande au groupe d'achats,108.0,55136
+54,232,03:30:00,2015-04-02,Échanges associatifs,Comptabilité de L'Accorderie,108.0,55143
+128,232,04:00:00,2015-04-02,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,55144
+153,52,01:00:00,2015-04-07,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,55146
+153,60,01:00:00,2015-04-07,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,55147
+174,232,03:00:00,2015-04-06,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,55150
+107,232,01:00:00,2015-04-04,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,55154
+81,232,04:30:00,2015-04-06,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,55155
+198,232,04:30:00,2015-04-06,Échanges associatifs,Communications pour L'Accorderie,108.0,55156
+80,232,04:00:00,2015-04-06,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,55157
+58,232,04:30:00,2015-04-06,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,55158
+107,232,04:30:00,2015-04-06,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,55159
+72,79,02:00:00,2014-12-12,Transport / Déménagement,Transport de matériel avec voiture,108.0,55161
+60,149,00:30:00,2015-04-09,Informatique / Bureautique,Initiation tablettes électroniques / iPad,108.0,55209
+93,73,02:00:00,2015-03-20,Langues / Littérature,Conversation français/anglais,108.0,55210
+139,232,03:30:00,2015-04-11,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,55273
+93,232,00:30:00,2015-04-06,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,55277
+93,232,00:30:00,2015-04-06,Échanges associatifs,Communications pour L'Accorderie,108.0,55278
+93,232,01:00:00,2015-04-08,Échanges associatifs,Communications pour L'Accorderie,108.0,55279
+164,232,04:00:00,2015-04-15,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,55339
+153,139,01:00:00,2015-03-31,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,55341
+152,232,03:30:00,2015-04-14,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,55393
+153,52,01:00:00,2015-04-14,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,55467
+153,119,01:00:00,2015-04-14,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,55471
+140,128,01:00:00,2015-04-16,Artisanat / Couture / Vêtements,Réparation ou restauration d'objets décoratifs,108.0,55483
+128,232,04:30:00,2015-04-16,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,55485
+54,232,03:00:00,2015-04-14,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,55486
+153,53,01:00:00,2015-04-14,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,55488
+60,232,00:30:00,2015-04-13,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,55489
+120,91,01:30:00,2015-04-17,Arts / Culture / Éducation,Transfert sur CD,108.0,55497
+128,232,01:30:00,2015-04-17,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,55498
+101,232,02:00:00,2015-04-21,Achat regroupé,Rencontre de travail achat regroupé,108.0,55597
+101,232,03:00:00,2015-04-21,Achat regroupé,Partage des commandes,108.0,55598
+101,232,01:30:00,2015-04-21,Achat regroupé,Recherche informations pour achat regroupé,108.0,55599
+101,232,00:30:00,2015-04-21,Achat regroupé,Recherche informations pour achat regroupé,108.0,55600
+101,232,02:00:00,2014-06-11,Achat regroupé,Rencontre de travail achat regroupé,108.0,55601
+101,232,02:30:00,2014-08-12,Achat regroupé,Rencontre de travail achat regroupé,108.0,55602
+101,232,01:00:00,2014-08-27,Achat regroupé,Rencontre de travail achat regroupé,108.0,55603
+101,232,01:30:00,2014-09-04,Achat regroupé,Recherche informations pour achat regroupé,108.0,55604
+101,232,02:00:00,2014-09-09,Achat regroupé,Rencontre de travail achat regroupé,108.0,55605
+101,232,00:30:00,2014-09-09,Achat regroupé,Tâches cléricales pour achat regroupé,108.0,55606
+101,232,01:30:00,2014-09-09,Achat regroupé,Développement d'outils achat regroupé,108.0,55607
+101,232,03:00:00,2014-09-18,Achat regroupé,Accueil au souper commande,108.0,55608
+101,232,02:00:00,2014-09-30,Achat regroupé,Rencontre de travail achat regroupé,108.0,55609
+101,232,02:30:00,2014-10-03,Achat regroupé,Partage des commandes,108.0,55610
+101,232,02:00:00,2014-10-03,Achat regroupé,Rencontre de travail achat regroupé,108.0,55611
+101,232,01:00:00,2014-10-03,Achat regroupé,Rencontre de travail achat regroupé,108.0,55612
+101,232,01:00:00,2014-11-17,Achat regroupé,Rencontre de travail achat regroupé,108.0,55613
+101,232,01:30:00,2015-02-06,Achat regroupé,Partage des commandes,108.0,55614
+80,76,01:00:00,2015-03-30,Travaux / Entretien / Jardinage,Conseils projet de rénovation,108.0,55615
+80,76,02:00:00,2015-04-04,Informatique / Bureautique,Initiation traitement photo et image,108.0,55616
+80,76,01:00:00,2015-04-11,Informatique / Bureautique,Initiation traitement photo et image,108.0,55617
+80,76,02:00:00,2015-04-18,Informatique / Bureautique,Initiation traitement photo et image,108.0,55618
+55,210,04:00:00,2015-06-02,Travaux / Entretien / Jardinage,Nettoyage intérieur voiture,108.0,57660
+152,232,04:00:00,2015-04-21,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,55657
+226,232,03:00:00,2015-04-22,Achat regroupé,Rencontre de travail achat regroupé,108.0,55679
+105,242,00:30:00,2015-04-18,Transport / Déménagement,Transport besoins divers,108.0,55680
+58,210,03:30:00,2015-04-18,Travaux / Entretien / Jardinage,Ménage léger,108.0,55708
+106,232,01:00:00,2015-04-22,Échanges associatifs,Communications pour L'Accorderie,108.0,56271
+54,232,03:30:00,2015-04-21,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,55711
+139,232,06:30:00,2015-04-18,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,55714
+117,198,02:00:00,2015-04-22,Administration / Emploi / Organisation,Rapport d'impôt personnel,108.0,55715
+232,226,03:00:00,2015-04-02,Achat regroupé,Rencontre de travail achat regroupé,108.0,55716
+93,224,04:00:00,2015-04-22,Informatique / Bureautique,Initiation générale à l'informatique,108.0,55727
+128,232,03:00:00,2015-04-23,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,55800
+58,232,02:30:00,2015-04-23,Accompagnement / Gardiennage / Animaux,Accompagnement activités familiales extérieures,108.0,56012
+139,232,03:00:00,2015-04-25,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,56013
+220,149,00:30:00,2015-04-25,Transport / Déménagement,Transport avec camionnette,108.0,56014
+206,174,03:00:00,2015-04-23,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,56016
+153,119,01:00:00,2015-04-28,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,56018
+153,210,01:00:00,2015-04-28,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,56019
+153,91,01:00:00,2015-04-28,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,56020
+107,149,00:30:00,2015-04-25,Transport / Déménagement,Transport besoins divers,108.0,56021
+206,174,01:00:00,2015-04-29,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,56229
+93,79,03:00:00,2015-04-20,Artisanat / Couture / Vêtements,Peinture sur bois,108.0,56231
+128,232,04:00:00,2015-04-30,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,56232
+93,232,01:00:00,2015-04-22,Échanges associatifs,Communications pour L'Accorderie,108.0,56237
+93,232,05:00:00,2015-04-23,Échanges associatifs,Communications pour L'Accorderie,108.0,56238
+93,232,01:00:00,2015-04-20,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,56239
+152,232,03:30:00,2015-05-05,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,56240
+152,232,03:30:00,2015-04-28,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,56272
+76,232,04:00:00,2015-02-06,Achat regroupé,Partage des commandes,108.0,56345
+58,232,02:30:00,2015-04-23,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,56332
+139,232,03:00:00,2015-05-02,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,56333
+82,174,01:00:00,2015-04-05,Transport / Déménagement,Transport besoins divers,108.0,56338
+262,232,02:00:00,2015-02-05,Achat regroupé,Rencontre de travail achat regroupé,108.0,56341
+262,232,02:00:00,2015-02-27,Achat regroupé,Rencontre de travail achat regroupé,108.0,56342
+262,232,02:00:00,2015-04-09,Achat regroupé,Rencontre de travail achat regroupé,108.0,56343
+58,232,02:30:00,2015-04-02,Achat regroupé,Partage des commandes,108.0,56344
+76,232,01:30:00,2015-02-06,Achat regroupé,Recherche informations pour achat regroupé,108.0,56347
+76,232,02:30:00,2015-01-08,Achat regroupé,Rencontre de travail achat regroupé,108.0,56349
+76,232,02:30:00,2015-02-05,Achat regroupé,Rencontre de travail achat regroupé,108.0,56351
+76,232,02:30:00,2015-02-27,Achat regroupé,Rencontre de travail achat regroupé,108.0,56353
+76,232,02:30:00,2015-04-09,Achat regroupé,Rencontre de travail achat regroupé,108.0,56354
+76,232,02:00:00,2015-01-23,Achat regroupé,Animation du souper commande,108.0,56356
+76,232,02:00:00,2015-03-20,Achat regroupé,Animation du souper commande,108.0,56359
+86,232,03:00:00,2015-02-06,Achat regroupé,Partage des commandes,108.0,56362
+86,232,03:00:00,2015-04-02,Achat regroupé,Partage des commandes,108.0,56363
+86,232,01:00:00,2015-02-13,Achat regroupé,Recherche de fournisseurs,108.0,56364
+86,232,02:00:00,2015-01-08,Achat regroupé,Rencontre de travail achat regroupé,108.0,56365
+86,232,02:00:00,2015-02-05,Achat regroupé,Rencontre de travail achat regroupé,108.0,56366
+86,232,02:00:00,2015-02-27,Achat regroupé,Rencontre de travail achat regroupé,108.0,56367
+86,232,02:00:00,2015-04-09,Achat regroupé,Rencontre de travail achat regroupé,108.0,56369
+86,232,02:00:00,2015-01-23,Achat regroupé,Accueil au souper commande,108.0,56371
+86,232,03:00:00,2015-02-06,Achat regroupé,Accueil ramassage commande,108.0,56372
+86,232,01:00:00,2015-03-16,Achat regroupé,Développement d'outils achat regroupé,108.0,56373
+65,232,03:30:00,2015-04-02,Achat regroupé,Partage des commandes,108.0,56375
+65,232,02:30:00,2015-02-05,Achat regroupé,Rencontre de travail achat regroupé,108.0,56376
+65,232,02:30:00,2015-02-27,Achat regroupé,Rencontre de travail achat regroupé,108.0,56378
+65,232,02:30:00,2015-04-09,Achat regroupé,Rencontre de travail achat regroupé,108.0,56379
+147,232,01:00:00,2015-03-10,Achat regroupé,Recherche de fournisseurs,108.0,56384
+147,232,01:00:00,2015-03-26,Achat regroupé,Recherche de fournisseurs,108.0,56385
+147,232,02:30:00,2015-01-08,Achat regroupé,Rencontre de travail achat regroupé,108.0,56387
+147,232,02:30:00,2015-02-05,Achat regroupé,Rencontre de travail achat regroupé,108.0,56388
+147,232,02:30:00,2015-02-27,Achat regroupé,Rencontre de travail achat regroupé,108.0,56390
+147,232,01:30:00,2015-04-09,Achat regroupé,Rencontre de travail achat regroupé,108.0,63196
+147,232,01:30:00,2015-01-23,Achat regroupé,Animation du souper commande,108.0,56392
+147,232,01:30:00,2015-03-20,Achat regroupé,Animation du souper commande,108.0,56393
+187,232,04:00:00,2015-05-13,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,56699
+100,91,02:00:00,2015-05-09,Artisanat / Couture / Vêtements,Initiation origami,108.0,56703
+100,193,02:00:00,2015-05-09,Artisanat / Couture / Vêtements,Initiation origami,108.0,56704
+153,248,01:00:00,2015-05-12,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,56708
+153,224,01:00:00,2015-05-12,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,56710
+153,139,01:00:00,2015-05-12,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,56712
+193,174,01:00:00,2015-05-06,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,56715
+70,95,00:30:00,2015-05-04,Transport / Déménagement,Transport besoins divers,108.0,56718
+70,95,00:30:00,2015-05-11,Transport / Déménagement,Transport besoins divers,108.0,56720
+169,174,01:00:00,2015-05-13,Transport / Déménagement,Transport pour les courses,108.0,56737
+139,232,03:00:00,2015-05-09,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,56739
+139,232,03:30:00,2015-05-12,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,56740
+95,232,01:00:00,2015-05-13,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,56748
+193,232,03:00:00,2015-05-07,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,56755
+193,232,03:00:00,2015-05-14,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,56838
+85,193,02:00:00,2015-05-14,Travaux / Entretien / Jardinage,Lavage vitres,108.0,56839
+78,210,03:00:00,2015-05-09,Travaux / Entretien / Jardinage,Nettoyage saisonnier de terrains,108.0,56840
+128,232,04:00:00,2015-05-14,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,56841
+58,193,03:00:00,2015-05-16,Travaux / Entretien / Jardinage,Ménage léger,108.0,56958
+187,232,04:00:00,2015-05-20,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,57044
+193,174,01:00:00,2015-05-19,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,57046
+54,232,04:00:00,2015-05-19,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,57048
+58,210,03:30:00,2015-05-07,Travaux / Entretien / Jardinage,Aide pour jardinage,108.0,57052
+81,232,02:30:00,2015-05-14,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,57057
+174,232,02:30:00,2015-05-14,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,57058
+58,232,02:30:00,2015-05-14,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,57059
+107,232,02:30:00,2015-05-14,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,57060
+80,232,02:30:00,2015-05-14,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,57061
+84,232,03:00:00,2015-05-01,Échanges associatifs,Tâches activité de financement,108.0,57066
+159,232,04:30:00,2015-05-01,Échanges associatifs,Tâches activité de financement,108.0,57067
+199,232,03:30:00,2015-05-01,Échanges associatifs,Tâches activité de financement,108.0,57068
+174,232,06:00:00,2015-05-01,Échanges associatifs,Tâches activité de financement,108.0,57069
+220,232,05:00:00,2015-05-01,Échanges associatifs,Tâches activité de financement,108.0,57070
+107,232,06:00:00,2015-05-01,Échanges associatifs,Tâches activité de financement,108.0,57071
+129,232,04:00:00,2015-05-02,Échanges associatifs,Tâches activité de financement,108.0,57072
+59,232,04:00:00,2015-05-02,Échanges associatifs,Tâches activité de financement,108.0,57074
+80,232,07:00:00,2015-05-02,Échanges associatifs,Tâches activité de financement,108.0,57075
+58,232,07:00:00,2015-05-02,Échanges associatifs,Tâches activité de financement,108.0,57077
+174,232,07:00:00,2015-05-02,Échanges associatifs,Tâches activité de financement,108.0,57078
+57,232,03:00:00,2015-05-03,Échanges associatifs,Tâches activité de financement,108.0,57079
+81,232,07:00:00,2015-05-03,Échanges associatifs,Tâches activité de financement,108.0,57080
+174,232,07:30:00,2015-05-03,Échanges associatifs,Tâches activité de financement,108.0,57081
+152,232,03:00:00,2015-05-03,Échanges associatifs,Tâches activité de financement,108.0,57082
+69,232,03:00:00,2015-05-03,Échanges associatifs,Tâches activité de financement,108.0,57083
+78,232,02:30:00,2015-05-03,Échanges associatifs,Tâches activité de financement,108.0,57085
+93,232,02:00:00,2015-05-20,Échanges associatifs,Communications pour L'Accorderie,108.0,57207
+93,232,01:00:00,2015-05-18,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,57206
+106,232,01:00:00,2015-05-20,Langues / Littérature,Rédaction textes en français,108.0,57205
+193,232,03:00:00,2015-05-21,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,57204
+98,152,01:00:00,2015-05-08,Travaux / Entretien / Jardinage,Menus travaux ébénisterie,108.0,57333
+98,152,02:00:00,2015-05-18,Travaux / Entretien / Jardinage,Menus travaux ébénisterie,108.0,57334
+98,152,02:00:00,2015-05-20,Travaux / Entretien / Jardinage,Menus travaux ébénisterie,108.0,57335
+152,232,03:30:00,2015-05-26,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,57339
+206,174,00:30:00,2015-05-15,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,57393
+206,174,00:30:00,2015-05-14,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,57394
+153,224,01:00:00,2015-05-26,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,57397
+153,187,01:00:00,2015-05-26,Santé / Maternité / Esthétique,Massage des pieds et mains,108.0,57398
+45,193,03:00:00,2015-05-22,Travaux / Entretien / Jardinage,Ménage léger,108.0,57399
+161,232,01:00:00,2015-05-21,Achat regroupé,Rencontre de travail achat regroupé,108.0,57400
+70,95,00:30:00,2015-05-20,Transport / Déménagement,Transport besoins divers,108.0,57406
+59,95,00:30:00,2015-05-20,Transport / Déménagement,Transport besoins divers,108.0,57407
+43,232,02:00:00,2015-04-08,Échanges associatifs,Rencontre de travail comité gestion,108.0,57413
+43,232,02:00:00,2015-04-15,Échanges associatifs,Rencontre de travail comité gestion,108.0,57414
+43,232,01:30:00,2015-05-12,Échanges associatifs,Rencontre de travail comité gestion,108.0,57415
+43,232,07:00:00,2015-04-25,Échanges associatifs,Rencontre de travail comité gestion,108.0,57416
+43,232,01:00:00,2015-05-19,Échanges associatifs,Rencontre de travail comité gestion,108.0,57417
+43,232,01:30:00,2015-05-02,Échanges associatifs,Rencontre de travail comité gestion,108.0,57418
+43,232,03:00:00,2015-04-12,Échanges associatifs,Rencontre de travail comité gestion,108.0,57419
+43,90,01:00:00,2015-05-08,Échanges associatifs,Rencontre de travail comité gestion,108.0,57420
+128,232,05:00:00,2015-05-28,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,57466
+59,95,00:30:00,2015-05-23,Transport / Déménagement,Transport besoins divers,108.0,57472
+152,98,03:00:00,2015-05-30,Travaux / Entretien / Jardinage,Entretien de plates-bandes,108.0,57489
+193,232,03:00:00,2015-05-28,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,57671
+128,232,02:00:00,2015-05-29,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,57673
+128,232,05:00:00,2015-05-28,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,57674
+233,224,00:30:00,2015-05-27,Santé / Maternité / Esthétique,"Compréhension maladie, corps, médicament",108.0,57676
+233,55,00:30:00,2015-05-27,Santé / Maternité / Esthétique,"Compréhension maladie, corps, médicament",108.0,57677
+233,198,00:30:00,2015-05-27,Santé / Maternité / Esthétique,"Compréhension maladie, corps, médicament",108.0,57678
+233,81,00:30:00,2015-05-27,Santé / Maternité / Esthétique,"Compréhension maladie, corps, médicament",108.0,57679
+233,95,00:30:00,2015-05-27,Santé / Maternité / Esthétique,"Compréhension maladie, corps, médicament",108.0,57680
+233,93,00:30:00,2015-05-27,Santé / Maternité / Esthétique,"Compréhension maladie, corps, médicament",108.0,57681
+233,149,00:30:00,2015-05-27,Santé / Maternité / Esthétique,"Compréhension maladie, corps, médicament",108.0,57682
+233,193,00:30:00,2015-05-27,Santé / Maternité / Esthétique,"Compréhension maladie, corps, médicament",108.0,57683
+233,79,00:30:00,2015-05-27,Santé / Maternité / Esthétique,"Compréhension maladie, corps, médicament",108.0,57684
+48,55,01:30:00,2015-06-02,Artisanat / Couture / Vêtements,Petites réparations vêtements,108.0,57686
+126,154,04:00:00,2015-05-27,Hébergement / Voyage / Stationnement,Hébergement en maison courte durée,108.0,57722
+177,242,01:00:00,2015-06-02,Travaux / Entretien / Jardinage,Réparation de meubles,108.0,57811
+43,232,02:00:00,2015-06-04,Échanges associatifs,Rencontre de travail comité gestion,108.0,57812
+174,98,02:00:00,2015-06-03,Travaux / Entretien / Jardinage,Peinture extérieure,108.0,57814
+174,98,02:00:00,2015-05-21,Travaux / Entretien / Jardinage,Peinture extérieure,108.0,57815
+174,98,02:00:00,2015-05-19,Travaux / Entretien / Jardinage,Peinture extérieure,108.0,57816
+93,232,02:00:00,2015-05-30,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,58170
+93,232,01:00:00,2015-05-30,Échanges associatifs,Communications pour L'Accorderie,108.0,58171
+58,210,02:30:00,2015-06-04,Travaux / Entretien / Jardinage,Aide pour jardinage,108.0,58172
+206,174,01:00:00,2015-06-04,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,58175
+206,174,01:00:00,2015-06-08,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,58176
+206,232,02:00:00,2015-05-28,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,58318
+85,232,03:00:00,2015-05-30,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,58319
+164,232,03:00:00,2015-05-30,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,58321
+81,232,03:00:00,2015-05-30,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,58322
+150,232,01:00:00,2015-06-01,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,58323
+199,232,01:30:00,2015-06-01,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,58324
+130,232,02:00:00,2015-06-01,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,58325
+42,232,02:00:00,2015-06-01,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,58326
+64,232,01:00:00,2015-06-02,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,58327
+42,232,02:00:00,2015-06-02,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,58328
+130,232,02:00:00,2015-06-02,Travaux / Entretien / Jardinage,Ménage léger,108.0,58329
+64,232,01:00:00,2015-06-03,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,58330
+42,232,03:00:00,2015-06-03,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,58331
+64,232,01:00:00,2015-06-03,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,58332
+42,232,01:00:00,2015-06-16,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,58338
+42,232,03:00:00,2015-06-11,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,58340
+130,232,03:00:00,2015-06-11,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,58342
+206,174,01:00:00,2015-06-13,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,58349
+94,174,02:00:00,2015-06-12,Accompagnement / Gardiennage / Animaux,Accompagnement magasinage,108.0,58350
+116,232,02:00:00,2014-10-16,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,58355
+106,232,07:00:00,2015-06-11,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,58356
+232,164,02:00:00,2015-06-17,Achat regroupé,Commande au groupe d'achats,108.0,58357
+232,101,02:00:00,2015-06-17,Achat regroupé,Commande au groupe d'achats,108.0,58358
+232,248,02:00:00,2015-06-17,Achat regroupé,Commande au groupe d'achats,108.0,58361
+232,70,02:00:00,2015-06-17,Achat regroupé,Commande au groupe d'achats,108.0,58362
+232,262,02:00:00,2015-06-17,Achat regroupé,Commande au groupe d'achats,108.0,58363
+232,206,02:00:00,2015-06-17,Achat regroupé,Commande au groupe d'achats,108.0,58364
+232,226,02:00:00,2015-06-17,Achat regroupé,Commande au groupe d'achats,108.0,58365
+232,122,02:00:00,2015-06-17,Achat regroupé,Commande au groupe d'achats,108.0,58366
+232,45,02:00:00,2015-06-17,Achat regroupé,Commande au groupe d'achats,108.0,58367
+232,45,02:00:00,2015-06-17,Achat regroupé,Commande au groupe d'achats,108.0,58368
+232,147,02:00:00,2015-06-17,Achat regroupé,Commande au groupe d'achats,108.0,58369
+232,210,02:00:00,2015-06-17,Achat regroupé,Commande au groupe d'achats,108.0,58370
+232,185,02:00:00,2015-06-17,Achat regroupé,Commande au groupe d'achats,108.0,58375
+232,79,02:00:00,2015-06-17,Achat regroupé,Commande au groupe d'achats,108.0,58376
+232,44,02:00:00,2015-06-17,Achat regroupé,Commande au groupe d'achats,108.0,58373
+232,125,02:00:00,2015-06-17,Achat regroupé,Commande au groupe d'achats,108.0,58374
+232,95,02:00:00,2015-06-17,Achat regroupé,Commande au groupe d'achats,108.0,58377
+232,58,02:00:00,2015-06-17,Achat regroupé,Commande au groupe d'achats,108.0,58378
+232,130,02:00:00,2015-06-17,Achat regroupé,Commande au groupe d'achats,108.0,58379
+232,198,02:00:00,2015-06-17,Achat regroupé,Commande au groupe d'achats,108.0,58380
+232,76,02:00:00,2015-06-17,Achat regroupé,Commande au groupe d'achats,108.0,58381
+232,77,02:00:00,2015-06-17,Achat regroupé,Commande au groupe d'achats,108.0,58382
+78,108,04:30:00,2015-06-16,Travaux / Entretien / Jardinage,Ménage lourd,108.0,58385
+42,232,01:00:00,2015-06-18,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,58428
+179,232,01:30:00,2015-06-18,Échanges associatifs,Comptabilité de L'Accorderie,108.0,58430
+85,232,03:00:00,2015-05-30,Échanges associatifs,Rencontre de travail aménagement / entretien des locaux,108.0,58941
+164,232,03:00:00,2015-05-30,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,58949
+81,232,03:00:00,2015-05-30,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,58950
+206,232,02:00:00,2015-05-28,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,58951
+150,232,01:00:00,2015-06-01,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,58952
+199,232,01:30:00,2015-06-01,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,58953
+130,232,02:00:00,2015-06-01,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,58954
+42,232,02:00:00,2015-06-01,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,58955
+48,232,01:00:00,2015-07-02,Artisanat / Couture / Vêtements,Coud bas de pantalon,108.0,58959
+232,93,02:00:00,2015-05-30,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,58975
+93,232,01:00:00,2015-07-01,Échanges associatifs,Communications pour L'Accorderie,108.0,58981
+64,232,01:00:00,2015-06-02,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,58983
+42,232,02:00:00,2015-06-02,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,58984
+130,232,02:00:00,2015-06-02,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,58985
+64,232,02:00:00,2015-06-03,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,58986
+42,232,03:00:00,2015-06-03,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,58987
+174,232,02:30:00,2015-06-25,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,58989
+164,232,02:00:00,2015-06-25,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,58990
+157,232,04:00:00,2015-06-26,Travaux / Entretien / Jardinage,Menus travaux ébénisterie,108.0,58994
+150,232,05:30:00,2015-06-26,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,58995
+198,232,06:00:00,2015-06-26,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,58997
+98,224,01:00:00,2015-06-18,Travaux / Entretien / Jardinage,Menus travaux ébénisterie,108.0,59089
+179,232,01:30:00,2015-06-16,Échanges associatifs,Comptabilité de L'Accorderie,108.0,59224
+48,79,10:00:00,2015-06-16,Artisanat / Couture / Vêtements,Modifications vêtements,108.0,59225
+262,232,01:00:00,2015-05-15,Achat regroupé,Commande au groupe d'achats,108.0,59478
+262,232,02:00:00,2015-05-04,Achat regroupé,Commande au groupe d'achats,108.0,59228
+262,232,04:30:00,2015-06-21,Achat regroupé,Commande au groupe d'achats,108.0,59229
+174,232,04:30:00,2015-05-03,Échanges associatifs,Tâches activité de financement,108.0,59230
+58,232,02:00:00,2015-05-03,Échanges associatifs,Tâches activité de financement,108.0,59231
+81,232,07:30:00,2015-05-03,Informatique / Bureautique,Dépannage pour ordinateurs P.C.,108.0,59232
+84,232,01:30:00,2015-05-03,Échanges associatifs,Tâches activité de financement,108.0,59233
+93,232,01:30:00,2015-05-03,Échanges associatifs,Communications pour L'Accorderie,108.0,59234
+65,232,07:00:00,2015-05-03,Achat regroupé,Rencontre de travail achat regroupé,108.0,59235
+139,232,01:00:00,2015-05-03,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,59236
+80,232,02:00:00,2015-05-03,Informatique / Bureautique,Initiation traitement photo et image,108.0,59237
+107,232,01:00:00,2015-05-03,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,59241
+80,232,01:30:00,2015-05-03,Échanges associatifs,Tâches activité de financement,108.0,59242
+206,174,01:30:00,2015-07-04,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,59293
+128,232,03:00:00,2015-07-09,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,59296
+262,232,01:30:00,2015-07-10,Achat regroupé,Accueil ramassage commande,108.0,59299
+206,174,01:00:00,2015-06-30,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,59304
+81,232,02:00:00,2015-06-22,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,59306
+150,232,03:00:00,2015-06-29,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,59307
+81,232,02:00:00,2015-07-03,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,59308
+58,232,03:00:00,2015-07-03,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,59309
+96,232,03:00:00,2015-05-03,Échanges associatifs,Tâches activité de financement,108.0,59469
+128,232,02:00:00,2015-06-29,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,59470
+139,232,03:00:00,2015-05-16,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,59479
+128,232,03:00:00,2015-06-11,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,59480
+206,174,02:00:00,2015-06-11,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,59481
+98,242,03:00:00,2015-07-15,Travaux / Entretien / Jardinage,Menus travaux ébénisterie,108.0,59543
+174,98,02:00:00,2015-07-14,Travaux / Entretien / Jardinage,Peinture extérieure,108.0,59546
+206,174,01:00:00,2015-07-16,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,59548
+206,174,01:00:00,2015-07-16,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,59592
+174,98,02:00:00,2015-07-14,Travaux / Entretien / Jardinage,Peinture extérieure,108.0,59597
+152,232,02:00:00,2015-07-10,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,59635
+37,34,01:00:00,2015-07-21,Langues / Littérature,Conversation anglaise,108.0,59730
+93,34,01:00:00,2015-07-22,Langues / Littérature,Conversation français/anglais,108.0,59731
+81,232,02:00:00,2015-07-21,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,59732
+80,232,02:00:00,2015-02-02,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,59733
+80,232,02:00:00,2015-04-06,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,59734
+80,232,02:30:00,2015-05-14,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,59735
+80,232,02:00:00,2015-07-21,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,59736
+48,81,00:30:00,2015-07-21,Artisanat / Couture / Vêtements,Petites réparations vêtements,108.0,59835
+58,39,03:00:00,2015-07-17,Travaux / Entretien / Jardinage,Aide pour jardinage,108.0,59840
+47,58,02:00:00,2015-06-03,Sports / Loisirs / Animation,Initiation végétation forestière,108.0,59854
+93,232,03:00:00,2015-07-24,Échanges associatifs,Communications pour L'Accorderie,108.0,59864
+128,232,03:00:00,2015-07-23,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,59885
+48,79,05:00:00,2015-07-23,Artisanat / Couture / Vêtements,Petites réparations vêtements,108.0,59886
+128,94,01:00:00,2015-07-23,Accompagnement / Gardiennage / Animaux,Accompagnement marche,108.0,59887
+58,232,05:00:00,2015-07-24,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,59905
+58,232,02:00:00,2015-07-22,Échanges associatifs,Tâches activité de financement,108.0,59906
+220,232,01:30:00,2015-07-24,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,60002
+128,232,02:00:00,2015-07-28,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,60006
+72,110,02:00:00,2015-08-07,Transport / Déménagement,Transport de matériel avec voiture,108.0,60039
+37,34,02:00:00,2015-07-28,Langues / Littérature,Conversation anglaise,108.0,60083
+37,34,02:00:00,2015-07-30,Langues / Littérature,Conversation anglaise,108.0,60085
+72,110,01:30:00,2015-07-09,Transport / Déménagement,Transport de matériel avec voiture,108.0,60095
+174,185,03:00:00,2015-07-29,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,60152
+54,232,02:30:00,2015-05-07,Échanges associatifs,Comptabilité de L'Accorderie,108.0,60242
+128,232,04:30:00,2015-07-12,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,60279
+103,37,01:30:00,2015-07-31,Arts / Culture / Éducation,Initiation culture religieuse,108.0,60308
+55,232,01:00:00,2015-07-16,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,60311
+220,149,00:30:00,2015-08-01,Transport / Déménagement,Transport avec camionnette,108.0,60312
+128,232,03:00:00,2015-08-06,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,60456
+130,206,03:30:00,2015-05-14,Travaux / Entretien / Jardinage,Ménage léger,108.0,60457
+130,206,03:00:00,2015-05-13,Travaux / Entretien / Jardinage,Ménage léger,108.0,60570
+128,232,02:00:00,2015-08-05,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,60571
+37,34,01:00:00,2015-08-17,Langues / Littérature,Conversation anglaise,108.0,61046
+55,232,02:00:00,2015-08-13,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,60817
+104,55,03:00:00,2015-08-15,Informatique / Bureautique,Grave disques compacts,108.0,60828
+93,232,02:00:00,2015-08-19,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,60915
+93,232,02:00:00,2015-08-20,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,60916
+27,232,03:00:00,2015-09-11,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,61632
+58,232,02:00:00,2015-08-20,Échanges associatifs,Tâches activité de financement,108.0,60918
+81,232,02:00:00,2015-08-20,Informatique / Bureautique,Dépannage pour ordinateurs P.C.,108.0,60919
+220,232,05:00:00,2015-08-14,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,60921
+220,232,03:00:00,2015-08-21,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,60922
+220,232,04:00:00,2015-07-17,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,60923
+220,232,04:00:00,2015-07-31,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,60924
+81,232,02:00:00,2015-08-19,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,60926
+128,232,03:00:00,2015-08-20,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,60929
+140,169,01:00:00,2015-08-22,Informatique / Bureautique,Initiation générale à l'informatique,108.0,61043
+55,232,02:00:00,2015-08-20,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,61045
+37,34,01:00:00,2015-08-24,Langues / Littérature,Conversation anglaise,108.0,61047
+104,55,01:30:00,2015-08-12,Informatique / Bureautique,Grave disques compacts,108.0,61058
+48,55,01:30:00,2015-08-28,Artisanat / Couture / Vêtements,Petites réparations vêtements,108.0,61146
+82,161,01:00:00,2015-08-28,Transport / Déménagement,Transport besoins divers,108.0,61147
+194,55,01:00:00,2015-08-28,Arts / Culture / Éducation,Prise de photos général,108.0,61148
+105,55,01:00:00,2015-08-21,Transport / Déménagement,Transport besoins divers,108.0,61215
+37,34,01:00:00,2015-08-27,Langues / Littérature,Conversation anglaise,108.0,61218
+48,79,06:00:00,2015-08-30,Artisanat / Couture / Vêtements,Petites réparations vêtements,108.0,61219
+137,198,01:00:00,2015-08-25,Santé / Maternité / Esthétique,Confection gélules plantes médicinales,108.0,61220
+213,210,02:00:00,2015-08-28,Travaux / Entretien / Jardinage,Aide pour jardinage,108.0,61221
+104,55,01:00:00,2015-08-31,Informatique / Bureautique,Grave disques compacts,108.0,61344
+72,110,02:00:00,2014-08-07,Transport / Déménagement,Transport de matériel avec voiture,108.0,61350
+48,55,08:00:00,2015-09-03,Artisanat / Couture / Vêtements,Petites réparations vêtements,108.0,61348
+58,232,02:00:00,2015-08-20,Échanges associatifs,Rencontre de travail comité de financement,108.0,61354
+93,232,02:00:00,2015-08-20,Échanges associatifs,Rencontre de travail comité de financement,108.0,61355
+81,232,02:00:00,2015-08-20,Échanges associatifs,Rencontre de travail comité de financement,108.0,61356
+47,172,02:00:00,2015-08-30,Accompagnement / Gardiennage / Animaux,Promenade chien,108.0,61359
+130,232,02:30:00,2015-08-06,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,61360
+42,232,02:30:00,2015-08-06,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,61361
+37,232,02:00:00,2015-08-05,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,61362
+93,232,02:00:00,2015-08-05,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,61364
+42,232,02:00:00,2015-08-05,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,61365
+130,232,02:00:00,2015-08-05,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,61366
+150,232,02:00:00,2015-08-05,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,61370
+93,232,02:00:00,2015-07-22,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,61372
+37,232,02:00:00,2015-07-22,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,61373
+174,232,03:00:00,2015-09-07,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,61428
+174,232,05:00:00,2015-09-05,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,61429
+152,193,03:00:00,2015-09-02,Travaux / Entretien / Jardinage,Aide pour entretien de plantes,108.0,61431
+27,232,03:00:00,2015-09-04,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,61432
+48,198,01:30:00,2015-08-28,Artisanat / Couture / Vêtements,Petites réparations vêtements,108.0,61433
+195,201,01:00:00,2015-08-26,Travaux / Entretien / Jardinage,Aide pour rénovation,108.0,61434
+93,28,01:00:00,2015-09-01,Langues / Littérature,Conversation français/anglais,108.0,61435
+28,93,01:00:00,2015-09-01,Santé / Maternité / Esthétique,Réflexologie,108.0,61436
+128,232,03:00:00,2015-09-03,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,61452
+50,84,01:30:00,2015-09-03,Arts / Culture / Éducation,Retouche photos,108.0,61459
+42,232,02:30:00,2015-09-02,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,61468
+130,232,02:30:00,2015-09-02,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,61471
+33,232,03:00:00,2015-09-02,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,61525
+33,232,03:00:00,2015-11-04,Échanges associatifs,Tâches activité de financement,108.0,64531
+152,232,03:00:00,2015-09-08,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,61600
+193,232,04:00:00,2015-09-10,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,61618
+128,232,03:30:00,2015-09-10,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,61619
+93,232,04:00:00,2015-09-10,Échanges associatifs,Communications pour L'Accorderie,108.0,61620
+93,34,01:00:00,2015-08-17,Langues / Littérature,Conversation français/anglais,108.0,61621
+93,34,01:00:00,2015-08-24,Langues / Littérature,Conversation français/anglais,108.0,61622
+55,232,02:00:00,2015-08-27,Travaux / Entretien / Jardinage,Ménage léger,108.0,61623
+33,232,03:00:00,2015-09-09,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,61625
+28,93,01:00:00,2015-09-09,Santé / Maternité / Esthétique,Réflexologie,108.0,61626
+93,28,01:00:00,2015-09-09,Langues / Littérature,Conversation français/anglais,108.0,61627
+64,232,03:00:00,2015-07-15,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,61659
+64,232,03:00:00,2015-08-10,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,61660
+64,232,02:00:00,2015-09-02,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,61661
+64,232,01:30:00,2015-09-04,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,61662
+64,232,02:30:00,2015-09-08,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,61663
+47,172,04:00:00,2015-09-05,Accompagnement / Gardiennage / Animaux,Garde d'animaux à ma maison,108.0,61686
+50,40,01:00:00,2015-09-01,Arts / Culture / Éducation,Retouche photos,108.0,61689
+40,232,04:00:00,2015-09-01,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,61714
+40,232,03:00:00,2015-09-12,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,61715
+40,232,04:00:00,2015-09-11,Échanges associatifs,Entretien ménager des locaux,108.0,61716
+68,232,04:00:00,2015-09-11,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,61717
+50,232,04:00:00,2015-09-11,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,61718
+35,232,05:00:00,2015-07-12,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,61719
+29,128,00:30:00,2015-09-12,Transport / Déménagement,Transport besoins divers,108.0,61820
+29,149,00:30:00,2015-09-12,Transport / Déménagement,Transport besoins divers,108.0,61821
+42,232,03:00:00,2015-09-12,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,61827
+93,232,03:00:00,2015-09-12,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,61829
+185,232,02:30:00,2014-10-02,Achat regroupé,Commande au groupe d'achats,108.0,61839
+185,232,02:30:00,2014-11-05,Achat regroupé,Recherche de fournisseurs,108.0,61840
+185,232,01:00:00,2015-01-22,Achat regroupé,Recherche de fournisseurs,108.0,61841
+185,232,02:00:00,2014-09-08,Achat regroupé,Formation outils groupe d'achats,108.0,61842
+185,232,02:00:00,2015-03-11,Achat regroupé,Formation outils groupe d'achats,108.0,61843
+185,232,02:00:00,2014-08-12,Achat regroupé,Rencontre de travail achat regroupé,108.0,61844
+185,232,02:00:00,2014-08-22,Achat regroupé,Rencontre de travail achat regroupé,108.0,61845
+185,232,02:00:00,2014-10-30,Achat regroupé,Rencontre de travail achat regroupé,108.0,61846
+185,232,02:00:00,2014-09-09,Achat regroupé,Rencontre de travail achat regroupé,108.0,61847
+185,232,03:00:00,2015-01-08,Achat regroupé,Rencontre de travail achat regroupé,108.0,61848
+185,232,03:00:00,2015-02-05,Achat regroupé,Rencontre de travail achat regroupé,108.0,61849
+185,232,02:00:00,2015-02-27,Achat regroupé,Rencontre de travail achat regroupé,108.0,61850
+185,232,03:00:00,2015-04-09,Achat regroupé,Rencontre de travail achat regroupé,108.0,61851
+185,232,02:30:00,2015-05-04,Achat regroupé,Rencontre de travail achat regroupé,108.0,61852
+185,232,03:00:00,2014-09-19,Achat regroupé,Animation du souper commande,108.0,61853
+185,232,01:00:00,2014-10-16,Achat regroupé,Animation du souper commande,108.0,61854
+185,232,04:00:00,2014-12-09,Achat regroupé,Animation du souper commande,108.0,61855
+185,232,02:00:00,2015-01-23,Achat regroupé,Animation du souper commande,108.0,61856
+185,232,02:00:00,2015-02-19,Achat regroupé,Accueil ramassage commande,108.0,61857
+185,232,01:00:00,2014-08-22,Achat regroupé,Accueil ramassage commande,108.0,61858
+185,232,01:00:00,2014-08-22,Achat regroupé,Développement d'outils achat regroupé,108.0,61859
+185,232,05:00:00,2014-08-29,Achat regroupé,Développement d'outils achat regroupé,108.0,61860
+185,232,02:00:00,2014-12-04,Achat regroupé,Dépliant de l'achat regroupé,108.0,61861
+152,232,03:00:00,2015-09-15,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,61865
+93,28,01:00:00,2015-09-15,Langues / Littérature,Aide lecture en anglais,108.0,61941
+232,248,02:30:00,2015-09-01,Achat regroupé,Commande au groupe d'achats,108.0,63058
+231,248,01:00:00,2015-09-02,Transport / Déménagement,Transport besoins divers,108.0,62010
+106,232,05:00:00,2015-09-12,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,62011
+128,232,03:30:00,2015-09-17,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,62012
+42,193,01:30:00,2015-09-16,Santé / Maternité / Esthétique,Reiki,108.0,62013
+28,193,01:00:00,2015-09-16,Santé / Maternité / Esthétique,Réflexologie,108.0,62014
+193,232,03:00:00,2015-09-17,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,62015
+27,232,03:00:00,2015-09-18,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,62016
+27,232,01:00:00,2015-09-18,Travaux / Entretien / Jardinage,Ménage léger,108.0,62017
+42,232,06:00:00,2015-09-12,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,62019
+130,232,07:00:00,2015-09-12,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,62020
+42,232,01:00:00,2015-09-13,Travaux / Entretien / Jardinage,Lavage vaisselle,108.0,62022
+82,31,01:00:00,2015-10-08,Transport / Déménagement,Des bras pour moyen déménagement,108.0,66152
+106,232,01:00:00,2015-08-27,Échanges associatifs,Communications pour L'Accorderie,108.0,62109
+106,232,01:00:00,2015-09-18,Échanges associatifs,Communications pour L'Accorderie,108.0,62110
+152,232,02:00:00,2015-09-23,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,62289
+27,232,02:00:00,2015-09-22,Échanges associatifs,Comité contact communautaire,108.0,62515
+120,91,06:00:00,2015-09-23,Arts / Culture / Éducation,Transfert sur CD,108.0,62363
+55,232,02:30:00,2015-09-24,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,62364
+36,152,01:00:00,2015-09-15,Travaux / Entretien / Jardinage,Aide pour rénovation,108.0,62471
+36,152,04:30:00,2015-09-16,Travaux / Entretien / Jardinage,Aide pour rénovation,108.0,62472
+36,152,03:00:00,2015-09-22,Travaux / Entretien / Jardinage,Aide pour rénovation,108.0,62473
+152,232,03:00:00,2015-09-22,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,62501
+152,232,02:00:00,2015-09-22,Échanges associatifs,Comité contact communautaire,108.0,62514
+152,232,03:00:00,2015-09-29,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,62506
+48,149,00:30:00,2015-09-27,Artisanat / Couture / Vêtements,Coud bas de pantalon,108.0,62507
+202,24,01:00:00,2015-09-28,Informatique / Bureautique,Initiation générale à l'informatique,108.0,62508
+47,172,08:00:00,2015-09-16,Accompagnement / Gardiennage / Animaux,Garde d'animaux à ma maison,108.0,62510
+40,28,01:00:00,2015-09-22,Santé / Maternité / Esthétique,Réflexologie,108.0,63059
+23,232,02:00:00,2015-09-22,Échanges associatifs,Comité contact communautaire,108.0,62517
+48,55,02:30:00,2015-09-29,Artisanat / Couture / Vêtements,Petites réparations vêtements,108.0,62519
+28,93,01:30:00,2015-09-29,Santé / Maternité / Esthétique,Réflexologie,108.0,62622
+93,28,01:00:00,2015-09-29,Langues / Littérature,Apprentissage de l'anglais,108.0,62625
+220,24,02:00:00,2015-10-01,Informatique / Bureautique,Dépannage pour ordinateurs P.C.,108.0,62641
+128,232,03:30:00,2015-10-01,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,62665
+27,128,01:00:00,2015-10-01,Informatique / Bureautique,Initiation et aide Espace membre,108.0,62666
+27,232,01:30:00,2015-09-25,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,62667
+28,93,01:00:00,2015-09-15,Santé / Maternité / Esthétique,Réflexologie,108.0,62668
+193,174,02:00:00,2015-09-24,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,62670
+48,29,01:00:00,2015-10-03,Artisanat / Couture / Vêtements,Petites réparations vêtements,108.0,62795
+174,185,05:30:00,2015-09-26,Travaux / Entretien / Jardinage,Peinture extérieure,108.0,62796
+28,193,01:30:00,2015-09-30,Santé / Maternité / Esthétique,Réflexologie,108.0,62798
+206,174,02:00:00,2015-09-25,Accompagnement / Gardiennage / Animaux,Accompagnement magasinage,108.0,62802
+30,48,09:00:00,2015-10-03,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,62803
+93,232,02:00:00,2015-09-08,Sports / Loisirs / Animation,Animation fêtes et événements,108.0,62838
+93,232,02:00:00,2015-09-17,Administration / Emploi / Organisation,Communication interne,108.0,62840
+93,232,01:00:00,2015-10-06,Administration / Emploi / Organisation,Communication interne,108.0,62841
+152,232,03:00:00,2015-10-06,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,62857
+33,232,03:00:00,2015-10-07,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,62927
+220,24,01:00:00,2015-10-07,Informatique / Bureautique,Dépannage pour ordinateurs P.C.,108.0,63035
+82,31,02:00:00,2015-09-26,Transport / Déménagement,Des bras pour moyen déménagement,108.0,66151
+128,232,03:30:00,2015-10-08,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,63061
+27,232,03:00:00,2015-10-02,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,63057
+27,232,01:00:00,2015-10-09,Travaux / Entretien / Jardinage,Ménage léger,108.0,63060
+28,93,01:00:00,2015-10-07,Santé / Maternité / Esthétique,Réflexologie,108.0,63062
+93,28,01:00:00,2015-10-07,Langues / Littérature,Apprentissage de l'anglais,108.0,63063
+55,232,02:00:00,2015-09-08,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,63064
+147,232,02:00:00,2015-09-01,Achat regroupé,Rencontre de travail achat regroupé,108.0,63198
+147,232,02:00:00,2015-10-08,Achat regroupé,Rencontre de travail achat regroupé,108.0,63199
+147,232,00:30:00,2015-06-09,Achat regroupé,Tâches manuelles pour achat regroupé,108.0,63201
+147,232,00:30:00,2015-06-12,Achat regroupé,Tâches manuelles pour achat regroupé,108.0,63202
+147,232,00:30:00,2015-07-04,Achat regroupé,Tâches cléricales pour achat regroupé,108.0,63204
+147,232,00:30:00,2015-07-07,Achat regroupé,Tâches cléricales pour achat regroupé,108.0,63205
+147,232,00:30:00,2015-07-09,Achat regroupé,Tâches cléricales pour achat regroupé,108.0,63206
+147,232,00:30:00,2015-07-22,Achat regroupé,Tâches cléricales pour achat regroupé,108.0,63207
+147,232,01:00:00,2015-09-04,Achat regroupé,Tâches cléricales pour achat regroupé,108.0,63208
+147,232,01:00:00,2015-09-09,Achat regroupé,Tâches cléricales pour achat regroupé,108.0,63209
+147,232,01:00:00,2015-09-14,Achat regroupé,Tâches cléricales pour achat regroupé,108.0,63210
+147,232,01:00:00,2015-09-18,Achat regroupé,Tâches cléricales pour achat regroupé,108.0,63211
+147,232,01:00:00,2015-09-14,Achat regroupé,Tâches cléricales pour achat regroupé,108.0,63212
+147,232,00:30:00,2015-09-29,Achat regroupé,Tâches cléricales pour achat regroupé,108.0,63213
+147,232,00:30:00,2015-10-01,Achat regroupé,Tâches cléricales pour achat regroupé,108.0,63214
+93,91,03:00:00,2015-10-13,Artisanat / Couture / Vêtements,Peinture sur bois,108.0,63216
+179,232,01:00:00,2015-10-11,Échanges associatifs,Comptabilité de L'Accorderie,108.0,63217
+152,232,03:30:00,2015-10-13,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,63354
+55,232,03:00:00,2015-10-15,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,63377
+128,232,03:00:00,2015-10-15,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,63378
+27,232,03:00:00,2015-10-16,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,63379
+82,31,02:30:00,2015-09-21,Transport / Déménagement,Des bras pour moyen déménagement,108.0,66150
+40,55,01:30:00,2015-10-12,Santé / Maternité / Esthétique,Réflexologie,108.0,63382
+28,93,01:30:00,2015-10-16,Santé / Maternité / Esthétique,Réflexologie,108.0,63384
+93,28,01:00:00,2015-10-16,Langues / Littérature,Apprentissage de l'anglais,108.0,63385
+152,232,03:00:00,2015-10-20,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,63443
+33,232,03:00:00,2015-10-21,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,63526
+232,101,02:00:00,2015-10-02,Achat regroupé,Commande au groupe d'achats,108.0,63624
+232,262,02:00:00,2015-10-02,Achat regroupé,Commande au groupe d'achats,108.0,63625
+232,99,02:00:00,2015-10-02,Achat regroupé,Commande au groupe d'achats,108.0,63626
+232,75,02:00:00,2015-10-02,Achat regroupé,Commande au groupe d'achats,108.0,63627
+232,206,02:00:00,2015-10-02,Achat regroupé,Commande au groupe d'achats,108.0,63628
+232,201,02:00:00,2015-10-02,Achat regroupé,Commande au groupe d'achats,108.0,63629
+232,147,02:00:00,2015-10-02,Achat regroupé,Commande au groupe d'achats,108.0,63630
+232,210,02:00:00,2015-10-02,Achat regroupé,Commande au groupe d'achats,108.0,63631
+232,44,02:00:00,2015-10-02,Achat regroupé,Commande au groupe d'achats,108.0,63632
+232,125,02:00:00,2015-10-02,Achat regroupé,Commande au groupe d'achats,108.0,63633
+232,185,02:00:00,2015-10-02,Achat regroupé,Commande au groupe d'achats,108.0,63634
+232,86,02:00:00,2015-10-02,Achat regroupé,Commande au groupe d'achats,108.0,63635
+232,30,02:00:00,2015-10-02,Achat regroupé,Commande au groupe d'achats,108.0,63636
+232,58,02:00:00,2015-10-02,Achat regroupé,Commande au groupe d'achats,108.0,63637
+232,130,02:00:00,2015-10-02,Achat regroupé,Commande au groupe d'achats,108.0,63638
+232,198,02:00:00,2015-10-02,Achat regroupé,Commande au groupe d'achats,108.0,63639
+232,76,02:00:00,2015-10-02,Achat regroupé,Commande au groupe d'achats,108.0,63640
+232,28,02:00:00,2015-10-02,Achat regroupé,Commande au groupe d'achats,108.0,63641
+232,32,02:00:00,2015-10-02,Achat regroupé,Commande au groupe d'achats,108.0,63642
+232,230,02:00:00,2015-10-02,Achat regroupé,Commande au groupe d'achats,108.0,63643
+232,65,02:00:00,2015-10-02,Achat regroupé,Commande au groupe d'achats,108.0,63644
+232,197,02:00:00,2015-10-02,Achat regroupé,Commande au groupe d'achats,108.0,63645
+232,45,02:00:00,2015-10-02,Achat regroupé,Commande au groupe d'achats,108.0,63646
+40,232,02:00:00,2015-09-30,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,63647
+210,58,02:30:00,2015-09-17,Travaux / Entretien / Jardinage,Nettoyage saisonnier de terrains,108.0,63648
+210,58,02:30:00,2015-10-01,Travaux / Entretien / Jardinage,Nettoyage saisonnier de terrains,108.0,63649
+230,232,01:00:00,2015-10-23,Échanges associatifs,Communications pour L'Accorderie,108.0,63657
+93,232,05:00:00,2015-10-21,Échanges associatifs,Communications pour L'Accorderie,108.0,63665
+93,28,01:00:00,2015-10-20,Langues / Littérature,Apprentissage de l'anglais,108.0,63666
+28,93,01:00:00,2015-10-20,Santé / Maternité / Esthétique,Réflexologie,108.0,63667
+174,193,02:00:00,2015-10-21,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,63668
+174,193,03:00:00,2015-10-22,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,63669
+174,193,01:30:00,2015-10-23,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,63670
+193,174,01:00:00,2015-10-23,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,63671
+42,198,01:00:00,2015-10-26,Travaux / Entretien / Jardinage,Bricoleur pour petits travaux,108.0,63753
+174,193,02:00:00,2015-10-24,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,63831
+48,79,04:30:00,2015-10-24,Artisanat / Couture / Vêtements,Petites réparations vêtements,108.0,63835
+174,98,03:00:00,2015-10-17,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,63837
+93,28,01:00:00,2015-10-28,Langues / Littérature,Apprentissage de l'anglais,108.0,63967
+28,93,01:00:00,2015-10-28,Santé / Maternité / Esthétique,Réflexologie,108.0,63968
+27,232,06:00:00,2015-10-23,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,64057
+27,232,03:00:00,2015-10-30,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,64058
+27,232,03:00:00,2015-10-09,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,64059
+27,232,03:00:00,2015-11-06,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,64254
+55,232,02:00:00,2015-11-05,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,64260
+27,232,01:00:00,2015-11-06,Travaux / Entretien / Jardinage,Ménage léger,108.0,64261
+51,232,04:00:00,2015-10-14,Travaux / Entretien / Jardinage,Aide pour rénovation,108.0,64291
+42,198,01:00:00,2015-11-09,Travaux / Entretien / Jardinage,Bricoleur pour petits travaux,108.0,64362
+152,232,05:00:00,2015-11-03,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,64412
+93,232,03:00:00,2015-11-04,Échanges associatifs,Tâches activité de financement,108.0,64509
+201,232,03:00:00,2015-11-04,Échanges associatifs,Tâches activité de financement,108.0,64510
+220,232,03:00:00,2015-11-04,Échanges associatifs,Tâches activité de financement,108.0,64513
+87,232,03:00:00,2015-11-04,Échanges associatifs,Tâches activité de financement,108.0,64514
+28,232,03:00:00,2015-11-04,Échanges associatifs,Tâches activité de financement,108.0,64515
+42,232,03:00:00,2015-11-04,Échanges associatifs,Tâches activité de financement,108.0,64519
+130,232,03:00:00,2015-11-04,Échanges associatifs,Tâches activité de financement,108.0,64520
+230,232,03:00:00,2015-11-04,Échanges associatifs,Tâches activité de financement,108.0,64521
+174,232,03:00:00,2015-11-04,Échanges associatifs,Tâches activité de financement,108.0,64522
+27,232,03:00:00,2015-11-04,Échanges associatifs,Tâches activité de financement,108.0,64523
+152,232,03:00:00,2015-11-04,Échanges associatifs,Tâches activité de financement,108.0,64532
+27,232,04:00:00,2015-11-13,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,64673
+174,193,02:00:00,2012-10-30,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,64784
+174,193,02:00:00,2015-11-13,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,64788
+174,46,03:30:00,2015-11-03,Travaux / Entretien / Jardinage,Aide pour jardinage,108.0,64805
+28,36,01:00:00,2015-10-26,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,64812
+28,93,01:00:00,2015-11-16,Santé / Maternité / Esthétique,Réflexologie,108.0,64814
+93,28,01:00:00,2015-11-17,Langues / Littérature,Aide lecture en anglais,108.0,64815
+174,193,02:00:00,2015-11-14,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,64927
+152,232,04:00:00,2015-11-17,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,64895
+152,232,03:00:00,2015-11-10,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,64896
+33,232,03:00:00,2015-11-18,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,64921
+152,232,08:00:00,2015-11-21,Échanges associatifs,Tâches activité de financement,108.0,65162
+93,232,03:00:00,2015-11-24,Échanges associatifs,Tâches activité de financement,108.0,65169
+93,232,03:30:00,2015-11-11,Échanges associatifs,Tâches activité de financement,108.0,65174
+93,232,03:30:00,2015-11-07,Échanges associatifs,Tâches activité de financement,108.0,65167
+93,232,03:30:00,2015-11-08,Échanges associatifs,Tâches activité de financement,108.0,65168
+93,232,03:30:00,2015-11-09,Échanges associatifs,Tâches activité de financement,108.0,65171
+93,232,04:00:00,2015-11-10,Échanges associatifs,Tâches activité de financement,108.0,65180
+93,232,03:30:00,2015-11-13,Échanges associatifs,Tâches activité de financement,108.0,65175
+93,232,03:30:00,2015-11-15,Échanges associatifs,Tâches activité de financement,108.0,65176
+93,232,03:30:00,2015-11-19,Échanges associatifs,Tâches activité de financement,108.0,65177
+93,232,03:30:00,2015-11-20,Échanges associatifs,Tâches activité de financement,108.0,65178
+93,232,04:00:00,2015-11-12,Échanges associatifs,Tâches activité de financement,108.0,65181
+93,232,04:00:00,2015-11-14,Échanges associatifs,Tâches activité de financement,108.0,65183
+93,232,04:00:00,2015-11-16,Échanges associatifs,Tâches activité de financement,108.0,65185
+93,232,04:00:00,2015-11-18,Échanges associatifs,Tâches activité de financement,108.0,65186
+27,232,06:00:00,2015-11-21,Échanges associatifs,Tâches activité de financement,108.0,65190
+220,232,06:00:00,2015-11-21,Échanges associatifs,Tâches activité de financement,108.0,65191
+174,232,05:00:00,2015-11-21,Échanges associatifs,Tâches activité de financement,108.0,65192
+130,232,05:00:00,2015-11-20,Échanges associatifs,Tâches activité de financement,108.0,65194
+130,232,05:00:00,2015-11-21,Échanges associatifs,Tâches activité de financement,108.0,65195
+42,232,05:00:00,2015-11-20,Échanges associatifs,Tâches activité de financement,108.0,65196
+42,232,05:00:00,2015-11-21,Transport / Déménagement,Transport besoins divers,108.0,65197
+48,91,03:00:00,2015-11-29,Artisanat / Couture / Vêtements,Petites réparations vêtements,108.0,65353
+174,48,05:00:00,2015-11-28,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,65489
+28,93,01:00:00,2015-10-25,Santé / Maternité / Esthétique,Réflexologie,108.0,65357
+93,28,01:00:00,2015-11-25,Langues / Littérature,Aide lecture en anglais,108.0,65358
+55,232,03:00:00,2015-11-26,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,65363
+55,232,03:00:00,2015-11-29,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,65364
+33,232,03:00:00,2015-12-02,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,65421
+193,174,01:00:00,2015-11-27,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,65426
+206,174,02:00:00,2015-12-02,Accompagnement / Gardiennage / Animaux,Accompagnement magasinage,108.0,65491
+55,232,03:00:00,2015-12-03,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,65623
+55,232,00:30:00,2015-12-03,Accompagnement / Gardiennage / Animaux,Garde de plantes chez moi,108.0,65624
+55,232,01:00:00,2015-12-03,Travaux / Entretien / Jardinage,Ménage léger,108.0,65626
+48,81,02:00:00,2015-11-09,Artisanat / Couture / Vêtements,Coud bas de pantalon,108.0,65628
+28,93,01:00:00,2015-11-25,Santé / Maternité / Esthétique,Réflexologie,108.0,65629
+27,232,03:00:00,2015-12-04,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,65631
+27,172,00:30:00,2015-12-04,Informatique / Bureautique,Initiation et aide Espace membre,108.0,65632
+172,232,03:00:00,2015-12-04,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,65635
+220,172,00:30:00,2015-12-04,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,65636
+152,232,03:00:00,2015-11-24,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,65638
+152,232,03:00:00,2015-12-01,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,65639
+193,174,01:00:00,2015-12-05,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,65711
+193,174,01:00:00,2015-12-07,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,65712
+150,242,01:30:00,2015-12-05,Informatique / Bureautique,Initiation générale à l'informatique,108.0,65842
+55,232,01:00:00,2015-12-10,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,65937
+206,174,01:00:00,2015-12-08,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,65938
+82,31,02:30:00,2015-09-13,Transport / Déménagement,Des bras pour moyen déménagement,108.0,66149
+193,174,01:00:00,2015-12-11,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,66078
+42,174,01:00:00,2015-12-16,Transport / Déménagement,Transport besoins divers,108.0,66154
+82,31,08:00:00,2015-10-08,Transport / Déménagement,Des bras pour moyen déménagement,108.0,66174
+47,224,02:30:00,2015-12-18,Accompagnement / Gardiennage / Animaux,Garde d'animaux à ma maison,108.0,66176
+55,232,04:00:00,2015-12-18,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,66177
+232,90,03:00:00,2016-01-05,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,66624
+42,174,01:00:00,2015-12-22,Transport / Déménagement,Transport besoins divers,108.0,66672
+220,242,02:00:00,2016-01-04,Informatique / Bureautique,Dépannage pour ordinateurs P.C.,108.0,66673
+206,174,01:00:00,2015-12-29,Transport / Déménagement,Transport besoins divers,108.0,66680
+55,232,03:00:00,2015-12-17,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,66850
+42,149,00:30:00,2016-01-15,Transport / Déménagement,Transport besoins divers,108.0,66885
+152,232,02:00:00,2016-01-12,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,66903
+152,232,03:00:00,2015-12-08,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,66904
+152,232,03:00:00,2015-12-15,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,66905
+152,232,03:00:00,2016-01-05,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,66906
+177,94,02:00:00,2015-12-15,Travaux / Entretien / Jardinage,Aménagement de l'espace maison,108.0,66947
+152,232,03:00:00,2016-01-19,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,67008
+42,232,03:00:00,2015-12-15,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,67014
+93,28,01:00:00,2016-01-15,Langues / Littérature,Apprentissage de l'anglais,108.0,67016
+206,174,01:00:00,2016-01-19,Transport / Déménagement,Transport besoins divers,108.0,67024
+98,152,02:00:00,2016-01-27,Travaux / Entretien / Jardinage,Menus travaux ébénisterie,108.0,67365
+105,248,01:30:00,2015-12-27,Transport / Déménagement,Transport besoins divers,108.0,67367
+82,174,01:00:00,2016-01-30,Transport / Déménagement,Transport besoins divers,108.0,67490
+244,18,00:30:00,2016-01-31,Travaux / Entretien / Jardinage,Petit déneigement,108.0,67491
+232,90,01:00:00,2016-01-31,Arts / Culture / Éducation,Aide aux devoirs,108.0,67496
+93,91,01:00:00,2016-01-31,Arts / Culture / Éducation,Diaporama photo souvenir,108.0,67531
+98,152,01:00:00,2016-02-04,Travaux / Entretien / Jardinage,Menus travaux ébénisterie,108.0,67727
+226,232,05:00:00,2015-11-06,Achat regroupé,Tâches cléricales pour achat regroupé,108.0,67736
+226,232,05:00:00,2015-12-04,Achat regroupé,Tâches cléricales pour achat regroupé,108.0,67737
+226,232,05:00:00,2016-02-05,Achat regroupé,Tâches cléricales pour achat regroupé,108.0,67738
+198,91,04:00:00,2016-02-06,Informatique / Bureautique,Initiation à Internet et courriel,108.0,67745
+51,38,11:00:00,2015-10-27,Travaux / Entretien / Jardinage,Aide pour rénovation,108.0,67768
+51,38,11:00:00,2015-10-28,Travaux / Entretien / Jardinage,Aide pour rénovation,108.0,67769
+51,38,11:00:00,2015-10-29,Travaux / Entretien / Jardinage,Aide pour rénovation,108.0,67770
+51,38,12:00:00,2015-10-30,Travaux / Entretien / Jardinage,Aide pour rénovation,108.0,67771
+42,174,01:00:00,2016-02-10,Transport / Déménagement,Transport besoins divers,108.0,67772
+22,172,01:00:00,2016-02-10,Santé / Maternité / Esthétique,Massothérapie thérapeutique,108.0,67871
+98,152,01:00:00,2016-02-11,Travaux / Entretien / Jardinage,Menus travaux ébénisterie,108.0,67878
+152,232,04:00:00,2016-02-11,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,67879
+152,232,01:00:00,2016-02-09,Langues / Littérature,Correction textes en français,108.0,67880
+130,232,04:00:00,2016-02-10,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,67996
+206,93,01:30:00,2016-02-12,Accompagnement / Gardiennage / Animaux,Accompagnement magasinage,108.0,67942
+156,232,01:00:00,2016-02-15,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,67946
+43,174,00:30:00,2016-02-13,Transport / Déménagement,Transport besoins divers,108.0,67983
+42,232,02:00:00,2016-02-12,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,67984
+42,232,03:30:00,2016-02-12,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,67985
+42,232,08:00:00,2016-02-13,Échanges associatifs,Tâches activité de financement,108.0,67986
+42,232,01:30:00,2016-02-15,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,67987
+130,232,03:00:00,2016-02-11,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,67997
+130,232,02:00:00,2016-02-12,Échanges associatifs,Tâches pour Fêtes ou 5 à 7 de L'Accorderie,108.0,67998
+130,232,08:00:00,2016-02-13,Échanges associatifs,Tâches activité de financement,108.0,67999
+130,232,02:00:00,2016-02-14,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,68000
+193,232,04:00:00,2016-02-18,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,68265
+244,18,01:00:00,2016-02-18,Travaux / Entretien / Jardinage,Petit déneigement,108.0,68266
+42,149,01:00:00,2016-02-17,Transport / Déménagement,Transport besoins divers,108.0,68310
+42,232,02:00:00,2016-02-14,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,68311
+105,193,04:00:00,2016-02-23,Travaux / Entretien / Jardinage,Conseils pour décoration intérieure,108.0,68601
+152,232,03:00:00,2016-02-25,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,68404
+244,18,01:00:00,2016-02-27,Travaux / Entretien / Jardinage,Petit déneigement,108.0,68507
+42,174,01:00:00,2016-02-26,Transport / Déménagement,Transport besoins divers,108.0,68508
+42,232,02:00:00,2016-02-29,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,68512
+130,232,02:00:00,2016-02-29,Travaux / Entretien / Jardinage,Ménage léger,108.0,68511
+244,18,00:30:00,2016-03-03,Travaux / Entretien / Jardinage,Petit déneigement,108.0,68607
+193,232,04:00:00,2016-03-03,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,68605
+42,232,03:30:00,2016-03-01,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,68606
+244,18,00:30:00,2016-03-06,Travaux / Entretien / Jardinage,Petit déneigement,108.0,68702
+140,242,02:00:00,2016-03-05,Informatique / Bureautique,Initiation générale à l'informatique,108.0,68742
+193,232,04:00:00,2016-03-10,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,68967
+28,42,01:00:00,2016-03-04,Accompagnement / Gardiennage / Animaux,Toilettage chien,108.0,69026
+42,174,01:30:00,2016-03-16,Transport / Déménagement,Transport besoins divers,108.0,69031
+42,232,04:00:00,2016-03-18,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,69129
+152,232,04:00:00,2016-03-24,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,69273
+152,232,04:00:00,2016-03-17,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,69274
+28,91,02:00:00,2016-03-18,,,108.0,69279
+206,174,02:00:00,2016-03-24,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,69322
+130,206,02:30:00,2016-03-25,Travaux / Entretien / Jardinage,Ménage léger,108.0,69403
+174,244,02:00:00,2016-03-22,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,69406
+174,244,03:00:00,2016-03-23,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,69407
+102,193,02:00:00,2016-03-30,Travaux / Entretien / Jardinage,Réparation de meubles,108.0,69479
+17,172,02:00:00,2016-04-02,Transport / Déménagement,Transport pour les courses,108.0,69566
+244,18,00:30:00,2016-04-01,Travaux / Entretien / Jardinage,Petit déneigement,108.0,69638
+130,232,02:00:00,2016-04-04,Travaux / Entretien / Jardinage,Ménage léger,108.0,69609
+16,232,02:30:00,2016-04-05,Transport / Déménagement,Aide pour préparer déménagement,108.0,69635
+120,90,06:00:00,2016-04-04,Arts / Culture / Éducation,Transfert sur CD,108.0,69614
+120,91,06:00:00,2016-04-04,Arts / Culture / Éducation,Transfert sur CD,108.0,69628
+193,174,01:00:00,2016-04-02,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,69620
+174,232,02:00:00,2016-02-13,Échanges associatifs,Tâches activité de financement,108.0,69629
+42,232,04:00:00,2016-04-05,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,69636
+42,232,01:00:00,2016-04-07,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,69924
+42,174,01:00:00,2016-04-06,Transport / Déménagement,Transport besoins divers,108.0,69925
+104,242,01:00:00,2016-04-01,Informatique / Bureautique,Initiation générale à l'informatique,108.0,69928
+42,149,01:00:00,2016-04-06,Transport / Déménagement,Transport besoins divers,108.0,70012
+193,232,04:00:00,2016-04-14,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,70280
+42,232,02:00:00,2016-03-29,,,108.0,70282
+42,232,02:00:00,2016-04-15,,,108.0,70283
+42,232,02:00:00,2016-04-18,,,108.0,70284
+193,232,04:00:00,2016-04-21,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,70447
+42,232,01:30:00,2016-04-22,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,70448
+206,174,01:30:00,2016-04-21,Transport / Déménagement,Transport besoins divers,108.0,70483
+42,174,01:00:00,2016-04-22,Transport / Déménagement,Transport besoins divers,108.0,70484
+80,193,03:00:00,2016-04-20,Travaux / Entretien / Jardinage,Conseils projet de rénovation,108.0,70510
+177,242,00:30:00,2016-05-02,Travaux / Entretien / Jardinage,Aménagement de l'espace maison,108.0,70776
+193,232,04:00:00,2016-04-28,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,70780
+174,98,03:00:00,2016-04-28,Transport / Déménagement,Des bras pour moyen déménagement,108.0,70781
+42,232,01:00:00,2016-05-03,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,70782
+42,232,04:00:00,2016-04-29,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,70786
+226,232,01:00:00,2016-03-04,Administration / Emploi / Organisation,Aide pour remplir formulaires,108.0,70788
+226,232,02:00:00,2016-03-04,Achat regroupé,Tâches cléricales pour achat regroupé,108.0,70789
+16,172,01:00:00,2016-04-27,Transport / Déménagement,Des bras pour petit déménagement,108.0,70814
+226,232,03:00:00,2016-03-04,Achat regroupé,Tâches cléricales pour achat regroupé,108.0,70907
+226,232,05:00:00,2016-04-08,Achat regroupé,Tâches cléricales pour achat regroupé,108.0,70908
+42,232,03:00:00,2016-05-06,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,71189
+177,242,00:30:00,2016-05-05,Travaux / Entretien / Jardinage,Aménagement de l'espace maison,108.0,71207
+152,98,02:30:00,2016-05-06,Travaux / Entretien / Jardinage,Entretien de plates-bandes,108.0,71238
+152,98,02:30:00,2016-05-13,Travaux / Entretien / Jardinage,Entretien de plates-bandes,108.0,71239
+152,232,04:00:00,2016-05-12,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,71240
+152,232,04:00:00,2016-05-05,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,71241
+42,232,04:00:00,2016-05-10,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,71423
+42,232,04:00:00,2016-05-13,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,71424
+42,232,04:00:00,2016-05-17,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,71425
+226,232,05:00:00,2016-05-06,Achat regroupé,Tâches cléricales pour achat regroupé,108.0,71435
+42,232,04:00:00,2016-05-24,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,71622
+206,174,01:30:00,2016-05-20,Accompagnement / Gardiennage / Animaux,Accompagnement magasinage,108.0,71623
+174,98,03:00:00,2016-05-18,Travaux / Entretien / Jardinage,Peinture extérieure,108.0,71624
+174,98,03:00:00,2016-05-19,Travaux / Entretien / Jardinage,Peinture extérieure,108.0,71625
+174,98,02:30:00,2016-05-21,Travaux / Entretien / Jardinage,Peinture extérieure,108.0,71626
+42,232,02:30:00,2016-05-23,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,71627
+130,232,02:30:00,2016-05-23,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,71629
+152,232,03:30:00,2016-05-27,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,71738
+42,174,01:00:00,2016-05-27,Transport / Déménagement,Transport besoins divers,108.0,71841
+98,193,05:00:00,2016-05-18,Travaux / Entretien / Jardinage,Menus travaux ébénisterie,108.0,71842
+16,53,01:00:00,2016-05-23,Transport / Déménagement,Des bras pour petit déménagement,108.0,71859
+42,232,01:00:00,2016-05-31,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,71862
+42,174,01:30:00,2016-05-31,Santé / Maternité / Esthétique,Reiki,108.0,71883
+16,19,01:00:00,2016-06-03,Transport / Déménagement,Transport avec remorque,108.0,72064
+42,232,03:00:00,2016-06-03,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,72077
+42,232,04:00:00,2016-06-09,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,72197
+42,174,01:00:00,2016-06-08,Santé / Maternité / Esthétique,Reiki,108.0,72198
+42,174,01:00:00,2016-06-09,Transport / Déménagement,Transport besoins divers,108.0,72199
+42,114,01:00:00,2016-04-23,Santé / Maternité / Esthétique,Reiki,108.0,72208
+42,110,01:00:00,2016-04-23,Santé / Maternité / Esthétique,Reiki,108.0,72209
+193,232,04:00:00,2016-06-14,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,72387
+42,174,00:30:00,2016-06-11,Transport / Déménagement,Transport besoins divers,108.0,72389
+152,232,04:00:00,2016-06-07,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,72561
+152,232,04:00:00,2016-06-17,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,72562
+105,174,02:00:00,2016-06-24,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous médicaux,108.0,72731
+206,174,02:00:00,2016-06-30,Transport / Déménagement,Transport besoins divers,108.0,72923
+206,172,01:00:00,2016-07-02,Transport / Déménagement,Transport besoins divers,108.0,72978
+93,91,01:00:00,2016-06-29,Arts / Culture / Éducation,Modèles simples publicité et promotion,108.0,72980
+130,206,02:30:00,2016-04-15,Travaux / Entretien / Jardinage,Ménage léger,108.0,73342
+130,206,02:30:00,2016-05-15,Travaux / Entretien / Jardinage,Ménage léger,108.0,73343
+206,232,01:00:00,2016-02-02,Achat regroupé,Tâches manuelles pour achat regroupé,108.0,73344
+206,232,03:00:00,2016-02-05,Achat regroupé,Accueil ramassage commande,108.0,73345
+206,232,05:00:00,2016-03-11,Achat regroupé,Accueil ramassage commande,108.0,73346
+206,232,03:00:00,2016-03-20,Achat regroupé,Animation du souper commande,108.0,73347
+206,232,03:00:00,2016-04-08,Achat regroupé,Accueil ramassage commande,108.0,73348
+206,232,04:00:00,2016-05-06,Achat regroupé,Accueil ramassage commande,108.0,73349
+206,232,02:00:00,2016-05-23,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,73350
+206,232,02:00:00,2016-06-02,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,73351
+206,232,05:00:00,2016-06-03,Achat regroupé,Accueil ramassage commande,108.0,73352
+206,232,02:00:00,2016-06-16,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,73353
+206,174,01:00:00,2016-07-13,Accompagnement / Gardiennage / Animaux,Accompagnement magasinage,108.0,73431
+118,172,01:00:00,2016-07-07,Accompagnement / Gardiennage / Animaux,Garde d'animaux à votre maison,108.0,73530
+118,172,01:00:00,2016-07-08,Accompagnement / Gardiennage / Animaux,Garde d'animaux à votre maison,108.0,73531
+118,172,01:00:00,2016-07-09,Accompagnement / Gardiennage / Animaux,Garde d'animaux à votre maison,108.0,73532
+118,172,01:00:00,2016-07-10,Accompagnement / Gardiennage / Animaux,Garde d'animaux à votre maison,108.0,73533
+118,172,01:00:00,2016-07-11,Accompagnement / Gardiennage / Animaux,Garde d'animaux à votre maison,108.0,73534
+118,172,01:00:00,2016-07-12,Accompagnement / Gardiennage / Animaux,Garde d'animaux à votre maison,108.0,73535
+80,232,01:30:00,2016-07-18,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,74031
+193,94,02:00:00,2016-08-05,Accompagnement / Gardiennage / Animaux,Commissions à votre place,108.0,73911
+16,26,02:00:00,2016-08-01,Transport / Déménagement,Des bras pour petit déménagement,108.0,73982
+93,33,01:00:00,2016-08-10,,,108.0,73988
+227,93,04:00:00,2016-08-11,Langues / Littérature,Correction textes en français,108.0,74138
+42,232,01:30:00,2016-07-18,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,74164
+42,232,03:00:00,2016-07-26,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,74165
+42,232,03:00:00,2016-08-10,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,74166
+130,232,01:30:00,2016-07-18,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,74167
+130,232,03:00:00,2016-07-26,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,74168
+130,232,03:00:00,2016-08-10,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,74169
+80,232,03:00:00,2016-07-26,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,74170
+80,232,03:00:00,2016-08-10,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,74171
+198,232,01:30:00,2016-07-18,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,74172
+198,232,01:30:00,2016-07-26,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,74173
+198,232,03:00:00,2016-08-10,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,74174
+152,232,01:30:00,2016-07-18,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,74175
+152,232,02:30:00,2016-07-26,Échanges associatifs,Rencontre de travail comité accueil,108.0,74176
+93,232,01:30:00,2016-07-18,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,74183
+33,232,01:30:00,2016-07-18,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,74190
+198,232,04:30:00,2016-08-18,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,74301
+93,232,01:00:00,2016-08-08,Échanges associatifs,Communications pour L'Accorderie,108.0,74306
+93,232,01:00:00,2016-08-18,Échanges associatifs,Communications pour L'Accorderie,108.0,74307
+16,15,02:00:00,2016-05-01,Transport / Déménagement,Des bras pour petit déménagement,108.0,74402
+174,53,02:00:00,2016-08-13,Travaux / Entretien / Jardinage,Lavage vitres,108.0,74404
+28,93,01:00:00,2016-08-22,,,108.0,74444
+93,232,01:00:00,2016-08-28,Échanges associatifs,Communications pour L'Accorderie,108.0,74511
+152,232,02:30:00,2016-08-29,Échanges associatifs,Rencontre de travail comité accueil,108.0,74541
+139,149,00:30:00,2016-08-31,,,108.0,74549
+206,174,01:00:00,2016-09-01,Transport / Déménagement,Transport besoins divers,108.0,74585
+152,98,03:00:00,2016-08-31,Travaux / Entretien / Jardinage,Entretien de plates-bandes,108.0,74705
+152,232,04:00:00,2016-09-02,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,74707
+98,152,01:00:00,2016-08-09,Travaux / Entretien / Jardinage,Menus travaux ébénisterie,108.0,74708
+98,152,03:00:00,2016-08-10,Travaux / Entretien / Jardinage,Menus travaux ébénisterie,108.0,74709
+98,152,03:00:00,2016-08-12,Travaux / Entretien / Jardinage,Menus travaux ébénisterie,108.0,74710
+98,152,02:00:00,2016-08-15,Travaux / Entretien / Jardinage,Menus travaux ébénisterie,108.0,74711
+98,152,03:00:00,2016-08-22,Travaux / Entretien / Jardinage,Menus travaux ébénisterie,108.0,74712
+98,152,03:00:00,2016-08-23,Travaux / Entretien / Jardinage,Menus travaux ébénisterie,108.0,74713
+98,152,02:00:00,2016-08-29,Travaux / Entretien / Jardinage,Menus travaux ébénisterie,108.0,74714
+227,93,00:30:00,2016-09-01,Langues / Littérature,Correction textes en français,108.0,74716
+198,82,02:00:00,2016-08-21,Travaux / Entretien / Jardinage,Peinture extérieure,108.0,74717
+42,174,02:00:00,2016-09-08,Transport / Déménagement,Transport besoins divers,108.0,74867
+80,42,02:30:00,2016-09-07,Travaux / Entretien / Jardinage,Aide cordage de bois,108.0,74868
+174,98,03:00:00,2016-09-07,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,74871
+198,91,03:00:00,2016-09-08,Informatique / Bureautique,Initiation à Internet et courriel,108.0,74872
+152,232,07:00:00,2016-09-06,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,74876
+174,232,02:30:00,2016-09-01,Échanges associatifs,Sondages pour L'Accorderie,108.0,74877
+130,232,02:30:00,2016-09-01,Échanges associatifs,Sondages pour L'Accorderie,108.0,74878
+42,232,02:30:00,2016-09-01,Échanges associatifs,Sondages pour L'Accorderie,108.0,74880
+152,98,03:00:00,2016-09-07,Travaux / Entretien / Jardinage,Entretien de plates-bandes,108.0,75027
+174,42,03:00:00,2016-09-13,Travaux / Entretien / Jardinage,Lavage vitres,108.0,75028
+66,232,01:30:00,2016-09-05,Échanges associatifs,Sondages pour L'Accorderie,108.0,75033
+80,232,01:00:00,2016-08-27,Échanges associatifs,Sondages pour L'Accorderie,108.0,75034
+80,232,01:00:00,2016-08-28,Échanges associatifs,Sondages pour L'Accorderie,108.0,75035
+14,232,02:00:00,2016-09-12,Échanges associatifs,Photographie pour L'Accorderie,108.0,75036
+42,232,02:30:00,2016-09-01,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,75039
+130,232,06:30:00,2016-09-10,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,75042
+42,232,08:30:00,2016-09-10,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,75045
+80,232,08:30:00,2016-09-10,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,75047
+130,232,02:30:00,2016-09-01,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,75048
+80,232,02:30:00,2016-09-01,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,75049
+42,174,01:30:00,2016-09-15,Transport / Déménagement,Transport besoins divers,108.0,75153
+93,232,01:00:00,2016-09-15,Administration / Emploi / Organisation,Communication interne,108.0,75154
+232,193,02:00:00,2015-10-20,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,75155
+174,193,02:00:00,2015-10-30,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,75156
+28,36,01:00:00,2015-10-26,Santé / Maternité / Esthétique,Réflexologie,108.0,75163
+93,20,02:00:00,2016-09-20,Informatique / Bureautique,Initiation médias sociaux sur Internet,108.0,75264
+14,53,05:30:00,2016-09-16,Langues / Littérature,Correction textes en français,108.0,75378
+42,174,01:30:00,2016-09-23,Transport / Déménagement,Transport besoins divers,108.0,75471
+130,232,01:00:00,2016-09-28,Échanges associatifs,Tâches activité de financement,108.0,75489
+42,174,02:00:00,2016-09-28,Transport / Déménagement,Transport besoins divers,108.0,75617
+139,53,01:00:00,2016-09-30,,,108.0,75621
+152,232,04:00:00,2016-10-19,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,76445
+174,98,03:00:00,2016-09-30,Travaux / Entretien / Jardinage,Peinture extérieure,108.0,75798
+174,98,03:00:00,2016-09-29,Travaux / Entretien / Jardinage,Peinture extérieure,108.0,75802
+98,152,01:00:00,2016-10-03,Travaux / Entretien / Jardinage,Menus travaux ébénisterie,108.0,75830
+152,232,02:00:00,2016-10-04,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,75831
+152,232,04:00:00,2016-10-05,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,75832
+42,232,00:30:00,2016-10-05,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,75835
+174,98,02:30:00,2016-10-07,Travaux / Entretien / Jardinage,Peinture extérieure,108.0,75958
+93,232,01:00:00,2016-10-09,Échanges associatifs,Communications pour L'Accorderie,108.0,76085
+42,149,00:30:00,2016-10-09,Transport / Déménagement,Transport besoins divers,108.0,76246
+11,232,04:00:00,2016-10-14,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,76242
+152,232,02:00:00,2016-10-13,Échanges associatifs,Rencontre de travail comité accueil,108.0,76376
+11,232,02:00:00,2016-10-13,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,76381
+152,232,04:00:00,2016-10-12,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,76395
+174,42,03:00:00,2016-10-19,Travaux / Entretien / Jardinage,Aide installation garage de toile (tempo),108.0,76396
+16,156,01:30:00,2016-09-02,Transport / Déménagement,Des bras pour petit déménagement,108.0,76407
+42,232,01:00:00,2016-10-12,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,76446
+80,232,01:00:00,2016-10-12,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,76447
+130,232,01:00:00,2016-10-12,Échanges associatifs,Rencontre comité Vie associative et gestion de l'échange,108.0,76448
+42,174,01:00:00,2016-10-13,Transport / Déménagement,Transport besoins divers,108.0,76449
+42,174,01:30:00,2016-10-20,Transport / Déménagement,Transport besoins divers,108.0,76518
+130,232,01:00:00,2016-10-25,Échanges associatifs,Tâches activité de financement,108.0,76648
+130,232,04:00:00,2016-10-15,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,76649
+42,174,01:30:00,2016-10-22,Transport / Déménagement,Transport besoins divers,108.0,76666
+42,174,01:00:00,2016-10-24,Transport / Déménagement,Transport besoins divers,108.0,76725
+14,53,01:30:00,2016-10-28,Langues / Littérature,Correction textes en français,108.0,77018
+152,232,02:00:00,2016-10-21,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,76967
+152,232,04:00:00,2016-10-26,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,76968
+193,232,04:00:00,2016-10-27,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,76970
+42,232,04:00:00,2016-10-25,Échanges associatifs,Tâches activité de financement,108.0,76971
+42,232,02:00:00,2016-10-26,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,76972
+130,232,02:00:00,2016-10-26,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,76973
+174,42,01:00:00,2016-10-31,Travaux / Entretien / Jardinage,Aide pour jardinage,108.0,76974
+42,172,01:00:00,2016-11-01,Transport / Déménagement,Transport besoins divers,108.0,76975
+152,232,04:00:00,2016-11-02,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,77014
+152,98,02:30:00,2016-10-28,Travaux / Entretien / Jardinage,Entretien de plates-bandes,108.0,77016
+93,248,03:00:00,2016-11-03,Arts / Culture / Éducation,Illustration,108.0,77293
+105,172,00:30:00,2016-10-29,Accompagnement / Gardiennage / Animaux,Garde d'animaux à votre maison,108.0,77523
+80,232,02:00:00,2016-10-06,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,77524
+80,232,01:00:00,2016-10-26,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,77525
+80,232,03:00:00,2016-11-09,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,77526
+42,172,01:00:00,2016-11-11,Transport / Déménagement,Transport besoins divers,108.0,77557
+172,53,01:30:00,2016-11-12,,,108.0,77558
+172,149,01:30:00,2016-11-12,,,108.0,77560
+172,156,01:30:00,2016-11-12,,,108.0,77561
+174,42,01:30:00,2016-11-15,Travaux / Entretien / Jardinage,Travaux d'aménagement de terrains,108.0,77563
+172,232,04:00:00,2016-11-11,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,77566
+152,232,01:00:00,2016-11-15,Échanges associatifs,Rencontre de travail comité accueil,108.0,77568
+42,174,01:30:00,2016-11-16,Transport / Déménagement,Transport besoins divers,108.0,77767
+42,232,03:00:00,2016-11-18,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,77763
+42,174,01:30:00,2016-11-21,Transport / Déménagement,Transport besoins divers,108.0,77764
+174,232,03:00:00,2016-11-19,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,77900
+42,232,03:00:00,2016-11-19,Échanges associatifs,Tâches activité de financement,108.0,77768
+42,232,03:00:00,2016-11-20,Échanges associatifs,Tâches activité de financement,108.0,77769
+11,232,04:00:00,2016-11-19,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,77772
+47,232,02:00:00,2016-11-19,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,77773
+130,232,08:00:00,2016-11-19,Échanges associatifs,Tâches activité de financement,108.0,77845
+130,232,10:00:00,2016-11-20,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,77846
+152,232,04:00:00,2016-11-23,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,77903
+152,232,05:30:00,2016-11-19,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,77904
+130,206,04:00:00,2016-11-06,Accompagnement / Gardiennage / Animaux,Garde d'animaux à ma maison,108.0,78119
+11,149,00:30:00,2016-11-19,Transport / Déménagement,Transport besoins divers,108.0,77910
+42,174,02:00:00,2016-11-24,Transport / Déménagement,Transport besoins divers,108.0,77920
+174,42,01:00:00,2016-11-26,Travaux / Entretien / Jardinage,Travaux d'aménagement de terrains,108.0,78019
+42,174,01:00:00,2016-11-25,Transport / Déménagement,Transport besoins divers,108.0,78020
+11,53,00:30:00,2016-11-19,Transport / Déménagement,Transport besoins divers,108.0,78021
+42,174,01:30:00,2016-11-29,Transport / Déménagement,Transport besoins divers,108.0,78076
+152,232,04:00:00,2016-11-30,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,78116
+42,172,01:30:00,2016-11-30,Transport / Déménagement,Transport besoins divers,108.0,78132
+93,169,00:30:00,2016-11-19,Informatique / Bureautique,Dépannage pour ordinateurs P.C.,108.0,78145
+42,174,01:00:00,2016-12-06,Transport / Déménagement,Transport besoins divers,108.0,78644
+193,232,04:00:00,2016-12-07,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,78645
+130,232,01:00:00,2016-12-07,Échanges associatifs,Tâches activité de financement,108.0,78646
+78,172,01:30:00,2016-12-04,Accompagnement / Gardiennage / Animaux,Accompagnement magasinage,108.0,78648
+42,172,01:30:00,2016-12-06,Transport / Déménagement,Transport besoins divers,108.0,78650
+193,232,04:00:00,2016-12-09,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,79049
+42,174,02:00:00,2016-12-08,Transport / Déménagement,Transport besoins divers,108.0,79050
+244,18,00:30:00,2016-12-12,Travaux / Entretien / Jardinage,Petit déneigement,108.0,79051
+80,232,00:30:00,2016-11-14,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,79053
+80,232,07:00:00,2016-11-19,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,79054
+80,232,00:30:00,2016-11-21,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,79055
+42,174,02:30:00,2016-12-20,Transport / Déménagement,Transport besoins divers,108.0,79650
+42,172,01:00:00,2016-12-21,Transport / Déménagement,Transport besoins divers,108.0,79651
+42,232,02:00:00,2017-01-09,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,79652
+42,174,02:00:00,2017-01-06,Transport / Déménagement,Transport besoins divers,108.0,79675
+42,174,01:00:00,2016-12-19,Transport / Déménagement,Transport besoins divers,108.0,79654
+244,18,00:30:00,2016-12-22,Travaux / Entretien / Jardinage,Petit déneigement,108.0,79655
+244,18,00:30:00,2016-12-31,Travaux / Entretien / Jardinage,Petit déneigement,108.0,79656
+244,18,00:30:00,2017-01-06,Travaux / Entretien / Jardinage,Petit déneigement,108.0,79657
+174,172,01:30:00,2016-12-23,Transport / Déménagement,Des bras pour moyen déménagement,108.0,79659
+152,232,04:30:00,2017-01-11,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,79734
+98,26,02:00:00,2016-12-16,Travaux / Entretien / Jardinage,Menus travaux ébénisterie,108.0,79736
+42,174,01:30:00,2017-01-11,Transport / Déménagement,Transport besoins divers,108.0,79795
+59,174,01:00:00,2017-01-14,Transport / Déménagement,Transport besoins divers,108.0,79920
+152,232,04:00:00,2017-01-18,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,79987
+206,248,01:30:00,2017-01-16,Transport / Déménagement,Transport besoins divers,108.0,79988
+193,248,02:00:00,2016-12-08,Transport / Déménagement,Transport besoins divers,108.0,79989
+152,232,02:00:00,2017-01-19,Échanges associatifs,Rencontre de travail comité accueil,108.0,80006
+172,232,04:00:00,2017-01-19,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,80011
+42,174,01:30:00,2016-12-21,Transport / Déménagement,Transport besoins divers,108.0,80016
+152,232,02:00:00,2017-01-24,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,80075
+193,232,03:00:00,2017-01-19,Échanges associatifs,Rencontre de travail comité accueil,108.0,80083
+152,232,03:00:00,2017-01-25,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,80100
+42,172,00:30:00,2017-01-21,Transport / Déménagement,Transport besoins divers,108.0,80104
+172,232,04:00:00,2017-01-25,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,80270
+152,232,02:00:00,2017-01-26,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,80160
+244,18,01:00:00,2017-01-27,Travaux / Entretien / Jardinage,Petit déneigement,108.0,80204
+42,174,01:00:00,2017-01-24,Transport / Déménagement,Transport besoins divers,108.0,80205
+11,174,01:00:00,2017-01-27,Transport / Déménagement,Transport besoins divers,108.0,80208
+172,53,02:30:00,2017-01-28,Langues / Littérature,Conversation espagnole,108.0,80268
+172,149,02:30:00,2017-01-28,Langues / Littérature,Conversation espagnole,108.0,80269
+172,232,04:00:00,2017-02-01,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,80369
+152,232,01:00:00,2017-02-02,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,80370
+42,172,01:00:00,2017-02-06,Transport / Déménagement,Transport besoins divers,108.0,80547
+152,232,04:00:00,2017-02-08,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,80648
+152,232,05:00:00,2017-02-13,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,80787
+14,91,01:30:00,2017-02-02,Arts / Culture / Éducation,Apprentissage du piano,108.0,80788
+244,18,01:00:00,2017-02-10,Travaux / Entretien / Jardinage,Petit déneigement,108.0,80790
+193,9,01:30:00,2017-02-10,Transport / Déménagement,Transport besoins divers,108.0,80870
+152,232,04:00:00,2017-02-15,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,80869
+111,10,01:00:00,2017-02-17,Travaux / Entretien / Jardinage,Petit déneigement,108.0,80985
+198,53,01:00:00,2017-02-19,Informatique / Bureautique,Initiation à Internet et courriel,108.0,80968
+42,232,02:00:00,2017-02-20,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,80987
+244,18,01:00:00,2017-02-17,Travaux / Entretien / Jardinage,Petit déneigement,108.0,80979
+130,206,01:30:00,2016-12-24,Accompagnement / Gardiennage / Animaux,Garde d'animaux à ma maison,108.0,80990
+130,206,01:30:00,2016-12-26,Accompagnement / Gardiennage / Animaux,Garde d'animaux à ma maison,108.0,80991
+130,206,01:30:00,2016-12-30,Accompagnement / Gardiennage / Animaux,Garde d'animaux à ma maison,108.0,80992
+130,206,01:30:00,2017-01-01,Accompagnement / Gardiennage / Animaux,Garde d'animaux à ma maison,108.0,80993
+244,193,02:00:00,2017-02-21,Travaux / Entretien / Jardinage,Petit déneigement,108.0,81074
+152,232,04:00:00,2017-02-22,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,81098
+152,232,01:30:00,2017-02-28,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,81218
+152,232,04:00:00,2017-03-01,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,81294
+244,18,01:00:00,2017-03-06,Travaux / Entretien / Jardinage,Petit déneigement,108.0,81397
+152,232,04:00:00,2017-03-08,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,81568
+198,53,00:30:00,2017-03-12,Informatique / Bureautique,Initiation à Internet et courriel,108.0,81745
+152,232,01:30:00,2017-03-20,Échanges associatifs,Rencontre de travail comité accueil,108.0,82005
+172,232,04:00:00,2017-03-17,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,82035
+244,18,01:00:00,2017-03-16,Travaux / Entretien / Jardinage,Petit déneigement,108.0,82038
+193,232,04:00:00,2017-03-22,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,82137
+193,232,04:00:00,2017-03-29,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,82316
+42,242,01:00:00,2017-04-04,Travaux / Entretien / Jardinage,Bricoleur pour petits travaux,108.0,82461
+42,172,00:30:00,2017-03-30,Transport / Déménagement,Transport besoins divers,108.0,82463
+11,149,00:30:00,2017-04-02,Transport / Déménagement,Transport besoins divers,108.0,82629
+193,232,04:00:00,2017-04-12,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,82810
+193,232,04:00:00,2017-04-05,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,82630
+172,195,28:30:00,2017-04-06,Langues / Littérature,Conversation espagnole,108.0,82640
+14,53,01:30:00,2017-03-24,Langues / Littérature,Correction textes en français,108.0,82671
+14,91,01:30:00,2017-04-14,Arts / Culture / Éducation,Apprentissage du piano,108.0,82944
+98,53,08:30:00,2017-04-18,Travaux / Entretien / Jardinage,Menus travaux ébénisterie,108.0,82961
+193,232,04:00:00,2017-04-19,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,83059
+42,174,01:00:00,2017-04-21,Transport / Déménagement,Transport besoins divers,108.0,83179
+42,174,00:30:00,2017-04-22,Transport / Déménagement,Transport besoins divers,108.0,83180
+80,53,03:00:00,2017-04-23,Informatique / Bureautique,Initiation ordinateurs Macintosh,108.0,83181
+16,26,01:00:00,2017-04-26,Transport / Déménagement,Des bras pour petit déménagement,108.0,83292
+198,53,01:30:00,2017-04-28,Informatique / Bureautique,Initiation Word,108.0,83398
+174,42,02:00:00,2017-05-01,Travaux / Entretien / Jardinage,Aide installation garage de toile (tempo),108.0,83418
+152,232,04:00:00,2017-05-03,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,83511
+193,232,01:00:00,2017-05-03,Échanges associatifs,Rencontre de travail comité accueil,108.0,83529
+98,208,30:30:00,2017-05-05,Travaux / Entretien / Jardinage,Menus travaux ébénisterie,108.0,83531
+98,208,13:30:00,2017-05-04,Travaux / Entretien / Jardinage,Restauration ou fabrication de petits meubles,108.0,83532
+42,149,00:30:00,2017-05-06,Transport / Déménagement,Transport besoins divers,108.0,83743
+198,149,00:30:00,2017-05-05,Transport / Déménagement,Transport besoins divers,108.0,83744
+152,232,04:00:00,2017-05-12,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,83773
+42,41,01:30:00,2017-05-15,Transport / Déménagement,Transport besoins divers,108.0,83963
+152,232,04:00:00,2017-05-17,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,84013
+130,206,02:00:00,2017-04-16,Accompagnement / Gardiennage / Animaux,Garde d'animaux à ma maison,108.0,84016
+206,55,01:00:00,2017-05-08,Transport / Déménagement,Transport besoins divers,108.0,84017
+174,42,01:00:00,2017-05-19,Travaux / Entretien / Jardinage,Travaux d'aménagement de terrains,108.0,84084
+42,172,00:30:00,2017-05-21,Transport / Déménagement,Transport besoins divers,108.0,84200
+172,149,01:30:00,2017-05-21,Langues / Littérature,Conversation espagnole,108.0,84201
+172,232,04:00:00,2017-05-24,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,84202
+63,193,03:00:00,2017-05-24,Travaux / Entretien / Jardinage,Assistance pour compostière,108.0,84261
+12,232,00:30:00,2017-05-23,Informatique / Bureautique,Tableaux Excel,108.0,84266
+232,6,52:00:00,2017-05-29,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,84317
+232,6,42:00:00,2017-05-29,,,108.0,84318
+42,242,01:30:00,2017-05-26,Travaux / Entretien / Jardinage,Bricoleur pour petits travaux,108.0,84364
+172,232,03:30:00,2017-05-31,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,84416
+174,98,03:30:00,2017-05-26,Travaux / Entretien / Jardinage,Travaux d'aménagement de terrains,108.0,84419
+172,149,01:00:00,2017-05-31,Langues / Littérature,Conversation espagnole,108.0,84444
+152,232,01:00:00,2017-05-31,Échanges associatifs,Rencontre de travail comité accueil,108.0,84448
+80,232,01:00:00,2017-05-31,Échanges associatifs,Rencontre de travail comité accueil,108.0,84451
+198,232,01:00:00,2017-05-25,Échanges associatifs,Tâches activité de financement,108.0,84465
+193,232,04:00:00,2017-06-02,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,84558
+130,206,02:00:00,2017-05-26,Accompagnement / Gardiennage / Animaux,Garde d'animaux à ma maison,108.0,84559
+130,206,02:00:00,2017-05-28,Accompagnement / Gardiennage / Animaux,Garde d'animaux à ma maison,108.0,84560
+152,98,05:30:00,2017-06-03,Travaux / Entretien / Jardinage,Entretien de plates-bandes,108.0,84561
+174,130,02:00:00,2017-06-06,Travaux / Entretien / Jardinage,Travaux d'aménagement de terrains,108.0,84609
+152,232,04:00:00,2017-06-07,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,84673
+206,130,01:00:00,2017-06-07,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,84703
+98,152,02:00:00,2016-11-28,Travaux / Entretien / Jardinage,Menus travaux ébénisterie,108.0,84827
+152,232,04:00:00,2017-06-14,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,84828
+208,232,12:00:00,2017-06-14,Échanges associatifs,Tâches activité de financement,108.0,84837
+159,177,02:00:00,2017-06-14,Travaux / Entretien / Jardinage,Aide pour jardinage,108.0,84865
+42,174,01:00:00,2017-06-19,Transport / Déménagement,Transport besoins divers,108.0,85207
+63,193,02:00:00,2017-06-27,Travaux / Entretien / Jardinage,Assistance pour compostière,108.0,85356
+174,42,01:30:00,2017-06-27,Travaux / Entretien / Jardinage,Travaux d'aménagement de terrains,108.0,85427
+174,42,03:00:00,2017-07-03,Travaux / Entretien / Jardinage,Lavage vitres,108.0,85638
+22,199,01:30:00,2017-07-03,Artisanat / Couture / Vêtements,Petites réparations vêtements,108.0,85639
+174,193,03:30:00,2017-07-08,Travaux / Entretien / Jardinage,Lavage vitres,108.0,85891
+174,53,02:30:00,2017-07-24,Travaux / Entretien / Jardinage,Lavage vitres,108.0,86146
+152,98,03:00:00,2017-06-23,Travaux / Entretien / Jardinage,Aide pour entretien de plantes,108.0,86400
+80,232,02:00:00,2017-08-09,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,86415
+42,232,03:00:00,2017-08-16,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,86588
+130,4,03:00:00,2017-07-06,Accompagnement / Gardiennage / Animaux,Garde d'animaux à ma maison,108.0,86589
+206,130,04:00:00,2017-08-16,Cuisine / Alimentation,Aide pour cuisiner,108.0,86607
+130,199,01:30:00,2017-08-17,Travaux / Entretien / Jardinage,Ménage léger,108.0,86617
+206,130,02:00:00,2017-08-08,Cuisine / Alimentation,Aide pour cuisiner,108.0,86628
+206,130,02:00:00,2017-08-07,Cuisine / Alimentation,Aide pour cuisiner,108.0,86629
+3,5,01:30:00,2017-08-19,Langues / Littérature,Rédaction textes en français,108.0,86679
+41,8,03:00:00,2017-07-20,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,86693
+152,98,01:30:00,2017-08-14,Travaux / Entretien / Jardinage,Aide pour entretien de plantes,108.0,86695
+21,174,01:30:00,2017-08-22,Travaux / Entretien / Jardinage,Conseils pour travaux de peinture / teinture,108.0,86786
+152,232,04:00:00,2017-08-16,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,86764
+152,232,04:00:00,2017-08-23,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,86766
+21,174,03:30:00,2017-08-23,Travaux / Entretien / Jardinage,Conseils pour travaux de peinture / teinture,108.0,86774
+42,232,01:00:00,2017-08-25,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,86802
+21,174,03:00:00,2017-08-24,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,86949
+21,174,03:30:00,2017-08-25,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,86950
+42,232,02:00:00,2017-08-30,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,86937
+130,206,02:00:00,2017-08-29,Cuisine / Alimentation,Accompagnement cuisine,108.0,86955
+193,149,00:30:00,2017-08-31,Transport / Déménagement,Transport besoins divers,108.0,86985
+152,232,04:00:00,2017-09-06,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,87107
+63,193,02:00:00,2017-09-06,Transport / Déménagement,Transport pour les courses,108.0,87110
+42,232,03:00:00,2017-09-05,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,87120
+130,232,03:00:00,2017-09-05,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,87121
+41,199,03:00:00,2017-08-18,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,87224
+41,199,03:00:00,2017-08-19,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,87225
+41,199,01:00:00,2017-09-06,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,87226
+152,53,08:00:00,2017-07-15,Langues / Littérature,Traduction textes anglais à français,108.0,87230
+42,232,01:00:00,2017-09-04,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,87238
+174,42,03:00:00,2017-09-13,Travaux / Entretien / Jardinage,Lavage vitres,108.0,87434
+152,232,04:00:00,2017-09-13,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,87402
+206,174,01:30:00,2017-09-18,Accompagnement / Gardiennage / Animaux,Accompagnement rendez-vous divers,108.0,87561
+198,232,04:00:00,2017-09-05,Échanges associatifs,Tâches activité de financement,108.0,87624
+174,98,03:00:00,2017-09-19,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,87641
+174,98,03:00:00,2017-09-22,Travaux / Entretien / Jardinage,Peinture extérieure,108.0,87642
+42,232,03:00:00,2017-09-21,Échanges associatifs,Tâches activité de financement,108.0,87652
+193,232,04:00:00,2017-09-26,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,87776
+93,232,03:00:00,2017-09-26,Échanges associatifs,Tâches activité de financement,108.0,87779
+174,98,03:00:00,2017-09-23,Travaux / Entretien / Jardinage,Peinture extérieure,108.0,87781
+42,53,00:30:00,2017-09-26,Transport / Déménagement,Transport besoins divers,108.0,87806
+152,232,04:00:00,2017-09-27,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,87820
+193,232,04:00:00,2017-10-03,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,87977
+42,174,01:30:00,2017-10-03,Transport / Déménagement,Transport besoins divers,108.0,87980
+152,232,04:00:00,2017-10-04,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,88055
+193,26,05:00:00,2017-09-21,Transport / Déménagement,Transport moyenne distance,108.0,88056
+16,26,00:30:00,2017-09-28,Transport / Déménagement,Transport avec remorque,108.0,88057
+63,242,01:00:00,2017-10-05,Transport / Déménagement,Transport pour les courses,108.0,88093
+93,26,01:00:00,2017-09-27,Langues / Littérature,Apprentissage de l'anglais,108.0,88135
+140,174,01:00:00,2017-10-09,Artisanat / Couture / Vêtements,Coud bas de pantalon,108.0,88136
+174,98,03:00:00,2017-10-06,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,88137
+174,98,01:30:00,2017-10-07,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,88210
+152,232,04:00:00,2017-10-11,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,88243
+14,232,02:00:00,2017-10-13,Langues / Littérature,Correction textes en français,108.0,88303
+208,91,02:30:00,2017-10-16,Travaux / Entretien / Jardinage,Informations plantes potagères,108.0,88696
+140,174,00:30:00,2017-10-16,Artisanat / Couture / Vêtements,Coud bas de pantalon,108.0,88376
+42,41,01:30:00,2017-07-18,Transport / Déménagement,Transport besoins divers,108.0,88396
+14,232,02:00:00,2017-10-13,Langues / Littérature,Correction textes en français,108.0,88397
+152,232,04:00:00,2017-10-18,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,88446
+11,149,00:30:00,2017-10-17,Transport / Déménagement,Transport besoins divers,108.0,88469
+16,19,02:00:00,2017-10-23,Transport / Déménagement,Transport avec remorque,108.0,88604
+193,232,04:00:00,2017-10-24,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,88635
+152,232,04:00:00,2017-10-25,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,88636
+42,149,00:30:00,2017-10-24,Transport / Déménagement,Transport besoins divers,108.0,88693
+42,174,01:30:00,2017-10-23,Transport / Déménagement,Transport besoins divers,108.0,88694
+42,174,01:00:00,2017-10-31,Transport / Déménagement,Transport besoins divers,108.0,88966
+42,174,01:00:00,2017-10-30,Transport / Déménagement,Transport besoins divers,108.0,88968
+193,232,04:00:00,2017-10-31,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,88969
+174,42,02:00:00,2017-10-31,Travaux / Entretien / Jardinage,Aide installation garage de toile (tempo),108.0,88970
+80,232,00:30:00,2017-11-01,Informatique / Bureautique,Ajout de composantes (hardware),108.0,88971
+174,98,03:30:00,2017-10-25,Travaux / Entretien / Jardinage,Travaux d'aménagement de terrains,108.0,88973
+174,98,02:00:00,2017-10-27,Travaux / Entretien / Jardinage,Travaux d'aménagement de terrains,108.0,88974
+152,232,04:00:00,2017-11-01,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,89009
+42,232,00:30:00,2017-11-03,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,89091
+140,174,02:00:00,2017-11-03,Artisanat / Couture / Vêtements,Réparation ou restauration d'objets décoratifs,108.0,89169
+152,232,04:00:00,2017-11-08,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,89262
+80,232,06:00:00,2017-11-11,Échanges associatifs,Tâches activité de financement,108.0,89305
+208,232,03:00:00,2017-11-10,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,89422
+42,174,01:00:00,2017-11-10,Transport / Déménagement,Transport besoins divers,108.0,89423
+174,232,04:00:00,2017-11-11,Échanges associatifs,Tâches activité de financement,108.0,89424
+193,232,04:00:00,2017-11-14,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,89426
+152,232,10:00:00,2017-11-11,Échanges associatifs,Tâches activité de financement,108.0,89430
+152,232,04:00:00,2017-11-15,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,89431
+208,232,14:00:00,2017-11-11,Échanges associatifs,Tâches activité de financement,108.0,89433
+42,232,10:00:00,2017-11-08,Échanges associatifs,Tâches activité de financement,108.0,89464
+42,232,08:30:00,2017-11-11,Échanges associatifs,Tâches activité de financement,108.0,89465
+42,232,01:30:00,2017-11-12,Échanges associatifs,Tâches activité de financement,108.0,89466
+174,42,01:30:00,2017-11-15,Travaux / Entretien / Jardinage,Travaux d'aménagement de terrains,108.0,89467
+130,232,08:30:00,2017-11-11,Échanges associatifs,Tâches activité de financement,108.0,89468
+130,232,01:30:00,2017-11-12,Échanges associatifs,Tâches activité de financement,108.0,89469
+21,18,07:00:00,2017-11-14,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,89477
+42,174,01:30:00,2017-11-17,Transport / Déménagement,Transport besoins divers,108.0,89633
+21,232,01:30:00,2017-11-11,Échanges associatifs,Tâches activité de financement,108.0,89679
+152,232,04:00:00,2017-11-22,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,89681
+193,232,04:00:00,2017-11-28,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,89913
+152,232,04:00:00,2017-11-29,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,89914
+193,232,03:30:00,2017-12-12,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,90612
+193,91,01:00:00,2017-12-08,Transport / Déménagement,Transport besoins divers,108.0,90643
+152,232,04:00:00,2017-12-13,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,90685
+42,232,01:30:00,2018-01-15,Échanges associatifs,Tâches activité de financement,108.0,91027
+42,232,02:00:00,2018-01-16,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,91028
+42,232,02:30:00,2018-01-08,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,91029
+42,232,01:30:00,2018-01-12,Transport / Déménagement,Transport besoins divers,108.0,91030
+42,41,02:00:00,2017-12-12,Transport / Déménagement,Transport besoins divers,108.0,91032
+152,232,04:00:00,2018-01-17,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,91079
+41,232,04:00:00,2018-01-17,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,91081
+42,232,02:00:00,2018-01-18,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,91083
+194,242,01:30:00,2018-01-17,Informatique / Bureautique,Initiation traitement photo et image,108.0,91101
+42,242,01:30:00,2018-01-22,Transport / Déménagement,Transport besoins divers,108.0,91145
+21,232,04:00:00,2018-01-22,Échanges associatifs,Tâches activité de financement,108.0,91213
+194,242,04:00:00,2018-01-26,Informatique / Bureautique,Initiation traitement photo et image,108.0,91303
+152,91,03:00:00,2017-12-21,Langues / Littérature,Correction textes en français,108.0,91306
+41,232,04:00:00,2018-01-24,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,91307
+42,193,01:00:00,2017-12-18,Transport / Déménagement,Transport besoins divers,108.0,91311
+27,193,02:00:00,2017-12-17,Travaux / Entretien / Jardinage,Petit déneigement,108.0,91473
+27,193,02:00:00,2017-12-15,Travaux / Entretien / Jardinage,Petit déneigement,108.0,91474
+41,232,04:00:00,2018-01-31,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,91475
+42,41,01:30:00,2018-02-01,Transport / Déménagement,Transport besoins divers,108.0,91566
+41,232,04:00:00,2018-02-02,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,91567
+140,174,00:30:00,2018-02-06,Artisanat / Couture / Vêtements,Petites réparations vêtements,108.0,91613
+152,232,04:00:00,2018-02-07,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,91648
+42,53,01:30:00,2018-02-08,Transport / Déménagement,Transport besoins divers,108.0,91657
+42,53,01:00:00,2018-02-07,Transport / Déménagement,Transport besoins divers,108.0,91659
+22,92,06:00:00,2017-08-01,Hébergement / Voyage / Stationnement,Hébergement en maison courte durée,108.0,91666
+41,232,04:00:00,2018-02-09,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,91896
+42,232,05:00:00,2018-02-13,Échanges associatifs,Animation kiosque pour L'Accorderie,108.0,91900
+16,19,05:00:00,2018-02-09,Transport / Déménagement,Transport avec remorque,108.0,91901
+152,91,00:30:00,2018-02-07,Langues / Littérature,Rédaction textes en français,108.0,91903
+41,232,02:00:00,2018-02-13,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,91905
+41,232,04:00:00,2018-02-16,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,92040
+152,232,04:00:00,2018-02-15,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,92044
+152,232,04:00:00,2018-02-21,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,92104
+13,174,02:00:00,2018-02-21,Artisanat / Couture / Vêtements,Petites réparations vêtements,108.0,92108
+42,53,00:30:00,2018-02-16,Travaux / Entretien / Jardinage,Bricoleur pour petits travaux,108.0,92110
+41,232,04:00:00,2018-02-23,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,92146
+42,232,05:00:00,2018-02-15,Échanges associatifs,Tâches activité de financement,108.0,92153
+42,232,05:00:00,2018-02-23,Transport / Déménagement,Transport besoins divers,108.0,92154
+80,232,09:00:00,2018-02-28,Échanges associatifs,Tâches cléricales pour L'Accorderie,108.0,92316
+208,232,04:00:00,2018-02-28,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,92315
+80,232,03:00:00,2018-02-19,Échanges associatifs,Tâches activité de financement,108.0,92317
+80,232,02:00:00,2018-02-20,Échanges associatifs,Tâches activité de financement,108.0,92318
+80,232,04:00:00,2018-02-27,Échanges associatifs,Tâches activité de financement,108.0,92320
+17,248,01:30:00,2018-03-02,Transport / Déménagement,Transport pour les courses,108.0,92428
+1,18,05:00:00,2018-03-03,Travaux / Entretien / Jardinage,Petit déneigement,108.0,92473
+152,232,04:00:00,2018-03-07,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,92474
+41,232,04:00:00,2018-03-09,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,92582
+98,91,12:00:00,2018-03-09,Travaux / Entretien / Jardinage,Menus travaux ébénisterie,108.0,92584
+174,7,00:30:00,2017-11-23,Transport / Déménagement,Des bras pour petit déménagement,108.0,92587
+16,7,00:30:00,2017-11-23,Transport / Déménagement,Des bras pour petit déménagement,108.0,92588
+152,232,04:00:00,2018-03-14,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,92660
+41,232,04:00:00,2018-03-16,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,92711
+42,232,02:00:00,2018-03-18,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,92770
+232,1,05:00:00,2018-03-19,Travaux / Entretien / Jardinage,Petit déneigement,108.0,92771
+1,18,05:00:00,2018-03-19,Travaux / Entretien / Jardinage,Petit déneigement,108.0,92772
+152,232,04:00:00,2018-03-21,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,92844
+21,25,08:00:00,2018-01-08,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,92846
+21,25,08:00:00,2018-01-09,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,92847
+21,25,08:00:00,2018-01-10,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,92848
+21,25,08:00:00,2018-01-11,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,92849
+21,25,08:00:00,2018-01-12,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,92850
+152,232,01:00:00,2018-03-20,Échanges associatifs,Tâches activité de financement,108.0,92856
+140,174,00:30:00,2018-03-21,Artisanat / Couture / Vêtements,Petites réparations vêtements,108.0,92875
+1,18,01:00:00,2018-03-21,Travaux / Entretien / Jardinage,Petit déneigement,108.0,92883
+42,41,01:00:00,2018-03-19,Transport / Déménagement,Transport besoins divers,108.0,93004
+41,232,04:00:00,2018-03-23,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,92929
+80,232,03:00:00,2018-03-23,Échanges associatifs,Tâches cléricales pour L'Accorderie,108.0,92935
+80,232,04:00:00,2018-03-22,Échanges associatifs,Tâches cléricales pour L'Accorderie,108.0,92936
+80,232,03:00:00,2018-03-20,Échanges associatifs,Tâches cléricales pour L'Accorderie,108.0,93005
+21,18,08:00:00,2018-03-27,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,93124
+41,232,01:30:00,2018-03-29,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,93126
+42,232,02:00:00,2018-04-02,Échanges associatifs,Tâches activité de financement,108.0,93137
+152,91,02:00:00,2018-03-30,Langues / Littérature,Correction textes en français,108.0,93138
+193,130,01:00:00,2018-03-07,Transport / Déménagement,Transport besoins divers,108.0,93142
+42,232,01:30:00,2018-04-06,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,93206
+41,232,04:00:00,2018-04-06,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,93285
+1,18,00:30:00,2018-04-10,Travaux / Entretien / Jardinage,Petit déneigement,108.0,93402
+42,232,01:30:00,2018-04-12,Échanges associatifs,Tâches activité de financement,108.0,93412
+42,41,01:00:00,2018-04-09,Transport / Déménagement,Transport besoins divers,108.0,93429
+42,41,00:30:00,2018-04-12,Transport / Déménagement,Transport besoins divers,108.0,93430
+41,232,04:00:00,2018-04-13,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,93436
+201,19,03:00:00,2018-04-14,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,93583
+201,91,03:00:00,2018-04-14,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,93584
+201,26,03:00:00,2018-04-14,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,93585
+201,42,03:00:00,2018-04-14,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,93586
+201,130,02:00:00,2018-04-14,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,93587
+201,242,03:00:00,2018-04-14,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,93588
+201,152,10:00:00,2018-04-14,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,93589
+201,193,03:00:00,2018-04-14,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,93590
+201,149,03:00:00,2018-04-14,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,93591
+152,91,02:00:00,2018-04-18,Langues / Littérature,Correction textes en français,108.0,93599
+41,232,04:00:00,2018-04-20,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,93619
+41,232,04:00:00,2018-04-27,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,93785
+41,232,04:00:00,2018-05-11,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,94215
+152,232,10:00:00,2018-04-28,Échanges associatifs,Tâches activité de financement,108.0,93897
+130,232,11:00:00,2018-04-28,Échanges associatifs,Tâches activité de financement,108.0,93900
+208,232,08:00:00,2018-04-28,Échanges associatifs,Tâches activité de financement,108.0,93901
+98,232,06:00:00,2018-04-28,Échanges associatifs,Tâches activité de financement,108.0,93937
+1,232,06:00:00,2018-04-28,Échanges associatifs,Tâches activité de financement,108.0,93939
+98,149,00:30:00,2018-04-28,Transport / Déménagement,Transport besoins divers,108.0,93940
+1,232,07:00:00,2018-04-26,Échanges associatifs,Tâches activité de financement,108.0,93941
+1,232,07:00:00,2018-04-27,Échanges associatifs,Tâches activité de financement,108.0,93942
+49,232,08:00:00,2018-04-27,Échanges associatifs,Tâches activité de financement,108.0,93943
+42,41,01:30:00,2018-05-01,Transport / Déménagement,Transport besoins divers,108.0,93977
+42,232,01:00:00,2018-05-02,Échanges associatifs,Tâches activité de financement,108.0,93979
+41,232,02:30:00,2018-05-04,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,93980
+1,18,00:30:00,2018-05-09,Travaux / Entretien / Jardinage,Travaux d'aménagement de terrains,108.0,94174
+80,91,02:00:00,2018-05-09,Transport / Déménagement,Transport besoins divers,108.0,94175
+80,232,02:00:00,2018-05-09,Échanges associatifs,Représentation de L'Accorderie,108.0,94177
+42,232,02:00:00,2018-05-04,Échanges associatifs,Rencontre de travail comité de financement,108.0,94179
+80,232,02:30:00,2018-04-11,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,94231
+80,232,04:30:00,2018-04-18,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,94232
+80,232,04:30:00,2018-05-02,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,94233
+21,18,02:00:00,2018-03-28,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,94327
+41,18,03:00:00,2018-05-16,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,94332
+41,18,03:30:00,2018-05-17,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,94333
+41,232,04:00:00,2018-05-18,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,94376
+80,90,02:00:00,2018-05-18,Échanges associatifs,Tâches cléricales pour L'Accorderie,108.0,94344
+42,41,01:00:00,2018-05-24,Transport / Déménagement,Transport besoins divers,108.0,94495
+41,18,03:00:00,2018-05-25,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,94496
+41,232,04:00:00,2018-05-25,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,94511
+42,53,02:00:00,2018-05-28,Travaux / Entretien / Jardinage,Bricoleur pour petits travaux,108.0,94584
+41,18,01:00:00,2018-05-29,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,94586
+41,18,03:30:00,2018-05-28,Travaux / Entretien / Jardinage,Peinture intérieure,108.0,94587
+41,232,04:00:00,2018-05-29,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,94595
+174,232,02:00:00,2018-04-28,Échanges associatifs,Tâches activité de financement,108.0,94612
+41,232,04:00:00,2018-06-05,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,94754
+152,91,03:00:00,2018-06-06,Langues / Littérature,Correction textes en français,108.0,94836
+201,91,02:00:00,2018-06-04,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,94837
+201,26,03:00:00,2018-06-02,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,94839
+201,91,03:00:00,2018-06-02,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,94841
+201,152,10:00:00,2018-06-02,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,94842
+201,193,03:00:00,2018-06-02,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,94843
+201,149,03:00:00,2018-06-02,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,94847
+201,242,03:00:00,2018-06-02,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,94848
+201,42,03:00:00,2018-06-02,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,94849
+201,130,03:00:00,2018-06-02,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,94850
+201,80,03:00:00,2018-06-02,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,94852
+201,2,03:00:00,2018-06-02,Échanges associatifs,Organisation / animation activité de L'Accorderie,108.0,94853
+63,149,00:30:00,2018-06-07,Arts / Culture / Éducation,Généalogie,108.0,94881
+41,232,04:00:00,2018-06-12,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,94936
+120,26,05:00:00,2018-06-07,Arts / Culture / Éducation,Transfert diapos et négatifs 35 mm en numérique,108.0,94993
+139,232,00:30:00,2018-06-13,Échanges associatifs,Tâches activité de financement,108.0,94996
+42,232,04:00:00,2018-06-13,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,95014
+42,232,02:00:00,2018-06-13,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,95015
+42,232,02:00:00,2018-06-08,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,95016
+42,232,02:00:00,2018-06-20,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,95113
+42,41,03:00:00,2018-06-29,Transport / Déménagement,Transport besoins divers,108.0,95267
+42,232,04:00:00,2018-06-29,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,95268
+193,26,04:00:00,2018-07-03,Transport / Déménagement,Transport moyenne distance,108.0,95363
+42,232,10:00:00,2018-07-10,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,95470
+42,41,01:30:00,2018-07-16,Transport / Déménagement,Transport besoins divers,108.0,95484
+152,91,08:00:00,2018-07-17,Langues / Littérature,Rédaction textes en français,108.0,95489
+194,242,01:00:00,2018-04-16,Arts / Culture / Éducation,Restauration photos,108.0,95491
+194,242,01:30:00,2018-07-17,Arts / Culture / Éducation,Restauration photos,108.0,95492
+194,242,00:30:00,2018-02-07,Arts / Culture / Éducation,Restauration photos,108.0,95494
+194,242,01:30:00,2018-07-18,Arts / Culture / Éducation,Restauration photos,108.0,95495
+42,232,03:00:00,2018-07-16,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,95511
+201,193,02:00:00,2018-07-16,Langues / Littérature,Correction textes en français,108.0,95516
+42,232,02:00:00,2018-07-26,Échanges associatifs,Tâches manuelles pour L'Accorderie,108.0,95596
+1,0,15:00:00,2018-07-05,Transport / Déménagement,Des bras pour moyen déménagement,108.0,95601
+227,232,08:00:00,2018-08-07,Échanges associatifs,Tâches activité de financement,108.0,95749
+131,242,01:30:00,2018-08-07,Informatique / Bureautique,Tableaux Excel,108.0,95773
+41,42,02:30:00,2018-08-11,Travaux / Entretien / Jardinage,Aménagement de l'espace maison,108.0,95885
+42,41,01:00:00,2018-08-07,Transport / Déménagement,Transport besoins divers,108.0,95886
+41,232,04:00:00,2018-08-07,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,95887
+41,232,04:00:00,2018-08-21,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,95961
+41,232,04:00:00,2018-08-17,Échanges associatifs,Tâches activité de financement,108.0,96026
+42,149,00:30:00,2018-09-11,Transport / Déménagement,Transport besoins divers,108.0,96369
+41,18,04:00:00,2018-08-28,Travaux / Entretien / Jardinage,Peinture extérieure,108.0,96133
+42,232,03:00:00,2018-08-31,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,96149
+41,18,01:00:00,2018-08-27,Travaux / Entretien / Jardinage,Peinture extérieure,108.0,96264
+41,18,03:00:00,2018-08-25,Travaux / Entretien / Jardinage,Peinture extérieure,108.0,96265
+41,232,04:00:00,2018-09-07,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,96267
+3,121,04:00:00,2018-08-23,Hébergement / Voyage / Stationnement,Hébergement en maison courte durée,108.0,96278
+3,121,04:00:00,2018-08-29,Hébergement / Voyage / Stationnement,Hébergement en maison courte durée,108.0,96280
+3,121,04:00:00,2018-08-24,Hébergement / Voyage / Stationnement,Hébergement en maison courte durée,108.0,96281
+41,232,03:30:00,2018-09-14,Échanges associatifs,Accueil/réception permanence Accorderie,108.0,96389

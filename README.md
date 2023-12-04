@@ -46,7 +46,7 @@ graph_parser $ python .\main.py --input=path --output=path # this command will g
 ```sh
 $ cd graph_filter
 # csv files are expected to be in input folder
-graph_filter $ python .\accorderie_filter.py --input=path --output=path --accorderie=2 # this command will filter members and transactions in accorderie 2 AND age between 18-30 or 23-34
+graph_filter $ python .\accorderie_filter.py --input=path --output=path --accorderie_edge=2 --accorderie_node=2 # this command will filter members and transactions in accorderie 2 AND age between 18-30 or 23-34
 
 graph_filter $ python .\report_filter.py --input=path --output=path --age=18-30 --age=55-65 --folder_name=experiment_101# this command will filter members and transactions in accorderie 2 AND age  between 18-30 OR 55-66
 ```

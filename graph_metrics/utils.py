@@ -149,10 +149,10 @@ def perform_filter_on_graph(g, filters):
         print("Filtering by age, value= "+str(filters["age"]))
         g = g.induced_subgraph(g.vs.select(age_in=filters["age"]))
 
-    if filters.get("m_acc_id", None):
-        accs = [int(ac) for ac in filters['m_acc_id']]
+    if filters.get("accorderie_node", None):
+        accs = [int(ac) for ac in filters['accorderie_node']]
         print("Filtering by member accorderie id, value= " +
-              str(filters["m_acc_id"]))
+              str(filters["accorderie_node"]))
         g = g.induced_subgraph(g.vs.select(accorderie_in=accs))
 
     if filters.get("adresse", None):
@@ -164,6 +164,12 @@ def perform_filter_on_graph(g, filters):
               str(filters["arrondissement"]))
         g = g.induced_subgraph(g.vs.select(
             arrondissement_in=filters["arrondissement"]))
+
+    # if (filters["accorderie_node"]):
+    #     print("Filtering by accorderie_node, value= " +
+    #           str(filters["accorderie_node"]))
+    #     g = g.induced_subgraph(g.vs.select(
+    #         accorderie_in=filters["accorderie_node"]))
 
     if filters.get("ville", None):
         print("Filtering by ville, value= "+str(filters["ville"]))
@@ -209,10 +215,12 @@ def perform_filter_on_graph(g, filters):
         print("Filtering by service, value= "+str(filters["service"]))
         g = g.subgraph_edges(g.es.select(service_in=filters["service"]))
 
-    if filters.get("accorderie", None):
-        filters['accorderie'] = [int(x) for x in filters['accorderie']]
+    if filters.get("accorderie_edge", None):
+        filters["accorderie_edge"] = [int(x)
+                                      for x in filters["accorderie_edge"]]
         print("Filtering by edge accorderie, value= " +
-              str(filters["accorderie"]))
-        g = g.subgraph_edges(g.es.select(accorderie_in=filters["accorderie"]))
+              str(filters["accorderie_edge"]))
+        g = g.subgraph_edges(g.es.select(
+            accorderie_in=filters["accorderie_edge"]))
 
     return g

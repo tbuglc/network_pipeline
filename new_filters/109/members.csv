@@ -1,0 +1,633 @@
+id,age,genre,revenu,ville,region,arrondissement,adresse,accorderie,mapid
+27,55-65,1,50001-,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,10441
+28,18-30,1,50001-,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,10442
+34,66-80,1,30001-50000,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1N,109,10433
+36,31-54,1,50001-,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,10435
+40,31-54,0,50001-,Sherbrooke,Estrie,Jacques-Cartier,J1L,109,10429
+48,55-65,0,50001-,Sherbrooke,Estrie,Fleurimont,J1E,109,10416
+49,66-80,0,10001-20000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,10417
+50,66-80,0,20001-30000,Sherbrooke,Estrie,Jacques-Cartier,J1L,109,10418
+51,66-80,0,20001-30000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,10419
+52,31-54,0,30001-50000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,10420
+68,81-95,0,20001-30000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,10399
+71,31-54,0,0,Sherbrooke,Estrie,Jacques-Cartier,J1L,109,10402
+74,66-80,1,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,10390
+75,66-80,1,20001-30000,Sherbrooke,Estrie,Fleurimont,J1E,109,10391
+79,81-95,1,30001-50000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,10388
+80,66-80,0,30001-50000,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1N,109,10389
+91,18-30,1,10001-20000,Sherbrooke,Estrie,Fleurimont,J1E,109,10377
+104,55-65,0,30001-50000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,10365
+105,18-30,0,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1K,109,10362
+120,0,0,0,Waterville,Estrie,,J0B,109,10348
+129,55-65,0,20001-30000,Sherbrooke,Estrie,Fleurimont,J1G,109,10342
+133,31-54,0,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,10335
+180,31-54,1,30001-50000,Waterville,Estrie,,J0B,109,10289
+183,31-54,1,50001-,Sherbrooke,Estrie,Jacques-Cartier,J1N,109,10286
+187,31-54,0,50001-,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,10279
+188,31-54,0,50001-,Sherbrooke,Estrie,Jacques-Cartier,J1L,109,10280
+197,66-80,0,10001-20000,Sherbrooke,Estrie,Jacques-Cartier,J1L,109,10272
+198,0,\N,,Waterville,Estrie,,J0B,109,10271
+220,55-65,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,10251
+231,31-54,1,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,10241
+232,31-54,0,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,10237
+240,55-65,0,30001-50000,Sherbrooke,Estrie,Fleurimont,J1G,109,10227
+241,31-54,0,50001-,Sherbrooke,Estrie,Fleurimont,J1E,109,10228
+253,31-54,0,30001-50000,Bolton-Est,Estrie,,J0E,109,10214
+265,31-54,1,50001-,Sherbrooke,Estrie,Fleurimont,J1E,109,10202
+271,31-54,1,30001-50000,Sherbrooke,Estrie,Jacques-Cartier,J1L,109,10197
+280,55-65,1,0,North Hatley,Estrie,,J0B,109,10189
+285,31-54,0,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1K,109,10183
+286,31-54,0,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,10181
+291,31-54,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,10176
+313,55-65,0,30001-50000,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1N,109,10155
+326,55-65,0,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,10142
+327,55-65,0,10001-20000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,10143
+336,31-54,1,50001-,Saint-Louis-de-Blandford,Centre-du-Québec,,G0Z,109,10130
+338,55-65,0,0,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,10132
+356,18-30,0,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,10112
+360,18-30,0,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,10109
+368,0,0,0,Sherbrooke,Estrie,Fleurimont,J1E,109,10100
+371,31-54,0,50001-,Sherbrooke,Estrie,Fleurimont,J1E,109,10096
+372,31-54,1,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,10095
+375,18-30,1,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,10092
+376,31-54,0,0,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,10093
+377,31-54,0,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,10094
+379,18-30,1,10001-20000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,10090
+382,18-30,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,10086
+384,55-65,0,30001-50000,Kingsbury,Estrie,,J0B,109,10084
+405,31-54,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,10061
+406,0,0,0,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,10062
+424,66-80,0,10001-20000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1Y,114,10044
+438,66-80,1,50001-,Sherbrooke,Estrie,Fleurimont,J1E,109,10029
+450,0,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,10017
+481,55-65,0,20001-30000,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1X,109,9999
+484,66-80,0,30001-50000,Sherbrooke,Estrie,Fleurimont,J1E,109,10002
+498,0,1,30001-50000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,9966
+499,31-54,0,10001-20000,Sherbrooke,Estrie,Fleurimont,J1L,109,9967
+500,31-54,0,30001-50000,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1N,109,9964
+501,31-54,0,30001-50000,Magog,Estrie,,J1X,109,9958
+508,31-54,0,10001-20000,Sherbrooke,Estrie,Fleurimont,J1E,109,9957
+514,31-54,0,0,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9954
+527,31-54,0,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9934
+533,18-30,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9940
+540,55-65,1,50001-,Sherbrooke,Estrie,Jacques-Cartier,J1L,109,9925
+544,31-54,0,30001-50000,Sherbrooke,Estrie,Fleurimont,J1E,109,9922
+545,66-80,0,30001-50000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,9923
+547,0,\N,,Granby,Montérégie,,J2G,120,9916
+564,31-54,0,10001-20000,Hatley,Estrie,,J0B,109,9902
+573,66-80,1,10001-20000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,9891
+578,31-54,0,30001-50000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,9885
+609,31-54,0,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9858
+612,55-65,0,30001-50000,Franklin,Montérégie,,J0S,114,9857
+622,31-54,0,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9847
+678,66-80,1,20001-30000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,9793
+713,31-54,1,30001-50000,Sherbrooke,Estrie,Fleurimont,J1G,109,9751
+714,18-30,0,10001-20000,Sherbrooke,Estrie,Fleurimont,J1G,109,9752
+718,66-80,1,30001-50000,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1N,109,9749
+724,66-80,0,20001-30000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,9741
+726,55-65,0,0,Sherbrooke,Estrie,Brompton,J1H,109,9739
+735,18-30,0,0-10000,Orford,Estrie,,J1X,109,9731
+738,66-80,0,30001-50000,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1N,109,9734
+739,31-54,0,50001-,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,9735
+741,31-54,0,30001-50000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,9728
+752,66-80,0,10001-20000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,9716
+758,18-30,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9713
+777,66-80,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9694
+783,18-30,0,0-10000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,9686
+784,18-30,1,0-10000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,9687
+786,31-54,0,0-10000,Waterville,Estrie,,J0B,109,9689
+787,66-80,1,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9690
+800,66-80,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9668
+808,66-80,0,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9657
+828,31-54,0,0,Sherbrooke,Estrie,Fleurimont,J1G,109,9641
+831,31-54,0,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9639
+860,31-54,0,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9610
+865,55-65,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9604
+868,18-30,0,0,Ham-Nord,Centre-du-Québec,,G0P,109,9601
+882,31-54,1,10001-20000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,9580
+912,66-80,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9553
+940,55-65,1,10001-20000,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1N,109,9525
+946,0,1,50001-,Sherbrooke,Estrie,Jacques-Cartier,J1L,109,9522
+951,31-54,0,30001-50000,Compton,Estrie,,J0B,109,9516
+952,18-30,1,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9517
+953,31-54,1,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9514
+962,81-95,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9509
+966,66-80,0,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9504
+975,66-80,1,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9498
+977,31-54,0,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9491
+983,31-54,1,50001-,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9488
+986,66-80,0,50001-,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1N,109,9484
+987,31-54,0,30001-50000,Ascot Corner,Estrie,,J0B,109,9485
+1000,31-54,1,0-10000,Saint-Jean-sur-Richelieu,Montérégie,,J2X,109,9472
+1007,31-54,0,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9456
+1008,66-80,1,0,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9457
+1009,81-95,1,50001-,Sherbrooke,Estrie,Jacques-Cartier,J1G,109,9458
+1010,31-54,0,10001-20000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,9459
+1061,96-150,0,10001-20000,Sherbrooke,Estrie,Fleurimont,J1E,109,9409
+1063,66-80,0,0-10000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,9408
+1069,31-54,1,10001-20000,Waterville,Estrie,,J0B,109,9400
+1115,31-54,0,0,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9351
+1116,31-54,1,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9352
+1117,0,0,10001-20000,Sherbrooke,Estrie,Fleurimont,J1E,109,9353
+1119,31-54,0,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9355
+1120,55-65,0,0-10000,Magog,Estrie,,J1X,109,9356
+1125,66-80,0,20001-30000,Sherbrooke,Estrie,Fleurimont,J1E,109,9346
+1141,18-30,0,10001-20000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,9327
+1161,55-65,1,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9305
+1202,31-54,0,20001-30000,Montréal,Montréal,Rosemont--La Petite-Patrie,H2G,114,9272
+1214,31-54,0,10001-20000,Sherbrooke,Estrie,Jacques-Cartier,J1N,109,9252
+1216,18-30,0,0-10000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,9254
+1217,31-54,1,20001-30000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,9255
+1272,66-80,0,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9193
+1274,31-54,1,10001-20000,Stoke,Estrie,,J0B,109,9195
+1275,31-54,1,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9196
+1339,55-65,0,30001-50000,Sherbrooke,Estrie,Fleurimont,J1G,109,9132
+1343,31-54,0,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9123
+1375,66-80,1,20001-30000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,9089
+1377,31-54,0,50001-,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,9091
+1379,55-65,0,10001-20000,Sherbrooke,Estrie,Fleurimont,J1G,109,9093
+1381,31-54,1,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1N,109,9095
+1456,18-30,0,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,9013
+1471,55-65,0,50001-,Sherbrooke,Estrie,Mont-Bellevue,J1K,109,8997
+1517,66-80,0,10001-20000,Compton,Estrie,,J0B,109,8948
+1519,55-65,1,10001-20000,Compton,Estrie,,J0B,109,8950
+1520,31-54,0,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,8951
+1536,31-54,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,8928
+1552,31-54,0,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,8913
+1588,66-80,0,30001-50000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,8875
+1589,31-54,0,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,8876
+1590,31-54,1,20001-30000,Sherbrooke,Estrie,Fleurimont,J1E,109,8877
+1632,31-54,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,8832
+1635,31-54,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,8835
+1652,55-65,0,0,Magog,Estrie,,J1X,109,8811
+1654,31-54,0,10001-20000,Sherbrooke,Estrie,Lennoxville,J1C,109,8813
+1667,31-54,0,50001-,Sherbrooke,Estrie,Jacques-Cartier,J1N,109,8802
+1668,55-65,1,50001-,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,8803
+1671,31-54,0,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,8798
+1675,66-80,0,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,8794
+1693,66-80,0,0,Sherbrooke,Estrie,Jacques-Cartier,J1L,109,8775
+1694,31-54,1,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1J,109,8772
+1734,31-54,0,10001-20000,Sherbrooke,Estrie,Fleurimont,J1E,109,8731
+1740,66-80,0,0-10000,Montréal,Montréal,Outremont,H2V,114,8726
+1772,66-80,1,10001-20000,Compton,Estrie,,J0B,109,8689
+1773,31-54,1,30001-50000,Magog,Estrie,,J1X,109,8690
+1774,31-54,1,0-10000,Sherbrooke,Estrie,Lennoxville,J1M,109,8691
+1828,55-65,1,0,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,8631
+1830,55-65,0,10001-20000,Cookshire-Eaton,Estrie,,J0B,109,8633
+1831,31-54,1,0-10000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,8634
+1832,31-54,1,0-10000,Sherbrooke,Estrie,Fleurimont,J1E,109,8635
+1833,66-80,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1K,109,8636
+1844,66-80,1,0,Sherbrooke,Estrie,Lennoxville,J1M,109,8622
+1855,55-65,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,8613
+1858,0,1,0-10000,Sherbrooke,Estrie,Fleurimont,J1E,109,8609
+1893,18-30,0,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,8573
+1894,31-54,0,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,8574
+1901,55-65,0,10001-20000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1X,114,8564
+1941,55-65,0,10001-20000,Sherbrooke,Estrie,Lennoxville,J1M,109,8524
+1949,31-54,1,10001-20000,Cookshire-Eaton,Estrie,,J0B,109,8521
+1951,66-80,0,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1N,109,8523
+1962,31-54,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,8502
+1976,31-54,1,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,8481
+1977,0,1,0,Kingsbury,Estrie,,J0B,109,8482
+1983,66-80,0,30001-50000,Saint-Cyprien-de-Napierville,Montérégie,,J0J,115,8488
+1984,31-54,0,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,8489
+1997,55-65,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,8460
+2086,55-65,0,20001-30000,Montréal,Montréal,Villeray--Saint-Michel--Parc-Extension,H2P,114,8368
+2107,31-54,0,0-10000,Sherbrooke,Estrie,Fleurimont,J1E,109,8359
+2192,66-80,1,30001-50000,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1N,109,8269
+2217,0,0,20001-30000,Rimouski,Bas-Saint-Laurent,,G0L,118,8256
+2267,31-54,0,0-10000,Sherbrooke,Estrie,Fleurimont,J1E,109,8199
+2292,31-54,0,0-10000,Sherbrooke,Estrie,Jacques-Cartier,J1M,109,8174
+2360,55-65,0,50001-,Montréal,Montréal,Anjou,H1M,114,8092
+2370,66-80,0,30001-50000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1X,114,8102
+2433,66-80,0,0,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,8024
+2466,31-54,0,20001-30000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,8051
+2490,66-80,1,10001-20000,Stoke,Estrie,,J0B,109,7964
+2494,66-80,1,20001-30000,Stoke,Estrie,,J0B,109,7968
+2495,55-65,1,50001-,Sainte-Catherine-de-Hatley,Estrie,,J0B,109,7969
+2528,66-80,0,50001-,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,7926
+2529,66-80,0,50001-,Sherbrooke,Estrie,Fleurimont,J1E,109,7927
+2532,31-54,0,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,7930
+2534,31-54,0,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1K,109,7932
+2539,18-30,0,30001-50000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,7996
+2541,31-54,1,0,Sherbrooke,Estrie,Mont-Bellevue,J1L,109,7999
+2582,0,0,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,7998
+2600,31-54,1,0-10000,Sherbrooke,Estrie,Jacques-Cartier,J1L,109,7881
+2628,0,0,0,Sherbrooke,Estrie,Fleurimont,J1G,109,7837
+2643,0,1,50001-,Sherbrooke,Estrie,Mont-Bellevue,J1K,109,7831
+2645,31-54,0,0,Sherbrooke,Estrie,Lennoxville,J1H,109,7833
+2646,66-80,1,30001-50000,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1N,109,7834
+2662,55-65,0,0,Stoke,Estrie,,J0B,109,7799
+2663,66-80,0,20001-30000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,7800
+2664,66-80,1,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,7801
+2665,55-65,0,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1K,109,7802
+2666,66-80,0,0,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,7803
+2674,18-30,0,0,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,7781
+2675,66-80,0,50001-,Sherbrooke,Estrie,Jacques-Cartier,J1L,109,7782
+2677,31-54,0,0,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,7784
+2678,31-54,1,0,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,7785
+2679,0,0,30001-50000,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1N,109,7786
+2680,66-80,0,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,7787
+2708,31-54,0,0-10000,Acton Vale,Montérégie,,J0H,115,7761
+2726,31-54,0,30001-50000,Mont-Joli,Bas-Saint-Laurent,,G5H,108,7739
+2743,31-54,0,50001-,Montréal,Montréal,Rosemont--La Petite-Patrie,H2S,114,7704
+2810,66-80,0,30001-50000,Sherbrooke,Estrie,Jacques-Cartier,J1L,109,7731
+2811,66-80,0,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,7652
+2840,31-54,1,0,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,7626
+2841,55-65,0,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1K,109,7638
+2842,66-80,0,20001-30000,Sherbrooke,Estrie,Fleurimont,J1E,109,7639
+2843,31-54,0,30001-50000,Windsor,Estrie,,J1S,109,7640
+2895,55-65,0,0-10000,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1N,109,7594
+2898,31-54,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,7597
+2899,81-95,0,50001-,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,7598
+2900,31-54,1,30001-50000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,7599
+2901,66-80,0,10001-20000,East Angus,Estrie,,J1H,109,7604
+2935,0,0,20001-30000,Wotton,Estrie,,J0A,109,7547
+2940,66-80,0,0-10000,Sherbrooke,Estrie,Fleurimont,J1G,109,7549
+2941,31-54,0,0,Richmond,Estrie,,J0B,109,7550
+2972,0,0,0,Hatley,Estrie,,J0B,109,7516
+3020,31-54,0,0-10000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,7439
+3123,0,0,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,7341
+3124,31-54,1,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,7342
+3126,31-54,0,10001-20000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,7344
+3127,31-54,0,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,7345
+3166,31-54,0,20001-30000,Compton,Estrie,,J0B,109,7296
+3167,31-54,0,10001-20000,Sherbrooke,Estrie,Fleurimont,J1E,109,7297
+3179,31-54,0,0,Sherbrooke,Estrie,Jacques-Cartier,J1L,109,7284
+3213,31-54,1,20001-30000,Saint-Denis-de-Brompton,Estrie,,J0B,109,7249
+3214,31-54,0,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1K,109,7290
+3215,31-54,1,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1K,109,7215
+3216,66-80,1,20001-30000,Sherbrooke,Estrie,Fleurimont,J1E,109,7241
+3217,31-54,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,7242
+3221,55-65,0,20001-30000,Sherbrooke,Estrie,Fleurimont,J1G,109,7246
+3252,31-54,1,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,7219
+3260,66-80,0,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,7218
+3261,55-65,0,30001-50000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,7351
+3265,66-80,1,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,7202
+3280,66-80,0,10001-20000,Shawinigan,Mauricie,,G9N,92,7192
+3299,81-95,0,30001-50000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1T,114,7158
+3323,55-65,0,30001-50000,Sherbrooke,Estrie,Lennoxville,J1M,109,7146
+3324,31-54,0,10001-20000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,7147
+3325,31-54,0,30001-50000,Sherbrooke,Estrie,Fleurimont,J1E,109,7148
+3378,66-80,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,7100
+3454,66-80,0,30001-50000,Sherbrooke,Estrie,Jacques-Cartier,J1L,109,7031
+3468,31-54,0,50001-,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1N,109,7004
+3492,66-80,1,10001-20000,Sherbrooke,Estrie,Fleurimont,J1E,109,6972
+3528,66-80,1,20001-30000,Sherbrooke,Estrie,Fleurimont,J1E,109,6947
+3529,18-30,0,0-10000,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1N,109,6948
+3530,31-54,0,50001-,Austin,Estrie,,J0B,109,6949
+3540,55-65,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1K,109,6927
+3541,66-80,0,30001-50000,Sherbrooke,Estrie,Jacques-Cartier,J1L,109,6928
+3579,,1,20001-30000,Sherbrooke,Estrie,Fleurimont,J1E,109,6895
+3580,66-80,0,10001-20000,Sherbrooke,Estrie,Jacques-Cartier,J1L,109,6896
+3581,31-54,1,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,6897
+3582,31-54,0,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,6898
+3618,31-54,0,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,6852
+3624,31-54,0,0-10000,Montréal,Montréal,Rosemont--La Petite-Patrie,H2S,114,6836
+3642,31-54,0,10001-20000,Sherbrooke,Estrie,Lennoxville,J1M,109,6826
+3648,31-54,0,30001-50000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,6861
+3650,66-80,0,50001-,Sherbrooke,Estrie,Lennoxville,J1M,109,6868
+3651,66-80,0,10001-20000,Sherbrooke,Estrie,Fleurimont,J1G,109,6869
+3682,81-95,0,10001-20000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,6799
+3692,66-80,0,10001-20000,Sherbrooke,Estrie,Fleurimont,J1E,109,6782
+3693,31-54,1,10001-20000,Rimouski,Bas-Saint-Laurent,,G5L,109,6785
+3708,55-65,0,30001-50000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,6768
+3711,31-54,0,30001-50000,Sherbrooke,Estrie,Fleurimont,J1E,109,6769
+3712,18-30,0,30001-50000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,6770
+3719,31-54,0,20001-30000,Sherbrooke,Estrie,Fleurimont,J1G,109,6756
+3729,0,0,30001-50000,Sherbrooke,Estrie,Fleurimont,J1E,109,6747
+3749,31-54,1,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,6724
+3750,31-54,0,30001-50000,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1N,109,6725
+3751,31-54,0,0,Sherbrooke,Estrie,Lennoxville,J1M,109,6728
+3752,55-65,0,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,6729
+3753,31-54,0,30001-50000,Sherbrooke,Estrie,Fleurimont,J1E,109,6730
+3776,55-65,1,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,6709
+3788,31-54,1,10001-20000,Sherbrooke,Estrie,Fleurimont,J1E,109,6684
+3789,0,0,50001-,Sherbrooke,Estrie,Fleurimont,J1G,109,6685
+3790,0,1,50001-,Sherbrooke,Estrie,Fleurimont,J1G,109,6686
+3860,31-54,0,30001-50000,Sherbrooke,Estrie,Fleurimont,J1G,109,6599
+3861,31-54,0,0,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,6600
+3931,31-54,1,30001-50000,North Hatley,Estrie,,J0B,109,6529
+3955,66-80,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,6506
+3968,18-30,1,0,Sherbrooke,Estrie,Brompton,J0R,109,6496
+3996,55-65,1,0-10000,Sherbrooke,Estrie,Fleurimont,J1E,109,6463
+4003,31-54,0,0,Sherbrooke,Estrie,Fleurimont,J1R,109,6450
+4013,31-54,0,20001-30000,Sherbrooke,Estrie,Fleurimont,J1H,109,6446
+4015,31-54,0,30001-50000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,6449
+4019,55-65,0,30001-50000,Matane,Bas-Saint-Laurent,,G4W,110,6454
+4035,66-80,0,10001-20000,Sherbrooke,Estrie,Fleurimont,J1E,109,6422
+4036,0,1,10001-20000,Sherbrooke,Estrie,Fleurimont,J1E,109,6423
+4040,31-54,0,0-10000,Sherbrooke,Estrie,Lennoxville,J1M,109,6427
+4041,31-54,0,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,6428
+4042,0,0,0,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,6429
+4046,0,1,30001-50000,Sherbrooke,Estrie,Fleurimont,J1G,109,6433
+4047,31-54,0,30001-50000,Sherbrooke,Estrie,Brompton,J1G,109,6648
+4144,66-80,0,10001-20000,Shawinigan,Mauricie,,G9N,92,6325
+4161,31-54,1,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,6304
+4162,66-80,1,0,Sherbrooke,Estrie,Brompton,J1G,109,6305
+4163,55-65,0,20001-30000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,6306
+4182,31-54,0,10001-20000,Sherbrooke,Estrie,Fleurimont,J1H,109,6297
+4183,66-80,1,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,6298
+4184,66-80,0,0,Sherbrooke,Estrie,Fleurimont,J1E,109,6299
+4212,0,1,0,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1N,109,6251
+4330,66-80,1,0-10000,Sherbrooke,Estrie,Fleurimont,J1E,109,6130
+4339,55-65,0,20001-30000,Matane,Bas-Saint-Laurent,,G4W,110,6134
+4340,31-54,1,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,6150
+4351,31-54,0,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,6126
+4360,31-54,1,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,6127
+4361,66-80,0,10001-20000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,6128
+4362,55-65,1,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,6129
+4367,66-80,1,10001-20000,Sherbrooke,Estrie,Fleurimont,J1E,109,6094
+4369,31-54,0,0-10000,Montréal,Montréal,Rosemont--La Petite-Patrie,H2S,109,6096
+4373,66-80,1,30001-50000,Sherbrooke,Estrie,Fleurimont,J1J,109,6100
+4374,66-80,0,0,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,6101
+4377,55-65,0,20001-30000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,6104
+4378,55-65,0,0,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,8505
+4388,55-65,0,20001-30000,Matane,Bas-Saint-Laurent,,G4W,110,6086
+4422,31-54,0,20001-30000,Montréal,Montréal,Rosemont--La Petite-Patrie,H2G,114,6048
+4437,0,1,20001-30000,Sherbrooke,Estrie,Fleurimont,J1G,109,6032
+4438,31-54,1,10001-20000,Sherbrooke,Estrie,Fleurimont,J1H,109,6033
+4453,31-54,0,20001-30000,Sherbrooke,Estrie,Fleurimont,J1G,109,6015
+4454,66-80,0,30001-50000,Sherbrooke,Estrie,Fleurimont,J1E,109,6016
+4455,66-80,0,10001-20000,Sherbrooke,Estrie,Jacques-Cartier,J1L,109,6017
+4463,66-80,0,20001-30000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1X,114,6004
+4477,66-80,1,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,5980
+4478,31-54,1,10001-20000,Asbestos,Estrie,,J1H,109,5981
+4479,31-54,1,0,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,5982
+4483,66-80,0,10001-20000,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1N,109,5986
+4487,31-54,0,0,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,5975
+4488,0,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,5976
+4547,31-54,0,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,6014
+4568,31-54,0,10001-20000,Sherbrooke,Estrie,Fleurimont,J1G,109,5889
+4573,31-54,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,5894
+4577,55-65,1,10001-20000,Sherbrooke,Estrie,Fleurimont,J1E,109,5899
+4587,0,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,5882
+4627,31-54,0,20001-30000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,5856
+4637,66-80,1,10001-20000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,5829
+4659,31-54,0,20001-30000,Montréal,Montréal,Villeray--Saint-Michel--Parc-Extension,H2P,114,5804
+4664,66-80,1,20001-30000,Lac-Mégantic,Estrie,,G6B,112,5809
+4665,0,1,0-10000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,5834
+4666,31-54,0,50001-,Sherbrooke,Estrie,Brompton,J1K,109,5855
+4701,66-80,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,5771
+4702,55-65,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,5772
+4743,31-54,0,10001-20000,Sherbrooke,Estrie,Fleurimont,J1E,109,5767
+4766,81-95,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,5716
+4793,66-80,0,0,Sherbrooke,Estrie,Jacques-Cartier,J1L,109,5768
+4851,66-80,0,10001-20000,Sherbrooke,Estrie,Fleurimont,J1E,109,5622
+4854,31-54,1,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,5615
+4923,31-54,0,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,5551
+4939,31-54,0,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,5543
+4941,66-80,0,0,Sherbrooke,Estrie,Fleurimont,J1E,109,5538
+4943,0,1,30001-50000,Magog,Estrie,,J1X,109,5525
+4944,66-80,0,10001-20000,Sherbrooke,Estrie,Fleurimont,J1E,109,5526
+4945,31-54,1,20001-30000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,5527
+4948,0,0,10001-20000,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1N,109,5537
+4982,0,0,0-10000,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1N,109,5496
+4983,31-54,0,50001-,Ascot Corner,Estrie,,J0B,109,5497
+4985,0,0,30001-50000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,5499
+5019,66-80,1,0,Sherbrooke,Estrie,Brompton,J1C,109,5449
+5040,31-54,1,30001-50000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,5433
+5065,31-54,0,20001-30000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,5431
+5071,66-80,0,0-10000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1W,114,5395
+5101,31-54,0,20001-30000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,5369
+5134,55-65,0,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,5330
+5153,66-80,1,30001-50000,Sherbrooke,Estrie,Fleurimont,J1G,109,5319
+5165,55-65,0,50001-,Sherbrooke,Estrie,Jacques-Cartier,J1L,109,5307
+5188,31-54,0,20001-30000,Sherbrooke,Estrie,Fleurimont,J1G,109,5292
+5190,66-80,1,10001-20000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,5294
+5217,55-65,0,10001-20000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1X,114,5266
+5218,0,0,0,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1M,114,5267
+5221,66-80,0,20001-30000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1T,114,5270
+5257,55-65,1,20001-30000,Sherbrooke,Estrie,Lennoxville,J1M,109,5210
+5258,31-54,1,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1K,109,5211
+5261,55-65,0,30001-50000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,5214
+5262,31-54,0,30001-50000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,5215
+5318,66-80,0,20001-30000,Québec,Capitale-Nationale,Ste-Foy-Sillery-Cap-Rouge,G1X,2,5169
+5343,31-54,0,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1K,109,5129
+5345,31-54,1,10001-20000,Magog,Estrie,,J1X,109,5131
+5397,0,\N,,Montréal,Montréal,Rosemont--La Petite-Patrie,H1X,114,5075
+5428,66-80,0,20001-30000,Lac-Mégantic,Estrie,,G6B,112,5037
+5437,31-54,0,30001-50000,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1N,109,5029
+5461,55-65,1,0-10000,Saint-Léandre,Bas-Saint-Laurent,,G0J,110,5001
+5486,31-54,0,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4989
+5522,31-54,0,30001-50000,Nantes,Estrie,,G6B,112,4965
+5526,31-54,1,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1K,109,4939
+5544,31-54,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1K,109,4941
+5546,55-65,0,10001-20000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,4943
+5579,66-80,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4893
+5583,31-54,0,50001-,Sherbrooke,Estrie,Fleurimont,J1G,109,4890
+5590,55-65,0,50001-,Sherbrooke,Estrie,Fleurimont,J1E,109,4878
+5603,31-54,0,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4855
+5604,66-80,0,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4856
+5605,31-54,1,50001-,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1N,109,4857
+5607,31-54,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4859
+5609,66-80,1,30001-50000,Sherbrooke,Estrie,Fleurimont,J1E,109,4861
+5610,66-80,0,30001-50000,North Hatley,Estrie,,J0B,109,4862
+5616,31-54,1,10001-20000,Sherbrooke,Estrie,Brompton,J1G,109,4868
+5618,31-54,0,50001-,Sherbrooke,Estrie,Fleurimont,J1G,109,4870
+5619,66-80,0,0,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4871
+5720,31-54,1,0,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4755
+5721,55-65,0,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1X,109,4756
+5728,55-65,0,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4747
+5758,81-95,0,20001-30000,Matane,Bas-Saint-Laurent,,G4W,110,4719
+5761,66-80,0,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4707
+5774,66-80,0,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4708
+5803,31-54,0,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4676
+5804,55-65,0,0-10000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,4678
+5814,31-54,1,10001-20000,Marston,Estrie,,G0Y,112,4664
+5844,55-65,0,20001-30000,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1N,109,4635
+5845,31-54,0,0-10000,Montréal,Montréal,Rosemont--La Petite-Patrie,H2S,104,4637
+5856,66-80,1,50001-,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4613
+5857,66-80,1,30001-50000,Sherbrooke,Estrie,Fleurimont,J1G,109,4614
+5866,31-54,0,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4632
+5867,55-65,0,20001-30000,Sherbrooke,Estrie,Jacques-Cartier,J1L,109,4636
+5882,31-54,0,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4608
+5898,31-54,1,10001-20000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,4591
+5912,31-54,0,50001-,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4565
+5913,31-54,1,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4566
+5953,31-54,0,10001-20000,Waterville,Estrie,,J0B,109,4525
+5959,31-54,0,10001-20000,Sherbrooke,Estrie,Fleurimont,J1H,109,4523
+5960,66-80,0,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4524
+5962,66-80,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4513
+5963,66-80,0,10001-20000,Sherbrooke,Estrie,Fleurimont,J1G,109,4514
+5964,66-80,0,10001-20000,Sherbrooke,Estrie,Brompton,J1H,109,4515
+5967,66-80,0,20001-30000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,4511
+5968,0,1,20001-30000,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1N,109,4512
+5996,0,0,10001-20000,Sherbrooke,Estrie,Fleurimont,J1E,109,4484
+6003,55-65,1,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1K,109,4471
+6005,55-65,1,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4473
+6006,0,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4474
+6008,0,0,10001-20000,Sherbrooke,Estrie,Brompton,J1C,109,4476
+6009,31-54,1,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4477
+6011,31-54,0,0,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4479
+6012,55-65,0,50001-,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4480
+6046,31-54,1,50001-,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4428
+6051,31-54,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1K,109,4421
+6054,0,1,50001-,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1N,109,4423
+6078,66-80,0,0,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,4400
+6091,66-80,0,10001-20000,Sherbrooke,Estrie,Fleurimont,J1E,109,4371
+6092,66-80,0,30001-50000,Sherbrooke,Estrie,Jacques-Cartier,J1L,109,4372
+6094,66-80,0,30001-50000,Sherbrooke,Estrie,Fleurimont,J1E,109,4374
+6107,31-54,1,10001-20000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,4368
+6117,0,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4358
+6123,0,0,20001-30000,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1N,109,4346
+6124,66-80,0,20001-30000,Sherbrooke,Estrie,Brompton,J1C,109,4348
+6125,81-95,0,20001-30000,Sherbrooke,Estrie,Fleurimont,J1G,109,4349
+6126,55-65,0,30001-50000,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1N,109,4350
+6127,66-80,0,20001-30000,Sherbrooke,Estrie,Fleurimont,J1E,109,4351
+6129,66-80,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4353
+6130,55-65,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4354
+6149,55-65,0,0-10000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1X,114,4327
+6151,55-65,0,0,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,4316
+6153,81-95,1,20001-30000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,4323
+6156,55-65,0,0-10000,Sherbrooke,Estrie,Fleurimont,J1E,109,4301
+6161,55-65,1,50001-,East Angus,Estrie,,J0B,109,4317
+6162,66-80,0,30001-50000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,4318
+6173,66-80,1,30001-50000,Sherbrooke,Estrie,Fleurimont,J1E,109,4315
+6174,0,1,50001-,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1R,109,4319
+6178,66-80,0,20001-30000,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1R,109,4304
+6186,31-54,1,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4303
+6187,66-80,0,10001-20000,Sherbrooke,Estrie,Fleurimont,J1E,109,4305
+6188,31-54,0,30001-50000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,4311
+6189,31-54,0,10001-20000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,4312
+6190,66-80,1,50001-,Sherbrooke,Estrie,Jacques-Cartier,J1L,109,4314
+6198,66-80,0,30001-50000,Aston-Jonction,Centre-du-Québec,,J1H,109,4279
+6221,31-54,0,50001-,Sherbrooke,Estrie,Jacques-Cartier,J1L,109,4247
+6222,0,1,50001-,Sherbrooke,Estrie,Jacques-Cartier,J1L,109,4248
+6223,55-65,1,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4249
+6224,31-54,0,0-10000,Montréal,Montréal,Montréal-Nord,J1H,104,4250
+6230,66-80,0,0,Sherbrooke,Estrie,Fleurimont,J1H,109,4233
+6231,0,1,10001-20000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,4237
+6232,31-54,0,10001-20000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,4240
+6233,31-54,0,10001-20000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,4241
+6249,31-54,0,50001-,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,4227
+6250,0,1,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4228
+6254,66-80,0,20001-30000,Asbestos,Estrie,,J1T,109,4222
+6268,31-54,0,10001-20000,Sherbrooke,Estrie,Lennoxville,J1J,109,4208
+6269,31-54,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4209
+6278,81-95,1,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4186
+6281,55-65,0,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4189
+6282,31-54,0,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4190
+6284,31-54,0,10001-20000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,4192
+6285,66-80,0,0,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4193
+6286,31-54,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4194
+6287,31-54,1,20001-30000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,4195
+6288,31-54,0,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4196
+6289,31-54,0,50001-,Stoke,Estrie,,J0B,109,4174
+6294,31-54,0,50001-,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4179
+6295,18-30,1,0-10000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,4180
+6308,31-54,1,10001-20000,Montréal,Montréal,Côte-des-Neiges--Notre-Dame-de-Grâce,H3V,88,4166
+6312,81-95,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1K,109,4159
+6322,66-80,0,10001-20000,Sherbrooke,Estrie,Fleurimont,J1G,109,4155
+6323,0,0,0,Sherbrooke,Estrie,Brompton,J1C,109,4156
+6330,31-54,1,10001-20000,Montréal,Montréal,Villeray--Saint-Michel--Parc-Extension,H2A,114,4142
+6335,55-65,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4141
+6338,31-54,0,20001-30000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,4131
+6342,55-65,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4135
+6343,0,0,0,Sherbrooke,Estrie,Mont-Bellevue,J1N,109,4136
+6358,31-54,0,0-10000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,4122
+6360,31-54,1,20001-30000,Sherbrooke,Estrie,Jacques-Cartier,J1H,109,4109
+6361,31-54,0,0-10000,Sherbrooke,Estrie,Jacques-Cartier,J1G,109,4110
+6362,31-54,0,0-10000,Sherbrooke,Estrie,Brompton,J1E,109,4111
+6365,66-80,0,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4114
+6366,31-54,1,50001-,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4115
+6367,66-80,0,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4116
+6390,31-54,0,0-10000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4085
+6393,31-54,1,50001-,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,4081
+6397,0,1,0,Sherbrooke,Estrie,Jacques-Cartier,J1L,109,4076
+6398,31-54,0,30001-50000,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1N,109,4077
+6399,31-54,0,50001-,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,4078
+6400,31-54,1,10001-20000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,4079
+6405,31-54,1,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4069
+6406,0,1,50001-,Sherbrooke,Estrie,Mont-Bellevue,J1G,109,4070
+6407,31-54,1,0-10000,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1W,88,4071
+6408,31-54,1,50001-,Waterville,Estrie,,J0B,109,4072
+6413,31-54,1,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4056
+6414,31-54,0,50001-,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4057
+6415,55-65,0,10001-20000,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1N,109,4058
+6416,31-54,0,50001-,Waterville,Estrie,,J0B,109,4059
+6419,0,0,0-10000,Rimouski,Bas-Saint-Laurent,,G5L,108,4062
+6430,31-54,0,0,Longueuil,Montérégie,Le Vieux-Longueuil,J4M,115,4046
+6433,66-80,0,0,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,4040
+6435,55-65,0,10001-20000,Sherbrooke,Estrie,Rock Forest--Saint-Élie--Deauville,J1N,109,4041
+6482,0,\N,,Matane,Bas-Saint-Laurent,,G4W,110,3994
+6486,31-54,0,0-10000,Montréal,Montréal,Le Plateau-Mont-Royal,H2L,88,3984
+6531,31-54,1,0-10000,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1V,88,3944
+6532,31-54,0,10001-20000,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,3945
+6539,66-80,1,10001-20000,Montréal,Montréal,Villeray--Saint-Michel--Parc-Extension,H2P,88,3930
+6569,31-54,0,10001-20000,Asbestos,Estrie,,G1X,109,3902
+6571,66-80,0,0,Sherbrooke,Estrie,Brompton,G1X,109,3904
+6572,66-80,1,0,Sherbrooke,Estrie,Brompton,G1X,109,3905
+6629,31-54,1,50001-,Rimouski,Bas-Saint-Laurent,,G5N,108,3845
+6634,31-54,0,50001-,Rimouski,Bas-Saint-Laurent,,G5L,108,3842
+6649,31-54,0,20001-30000,Québec,Capitale-Nationale,La Cité-Limoilou,G1N,2,3821
+6687,0,\N,,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,3790
+6714,31-54,0,30001-50000,Rimouski,Bas-Saint-Laurent,,G5L,108,3760
+6744,31-54,0,20001-30000,Rimouski,Bas-Saint-Laurent,,G0L,108,3735
+6762,31-54,0,20001-30000,Sherbrooke,Estrie,Mont-Bellevue,J1K,109,3716
+6819,55-65,0,30001-50000,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1W,88,3651
+6843,31-54,0,10001-20000,Québec,Capitale-Nationale,La Cité-Limoilou,G1S,2,3632
+6848,31-54,0,10001-20000,Québec,Capitale-Nationale,La Cité-Limoilou,G1J,2,3628
+6885,66-80,0,30001-50000,Québec,Capitale-Nationale,La Cité-Limoilou,G1K,2,3589
+6964,0,0,10001-20000,Québec,Capitale-Nationale,La Cité-Limoilou,G1N,2,3511
+6965,66-80,0,20001-30000,Montréal,Montréal,Villeray--Saint-Michel--Parc-Extension,H2E,114,3507
+7007,31-54,0,30001-50000,Québec,Capitale-Nationale,La Cité-Limoilou,G1K,2,3470
+7014,31-54,0,0-10000,Québec,Capitale-Nationale,La Cité-Limoilou,G1R,2,3465
+7032,18-30,0,0-10000,Québec,Capitale-Nationale,La Cité-Limoilou,G1J,2,3447
+7071,0,0,10001-20000,Sherbrooke,Estrie,Fleurimont,J1G,109,3405
+7107,0,1,10001-20000,Québec,Capitale-Nationale,Beauport,G4W,2,3365
+7174,66-80,0,20001-30000,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1W,114,3292
+7303,31-54,0,0,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1V,88,3170
+7327,0,\N,,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1V,88,2434
+7331,66-80,0,0-10000,Montréal,Montréal,Ville-Marie,H1V,88,3135
+7351,66-80,0,10001-20000,Québec,Capitale-Nationale,Beauport,G1E,2,3119
+7431,66-80,0,30001-50000,Québec,Capitale-Nationale,La Cité-Limoilou,G1K,2,3046
+7643,66-80,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,2826
+7740,31-54,0,0-10000,Québec,Capitale-Nationale,La Cité-Limoilou,G1N,2,2725
+7817,66-80,1,30001-50000,Saint-Apollinaire,Chaudière-Appalaches,,G0S,2,2647
+8021,31-54,1,10001-20000,Québec,Capitale-Nationale,La Cité-Limoilou,G1L,2,2443
+8086,31-54,0,30001-50000,Québec,Capitale-Nationale,La Cité-Limoilou,G1K,2,2376
+8361,55-65,0,0,L'Ancienne-Lorette,Capitale-Nationale,,G1E,2,2091
+8495,66-80,0,10001-20000,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1V,88,1950
+8530,31-54,1,30001-50000,Québec,Capitale-Nationale,La Cité-Limoilou,G1K,2,1914
+8550,31-54,0,20001-30000,Québec,Capitale-Nationale,La Cité-Limoilou,G1R,2,1908
+8600,31-54,0,10001-20000,Québec,Capitale-Nationale,La Cité-Limoilou,G1R,2,1850
+8697,31-54,0,0-10000,Québec,Capitale-Nationale,Ste-Foy-Sillery-Cap-Rouge,G1T,2,1754
+8802,31-54,0,10001-20000,Montréal,Montréal,Montréal-Nord,H1H,104,1648
+8845,31-54,1,0-10000,Québec,Capitale-Nationale,La Cité-Limoilou,G1K,2,1605
+8971,66-80,0,20001-30000,Québec,Capitale-Nationale,La Haute-Saint-Charles,G2B,2,1482
+8988,31-54,0,10001-20000,Québec,Capitale-Nationale,La Cité-Limoilou,G1R,2,1465
+9058,31-54,0,10001-20000,Québec,Capitale-Nationale,La Cité-Limoilou,G1J,2,1396
+9226,55-65,1,0,Québec,Capitale-Nationale,La Cité-Limoilou,G1L,2,1223
+9264,31-54,0,0-10000,Québec,Capitale-Nationale,Beauport,G1E,2,1170
+9267,31-54,1,30001-50000,Sherbrooke,Estrie,Mont-Bellevue,J1K,109,1192
+9269,31-54,0,50001-,Sherbrooke,Estrie,Mont-Bellevue,J1H,109,1168
+9298,31-54,0,10001-20000,Saint-Léonard-d'Aston,Centre-du-Québec,,J0C,2,1008
+9446,31-54,0,0-10000,Québec,Capitale-Nationale,La Cité-Limoilou,G1K,2,184
+9462,31-54,0,0,Québec,Capitale-Nationale,La Cité-Limoilou,G1K,2,118
+9467,31-54,0,0-10000,Québec,Capitale-Nationale,Ste-Foy-Sillery-Cap-Rouge,G2A,2,178
+9524,0,0,0,Québec,Capitale-Nationale,La Cité-Limoilou,G1K,2,62
+9581,55-65,1,10001-20000,Québec,Capitale-Nationale,La Cité-Limoilou,G1K,2,295
+9607,31-54,1,0-10000,Gatineau,Outaouais,,J8K,2,128
+9608,0,0,0,Québec,Capitale-Nationale,La Cité-Limoilou,G1K,2,452
+9626,0,0,0,Québec,Capitale-Nationale,La Cité-Limoilou,G1L,2,676
+9644,66-80,0,10001-20000,Québec,Capitale-Nationale,Les Rivières,G1M,2,577
+9657,66-80,1,10001-20000,Québec,Capitale-Nationale,La Cité-Limoilou,G1K,2,374
+9727,66-80,0,0-10000,Québec,Capitale-Nationale,La Cité-Limoilou,G1R,2,124
+9875,31-54,0,10001-20000,Québec,Capitale-Nationale,La Cité-Limoilou,G1R,2,321
+9893,31-54,0,10001-20000,Québec,Capitale-Nationale,La Cité-Limoilou,G1K,2,353
+9915,55-65,0,10001-20000,Saint-Laurent-de-l'Île-d'Orléans,Capitale-Nationale,,G0A,2,389
+9977,31-54,0,20001-30000,Montréal,Montréal,Verdun,H4G,88,413
+9981,66-80,1,0-10000,Sherbrooke,Estrie,Lennoxville,G1K,109,204
+9997,31-54,1,0,Québec,Capitale-Nationale,La Cité-Limoilou,G1K,2,252
+10017,55-65,0,20001-30000,Québec,Capitale-Nationale,La Cité-Limoilou,G1L,2,257
+10057,31-54,0,30001-50000,Lévis,Chaudière-Appalaches,Desjardins,G6V,2,526
+10067,31-54,1,10001-20000,Québec,Capitale-Nationale,La Cité-Limoilou,G1J,2,131
+10090,31-54,0,10001-20000,Québec,Capitale-Nationale,La Cité-Limoilou,G1K,2,100
+10106,66-80,0,10001-20000,Québec,Capitale-Nationale,La Cité-Limoilou,G1K,2,163
+10108,31-54,1,0,Montréal,Montréal,Le Plateau-Mont-Royal,H2H,88,415
+10121,31-54,0,0-10000,Québec,Capitale-Nationale,La Cité-Limoilou,G1K,2,146
+10141,55-65,0,30001-50000,Québec,Capitale-Nationale,Les Rivières,G2K,2,212
+10202,66-80,1,0,Québec,Capitale-Nationale,La Cité-Limoilou,G1R,2,495
+10214,31-54,0,0-10000,Québec,Capitale-Nationale,La Cité-Limoilou,G1K,2,324
+10272,31-54,0,20001-30000,Québec,Capitale-Nationale,La Cité-Limoilou,G1S,2,416

@@ -4,21 +4,25 @@ import os
 ## parser ##
 
 # input folder: raw csv file
-# transactions.csv and members.csv of the global network will be created in output folder 
-cmd =  'graph_parser/main.py -i=folder/path -o=folder/path' # output folder will be created if it does not exist
+# transactions.csv and members.csv of the global network will be created in output folder
+# output folder will be created if it does not exist
+cmd = 'graph_parser/main.py -i=folder/path -o=folder/path'
 os.system(cmd)
 
 ## filter ##
 
 # input folder: global network or filtered network csv's and should contain transaction.csv and members.csv
-# output folder: transactions.csv and members.csv of the filtered network will be generated  
-cmd = 'graph_filter/main.py -i=folder/path -o=folder/path --accorderie=2'
+# output folder: transactions.csv and members.csv of the filtered network will be generated
+cmd = 'graph_filter/main.py -i=folder/path -o=folder/path --accorderie_edge=2 --accorderie_node=2'
 os.system(cmd)
 
 # Date filter
-cmd = "graph_filter/main.py -i=folder/path -o=folder/path --date ':06/2010,10/2016'" # date between 06/2010 and 10/2016
-cmd = "graph_filter/main.py -i=folder/path -o=folder/path --date '>06/2010'" # date after 06/2010 
-cmd = "graph_filter/main.py -i=folder/path -o=folder/path --date '<06/2006'" # date before 06/2006
+# date between 06/2010 and 10/2016
+cmd = "graph_filter/main.py -i=folder/path -o=folder/path --date ':06/2010,10/2016'"
+# date after 06/2010
+cmd = "graph_filter/main.py -i=folder/path -o=folder/path --date '>06/2010'"
+# date before 06/2006
+cmd = "graph_filter/main.py -i=folder/path -o=folder/path --date '<06/2006'"
 os.system(cmd)
 
 ## metrics ##
@@ -36,14 +40,14 @@ cmd = 'graph_filter/report_filter.py -i=folder/path/file.xlsx -o=folder/path/fil
 os.system(cmd)
 
 ## plots ##
-# input folder: folder containing metric files. Each file should contain a sheet named "Snapshot Average Metrics"   
+# input folder: folder containing metric files. Each file should contain a sheet named "Snapshot Average Metrics"
 cmd = 'graph_plot/main.py -i=folder/path -o=folder/path/file_name.pdf'
 os.system(cmd)
 
 
 ## generator ##
-# input folder: folder containing metric files. Each file should contain a sheet named "Snapshot Average Metrics"   
+# input folder: folder containing metric files. Each file should contain a sheet named "Snapshot Average Metrics"
 cmd = 'node graph_generator/src/index.js -o "folder/path"  -u=2000 -t=2000 -sd="exp" -sp=1.5 -r=0.5 -d=0.6'
 os.system(cmd)
 
-# 
+#

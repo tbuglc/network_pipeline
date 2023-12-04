@@ -1,0 +1,577 @@
+id,age,genre,revenu,ville,region,arrondissement,adresse,accorderie,mapid
+12,31-54,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,10460
+96,66-80,1,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,10373
+97,55-65,0,30001-50000,Longueuil,Montérégie,Greenfield Park,J4V,115,10371
+98,66-80,0,50001-,Brossard,Montérégie,,J4Z,115,10370
+100,31-54,0,0-10000,Saint-Lambert,Montérégie,,J4R,115,10375
+226,31-54,0,50001-,Brossard,Montérégie,,J4W,115,10242
+259,66-80,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,10209
+392,31-54,1,30001-50000,Longueuil,Montérégie,Saint-Hubert,J4T,115,10072
+397,0,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,115,10071
+398,0,0,30001-50000,Longueuil,Montérégie,Greenfield Park,J4R,115,10073
+399,31-54,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4G,115,10083
+408,66-80,0,10001-20000,Brossard,Montérégie,,J4Z,115,10056
+419,66-80,1,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4N,115,10045
+420,66-80,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4N,115,10046
+421,66-80,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,10047
+422,55-65,0,30001-50000,Saint-Lambert,Montérégie,,J4R,115,10048
+439,0,0,30001-50000,Brossard,Montérégie,,J4X,115,10054
+445,66-80,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,115,10025
+447,55-65,1,0-10000,Longueuil,Montérégie,Greenfield Park,J4R,115,10020
+448,81-95,0,30001-50000,Longueuil,Montérégie,Saint-Hubert,J3Y,115,10021
+449,55-65,0,10001-20000,Longueuil,Montérégie,Greenfield Park,J4V,115,10022
+459,66-80,0,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4G,115,10006
+460,0,0,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,10007
+493,31-54,0,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4M,115,10003
+494,31-54,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,10004
+496,31-54,0,10001-20000,Longueuil,Montérégie,Saint-Hubert,J3Y,115,10009
+507,55-65,0,0,Longueuil,Montérégie,Le Vieux-Longueuil,J4G,115,9969
+510,31-54,0,20001-30000,Longueuil,Montérégie,Saint-Hubert,J3Y,115,9970
+511,18-30,0,20001-30000,Saint-Basile-le-Grand,Montérégie,,J3N,115,9971
+536,66-80,1,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,9933
+548,0,0,10001-20000,Boucherville,Montérégie,,J4B,115,9915
+549,55-65,1,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,9917
+550,66-80,0,30001-50000,Longueuil,Montérégie,Saint-Hubert,J4T,115,9918
+552,31-54,0,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4G,115,9930
+581,31-54,0,30001-50000,Varennes,Montérégie,,J3X,115,9878
+583,81-95,0,10001-20000,Longueuil,Montérégie,Saint-Hubert,J3Y,115,9880
+584,66-80,1,20001-30000,Chambly,Montérégie,,J3L,115,9881
+585,31-54,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,9882
+586,55-65,0,0-10000,Saint-Bruno-de-Montarville,Montérégie,,J3V,115,9883
+587,66-80,0,20001-30000,Longueuil,Montérégie,Saint-Hubert,J3Y,115,9892
+588,66-80,0,0-10000,Longueuil,Montérégie,Saint-Hubert,J4T,115,9895
+599,55-65,0,30001-50000,Longueuil,Montérégie,Greenfield Park,J4V,115,9869
+604,55-65,0,30001-50000,Saint-Jean-Baptiste,Montérégie,,J0L,115,9862
+605,66-80,0,20001-30000,Saint-Lambert,Montérégie,,J4R,115,9863
+606,31-54,0,0-10000,Saint-Bruno-de-Montarville,Montérégie,,J3V,115,9864
+612,55-65,0,30001-50000,Franklin,Montérégie,,J0S,114,9857
+636,66-80,0,20001-30000,Saint-Lambert,Montérégie,,J4R,115,9834
+638,55-65,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,9827
+639,66-80,1,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,9828
+640,31-54,1,0,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,9829
+641,31-54,0,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,9830
+642,66-80,1,50001-,Beloeil,Montérégie,,J3G,115,9831
+643,31-54,0,0-10000,La Prairie,Montérégie,,J5R,115,9832
+651,66-80,1,30001-50000,Montréal,Montréal,Montréal-Nord,H2L,114,9820
+661,31-54,0,30001-50000,Richelieu,Montérégie,,J3L,115,9798
+662,81-95,1,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,9799
+664,66-80,1,20001-30000,Candiac,Montérégie,,J5R,115,9801
+672,66-80,0,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,9797
+684,55-65,0,30001-50000,Saint-Lambert,Montérégie,,J4P,115,9785
+686,66-80,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,9787
+729,66-80,0,30001-50000,Montréal,Montréal,Ville-Marie,H2L,115,9744
+730,66-80,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4M,115,9745
+732,31-54,0,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,9747
+760,66-80,0,20001-30000,Brossard,Montérégie,,J4X,115,9708
+761,31-54,1,30001-50000,Longueuil,Montérégie,Saint-Hubert,J3Y,115,9709
+799,31-54,0,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,9670
+802,31-54,1,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,9664
+803,66-80,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4M,115,9665
+805,55-65,0,30001-50000,Longueuil,Montérégie,Saint-Hubert,J4T,115,9667
+816,66-80,0,20001-30000,Longueuil,Montérégie,Greenfield Park,J4R,115,9652
+829,66-80,0,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,115,9637
+830,55-65,0,20001-30000,Montréal,Montréal,Verdun,H4H,115,9638
+832,66-80,0,10001-20000,Longueuil,Montérégie,Saint-Hubert,J4T,115,9633
+851,66-80,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4G,115,9624
+854,31-54,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,9611
+855,66-80,0,30001-50000,Boucherville,Montérégie,,J4B,115,9612
+856,31-54,0,30001-50000,Verchères,Montérégie,,J0L,115,9613
+857,0,0,30001-50000,Longueuil,Montérégie,Saint-Hubert,J4T,115,9614
+858,55-65,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,9615
+863,31-54,1,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,9606
+875,66-80,0,20001-30000,Québec,Capitale-Nationale,La Cité-Limoilou,G1S,115,9594
+880,31-54,0,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,9588
+885,66-80,1,20001-30000,Brossard,Montérégie,,J4Z,115,9581
+886,66-80,0,20001-30000,Longueuil,Montérégie,Saint-Hubert,J4T,115,9582
+887,55-65,0,30001-50000,Longueuil,Montérégie,Greenfield Park,J4V,115,9584
+888,66-80,1,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,9585
+890,31-54,0,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,115,9587
+904,31-54,0,20001-30000,Saint-Lambert,Montérégie,,J4P,115,9565
+905,66-80,0,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,9566
+929,31-54,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,9549
+934,31-54,0,30001-50000,Richelieu,Montérégie,,J3L,115,9533
+935,31-54,0,0-10000,Saint-Amable,Montérégie,,J0L,115,9534
+937,66-80,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4N,115,9536
+938,31-54,0,0-10000,Saint-Amable,Montérégie,,J0L,115,9545
+947,31-54,0,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,115,9518
+948,55-65,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,9519
+954,31-54,0,30001-50000,Saint-Lambert,Montérégie,,J4R,115,9515
+958,81-95,0,0-10000,Saint-Bruno-de-Montarville,Montérégie,,J3V,115,9510
+959,81-95,1,0,Saint-Bruno-de-Montarville,Montérégie,,J3V,115,9511
+968,0,1,30001-50000,Brossard,Montérégie,,J4Z,115,9500
+969,66-80,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,9501
+978,66-80,0,10001-20000,Montréal,Montréal,Le Plateau-Mont-Royal,H2H,114,9492
+984,31-54,1,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,9487
+990,31-54,0,50001-,Saint-Denis-sur-Richelieu,Montérégie,,J0H,115,9479
+992,66-80,0,30001-50000,Longueuil,Montérégie,Greenfield Park,J4V,115,9481
+995,0,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4N,115,9477
+996,0,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,9478
+1003,31-54,0,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,9467
+1006,31-54,0,0-10000,Brossard,Montérégie,,J4W,115,9455
+1019,0,0,20001-30000,Brossard,Montérégie,,J4Z,115,9445
+1023,55-65,0,20001-30000,Candiac,Montérégie,,J5R,115,9448
+1026,66-80,0,20001-30000,Candiac,Montérégie,,J5R,115,9451
+1035,55-65,1,30001-50000,Saint-Jean-de-Matha,Lanaudière,,J0K,115,9434
+1036,0,0,50001-,Longueuil,Montérégie,Le Vieux-Longueuil,J4N,115,9435
+1037,55-65,1,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,9436
+1043,55-65,0,20001-30000,Brossard,Montérégie,,J4Z,115,9421
+1060,31-54,0,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,9412
+1062,0,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,9410
+1066,55-65,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,9404
+1087,66-80,0,30001-50000,Longueuil,Montérégie,Greenfield Park,J4V,115,9384
+1094,0,1,10001-20000,Longueuil,Montérégie,Greenfield Park,J4V,115,9369
+1095,31-54,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,9370
+1096,0,0,30001-50000,Brossard,Montérégie,,J4X,115,9371
+1097,66-80,0,30001-50000,Saint-Lambert,Montérégie,,J4R,115,9372
+1098,55-65,1,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,115,9373
+1099,31-54,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,9374
+1100,66-80,1,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,9375
+1101,0,0,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,9376
+1114,66-80,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4R,115,9357
+1131,31-54,0,10001-20000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1Y,114,9344
+1135,31-54,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,9330
+1136,55-65,1,0-10000,Longueuil,Montérégie,Saint-Hubert,J3Y,115,9331
+1139,55-65,0,30001-50000,Varennes,Montérégie,,J3X,115,9334
+1147,0,0,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4R,115,9320
+1149,31-54,1,30001-50000,Delson,Montérégie,,J5B,115,9322
+1151,31-54,0,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,115,9318
+1172,55-65,0,50001-,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,9294
+1173,31-54,0,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,9295
+1175,31-54,0,30001-50000,Saint-Lambert,Montérégie,,J4R,115,9297
+1176,31-54,0,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,9298
+1177,31-54,0,20001-30000,Longueuil,Montérégie,Greenfield Park,J4V,115,9299
+1178,66-80,0,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,115,9300
+1191,31-54,1,50001-,Saint-Mathieu,Montérégie,,J0L,115,9323
+1192,31-54,0,50001-,Saint-Mathieu,Montérégie,,J0L,115,9324
+1201,31-54,1,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,115,9281
+1203,31-54,0,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,115,9262
+1204,31-54,0,0-10000,Longueuil,Montérégie,Saint-Hubert,J4T,115,9263
+1205,66-80,1,10001-20000,Verchères,Montérégie,,J0L,115,9264
+1206,66-80,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,9265
+1229,31-54,0,10001-20000,Saint-Constant,Montérégie,,J5A,115,9241
+1230,31-54,0,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,9242
+1235,31-54,0,50001-,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,115,9232
+1236,31-54,0,50001-,Brossard,Montérégie,,J4Y,115,9233
+1237,66-80,0,10001-20000,Longueuil,Montérégie,Greenfield Park,J4V,115,9234
+1238,0,0,20001-30000,Longueuil,Montérégie,Saint-Hubert,J3Y,115,9235
+1239,31-54,0,50001-,Longueuil,Montérégie,Greenfield Park,J4V,115,9236
+1250,31-54,0,50001-,Saint-Lambert,Montérégie,,J4P,115,9225
+1251,31-54,0,50001-,Longueuil,Montérégie,Saint-Hubert,J3Y,115,9226
+1253,31-54,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4N,115,9228
+1254,31-54,0,0,Longueuil,Montérégie,Greenfield Park,J4V,115,9229
+1255,55-65,0,10001-20000,Longueuil,Montérégie,Saint-Hubert,J3Y,115,9230
+1261,31-54,0,30001-50000,Boucherville,Montérégie,,J4B,115,9207
+1262,81-95,0,10001-20000,Longueuil,Montérégie,Saint-Hubert,J3Y,115,9208
+1266,81-95,0,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,9206
+1285,66-80,0,20001-30000,Longueuil,Montérégie,Saint-Hubert,J3Y,115,9183
+1286,66-80,0,50001-,Brossard,Montérégie,,J4X,115,9184
+1317,55-65,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,9151
+1319,31-54,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,9153
+1329,31-54,0,50001-,Saint-Jean-sur-Richelieu,Montérégie,,J2W,115,9137
+1330,31-54,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,9138
+1348,55-65,0,20001-30000,Saint-Bruno-de-Montarville,Montérégie,,J3V,115,9120
+1382,66-80,0,10001-20000,Brossard,Montérégie,,J4W,115,9087
+1383,66-80,1,10001-20000,Longueuil,Montérégie,Greenfield Park,J4V,115,9088
+1405,66-80,1,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,9063
+1434,31-54,0,20001-30000,Longueuil,Montérégie,Greenfield Park,J4V,115,9032
+1462,0,0,20001-30000,Beloeil,Montérégie,,J3G,115,9005
+1544,0,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,8923
+1566,31-54,1,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,8901
+1567,31-54,0,10001-20000,Mercier,Montérégie,,J6R,115,8902
+1568,31-54,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,8903
+1569,31-54,0,10001-20000,Candiac,Montérégie,,J5R,115,8904
+1581,31-54,0,10001-20000,Montréal,Montréal,Villeray--Saint-Michel--Parc-Extension,H2E,114,8884
+1610,31-54,0,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,115,8849
+1611,31-54,0,10001-20000,Longueuil,Montérégie,Saint-Hubert,J3Y,115,8850
+1616,31-54,0,10001-20000,Longueuil,Montérégie,Saint-Hubert,J3Y,115,8857
+1648,66-80,0,0,Boucherville,Montérégie,,J4B,115,8821
+1669,66-80,0,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,8800
+1684,81-95,0,30001-50000,Brossard,Montérégie,,J4W,115,8784
+1685,31-54,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,8785
+1712,18-30,1,50001-,Longueuil,Montérégie,Saint-Hubert,J3Y,115,8748
+1713,66-80,1,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,8749
+1739,31-54,0,50001-,Montréal,Montréal,Côte-des-Neiges--Notre-Dame-de-Grâce,H3S,114,8725
+1747,55-65,0,0-10000,Longueuil,Montérégie,Greenfield Park,J4V,115,8715
+1748,0,0,50001-,Longueuil,Montérégie,Saint-Hubert,J3Y,115,8716
+1750,31-54,0,0-10000,Brossard,Montérégie,,J4Y,115,8718
+1771,66-80,0,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,8701
+1783,31-54,0,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,8683
+1786,55-65,1,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,8670
+1788,66-80,0,30001-50000,Boucherville,Montérégie,,J4B,115,8672
+1803,31-54,0,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,8676
+1810,31-54,0,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,8659
+1841,66-80,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,115,8625
+1842,66-80,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,8626
+1866,55-65,0,0-10000,Delson,Montérégie,,J5B,115,8604
+1867,66-80,1,30001-50000,Saint-Lambert,Montérégie,,J4S,115,8605
+1868,31-54,0,0-10000,Piedmont,Laurentides,,J0R,115,8606
+1869,66-80,1,10001-20000,Longueuil,Montérégie,Greenfield Park,J3Y,115,8607
+1885,66-80,1,30001-50000,Montréal,Montréal,Rosemont--La Petite-Patrie,H2S,114,8588
+1890,66-80,1,10001-20000,Saint-Bruno-de-Montarville,Montérégie,,J3V,115,8576
+1891,66-80,0,10001-20000,Saint-Bruno-de-Montarville,Montérégie,,J3V,115,8577
+1895,66-80,0,30001-50000,Montréal,Montréal,Rosemont--La Petite-Patrie,H2G,114,8558
+1927,55-65,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,8537
+1931,66-80,0,10001-20000,Mercier,Montérégie,,J6R,115,8528
+1932,31-54,0,50001-,Longueuil,Montérégie,Saint-Hubert,J3Y,115,8529
+1933,31-54,0,50001-,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,8530
+1934,66-80,0,50001-,Saint-Lambert,Montérégie,,J4S,115,8531
+1935,66-80,0,20001-30000,Saint-Lambert,Montérégie,,J4S,115,8532
+1936,31-54,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,8533
+1937,18-30,1,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,8534
+1978,66-80,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,8483
+1979,66-80,1,50001-,Boucherville,Montérégie,,J4B,115,8484
+1980,66-80,0,30001-50000,Longueuil,Montérégie,Saint-Hubert,J3Y,115,8485
+1981,81-95,0,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,8486
+1982,66-80,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,115,8487
+1983,66-80,0,30001-50000,Saint-Cyprien-de-Napierville,Montérégie,,J0J,115,8488
+2011,31-54,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4P,115,8447
+2012,66-80,0,30001-50000,Aston-Jonction,Centre-du-Québec,,J4J,115,8448
+2013,66-80,1,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,8449
+2015,31-54,0,50001-,Longueuil,Montérégie,Saint-Hubert,J3Y,115,8450
+2018,31-54,1,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,8453
+2020,55-65,0,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4G,115,8455
+2060,31-54,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,8402
+2062,55-65,0,0-10000,Longueuil,Montérégie,Greenfield Park,J4V,115,8404
+2065,31-54,0,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4M,115,8407
+2066,66-80,0,10001-20000,Napierville,Montérégie,,J0J,115,8408
+2101,66-80,0,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,8361
+2102,66-80,0,50001-,Saint-Hyacinthe,Montérégie,,J2S,115,8363
+2103,31-54,0,20001-30000,Saint-Jean-sur-Richelieu,Montérégie,,J2X,115,8364
+2104,0,0,10001-20000,Longueuil,Montérégie,Saint-Hubert,J3Y,115,8380
+2105,31-54,0,10001-20000,McMasterville,Montérégie,,J3G,115,8381
+2106,0,0,10001-20000,Saint-Lambert,Montérégie,,J4P,115,8383
+2134,81-95,1,10001-20000,Longueuil,Montérégie,Greenfield Park,J4K,115,8335
+2135,55-65,0,20001-30000,Varennes,Montérégie,,J3X,115,8336
+2136,31-54,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,8337
+2137,31-54,1,30001-50000,Longueuil,Montérégie,Greenfield Park,J4H,115,8338
+2138,31-54,1,30001-50000,Montréal,Montréal,Rivière-des-Prairies--Pointe-aux-Trembles,H1E,115,8339
+2145,66-80,0,20001-30000,Longueuil,Montérégie,Saint-Hubert,J3Y,115,8316
+2146,66-80,0,0,Longueuil,Montérégie,Greenfield Park,J4V,115,8317
+2147,66-80,0,20001-30000,Delson,Montérégie,,J5B,115,8318
+2148,31-54,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,8319
+2150,66-80,0,20001-30000,Delson,Montérégie,,J4B,115,8344
+2160,0,1,10001-20000,Longueuil,Montérégie,Greenfield Park,J4V,115,8305
+2161,66-80,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4M,115,8306
+2162,66-80,0,50001-,Montréal,Montréal,Verdun,H3E,115,8307
+2185,31-54,0,0,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,8275
+2186,66-80,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,8276
+2226,55-65,1,20001-30000,Marieville,Montérégie,,J3M,115,8240
+2231,31-54,0,20001-30000,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1V,88,8232
+2234,55-65,1,30001-50000,Longueuil,Montérégie,Saint-Hubert,J4T,115,8229
+2251,66-80,1,30001-50000,Saint-Hyacinthe,Montérégie,,J2R,115,8211
+2253,66-80,0,30001-50000,Verchères,Montérégie,,J0L,115,8213
+2254,31-54,0,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,8214
+2255,66-80,0,0,Longueuil,Montérégie,Le Vieux-Longueuil,J4G,115,8215
+2260,66-80,0,50001-,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,115,8210
+2291,31-54,0,10001-20000,Longueuil,Montérégie,Saint-Hubert,J4T,115,8173
+2316,81-95,1,0,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,8149
+2317,55-65,0,0,Longueuil,Montérégie,Le Vieux-Longueuil,J4G,115,8150
+2318,55-65,1,30001-50000,Sainte-Catherine,Montérégie,,J5C,115,8151
+2319,66-80,0,50001-,Brossard,Montérégie,,J4Z,115,8152
+2322,0,0,0,Longueuil,Montérégie,Saint-Hubert,J4T,115,8139
+2352,0,0,10001-20000,Saint-Lambert,Montérégie,,J4P,115,8104
+2360,55-65,0,50001-,Montréal,Montréal,Anjou,H1M,114,8092
+2373,96-150,0,20001-30000,Longueuil,Montérégie,Saint-Hubert,J3Y,115,8081
+2383,66-80,0,0-10000,Longueuil,Montérégie,Saint-Hubert,J3Y,115,8082
+2384,81-95,0,30001-50000,Saint-Lambert,Montérégie,,J4R,115,8083
+2385,55-65,0,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,8084
+2419,55-65,0,0,Longueuil,Montérégie,Saint-Hubert,J3Y,115,8038
+2421,31-54,0,50001-,Longueuil,Montérégie,Greenfield Park,J4V,115,8040
+2451,66-80,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,8008
+2453,81-95,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,8014
+2458,18-30,0,10001-20000,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1W,113,8001
+2505,66-80,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,7971
+2544,66-80,0,20001-30000,Brossard,Montérégie,,J4Z,115,7904
+2545,55-65,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,7905
+2546,66-80,1,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,115,7906
+2547,81-95,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,115,7907
+2548,66-80,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,7908
+2549,55-65,0,0-10000,Saint-Lambert,Montérégie,,J4P,115,7909
+2552,66-80,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,7912
+2554,55-65,0,50001-,Beloeil,Montérégie,,J3G,115,7914
+2555,66-80,1,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,7915
+2590,66-80,0,30001-50000,Montréal,Montréal,Rosemont--La Petite-Patrie,H2G,114,7870
+2601,55-65,0,0-10000,Longueuil,Montérégie,Saint-Hubert,J3Y,115,7858
+2602,0,1,30001-50000,Boucherville,Montérégie,,J4B,115,7859
+2603,0,0,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,7860
+2604,66-80,0,20001-30000,Longueuil,Montérégie,Greenfield Park,J4V,115,7861
+2610,66-80,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,115,7851
+2611,66-80,0,20001-30000,Brossard,Montérégie,,J4Z,115,7852
+2630,66-80,1,10001-20000,Saint-Bruno-de-Montarville,Montérégie,,J3V,115,7836
+2631,66-80,1,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,7819
+2632,0,1,30001-50000,Saint-Bruno-de-Montarville,Montérégie,,J3V,115,7820
+2633,55-65,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4M,115,7821
+2634,66-80,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,7822
+2635,66-80,0,30001-50000,Longueuil,Montérégie,Saint-Hubert,J3Y,115,7823
+2637,66-80,1,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,7825
+2638,31-54,0,10001-20000,Longueuil,Montérégie,Greenfield Park,J4V,115,7826
+2640,66-80,0,50001-,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,7828
+2695,66-80,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,7767
+2699,31-54,0,50001-,Longueuil,Montérégie,Greenfield Park,J4V,115,7763
+2700,55-65,1,0,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,7764
+2701,55-65,0,0,Beloeil,Montérégie,,J3N,115,7765
+2702,66-80,0,50001-,Longueuil,Montérégie,Le Vieux-Longueuil,J4N,115,7766
+2708,31-54,0,0-10000,Acton Vale,Montérégie,,J0H,115,7761
+2709,0,0,30001-50000,Contrecoeur,Montérégie,,J0C,115,7762
+2744,55-65,0,30001-50000,Longueuil,Montérégie,Saint-Hubert,J4T,115,7705
+2781,31-54,0,0-10000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1Y,114,7668
+2783,31-54,0,30001-50000,Montréal,Montréal,Le Plateau-Mont-Royal,H2J,114,7670
+2784,66-80,0,10001-20000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1X,114,7671
+2805,81-95,0,20001-30000,Ragueneau,Côte-Nord,,G0H,117,7657
+2847,31-54,1,10001-20000,Montréal,Montréal,Villeray--Saint-Michel--Parc-Extension,H2R,114,7607
+2864,66-80,0,20001-30000,Brossard,Montérégie,,J4W,115,7601
+2865,55-65,0,50001-,Saint-Lambert,Montérégie,,J4P,115,7602
+2923,66-80,1,30001-50000,Longueuil,Montérégie,Saint-Hubert,J3Y,115,7528
+2924,31-54,0,30001-50000,Saint-Lambert,Montérégie,,J4R,115,7529
+2925,31-54,0,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,7530
+2926,31-54,1,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,115,7531
+2927,66-80,0,0-10000,Brossard,Montérégie,,J4W,115,7532
+2980,66-80,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4N,115,7486
+2981,31-54,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4G,115,7487
+3054,66-80,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,7412
+3058,31-54,0,50001-,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,7407
+3090,66-80,1,10001-20000,Saint-Jérôme,Laurentides,,J7Y,114,7370
+3117,66-80,1,0,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,7349
+3132,31-54,1,0-10000,Montréal,Montréal,Rosemont--La Petite-Patrie,H2S,114,7334
+3156,31-54,1,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,7331
+3157,31-54,0,30001-50000,Saint-Charles-sur-Richelieu,Montérégie,,J0H,115,7332
+3173,31-54,0,50001-,Montréal,Montréal,Rosemont--La Petite-Patrie,H1Y,114,7287
+3174,66-80,0,10001-20000,Wotton,Estrie,,J0A,114,7288
+3190,55-65,1,50001-,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,115,7294
+3191,66-80,1,0-10000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1Y,114,7261
+3230,55-65,0,0-10000,Longueuil,Montérégie,Saint-Hubert,J3Y,115,7239
+3249,31-54,0,50001-,Val-David,Laurentides,,J0T,115,7208
+3299,81-95,0,30001-50000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1T,114,7158
+3300,66-80,0,10001-20000,Montréal,Montréal,Anjou,H1M,114,7160
+3301,55-65,0,30001-50000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1W,114,7161
+3327,66-80,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,7159
+3328,31-54,0,0-10000,Brossard,Montérégie,,J4W,115,7162
+3367,55-65,0,0-10000,Longueuil,Montérégie,Saint-Hubert,J3Y,115,7113
+3392,66-80,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,115,7070
+3393,66-80,0,30001-50000,Lac-Brome,Montérégie,,J0E,115,7071
+3394,31-54,0,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,115,7072
+3395,31-54,0,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,115,7073
+3402,31-54,1,50001-,Longueuil,Montérégie,Saint-Hubert,J3Y,115,7080
+3419,31-54,0,30001-50000,Baie-Comeau,Côte-Nord,,G5C,117,7054
+3441,55-65,0,0-10000,Granby,Montérégie,,J2G,120,7018
+3449,0,0,20001-30000,Montréal,Montréal,Verdun,H3E,114,7026
+3465,66-80,0,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,115,7012
+3467,31-54,1,0-10000,Brossard,Montérégie,,J4Y,115,7015
+3477,55-65,0,10001-20000,Montréal,Montréal,Montréal-Nord,H1H,104,7003
+3504,31-54,0,50001-,Longueuil,Montérégie,Le Vieux-Longueuil,J4M,115,6992
+3519,66-80,1,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4M,115,6968
+3609,31-54,1,50001-,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,6862
+3610,66-80,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,115,6863
+3611,66-80,1,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,6864
+3621,55-65,0,0-10000,Montréal,Montréal,Villeray--Saint-Michel--Parc-Extension,H2A,114,6833
+3631,81-95,0,20001-30000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1Y,114,6843
+3731,66-80,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,6746
+3746,31-54,0,30001-50000,Chambly,Montérégie,,J3L,115,6732
+3762,55-65,1,50001-,Montréal,Montréal,Montréal-Nord,H1H,104,6706
+3769,66-80,1,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,6718
+3780,66-80,0,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4N,115,6716
+3781,66-80,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4N,115,6717
+3821,31-54,0,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,6636
+3844,66-80,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,115,6633
+3845,66-80,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,6634
+3852,31-54,0,20001-30000,Montréal,Montréal,Villeray--Saint-Michel--Parc-Extension,H2P,114,6615
+3858,66-80,0,10001-20000,Montréal,Montréal,Ahuntsic-Cartierville,H1H,104,6608
+3878,55-65,0,10001-20000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1X,114,6586
+3885,0,0,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,6583
+3886,66-80,0,10001-20000,Saint-Bruno-de-Montarville,Montérégie,,J3V,115,6584
+3891,31-54,0,10001-20000,Montréal,Montréal,Rosemont--La Petite-Patrie,H2G,114,6548
+3896,55-65,0,0-10000,Montréal,Montréal,Le Plateau-Mont-Royal,H1W,114,6553
+3901,31-54,1,50001-,Sainte-Thérèse,Laurentides,,J7E,114,6558
+3912,66-80,1,10001-20000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1X,114,6569
+3921,55-65,0,0-10000,Montréal,Montréal,Montréal-Nord,H1G,113,6572
+3928,66-80,0,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,6582
+3958,55-65,0,20001-30000,Saint-Bruno-de-Montarville,Montérégie,,J3V,115,6534
+3972,31-54,1,30001-50000,Boucherville,Montérégie,,J4B,115,6495
+3989,66-80,0,10001-20000,Montréal,Montréal,Le Plateau-Mont-Royal,H2V,114,6476
+4009,31-54,0,0-10000,Montréal,Montréal,Montréal-Nord,H1H,104,6459
+4017,55-65,1,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,6465
+4022,18-30,1,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,6443
+4062,31-54,0,0-10000,Saint-Hyacinthe,Montérégie,,J2T,115,6672
+4076,0,1,10001-20000,Baie-Comeau,Côte-Nord,,G4Z,117,6402
+4091,31-54,1,30001-50000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1X,114,6367
+4122,55-65,1,10001-20000,Brossard,Montérégie,,J4W,115,6349
+4132,55-65,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,6338
+4146,66-80,0,20001-30000,Pointe-aux-Outardes,Côte-Nord,,G0H,117,6322
+4167,31-54,0,0,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,6301
+4169,66-80,0,10001-20000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1X,114,6283
+4171,66-80,0,10001-20000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1X,114,6285
+4172,81-95,0,10001-20000,Montréal,Montréal,Rosemont--La Petite-Patrie,H2G,114,6286
+4239,0,0,30001-50000,Longueuil,Montérégie,Greenfield Park,J4V,115,6223
+4244,55-65,1,50001-,Baie-Comeau,Côte-Nord,,G4Z,117,6218
+4260,66-80,1,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4N,115,6215
+4271,31-54,1,30001-50000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1X,114,6184
+4318,55-65,0,50001-,Montréal-Est,Montréal,,H1L,117,6153
+4325,0,\N,,Baie-Comeau,Côte-Nord,,G4Z,117,6146
+4334,31-54,1,10001-20000,Montréal,Montréal,Le Plateau-Mont-Royal,H1H,114,6136
+4427,31-54,0,20001-30000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1X,114,6038
+4433,31-54,1,10001-20000,Montréal,Montréal,Rosemont--La Petite-Patrie,H2G,114,6044
+4490,31-54,0,10001-20000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1Y,114,5953
+4510,66-80,0,0-10000,Saint-Lambert,Montérégie,,J4H,115,5952
+4528,55-65,0,10001-20000,Saint-Jean-Baptiste,Montérégie,,J0L,115,5947
+4534,31-54,1,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,115,5934
+4535,55-65,1,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,5935
+4539,66-80,0,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4N,115,5936
+4540,66-80,1,30001-50000,Saint-Casimir,Capitale-Nationale,,G0A,111,5937
+4558,66-80,0,10001-20000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1X,114,5916
+4560,66-80,0,10001-20000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1X,114,5918
+4578,66-80,1,20001-30000,Candiac,Montérégie,,J5R,115,5908
+4579,31-54,0,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,5909
+4581,31-54,0,10001-20000,Québec,Capitale-Nationale,La Cité-Limoilou,G1S,2,5885
+4611,55-65,0,10001-20000,Terrebonne,Lanaudière,,J6W,104,5863
+4612,55-65,1,0,Montréal,Montréal,Rosemont--La Petite-Patrie,H1Y,114,5864
+4629,66-80,0,0-10000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1X,114,5838
+4638,31-54,1,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,5830
+4640,66-80,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,5832
+4657,55-65,0,10001-20000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1S,114,5802
+4659,31-54,0,20001-30000,Montréal,Montréal,Villeray--Saint-Michel--Parc-Extension,H2P,114,5804
+4660,66-80,1,30001-50000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1Y,114,5805
+4667,66-80,1,10001-20000,Longueuil,Montérégie,Greenfield Park,J4V,115,5813
+4668,66-80,0,10001-20000,Longueuil,Montérégie,Greenfield Park,J4P,115,5814
+4669,66-80,0,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,5815
+4672,31-54,1,10001-20000,Brossard,Montérégie,,J4Z,115,5797
+4707,55-65,0,30001-50000,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1N,88,5758
+4712,31-54,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,5762
+4721,66-80,1,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,5745
+4722,0,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,5746
+4724,0,1,10001-20000,Westmount,Montréal,,H3W,88,5748
+4725,31-54,0,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,115,5749
+4753,55-65,0,20001-30000,Victoriaville,Centre-du-Québec,,G6P,114,5703
+4768,55-65,0,10001-20000,Montréal,Montréal,Rosemont--La Petite-Patrie,H2S,114,5700
+4773,18-30,0,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,5698
+4781,55-65,0,50001-,Saint-Mathias-sur-Richelieu,Montérégie,,J3L,115,5693
+4782,55-65,0,50001-,Longueuil,Montérégie,Le Vieux-Longueuil,J4M,115,5694
+4796,,1,0-10000,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1V,88,5674
+4813,81-95,0,20001-30000,Longueuil,Montérégie,Saint-Hubert,J3Y,115,5662
+4820,55-65,1,50001-,Cowansville,Montérégie,,J2K,115,5663
+4826,66-80,0,10001-20000,Montréal,Montréal,Ahuntsic-Cartierville,H2M,114,5640
+4833,66-80,1,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,5647
+4835,66-80,1,20001-30000,Chambly,Montérégie,,J3L,115,5654
+4855,66-80,1,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,5616
+4856,66-80,0,10001-20000,Longueuil,Montérégie,Greenfield Park,J4V,115,5617
+4857,66-80,0,0-10000,Longueuil,Montérégie,Greenfield Park,J4V,115,5618
+4858,31-54,0,30001-50000,Laval,Laval,,H7M,88,5619
+4860,18-30,0,10001-20000,Otterburn Park,Montérégie,,J3H,115,5620
+4861,66-80,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,5603
+4862,66-80,1,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,5604
+4864,55-65,1,50001-,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,5606
+4865,55-65,0,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,5607
+4881,31-54,0,0-10000,Longueuil,Montérégie,Saint-Hubert,J3Y,115,5591
+4883,81-95,1,0,Brossard,Montérégie,,J4W,115,5593
+4884,0,1,0,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,5594
+4885,66-80,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,5595
+4886,55-65,1,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,5596
+4887,31-54,0,50001-,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,5600
+4890,31-54,1,50001-,Brossard,Montérégie,,J4Z,115,5585
+4891,66-80,1,0,Winneway,Abitibi-Témiscamingue,,H1T,113,5577
+4929,55-65,0,50001-,Saint-Bruno-de-Montarville,Montérégie,,J3V,115,5549
+4953,31-54,0,10001-20000,Rimouski,Bas-Saint-Laurent,,G5L,108,5521
+4981,31-54,0,0-10000,Montréal,Montréal,Rosemont--La Petite-Patrie,H2G,114,5495
+4987,31-54,0,50001-,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,5479
+4988,31-54,0,50001-,Brossard,Montérégie,,J4Z,115,5480
+5003,31-54,1,50001-,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,5481
+5014,31-54,0,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,115,5465
+5052,66-80,0,20001-30000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1Y,114,5423
+5058,66-80,1,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,5402
+5079,31-54,0,50001-,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,5401
+5150,31-54,0,10001-20000,Québec,Capitale-Nationale,La Cité-Limoilou,G1H,2,5328
+5173,31-54,0,30001-50000,Verchères,Montérégie,,J0L,115,5305
+5178,31-54,0,10001-20000,Montréal,Montréal,Rosemont--La Petite-Patrie,H2S,114,5282
+5192,0,\N,,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,115,5296
+5205,31-54,1,50001-,Laval,Laval,,H1X,114,5245
+5212,31-54,0,50001-,Laval,Laval,,H7V,114,5260
+5218,0,0,0,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1M,114,5267
+5221,66-80,0,20001-30000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1T,114,5270
+5253,55-65,1,30001-50000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1Y,114,5206
+5283,66-80,0,10001-20000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1Y,114,5141
+5287,55-65,1,50001-,Montréal,Montréal,Ahuntsic-Cartierville,H2B,104,5145
+5298,0,1,0,Boucherville,Montérégie,,J4B,115,5183
+5301,31-54,0,30001-50000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1Y,114,5186
+5315,0,0,50001-,Otterburn Park,Montérégie,,J3H,115,5159
+5387,55-65,0,50001-,Montréal,Montréal,Verdun,H1A,104,5082
+5397,0,\N,,Montréal,Montréal,Rosemont--La Petite-Patrie,H1X,114,5075
+5450,55-65,0,50001-,Montréal,Montréal,Verdun,H1H,104,2149
+5740,31-54,1,10001-20000,Bolton-Est,Estrie,,J0E,114,4732
+5837,66-80,1,0,Montréal,Montréal,Saint-Léonard,H1R,88,4640
+5849,66-80,1,0-10000,Montréal,Montréal,Saint-Léonard,H1R,88,4629
+5923,0,1,0-10000,Montréal,Montréal,Ahuntsic-Cartierville,H2C,104,4558
+6141,66-80,0,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,4334
+6149,55-65,0,0-10000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1X,114,4327
+6206,66-80,1,0-10000,Montréal,Montréal,Ahuntsic-Cartierville,H3M,104,4271
+6257,31-54,0,50001-,Montréal,Montréal,Le Plateau-Mont-Royal,H2J,115,4212
+6258,31-54,1,30001-50000,Montréal,Montréal,Le Plateau-Mont-Royal,H2J,115,4213
+6359,31-54,0,10001-20000,Montréal,Montréal,Ahuntsic-Cartierville,H4N,104,4123
+6400,31-54,1,10001-20000,Sherbrooke,Estrie,Jacques-Cartier,J1J,109,4079
+6402,66-80,1,10001-20000,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1A,88,4066
+6430,31-54,0,0,Longueuil,Montérégie,Le Vieux-Longueuil,J4M,115,4046
+6443,66-80,0,50001-,Longueuil,Montérégie,Le Vieux-Longueuil,J4M,115,4029
+6469,31-54,1,50001-,Montréal,Montréal,Ahuntsic-Cartierville,H3N,115,4000
+6472,81-95,0,50001-,Longueuil,Montérégie,Le Vieux-Longueuil,J4K,88,4003
+6485,31-54,1,10001-20000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1T,114,3983
+6500,31-54,0,0,Montréal,Montréal,Ahuntsic-Cartierville,H1W,88,3976
+6511,0,1,30001-50000,Montréal,Montréal,Le Sud-Ouest,H4C,88,3968
+6539,66-80,1,10001-20000,Montréal,Montréal,Villeray--Saint-Michel--Parc-Extension,H2P,88,3930
+6644,31-54,0,10001-20000,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1V,88,3830
+6658,31-54,0,20001-30000,Montréal,Montréal,Rosemont--La Petite-Patrie,H2S,104,3814
+6671,0,0,10001-20000,Montréal,Montréal,Montréal-Nord,H1H,104,3794
+6694,31-54,0,10001-20000,Montréal,Montréal,Le Plateau-Mont-Royal,H2X,114,3785
+6800,66-80,0,0,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1V,88,3671
+6807,31-54,0,10001-20000,Montréal,Montréal,Montréal-Nord,H1H,104,3668
+6841,66-80,1,0,Montréal,Montréal,Montréal-Nord,H1G,104,3635
+6858,66-80,0,0-10000,Montréal,Montréal,Ahuntsic-Cartierville,H2M,104,3608
+6937,55-65,1,0,Montréal,Montréal,Côte-des-Neiges--Notre-Dame-de-Grâce,H3W,88,3540
+6942,31-54,0,20001-30000,Montréal,Montréal,Rosemont--La Petite-Patrie,H2E,114,3533
+6947,66-80,0,10001-20000,Montréal,Montréal,Montréal-Nord,H1H,104,3528
+7053,55-65,0,0-10000,Longueuil,Montérégie,Le Vieux-Longueuil,J4R,104,3427
+7174,66-80,0,20001-30000,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1W,114,3292
+7180,66-80,1,20001-30000,Montréal,Montréal,Rosemont--La Petite-Patrie,H2S,104,3284
+7199,55-65,1,10001-20000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1Y,114,3273
+7210,81-95,1,10001-20000,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1N,114,3251
+7235,66-80,0,10001-20000,Montréal,Montréal,Rosemont--La Petite-Patrie,H2S,88,3241
+7248,31-54,0,30001-50000,Montréal,Montréal,Le Plateau-Mont-Royal,H2J,88,3223
+7249,55-65,1,50001-,Chambly,Montérégie,,J3L,113,3224
+7293,55-65,1,20001-30000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1X,88,3180
+7301,0,0,10001-20000,Montréal,Montréal,Le Sud-Ouest,H4C,88,3168
+7326,0,0,0,Montréal,Montréal,Montréal-Nord,H1H,88,927
+7327,0,\N,,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1V,88,2434
+7328,66-80,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4H,115,3144
+7331,66-80,0,0-10000,Montréal,Montréal,Ville-Marie,H1V,88,3135
+7367,66-80,1,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,H0H,115,3101
+7380,66-80,0,0-10000,Montréal,Montréal,Rosemont--La Petite-Patrie,H1Y,114,3089
+7381,66-80,0,50001-,Montréal,Montréal,Le Plateau-Mont-Royal,H2J,114,3090
+7398,31-54,0,50001-,Montréal,Montréal,Rosemont--La Petite-Patrie,H2E,114,3072
+7400,66-80,1,20001-30000,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1N,114,3074
+7414,66-80,1,10001-20000,Montréal,Montréal,Le Plateau-Mont-Royal,H2J,88,3060
+7418,31-54,0,30001-50000,Sainte-Thérèse,Laurentides,,J7E,104,3056
+7488,55-65,0,30001-50000,Longueuil,Montérégie,Saint-Hubert,J3Y,115,2984
+7555,66-80,0,10001-20000,Montréal,Montréal,Anjou,H1M,114,2912
+7571,66-80,0,0,Longueuil,Montérégie,Greenfield Park,J4N,115,2901
+7582,66-80,1,30001-50000,Montréal,Montréal,Rosemont--La Petite-Patrie,J1G,114,2887
+7610,66-80,0,30001-50000,Estérel,Laurentides,,J0T,104,2885
+7624,55-65,1,10001-20000,Montréal,Montréal,Villeray--Saint-Michel--Parc-Extension,H2E,88,2841
+7643,66-80,0,10001-20000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,2826
+7696,66-80,0,20001-30000,Laval,Laval,,H7X,104,2774
+7708,31-54,0,30001-50000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,2763
+7805,55-65,0,10001-20000,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1V,114,2662
+7807,0,\N,,Montréal,Montréal,Montréal-Nord,H1H,104,2659
+7833,55-65,1,20001-30000,Montréal,Montréal,Ville-Marie,H2L,88,2630
+8060,66-80,0,0,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1N,88,2397
+8427,66-80,0,10001-20000,Montréal,Montréal,Ahuntsic-Cartierville,H3L,104,2027
+8440,31-54,0,50001-,Longueuil,Montérégie,Le Vieux-Longueuil,J4L,88,2014
+8467,55-65,0,10001-20000,Montréal,Montréal,Rivière-des-Prairies--Pointe-aux-Trembles,H1E,113,1987
+8502,66-80,0,50001-,Montréal,Montréal,Montréal-Nord,H1H,104,1943
+8559,66-80,0,10001-20000,Montréal,Montréal,Montréal-Nord,H1H,104,1892
+8619,55-65,0,10001-20000,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1X,104,1827
+8633,55-65,1,10001-20000,Montréal,Montréal,Rosemont--La Petite-Patrie,H2G,114,1816
+8869,31-54,1,50001-,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1W,88,1585
+8934,81-95,0,0,Montréal,Montréal,Mercier--Hochelaga-Maisonneuve,H1V,88,1518
+9214,31-54,1,20001-30000,Trois-Rivières,Mauricie,Pointe du Lac,G9B,86,1239
+9251,31-54,0,20001-30000,Longueuil,Montérégie,Le Vieux-Longueuil,J4J,115,1178
+9333,55-65,0,0-10000,Montréal,Montréal,Montréal-Nord,H1H,104,952
+9471,81-95,0,30001-50000,Trois-Rivières,Mauricie,Trois-Rivières Centre,G8Y,92,1092
+10126,66-80,0,10001-20000,Beauceville,Chaudière-Appalaches,,G5X,104,612
+10277,66-80,1,20001-30000,Québec,Capitale-Nationale,Ste-Foy-Sillery-Cap-Rouge,G1S,2,677

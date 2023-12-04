@@ -6,7 +6,7 @@ import json
 from graph_loader import data_loader, load_accorderie_network
 from snapshot_generator import create_snapshots
 from utils import get_start_and_end_date,  add_sheet_to_xlsx, create_xlsx_file, save_csv_file, accorderies
-from metrics import graph_novelty, super_stars_count, get_avg_in_out_degree, get_avg_in_out_disbalance, get_avg_weighted_in_out_degree, get_unique_edges_vs_total, node_attribute_variance
+from metrics import graph_novelty, growth_rate, disparity, super_stars_count, get_avg_in_out_degree, get_avg_in_out_disbalance, get_avg_weighted_in_out_degree, get_unique_edges_vs_total, node_attribute_variance, compute_blau_index
 # accept input folder
 from collections import OrderedDict
 from matplotlib.backends.backend_pdf import PdfPages
@@ -17,6 +17,55 @@ from matplotlib.backends.backend_pdf import PdfPages
 from dateutil import parser
 import igraph as ig
 from matplotlib.colors import Normalize, to_hex
+import textwrap
+from cycler import cycler
+
+# num_colors = 30
+# colormap = plt.cm.magma  # Using the viridis colormap
+# colors = [colormap(i) for i in np.linspace(0, 1, num_colors)]
+colors = [
+    "#E91E63",
+    "#000000",
+    "#1616C2",
+    "#F4F48F",
+    "#28cf81",
+    "#00FFFF",
+    "#FA3600",
+    "#AA00FF",
+    "#03612e",
+    "#B0C4DE",
+    "#8B0000",
+    "#FFC400",
+    "#EB00FF",
+    "#7FFF00",
+    "#6b4dbf",
+    "#CD853F",
+    "#00AAFF",
+    "#20B2AA",
+    "#ff0080",
+    "#B0E0E6",
+    "#e3ff2f",
+    "#102c49",
+    "#2F4F4F",
+    "#5F9EA0",
+    "#4682B4",
+    "#FFDEAD",
+    "#D2691E",
+    "#CA1A30",
+    "#00FFAA",
+    "#F0E68C",
+]
+
+custom_cycler = cycler(color=colors)
+plt.rc('axes', prop_cycle=custom_cycler)
+
+
+def wrap_labels(labels, width):
+    """Wrap labels at specified width."""
+    wrapped_labels = []
+    for label in labels:
+        wrapped_labels.append('\n'.join(textwrap.wrap(label, width)))
+    return wrapped_labels
 
 
 def compute_bias_metrics(net_ids=[], alias=[], s_date='', e_date='', snapshot_size=365, super_star_threshold=.5):
@@ -40,30 +89,63 @@ def compute_bias_metrics(net_ids=[], alias=[], s_date='', e_date='', snapshot_si
     # result["Weighted Scatter"] = {
     #     "plt": "scatter", "data": [], "scale": prob_scale}
 
-    result["Node Novelty"] = {"plt": "plot", "data": [], "scale": prob_scale}
+    result["Node Novelty"] = {"plt": "plot",
+                              "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
 
     result["Weighted Node Novelty"] = {
-        "plt": "plot", "data": [], "scale": prob_scale}
+        "plt": "plot", "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
 
-    result["Edge Novelty"] = {"plt": "plot", "data": [], "scale": prob_scale}
-    result["Interactions Trend"] = {
-        "plt": "plot", "data": [], "scale": prob_scale}
-    result["In-Out Degree"] = {"plt": "bar", "data": [], "scale": prob_scale}
+    result["Edge Novelty"] = {"plt": "plot",
+                              "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+    result["Number of Interactions"] = {
+        "plt": "plot", "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+
+    result["In-Out Degree"] = {"plt": "bar",
+                               "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+    result["In-Out Degree Box"] = {"plt": "box",
+                                   "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+    result["In-Out Degree Line"] = {"plt": "line",
+                                    "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
 
     result["In-Out Weigthed(hours) Degree"] = {"plt": "bar",
-                                               "data": [], "scale": prob_scale}
+                                               "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+    result["Member Growth Rate"] = {"plt": "line",
+                                    "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+    result["Interaction Growth Rate"] = {"plt": "line",
+                                         "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
 
-    result["Disbalance"] = {"plt": "bar", "data": [], "scale": prob_scale[5:]}
+    result["Disparity in-degree"] = {"plt": "bar",
+                                     "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+    result["Disparity out-degree"] = {"plt": "bar",
+                                      "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+    result["Disparity in+out-degree"] = {"plt": "bar",
+                                         "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+    # Heterogeneity
+    result["Age Heterogeneity Index"] = {"plt": "bar",
+                                         "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+    result["Region Heterogeneity Index"] = {"plt": "bar",
+                                            "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+    result["Revenu Heterogeneity Index"] = {"plt": "bar",
+                                            "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+    result["Gender Heterogeneity Index"] = {"plt": "bar",
+                                            "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
 
-    result["Unique Edges"] = {"plt": "bar", "data": [], "scale": []}
+    result["Disbalance"] = {"plt": "bar", "data": [],
+                            "scale": prob_scale[5:], "label": [], 'ylabel': '', 'xlabel': ''}
 
-    result["Super Stars Sum"] = {"plt": "pie", "data": [], "scale": []}
+    result["Unique Edges"] = {"plt": "bar",
+                              "data": [], "scale": [], "label": [], 'ylabel': '', 'xlabel': ''}
+    result["Density"] = {"plt": "line",
+                         "data": [], "scale": [], "label": [], 'ylabel': '', 'xlabel': ''}
+    result["Super Stars Sum"] = {"plt": "pie",
+                                 "data": [], "scale": [], "label": [], 'ylabel': '', 'xlabel': ''}
     result["Super Stars In-deg"] = {"plt": "pie",
-                                    "data": [], "scale": []}
+                                    "data": [], "scale": [], "label": [], 'ylabel': '', 'xlabel': ''}
     result["Super Stars Out-deg"] = {"plt": "pie",
-                                     "data": [], "scale": []}
+                                     "data": [], "scale": [], "label": [], 'ylabel': '', 'xlabel': ''}
+
     result["Node Attribute Distances"] = {
-        "plt": "heatmap", "data": [], "scale": []}
+        "plt": "heatmap", "data": [], "scale": [], "label": [], 'ylabel': '', 'xlabel': ''}
 
     start_date = None
     end_date = None
@@ -108,7 +190,7 @@ def compute_bias_metrics(net_ids=[], alias=[], s_date='', e_date='', snapshot_si
         print(f"Name: {accorderie_name}, date: {start_date} - {end_date}")
 
         if count_super > 0:
-            accorderie_name = f'{accorderie_name} #nodes - {count_super}'
+            accorderie_name = f'{accorderie_name}'
             result["metadata"]["accorderies"].append(accorderie_name)
         else:
             result["metadata"]["accorderies"].append(accorderie_name)
@@ -136,18 +218,66 @@ def compute_bias_metrics(net_ids=[], alias=[], s_date='', e_date='', snapshot_si
         else:
             acc_id = ""
 
+        print('\nNode Grow Rate')
+        gwth_rate, gwth_raw_rate = growth_rate(g, sn_size=snapshot_size, start_date=start_date,
+                                               end_date=end_date, id=acc_id)
+        result['Member Growth Rate']['data'].append([v for _, v in gwth_rate])
+        result['Member Growth Rate']["xlabel"] = 'Date(s)'
+        result['Member Growth Rate']["label"].append([d for d, _ in gwth_rate])
+        # print(gwth_rate)
+        # print(gwth_raw_rate)
+        print('\Edge Grow Rate')
+        e_gwth_rate, e_gwth_raw_rate = growth_rate(g, sn_size=snapshot_size, start_date=start_date,
+                                                   end_date=end_date, id=acc_id, subset='EDGE')
+
+        result['Interaction Growth Rate']['data'].append(
+            [v for _, v in e_gwth_rate])
+        result['Interaction Growth Rate']["xlabel"] = 'Date(s)'
+        result['Interaction Growth Rate']["label"].append(
+            [d for d, _ in e_gwth_rate])
+        # print(e_gwth_rate)
+        # print(e_gwth_raw_rate)
+
+        print('\nDisparity in-degree')
+        in_avg_disp, in_disp = disparity(g, mode='in')
+        result['Disparity in-degree']['data'].append(in_avg_disp)
+        # print(in_avg_disp)
+        # print(in_disp)
+        print('\nDisparity out-degree')
+        out_avg_disp, out_disp = disparity(g, mode='out')
+        result['Disparity out-degree']['data'].append(out_avg_disp)
+        # print(out_avg_disp)
+        # print(out_disp)
+        print('\nDisparity ALL')
+        all_avg_disp, all_disp = disparity(g, mode='all')
+        result['Disparity in+out-degree']['data'].append(all_avg_disp)
+        # print(all_avg_disp)
+        # print(all_disp)
+
+        region_idx_blau = compute_blau_index(g, 'region')
+        result['Region Heterogeneity Index']['data'].append(region_idx_blau)
+
+        genre_idx_blau = compute_blau_index(g, 'genre')
+        result['Gender Heterogeneity Index']['data'].append(genre_idx_blau)
+
+        revenu_idx_blau = compute_blau_index(g, 'revenu')
+        result['Revenu Heterogeneity Index']['data'].append(revenu_idx_blau)
+
+        age_idx_blau = compute_blau_index(g, 'age')
+        result['Age Heterogeneity Index']['data'].append(age_idx_blau)
+
         print('\nNode Novelty')
-        _, _, node_novelty, raw_node_result = graph_novelty(
-            g, sn_size=snapshot_size, start_date=start_date, end_date=end_date, id=acc_id)
+        _, _, node_novelty, raw_node_result, densities = graph_novelty(
+            g, sn_size=snapshot_size, start_date=start_date, end_date=end_date, id=acc_id, density=True)
         print('ratio: ', node_novelty)
         print('raw: ', raw_node_result)
         print('\nEdge Novelty')
-        _, _, edge_novelty, raw_edge_result = graph_novelty(
+        _, _, edge_novelty, raw_edge_result, _ = graph_novelty(
             g, sn_size=snapshot_size, start_date=start_date, end_date=end_date, id=acc_id, subset='EDGE')
         print('ratio: ', edge_novelty)
         print('raw: ', raw_edge_result)
         print('\nWeighted Node Novelty')
-        _, _, weighted_node_novelty, raw_weighted_result = graph_novelty(
+        _, _, weighted_node_novelty, raw_weighted_result, _ = graph_novelty(
             g, sn_size=snapshot_size, start_date=start_date, end_date=end_date, id=acc_id, weighted=True)
         print('ratio: ', weighted_node_novelty)
         print('raw: ', raw_weighted_result)
@@ -175,12 +305,21 @@ def compute_bias_metrics(net_ids=[], alias=[], s_date='', e_date='', snapshot_si
         # print("EDGE COUNT", edg_count)
         # print('EDGE COUNT NORMALIZED', edg_count)
 
-        result['Interactions Trend']["data"].append(edg_count
-                                                    )
+        result['Number of Interactions']["data"].append(edg_count
+                                                        )
+        print('density', densities)
+        result['Density']["data"].append(densities
+                                         )
+        result['Density']["xlabel"] = 'Date(s)'
+        result['Density']["label"].append([d for d, _ in node_novelty])
         result['Weighted Node Novelty']["data"].append(weighted_node_novelty)
 
         print("Average In-Out")
-        result["In-Out Degree"]["data"].append(get_avg_in_out_degree(g=g))
+        res, array_res = get_avg_in_out_degree(g=g)
+        # print(array_res)
+        result["In-Out Degree"]["data"].append(res)
+        result["In-Out Degree Box"]["data"].append(array_res)
+        result["In-Out Degree Line"]["data"].append(array_res)
 
         print("Disbalance")
         result["Disbalance"]["data"].append(
@@ -229,7 +368,7 @@ def bias_report(metrics_data):
     accorderies = metrics_data['metadata']["accorderies"]
     report_name = '_'.join(accorderies).lower()
 
-    with PdfPages(f'selected_accorderies_bias_report.pdf') as pdf:
+    with PdfPages(f'3_accorderies_report_with_stars.pdf') as pdf:
         for key in metrics_data:
 
             if key == 'metadata':
@@ -256,7 +395,8 @@ def bias_report(metrics_data):
 
                     X_label = np.arange(len(d))
 
-                    plt.plot(X_label, X, label=accorderies[idx])
+                    plt.plot(X_label, X, label=wrap_labels(
+                        [accorderies[idx]], 15)[0])
 
                     if len(labels) > len(tick_labels):
                         tick_labels = labels
@@ -268,47 +408,132 @@ def bias_report(metrics_data):
 
                 plt.xticks(tick_X_label, labels=tick_labels,
                            rotation=45, ha='right')
-                plt.legend()
 
+                plt.ylabel('Proportion')
+                plt.xlabel('Date(s)')
+                plt.subplots_adjust(right=0.7)
+                plt.legend(loc='upper left', bbox_to_anchor=(
+                    1, 1), fontsize='small')
+                # plt.legend()
                 plt.tight_layout()
                 pdf.savefig()
                 plt.close()
+            elif plt_key == 'line':
+                label = metrics_data[key]["label"]
+                xlabel = metrics_data[key]["xlabel"]
+                for idx, d in enumerate(data):
+                    d.sort(reverse=True)
+
+                    plt.plot(d, label=wrap_labels(
+                        [accorderies[idx]], 15)[0])
+
+                if len(label) > 0:
+                    print(label[0], d)
+                    plt.xticks(np.arange(len(d)), labels=label[0],
+                               rotation=45, ha='right')
+
+                plt.ylabel('Proportion')
+                plt.xlabel(xlabel if xlabel else '# of members')
+                plt.subplots_adjust(right=0.7)
+                plt.legend(loc='upper left', bbox_to_anchor=(
+                    1, 1), fontsize='small')
+                plt.tight_layout()
+                pdf.savefig()
+                plt.close()
+                # labels = [k[0] for k in d]
+                # X = [k[1] for k in d]
+                # print('d ===>', d)
+                # X_label = np.arange(len(d))
+                # print('d ===>', d)
+                # plt.plot(X_label, X, label=accorderies[idx])
+                # print()
+
+            elif plt_key == 'box':
+                plt.boxplot(data, notch=False, showmeans=True, meanline=True,
+                            vert=True, showbox=True)
+
+                plt.xticks([i + 1 for i in range(len(accorderies))],
+                           [wrap_labels([ac], 15)[0] for ac in accorderies],  rotation=45, ha='right')
+                plt.ylabel('Proportion')
+                plt.xlabel('Accorderie(s)')
+                plt.tight_layout()
+                pdf.savefig()
+                plt.close()
+
+                # plt.close()
+                # tick_labels = []
+                # tick_X_label = []
+                # tick_positions = np.arange(0, 1.1, 0.1)
+                # fig, axes = plt.subplots()
+                # axes = axes.flatten()
+                # for idx, d in enumerate(data):
+                # labels = [k[0] for k in d]
+                # X = [k[1] for k in d]
+                # print('d ===>', d)
+                # X_label = np.arange(len(d))
+                # print('d ===>', d)
+                # plt.plot(X_label, X, label=accorderies[idx])
+                # if len(labels) > len(tick_labels):
+                #     tick_labels = labels
+                #     tick_X_label = X_label
+                # X_bool = [True if z <= 1 else False for z in X]
+
+                # if reduce(lambda v, w: v & w, [True if z <= 1 else False for z in X]):
+                #     plt.yticks(tick_positions)
+
+                # plt.xticks(tick_X_label, labels=tick_labels,
+                #    rotation=45, ha='right')
+                # plt.legend()
+
             elif plt_key == 'heatmap':
                 for dt_indx, dta in enumerate(data):
                     for dt in dta:
-                        # print(dt)
-                        d = dt["data"]
                         labls = dt["labels"]
                         title = dt["title"]
-                        # 'viridis' is a colormap; choose one you prefer
-                        plt.imshow(d, cmap='Reds', aspect='auto')
+                        d = dt["data"]
 
-                        # Add a colorbar to the plot
-                        cbar = plt.colorbar()
-                        cbar.set_label('Color Scale')  # Label for the colorbar
+                        for k in d:
+                            # Create a heatmap from the data, using the 'Reds' colormap
+                            plt.imshow(d[k], cmap='Reds', aspect='auto')
+                            # Create colorbar
+                            plt.colorbar()
 
-                        # Annotations for the legend
-                        # plt.annotate('Low Value', (0, -0.5), color='black', fontsize=10)
-                        # plt.annotate('High Value', (9, -0.5), color='black', fontsize=10)
+                            # Show the data values on the heatmap
+                            max_value = np.array(d[k]).max()
+                            for i in range(d[k].shape[0]):
+                                for j in range(d[k].shape[1]):
+                                    # Choosing text color based on data value to ensure visibility. You might need to choose colors based on your data range and colormap.
+                                    text_color = "black" if (d[k][i, j]) < (
+                                        max_value / 3) else "white"
+                                    v = f"{d[k][i, j]:.1f}"
 
-                        # Label the x-axis values
-                        plt.xticks(range(d.shape[1]), labls, rotation=45)
+                                    plt.text(j, i, v,
+                                             ha="center", va="center", color=text_color)
 
-                        # Label the y-axis values
-                        plt.yticks(range(d.shape[0]), labls, rotation=45)
+                            # 'viridis' is a colormap; choose one you prefer
 
-                        # Set the title
-                        plt.title(f'{accorderies[dt_indx]}-{title}')
+                            # Add a colorbar to the plot
+                            # cbar = plt.colorbar()
+                            # # Label for the colorbar
+                            # cbar.set_label('Color Scale')
+                            # Annotations for the legend
+                            # plt.annotate('Low Value', (0, -0.5), color='black', fontsize=10)
+                            # plt.annotate('High Value', (9, -0.5), color='black', fontsize=10)
+                            # Label the x-axis values
 
-                        # plt.legend()
-
-                        plt.tight_layout()
-                        pdf.savefig()
-                        plt.close()
-
+                            plt.xticks(range(d[k].shape[1]),
+                                       labls, rotation=45)
+                            # Label the y-axis values
+                            plt.yticks(range(d[k].shape[0]),
+                                       labls, rotation=45)
+                            # Set the title
+                            plt.title(f'{accorderies[dt_indx]} <> {title}-{k}')
+                            # plt.legend()
+                            plt.tight_layout()
+                            pdf.savefig()
+                            plt.close()
             elif plt_key == 'scatter':
                 for idx, d in enumerate(data):
-
                     X = []
                     Y = []
                     L = []
@@ -331,7 +556,10 @@ def bias_report(metrics_data):
                 # plt.yticks(tick_positions)
                 # plt.xticks(tick_X_label, labels=tick_labels,
                 #            rotation=45, ha='right')
-                plt.legend()
+                # plt.legend()
+                plt.subplots_adjust(right=0.7)
+                plt.legend(loc='upper left', bbox_to_anchor=(
+                    1, 1), fontsize='small')
 
                 plt.tight_layout()
                 pdf.savefig()
@@ -349,12 +577,12 @@ def bias_report(metrics_data):
                     labels = ["{:.2f}%".format(
                         rt * 100) if rt*100 > 2.5 else '' for rt in result]
 
-                    print('\n')
-                    print(result, explode)
+                    # print('\n')
+                    # print(result, explode)
                     if np.sum(result) == 0:
                         explode = np.zeros(len(result))
-                    print('\n')
-                    print(result, explode)
+                    # print('\n')
+                    # print(result, explode)
 
                     axes.pie(result, explode=explode,
                              autopct=custom_autopct,
@@ -367,12 +595,11 @@ def bias_report(metrics_data):
                     plt.tight_layout()
                     pdf.savefig()
                     plt.close()
-
             elif plt_key == 'bar':
                 for i, d in enumerate(data):
                     X = np.arange(len([d]))
                     X_new = X + (i - 1) * width
-                    print('KEY: ', key, 'value: ', d)
+                    # print('KEY: ', key, 'value: ', d)
                     plt.bar(X_new, [d], width=width, label=accorderies[i])
 
                 tick_positions = np.arange(0, 1.1, 0.1)
@@ -387,7 +614,7 @@ def bias_report(metrics_data):
                 #  plt.xticks(tick_X_label, labels=tick_labels,
                 #            rotation=45, ha='right')
                 plt.xticks(x_ticks_pos[:len(accorderies)],
-                           accorderies,  rotation=45, ha='right')
+                           [wrap_labels([acx], 15)[0] for acx in accorderies],  rotation=45, ha='right')
 
                 plt.ylabel('Proportion')
                 plt.xlabel('Accorderies')
@@ -445,76 +672,80 @@ def bias_report(metrics_data):
 
 all_accorderies = {
     2: "Québec",
-    121: "Yukon",
-    117: "La Manicouagan",
     86: "Trois-Rivières",
     88: "Mercier-Hochelaga-M.",
     92: "Shawinigan",
-    113: "Montréal-Nord secteur Nord-Est",
-    111: "Portneuf",
     104: "Montréal-Nord",
     108: "Rimouski-Neigette",
     109: "Sherbrooke",
     110: "La Matanie",
+    111: "Portneuf",
     112: "Granit",
+    113: "Montréal-Nord secteur Nord-Est",
     114: "Rosemont",
     115: "Longueuil",
     116: "Réseau Accorderie (du Qc)",
+    117: "La Manicouagan",
     118: "La Matapédia",
     119: "Grand Gaspé",
     120: "Granby et région",
+    121: "Yukon",
 }
 
 #  s_date='01/01/2014', e_date='01/01/2022'
 res = compute_bias_metrics(
     net_ids=[
-        'data\\accorderies\\2',
-        # 'data\\accorderies\\2-',
-        'data\\accorderies\\86',
-        # 'data\\accorderies\\86-',
-        'data\\accorderies\\92',
-        # 'data\\accorderies\\92-',
-        'data\\accorderies\\113',
-        # 'data\\accorderies\\113-',
-        'data\\accorderies\\104',
-        # 'data\\accorderies\\104-',
-        'data\\accorderies\\109',
-        # 'data\\accorderies\\109-',
-        'data\\accorderies\\114',
-        # 'data\\accorderies\\114-',
-        'data\\accorderies\\115',
-        # 'data\\accorderies\\115-',
-        # 'data\\accorderies\\116',
-        # 'data\\accorderies\\116-',
-        'data\\accorderies\\119',
-        # 'data\\accorderies\\119-',
-        'data\\accorderies\\120',
-        # 'data\\accorderies\\120-',
-    ], s_date='01/01/2012',
-    e_date='01/01/2023',
+        'accorderies\\2',
+        'accorderies\\2-',
+
+        'accorderies\\92',
+        'accorderies\\92-',
+
+        'accorderies\\109',
+        'accorderies\\109-',
+
+        # 'data\\accorderies\\86',
+        # 'data\\accorderies\\88',
+        # 'data\\accorderies\\104',
+        # 'data\\accorderies\\108',
+        # 'data\\accorderies\\110',
+        # 'data\\accorderies\\111',
+        # 'data\\accorderies\\112',
+        # 'data\\accorderies\\113',
+        # 'data\\accorderies\\114',
+        # 'data\\accorderies\\115',
+        # 'data\\accorderies\\117',
+        # 'data\\accorderies\\118',
+        # 'data\\accorderies\\119',
+        # 'data\\accorderies\\120',
+        # 'data\\accorderies\\121',
+    ], s_date='28/02/2014',
+    e_date='30/04/2022',
     alias=[
         "Québec",
-        # "Québec - 1 super star",
-        "Trois-Rivières",
-        # "Trois-Rivières - 1 super star",
+        "Québec-1",
+
         "Shawinigan",
-        # "Shawinigan - 1 super star",
-        "Montréal-Nord secteur Nord-Est",
-        # "Montréal-Nord secteur Nord-Est - 1 super star",
-        "Montréal-Nord",
-        # "Montréal-Nord - 1 super star",
+        "Shawinigan-1",
+
         "Sherbrooke",
-        # "Sherbrooke - 1 super star",
-        "Rosemont",
-        # "Rosemont - 1 super star",
-        "Longueuil",
-        # "Longueuil - 1 super star",
-        # "Réseau Accorderie (du Qc)",
-        # "Réseau Accorderie (du Qc) - 1 super star",
-        "Grand Gaspé",
-        # "Grand Gaspé - 1 super star",
-        "Granby et région",
-        # "Granby et région - 1 super star",
+        "Sherbrooke-1",
+
+        # "Trois-Rivières",
+        # "M-Hochelaga",
+        # "Mntrl-Nord",
+        # "Rimouski-Ngtte",
+        # "La Matanie",
+        # "Portneuf",
+        # "Granit",
+        # "Mntrl-S_N-E",
+        # "Rosemont",
+        # "Longueuil",
+        # "La Manicouagan",
+        # "La Matapédia",
+        # "Grand Gaspé",
+        # "Granby",
+        # "Yukon",
     ], snapshot_size=365, super_star_threshold=.5)
 
 # print('RESULT', res["Node Attribute Distances"]["data"])

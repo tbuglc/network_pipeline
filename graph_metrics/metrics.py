@@ -7,6 +7,7 @@ import powerlaw as pl
 from utils import global_graph_indices
 from dateutil import parser
 import sys
+from collections import Counter
 from matplotlib.backends.backend_pdf import PdfPages
 
 from datetime import datetime, timedelta
@@ -365,6 +366,26 @@ def homophily_nominal(g, attribute):
     return assortativity
 
 
+def compute_blau_index(g, attr):
+    attributes = [g.vs[node][attr] for node in range(
+        len(g.vs)) if attr in g.vs[node].attributes()]
+    print('\n\n\n\n\n\n\n')
+
+    attribute_counts = Counter(attributes)
+    print(attribute_counts)
+
+    total = sum(attribute_counts.values())
+    proportions = [count / total for count in attribute_counts.values()]
+    print(proportions)
+    print('\n\n\n\n\n\n\n')
+
+    blaus_index = 1 - sum([p**2 for p in proportions])
+
+    # result.append((attr, blaus_index))
+    # return result
+    return blaus_index
+
+
 def duree_to_int(duree_str):
     ret = 0
     if type(duree_str) == str:
@@ -376,13 +397,12 @@ def duree_to_int(duree_str):
 
     return ret
 
-
 # average indeg / (indeg + outdeg).  Less than 0.5 => outdeg bias, higher => indeg bias
-def get_avg_in_out_degree(g):
 
+
+def get_avg_in_out_degree(g):
     if len(g.vs) == 0:
         return -1
-
     ratio_sum = 0
     nb_isolated = 0
     all_ratio = []
@@ -397,25 +417,41 @@ def get_avg_in_out_degree(g):
             all_ratio.append(indeg / (outdeg + indeg))
     result = 0
 
-    pd.DataFrame(all_ratio).to_csv('ratios__.csv')
     try:
         print('ISOLATED: ', nb_isolated)
-
         result = ratio_sum / (len(g.vs) - nb_isolated)
     except Exception as e:
         print('WARNING: Divide by zero error')
-
     print(f'get_avg_in_out_degree: {result}')
-
     # FIXME:
-    std_in = np.std(g.degree(mode='in'))
-    std_out = np.std(g.degree(mode='out'))
+    # std_in = np.std(g.degree(mode='in'))
+    # std_out = np.std(g.degree(mode='out'))
     # print('in', g.degree(mode='in'), 'out', g.degree(mode='out'))
-    print('std_in: ', std_in)
-    print('std_out: ', std_out)
-    result = std_in / (std_in + std_out)
+    # print('std_in: ', std_in)
+    # print('std_out: ', std_out)
+    # result = std_in / (std_in + std_out)
     print('RESULT IN-OUT ', result)
-    return result
+    return result, all_ratio
+
+
+def disparity(g, mode='all'):
+    result = []
+
+    for v in g.vs:
+        incident_edges = g.es[g.incident(v, mode=mode)]
+    # Get the strength (sum of weights) of the links for the vertex
+        strength = sum([duree_to_int(e['duree'])
+                        for e in incident_edges])
+
+        # Compute the disparity
+        disparity = 0
+        if strength > 0:
+            disparity = sum([(duree_to_int(e['duree']) / strength) **
+                            2 for e in incident_edges])
+
+        result.append(disparity)
+
+    return sum(result)/len(g.vs), result
 
 
 # average duree_in / (duree_in + duree_out).  Less than 0.5 => outdeg bias, higher => indeg bias
@@ -454,10 +490,10 @@ def get_avg_weighted_in_out_degree(g, field_name='duree'):
         print('WARNING: Divide by zero error')
 
     print(f'get_avg_weighted_in_out_degree: {result}')
-    total_weigh_in = np.std(total_weigh_in)
-    total_weigh_out = np.std(total_weigh_out)
+    # total_weigh_in = np.std(total_weigh_in)
+    # total_weigh_out = np.std(total_weigh_out)
 
-    result = total_weigh_in / (total_weigh_in + total_weigh_out)
+    # result = total_weigh_in / (total_weigh_in + total_weigh_out)
     return result
 
 
@@ -536,11 +572,11 @@ def perform_filter(g, start_date, window_date, acc_id=None):
         'date': '',
         'duree': '',
         'service': '',
-        'accorderie': '',
+        'accorderie_edge': '',
     }
     if acc_id:
-        filters['accorderie'] = acc_id
-        filters['m_acc_id'] = acc_id
+        filters["accorderie_edge"] = acc_id
+        filters['accorderie_node'] = acc_id
     filters['date'] = f':{start_date.strftime("%Y-%m-%d")},{window_date.strftime("%Y-%m-%d")}'
 
     snapshot = perform_filter_on_graph(g, filters=filters)
@@ -548,7 +584,57 @@ def perform_filter(g, start_date, window_date, acc_id=None):
     return snapshot
 
 
-def graph_novelty(g, sn_size, start_date, end_date, id, weighted=False, subset='NODE', degree_mode='all',):
+def growth_rate(g, sn_size, start_date, end_date, id, weighted=False, subset='NODE', degree_mode='all'):
+    if len(g.vs) == 0:
+        return np.nan
+
+    window_date = start_date + timedelta(sn_size * 1)
+
+    result = []
+    raw_result = []
+
+    # perform_filter_on_graph(g, filters=)
+    # i.e:  2014
+    # prev = 2013:2014
+    # curr = 2014:2015
+    while (window_date) < end_date:
+        prev_snapshot = perform_filter(
+            g,  window_date - timedelta(sn_size), window_date, acc_id=id)
+
+        current_snapshot = perform_filter(
+            g, window_date, window_date + timedelta(sn_size), acc_id=id)
+        if subset == 'NODE':
+            if len(prev_snapshot.vs) <= 0:
+                raw_result.append(
+                    (len(prev_snapshot.vs), len(current_snapshot.vs)))
+                result.append(((window_date).strftime("%Y/%m/%d"), 0))
+
+            else:
+                rate = (len(current_snapshot.vs) - len(prev_snapshot.vs)) / \
+                    len(prev_snapshot.vs)
+                raw_result.append(
+                    (len(prev_snapshot.vs), len(current_snapshot.vs)))
+                result.append(((window_date).strftime("%Y/%m/%d"), rate))
+        elif subset == 'EDGE':
+            if len(prev_snapshot.es) <= 0:
+                raw_result.append(
+                    (len(prev_snapshot.es), len(current_snapshot.es)))
+                result.append(((window_date).strftime("%Y/%m/%d"), 0))
+            else:
+                rate = (len(current_snapshot.es) - len(prev_snapshot.es)) / \
+                    len(prev_snapshot.es)
+                raw_result.append(
+                    (len(prev_snapshot.es), len(current_snapshot.es)))
+                result.append(((window_date).strftime("%Y/%m/%d"), rate))
+        else:
+            raise 'Subset not specified'
+
+        window_date = window_date + timedelta(sn_size)
+
+    return result, raw_result
+
+
+def graph_novelty(g, sn_size, start_date, end_date, id, weighted=False, subset='NODE', degree_mode='all', density=False):
     if len(g.vs) == 0:
         return np.nan
 
@@ -556,6 +642,7 @@ def graph_novelty(g, sn_size, start_date, end_date, id, weighted=False, subset='
 
     result = []
     raw_result = []
+    densities = []
     total_sum = 0
     while (window_date - timedelta(sn_size)) < end_date:
         # if window_date - timedelta(sn_size) == start_date:
@@ -571,6 +658,18 @@ def graph_novelty(g, sn_size, start_date, end_date, id, weighted=False, subset='
         print('current snapshot')
         current_snapshot = perform_filter(
             g, window_date - timedelta(sn_size), window_date, acc_id=id)
+
+        nb_interaction_current_snapshot = len(current_snapshot.es)
+        nb_members_current_snapshot = len(current_snapshot.vs)
+        if density:
+            # print('nbitcs', nb_interaction_current_snapshot)
+            # print('nbmcs', nb_members_current_snapshot)
+
+            if nb_members_current_snapshot and nb_interaction_current_snapshot:
+                densities.append(nb_interaction_current_snapshot /
+                                 (nb_members_current_snapshot*(nb_members_current_snapshot - 1)))
+            else:
+                densities.append(0)
 
         dataframe_cummulative_snapshots = []
         dataframe_current_snapshot = []
@@ -640,7 +739,7 @@ def graph_novelty(g, sn_size, start_date, end_date, id, weighted=False, subset='
 
     average = (1/norm.days)*total_sum
 
-    return average, sn_size, result, raw_result
+    return average, sn_size, result, raw_result, densities
 
 
 def super_stars_count(g, threshold=.5, mode='all'):
@@ -772,36 +871,125 @@ def convert_matrix_to_graph(name, data, attribute_names):
 
 
 def normalize_matrix(matrix):
+    for key in matrix:
+        for r in range(np.array(matrix[key]).shape[0]):
+            if sum(matrix[key][r]) > 0:
+                matrix[key][r] = np.array(matrix[key][r])/sum(matrix[key][r])
+
+    return matrix
+
     # min_value = matrix.min()
     # max_value = matrix.max()
 
     # # Normalize the matrix to [0, 1]
     # normalized_matrix = (matrix - min_value) / (max_value - min_value)
     # print('normalization matrix start ', matrix)
-    for r in range(np.array(matrix).shape[0]):
-        # print('row before scaling', matrix[r])
-        if sum(matrix[r]) > 0:
-            matrix[r] = np.array(matrix[r])/sum(matrix[r])
-        # print('row after scaling', matrix[r])
-
     # print('normalization matrix end ', matrix)
-    return matrix
+    # return normalized_matrix
+    # print('row before scaling', matrix[key][r])
+    # print('row after scaling', matrix[r])
 
 
-def count_interactions(matrx, ob, source_prop, target_prop):
-    if ob.get(source_prop, None) and ob.get(target_prop, None):
+def count_interactions(matrx, ob, source_prop, target_prop, direction='UNDIRECTED'):
+    if ob.get(source_prop, None) == None or ob.get(target_prop, None) == None:
+        return
+
+    if direction == 'SOURCE_TARGET':
         matrx[ob[source_prop], ob[target_prop]] += 1
-    # return matrx
+    elif direction == 'TARGET_SOURCE':
+        matrx[ob[target_prop], ob[source_prop]] += 1
+    elif direction == 'UNDIRECTED':
+        matrx[ob[source_prop], ob[target_prop]] += 1
+        matrx[ob[target_prop], ob[source_prop]] += 1
+    else:
+        return
 
 
 def node_attribute_variance(g, accorderie_name=''):
-
+    # print(ages)
     ages = transform_array_to_obj('age', np.unique(g.vs["age"]))
+    # print(genres)
     genres = transform_array_to_obj("genre", np.unique(g.vs["genre"]))
+    # print(revenu)
     revenus = transform_array_to_obj("revenu", np.unique(g.vs["revenu"]))
-    # villes = transform_array_to_obj("ville", np.unique(g.vs["ville"]))
-    regions = transform_array_to_obj("region", np.unique(g.vs["region"]))
 
+    ages_matrx = {
+        "Source-Target": np.zeros((len(ages), len(ages))),
+        "Target-Source": np.zeros((len(ages), len(ages))),
+        "Undirected": np.zeros((len(ages), len(ages))),
+    }
+    genres_matrx = {
+        "Source-Target": np.zeros((len(genres), len(genres))),
+        "Target-Source": np.zeros((len(genres), len(genres))),
+        "Undirected": np.zeros((len(genres), len(genres))),
+    }
+    revenus_matrx = {
+        "Source-Target": np.zeros((len(revenus), len(revenus))),
+        "Target-Source": np.zeros((len(revenus), len(revenus))),
+        "Undirected": np.zeros((len(revenus), len(revenus))),
+    }
+
+    for e in g.es:
+        u, v = g.vs[e.source], g.vs[e.target]
+        # if (u['age'] == '96-150' or v['age'] == '96-150'):
+        #     print('AGE 95-150')
+        #     print('SOURCE', u)
+        #     print('LINK', e)
+        #     print('TARGET', v)
+
+        # age: source target
+        count_interactions(matrx=ages_matrx['Source-Target'], ob=ages, direction='SOURCE_TARGET', source_prop=str(
+            u['age']), target_prop=str(v['age']))
+        # age: target source
+        count_interactions(matrx=ages_matrx['Target-Source'], ob=ages,  direction='TARGET_SOURCE', source_prop=str(
+            u['age']), target_prop=str(v['age']), )
+        # age: undirected
+        count_interactions(matrx=ages_matrx['Undirected'], ob=ages, source_prop=str(
+            u['age']), target_prop=str(v['age']))
+
+        # genre: source target
+        count_interactions(matrx=genres_matrx['Source-Target'], ob=genres, direction='SOURCE_TARGET',
+                           source_prop=str(u['genre']), target_prop=str(v['genre']))
+        # genre: target source
+        count_interactions(matrx=genres_matrx['Target-Source'], ob=genres, direction='TARGET_SOURCE',
+                           source_prop=str(u['genre']), target_prop=str(v['genre']))
+        # genre: undirected
+        count_interactions(matrx=genres_matrx['Undirected'], ob=genres,
+                           source_prop=str(u['genre']), target_prop=str(v['genre']))
+
+        # revenu: source target
+        count_interactions(matrx=revenus_matrx['Source-Target'], ob=revenus, direction='SOURCE_TARGET',
+                           source_prop=str(u['revenu']), target_prop=str(v['revenu']))
+        # revenu: target source
+        count_interactions(matrx=revenus_matrx['Target-Source'], ob=revenus, direction='TARGET_SOURCE',
+                           source_prop=str(u['revenu']), target_prop=str(v['revenu']))
+        # revenu: undirected
+        count_interactions(matrx=revenus_matrx['Undirected'], ob=revenus,
+                           source_prop=str(u['revenu']), target_prop=str(v['revenu']))
+
+    print(ages)
+    print('raw age matrix: \n', ages_matrx)
+    # print('normalized age matrix: \n', normalize_matrix(ages_matrx))
+    print(genres)
+    print('raw genres matrix: \n', genres_matrx)
+    # print('normalized genres matrix: \n', normalize_matrix(genres_matrx))
+    print(revenus)
+    print('raw revenu matrix: \n', revenus_matrx)
+    # print('normalized revenu matrix: \n', normalize_matrix(revenus_matrx))
+
+    return [
+        {"data": ages_matrx, "title": "Ages", "labels": [
+            k for (k, _) in ages.items()]},
+        {"data": genres_matrx, "title": "Genres", "labels": [
+            k for (k, _) in genres.items()]},
+        {"data": revenus_matrx, "title": "Revenus", "labels": [
+            k for (k, _) in revenus.items()]},
+    ]
+
+    # villes = transform_array_to_obj("ville", np.unique(g.vs["ville"]))
+    # print(revenus)
+    # regions = transform_array_to_obj("region", np.unique(g.vs["region"]))
+    # print(regions)
     # try:
     #     addresses = transform_array_to_obj(
     #         "adresse", np.unique(g.vs["adresse"]))
@@ -811,58 +999,20 @@ def node_attribute_variance(g, accorderie_name=''):
 
     # arrondissements = transform_array_to_obj(
     # "arrondissement", np.unique(g.vs["arrondissement"]))
-
-    ages_matrx = np.zeros((len(ages), len(ages)))
-    genres_matrx = np.zeros((len(genres), len(genres)))
-    revenus_matrx = np.zeros((len(revenus), len(revenus)))
     # villes_matrx = np.zeros((len(villes), len(villes)))
-    regions_matrx = np.zeros((len(regions), len(regions)))
+    # regions_matrx = np.zeros((len(regions), len(regions)))
     # arrondissements_matrx = np.zeros(
     #     (len(arrondissements), len(arrondissements)))
     # addresses_matrx = np.zeros((len(addresses), len(addresses)))
 
-    for e in g.es:
-        u, v = g.vs[e.source], g.vs[e.target]
-        # ages_matrx[ages[str(u['age'])], ages[str(v['age'])]] += 1
-        count_interactions(ages_matrx, ages, str(v['age']), str(u['age']))
-        # genres_matrx[genres[str(u['genre'])], genres[str(v['genre'])]] += 1
-        count_interactions(genres_matrx, genres,
-                           str(u['genre']), str(v['genre']))
-        # revenus_matrx[revenus[str(u['revenu'])],
-        #               revenus[str(v['revenu'])]] += 1
-        count_interactions(revenus_matrx, revenus,
-                           str(u['revenu']), str(v['revenu']))
-        # villes_matrx[villes[str(u['ville'])], villes[str(v['ville'])]] += 1
-        # count_interactions(villes_matrx, villes,
-        #                    str(u['ville']), str(v['ville']))
-        # regions_matrx[regions[str(u['region'])],
-        #               regions[str(v['region'])]] += 1
-        count_interactions(regions_matrx, regions,
-                           str(u['region']), str(v['region']))
-        # arrondissements_matrx[arrondissements[str(
-        #     u['arrondissement'])], arrondissements[str(v['arrondissement'])]] += 1
-        # count_interactions(arrondissements_matrx, arrondissements, str(
-        #     u['arrondissement']), str(v['arrondissement']))
-        # addresses_matrx[addresses[str(u['adresse'])],
-        #                 addresses[str(v['adresse'])]] += 1
-        # count_interactions(addresses_matrx, addresses,
-        #                    str(u['adresse'] or u['address']), str(v['adresse'] or v['address']))
-    return [
-        {"data": normalize_matrix(ages_matrx), "title": "Ages", "labels": [
-            k for (k, _) in ages.items()]},
-        {"data": normalize_matrix(genres_matrx), "title": "Genres", "labels": [
-            k for (k, _) in genres.items()]},
-        {"data": normalize_matrix(revenus_matrx), "title": "Revenus", "labels": [
-            k for (k, _) in revenus.items()]},
-        # {"data": normalize_matrix(villes_matrx), "title": "Villes", "labels": [
-        #     k for (k, _) in villes.items()]},
-        {"data": normalize_matrix(regions_matrx), "title": "Regions", "labels": [
-            k for (k, _) in regions.items()]},
-        # {"data": normalize_matrix(arrondissements_matrx), "title": "Arrondissements", "labels": [
-        #     k for (k, _) in arrondissements.items()]},
-        # {"data": normalize_matrix(addresses_matrx), "title": "Adresses", "labels": [
-        #     k for (k, _) in addresses.items()]},
-    ]
+    # {"data": normalize_matrix(villes_matrx), "title": "Villes", "labels": [
+    #     k for (k, _) in villes.items()]},
+    # {"data": normalize_matrix(regions_matrx), "title": "Regions", "labels": [
+    #     k for (k, _) in regions.items()]},
+    # {"data": normalize_matrix(arrondissements_matrx), "title": "Arrondissements", "labels": [
+    #     k for (k, _) in arrondissements.items()]},
+    # {"data": normalize_matrix(addresses_matrx), "title": "Adresses", "labels": [
+    #     k for (k, _) in addresses.items()]},
     # return [
     #     {"ages": convert_matrix_to_graph(f"{accorderie_name}_ages", ages_matrx, [
     #                                      k for (_, k) in ages.items()])},

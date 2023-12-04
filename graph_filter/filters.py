@@ -1,6 +1,7 @@
 from dateutil import parser
 from igraph import Graph
 
+
 def perform_filter_on_dataframe(df, filters):
     # print(filters)
     if filters['age']:
@@ -43,6 +44,12 @@ def perform_filter_on_graph(g, filters):
         g = g.induced_subgraph(g.vs.select(
             arrondissement_in=filters["arrondissement"]))
 
+        if filters.get("accorderie_node", None):
+            accs = [int(ac) for ac in filters['accorderie_node']]
+            print("Filtering by member accorderie id, value= " +
+                  str(filters["accorderie_node"]))
+            g = g.induced_subgraph(g.vs.select(accorderie_in=accs))
+
     if (filters["ville"]):
         print("Filtering by ville, value= "+str(filters["ville"]))
         g = g.induced_subgraph(g.vs.select(aville_in=filters["ville"]))
@@ -62,12 +69,15 @@ def perform_filter_on_graph(g, filters):
 
         date_filter = filters['date']
         if date_filter[0] == '<':
-            g = g.subgraph_edges(g.es.select(lambda e: False if e['date'] == '0000-00-00' else parser.parse(e['date']) <= parser.parse(date_filter[1:])))
+            g = g.subgraph_edges(g.es.select(
+                lambda e: False if e['date'] == '0000-00-00' else parser.parse(e['date']) <= parser.parse(date_filter[1:])))
         elif date_filter[0] == '>':
-            g = g.subgraph_edges(g.es.select(lambda e: False if e['date'] == '0000-00-00' else parser.parse(e['date']) >= parser.parse(date_filter[1:])))
+            g = g.subgraph_edges(g.es.select(
+                lambda e: False if e['date'] == '0000-00-00' else parser.parse(e['date']) >= parser.parse(date_filter[1:])))
         elif date_filter[0] == ':':
             date_intervals = date_filter[1:].split(',')
-            g = g.subgraph_edges(g.es.select(lambda e: False if e['date'] == '0000-00-00' else parser.parse(e['date']) >= parser.parse(date_intervals[0]) and parser.parse(e['date']) <= parser.parse(date_intervals[1])))
+            g = g.subgraph_edges(g.es.select(lambda e: False if e['date'] == '0000-00-00' else parser.parse(
+                e['date']) >= parser.parse(date_intervals[0]) and parser.parse(e['date']) <= parser.parse(date_intervals[1])))
         else:
             g = g.subgraph_edges(g.es.select(date_in=[date_filter]))
 
@@ -75,20 +85,21 @@ def perform_filter_on_graph(g, filters):
         for i, d in enumerate(filters['duree']):
             splitted_d = d.split(':')
             if len(splitted_d[0]) < 2:
-                filters['duree'][i] = '0' + filters['duree'][i] 
-        
+                filters['duree'][i] = '0' + filters['duree'][i]
+
         print("Filtering by duree, value= "+str(filters["duree"]))
         g = g.subgraph_edges(g.es.select(duree_in=filters['duree']))
-        
 
     if (filters["service"]):
         print("Filtering by service, value= "+str(filters["service"]))
         g = g.subgraph_edges(g.es.select(service_in=filters["service"]))
 
-    if (filters["accorderie"]):
-        filters['accorderie'] = [int(x) for x in filters['accorderie']]
-        print("Filtering by accorderie, value= "+str(filters["accorderie"]))
-        g = g.subgraph_edges(g.es.select(accorderie_in=filters["accorderie"]))
+    if (filters["accorderie_edge"]):
+        filters["accorderie_edge"] = [int(x)
+                                      for x in filters["accorderie_edge"]]
+        print("Filtering by accorderie, value= " +
+              str(filters["accorderie_edge"]))
+        g = g.subgraph_edges(g.es.select(
+            accorderie_in=filters["accorderie_edge"]))
 
     return g
-
