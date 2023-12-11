@@ -90,64 +90,64 @@ def compute_bias_metrics(net_ids=[], alias=[], s_date='', e_date='', snapshot_si
     #     "plt": "scatter", "data": [], "scale": prob_scale}
 
     result["Node Novelty"] = {"plt": "plot",
-                              "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+                              "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': '', "order": False}
 
     result["Weighted Node Novelty"] = {
-        "plt": "plot", "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+        "plt": "plot", "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': '', "order": False}
 
     result["Edge Novelty"] = {"plt": "plot",
-                              "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+                              "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': '', "order": False}
     result["Number of Interactions"] = {
-        "plt": "plot", "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+        "plt": "plot", "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': '', "order": False}
 
     result["In-Out Degree"] = {"plt": "bar",
-                               "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+                               "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': '', "order": False}
     result["In-Out Degree Box"] = {"plt": "box",
-                                   "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+                                   "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': '', "order": False}
     result["In-Out Degree Line"] = {"plt": "line",
-                                    "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+                                    "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': '', "order": True}
 
     result["In-Out Weigthed(hours) Degree"] = {"plt": "bar",
-                                               "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+                                               "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': '', "order": False}
     result["Member Growth Rate"] = {"plt": "line",
-                                    "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+                                    "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': '', "order": False}
     result["Interaction Growth Rate"] = {"plt": "line",
-                                         "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+                                         "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': '', "order": False}
 
     result["Disparity in-degree"] = {"plt": "bar",
-                                     "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+                                     "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': '', "order": False}
     result["Disparity out-degree"] = {"plt": "bar",
-                                      "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+                                      "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': '', "order": False}
     result["Disparity in+out-degree"] = {"plt": "bar",
-                                         "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+                                         "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': '', "order": False}
     # Heterogeneity
     result["Age Heterogeneity Index"] = {"plt": "bar",
-                                         "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+                                         "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': '', "order": False}
     # result["Region Heterogeneity Index"] = {"plt": "bar",
-    #                                         "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+    #                                         "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': '', "order": False}
     result["Revenu Heterogeneity Index"] = {"plt": "bar",
-                                            "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+                                            "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': '', "order": False}
     result["Gender Heterogeneity Index"] = {"plt": "bar",
-                                            "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
-    result["Modularity"] = {"plt": "line",
-                            "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+                                            "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': '', "order": False}
+    result["Modularity"] = {"plt": "bar",
+                            "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': '', "order": False}
 
     result["Disbalance"] = {"plt": "bar", "data": [],
-                            "scale": prob_scale[5:], "label": [], 'ylabel': '', 'xlabel': ''}
+                            "scale": prob_scale[5:], "label": [], 'ylabel': '', 'xlabel': '', "order": False}
 
     result["Unique Edges"] = {"plt": "bar",
-                              "data": [], "scale": [], "label": [], 'ylabel': '', 'xlabel': ''}
+                              "data": [], "scale": [], "label": [], 'ylabel': '', 'xlabel': '', "order": False}
     result["Density"] = {"plt": "line",
-                         "data": [], "scale": [], "label": [], 'ylabel': '', 'xlabel': ''}
+                         "data": [], "scale": [], "label": [], 'ylabel': '', 'xlabel': '', "order": False}
     result["Super Stars Sum"] = {"plt": "pie",
-                                 "data": [], "scale": [], "label": [], 'ylabel': '', 'xlabel': ''}
+                                 "data": [], "scale": [], "label": [], 'ylabel': '', 'xlabel': '', "order": False}
     result["Super Stars In-deg"] = {"plt": "pie",
-                                    "data": [], "scale": [], "label": [], 'ylabel': '', 'xlabel': ''}
+                                    "data": [], "scale": [], "label": [], 'ylabel': '', 'xlabel': '', "order": False}
     result["Super Stars Out-deg"] = {"plt": "pie",
-                                     "data": [], "scale": [], "label": [], 'ylabel': '', 'xlabel': ''}
+                                     "data": [], "scale": [], "label": [], 'ylabel': '', 'xlabel': '', "order": False}
 
     result["Node Attribute Distances"] = {
-        "plt": "heatmap", "data": [], "scale": [], "label": [], 'ylabel': '', 'xlabel': ''}
+        "plt": "heatmap", "data": [], "scale": [], "label": [], 'ylabel': '', 'xlabel': '', "order": False}
 
     start_date = None
     end_date = None
@@ -350,7 +350,7 @@ def compute_bias_metrics(net_ids=[], alias=[], s_date='', e_date='', snapshot_si
 
             age_idx_blau = compute_blau_on_link(nav[2]['data']['Undirected'])
             result['Age Heterogeneity Index']['data'].append(age_idx_blau)
-        modular = [modularity(g)]
+        modular = modularity(g)
         print(f"\n MODULARITY: {modular} \n")
 
         result['Modularity']['data'].append(modular)
@@ -433,9 +433,11 @@ def bias_report(metrics_data):
                 plt.close()
             elif plt_key == 'line':
                 label = metrics_data[key]["label"]
+                order = metrics_data[key]["order"]
                 xlabel = metrics_data[key]["xlabel"]
                 for idx, d in enumerate(data):
-                    d.sort(reverse=True)
+                    if order:
+                        d.sort(reverse=True)
 
                     plt.plot(d, label=wrap_labels(
                         [accorderies[idx]], 15)[0])
@@ -614,11 +616,7 @@ def bias_report(metrics_data):
 
                     X = np.arange(len([d]))
                     X_new = X + (i - 1) * width
-                    # print('KEY: ', key, 'value: ', d)
-                    # if yticks:
-                    #     plt.bar(X_new, , width=width,
-                    #             label=accorderies[i])
-                    # else:
+
                     plt.bar(X_new, [d], width=width, label=accorderies[i])
 
                 tick_positions = np.arange(0, 1.1, 0.1)
@@ -628,7 +626,13 @@ def bias_report(metrics_data):
 
                     plt.ylim(0.5, 1.1)
 
+                if 'modularity' in key.lower():
+                    tick_positions = [round(i, 1)
+                                      for i in np.arange(-0.2, 0.2 + 0.1, 0.1)]
+                    plt.ylim(-0.2, 0.3)
+
                 plt.yticks(tick_positions)
+
                 x_ticks_pos = np.arange(-width, len(data), width)
                 #  plt.xticks(tick_X_label, labels=tick_labels,
                 #            rotation=45, ha='right')
@@ -714,11 +718,11 @@ all_accorderies = {
 #  s_date='01/01/2014', e_date='01/01/2022'
 res = compute_bias_metrics(
     net_ids=[
-        # 'accorderies\\2',
-        # 'accorderies\\2-',
+        'accorderies\\2',
+        'accorderies\\2-',
 
-        # 'accorderies\\92',
-        # 'accorderies\\92-',
+        'accorderies\\92',
+        'accorderies\\92-',
 
         'accorderies\\109',
         'accorderies\\109-',
@@ -741,11 +745,11 @@ res = compute_bias_metrics(
     ], s_date='28/02/2014',
     e_date='30/04/2022',
     alias=[
-        # "Québec",
-        # "Québec-1",
+        "Québec",
+        "Québec-1",
 
-        # "Shawinigan",
-        # "Shawinigan-1",
+        "Shawinigan",
+        "Shawinigan-1",
 
         "Sherbrooke",
         "Sherbrooke-1",
