@@ -120,30 +120,23 @@ def centralization(n, d=1, metrics=[], metric_name=''):
     elif metric_name == 'betweenness':
         denominator_factor = (n - 1)**2 * (n - 2)
     elif metric_name == 'harmonic':
-        denominator_factor = d*(n - 3)/2
+        denominator_factor = ((n-1)*(n-2))/(2*(n-1))
     elif metric_name == 'closeness':
-        denominator_factor = (d*(n-1)*(n-2))/(2*n - 3)
+        denominator_factor = ((n-1)*(n-2))/(2*n - 3)
 
     if not denominator_factor:
         return np.nan
 
-    metrics = list(filter(lambda m: m > 0, metrics))
-
-    if len(metrics) == 0:
-        return 0
-
     max_node = np.max(metrics)
 
     numerator = (max_node - np.array(metrics))
-    total_sum = 0
-    for v in metrics:
-        diff = (max_node - v)
-        # print(diff)
-        total_sum += diff
 
     sum_num = np.sum(numerator)
 
     result = sum_num / denominator_factor
+
+    if result == np.nan:
+        return 0
 
     return result
 
@@ -196,25 +189,46 @@ def compute_graph_metrics(g=Graph):
     return result
 
 
-def global_graph_properties(g=Graph):
+def modularity(g: Graph):
+    if g is None:
+        return 0
+    g = g.as_undirected()
+
+    communities = g.community_leiden()
+
+    return communities.modularity
+
+
+def global_graph_properties(g: Graph):
     weights = compute_edge_weight_based_on_edge_number(g)
+
+    if (g is None) or (g.vcount() == 0):
+        return np.zeros(28)
 
     n = len(g.vs)
 
     weak_size, strong_size = giant_component(g)
+    if len(g.count_multiple()) > 0:
+        d = np.max(g.count_multiple())
+    else:
+        d = 1
 
-    d = np.max(g.count_multiple())
+    avg_in_out_deg, _ = get_avg_in_out_degree(g)
+    # TODO: check return types of function below
+    # TODO: add new custom metrics:
+    # growth rate
+    # disparity
+    #
 
     data = [
         g.vcount(),
         g.ecount(),
-        # np.sum(g.degree(mode='in')),
-        # np.sum(g.degree(mode='out')),
-        g.maxdegree(mode='in', loops=True),
-        g.maxdegree(mode='out', loops=True),
+        np.min(g.degree(mode='in')),
+        np.max(g.degree(mode='in')),
+        np.min(g.degree(mode='out')),
+        np.max(g.degree(mode='out')),
         mean_degree(g),
-        # np.std(g.degree(mode='all')),
-        get_avg_in_out_degree(g),
+        avg_in_out_deg,
         get_avg_weighted_in_out_degree(g, field_name='duree'),
         get_avg_in_out_disbalance(g),
         get_unique_edges_vs_total(g),
@@ -236,20 +250,21 @@ def global_graph_properties(g=Graph):
         centralization(n=n, d=d, metrics=closeness(g),
                        metric_name='closeness'),
         centralization(n=n, d=d, metrics=harmonic(g), metric_name='harmonic'),
-        pagerank(g, average=True, weights=weights),
         degree_assortativity(g),
-        homophily_nominal(g, 'age'),
-        homophily_nominal(g, 'revenu'),
-        homophily_nominal(g, 'ville'),
-        homophily_nominal(g, 'region'),
-        homophily_nominal(g, 'arrondissement'),
-        homophily_nominal(g, 'address'),
+        modularity(g)
     ]
-
+    # pagerank(g, average=True, weights=weights),
+    # homophily_nominal(g, 'age'),
+    # homophily_nominal(g, 'revenu'),
+    # homophily_nominal(g, 'ville'),
+    # homophily_nominal(g, 'region'),
+    # homophily_nominal(g, 'arrondissement'),
+    # homophily_nominal(g, 'address'),
+    # print(f'===== DATA: ', data)
     return data
 
 
-def compute_global_properties_on_graph(g=Graph):
+def compute_global_properties_on_graph(g: Graph):
     columns = ['Value']
 
     data = global_graph_properties(g)
@@ -267,7 +282,7 @@ def compute_degree_distribution(g=Graph, degree_mode='out'):
 
 
 def mean_degree(g):
-    return g.ecount() / g.vcount()
+    return np.sum(g.degree(mode='in')) / g.vcount()
 
 
 '''
@@ -286,13 +301,26 @@ def mean_degree(g):
 #     return l, log_mean_dist
 
 
-def giant_component(g):
+def giant_component(g: Graph):
     s_components = g.connected_components(mode='strong')
     w_components = g.connected_components(mode='weak')
-    # print(s_components)
-    s = len(max(s_components, key=len)) / \
+
+    if g is None or (g.vcount() == 0):
+        return 0, 0
+
+    if len(s_components) != 0:
+        numerator_s_component = max(s_components, key=len)
+    else:
+        numerator_s_component = []
+
+    if len(w_components) != 0:
+        numerator_w_component = max(w_components, key=len)
+    else:
+        numerator_w_component = []
+
+    s = len(numerator_s_component) / \
         g.vcount()  # giant strongly component
-    w = len(max(w_components, key=len)) / \
+    w = len(numerator_w_component) / \
         g.vcount()  # giant weakly component
 
     return w, s
@@ -366,13 +394,25 @@ def homophily_nominal(g, attribute):
     return assortativity
 
 
+def compute_blau_on_link(table):
+    table = np.array(table)
+
+    table_to_list = table.reshape(-1)
+
+    total = np.sum(table_to_list)
+
+    p_sqr = np.power(table_to_list/total, 2)
+
+    return 1 - np.sum(p_sqr)
+
+
 def compute_blau_index(g, attr):
     attributes = [g.vs[node][attr] for node in range(
         len(g.vs)) if attr in g.vs[node].attributes()]
     print('\n\n\n\n\n\n\n')
 
     attribute_counts = Counter(attributes)
-    print(attribute_counts)
+    # print(attribute_counts)
 
     total = sum(attribute_counts.values())
     proportions = [count / total for count in attribute_counts.values()]
@@ -402,7 +442,8 @@ def duree_to_int(duree_str):
 
 def get_avg_in_out_degree(g):
     if len(g.vs) == 0:
-        return -1
+        return -1, []
+
     ratio_sum = 0
     nb_isolated = 0
     all_ratio = []
@@ -487,13 +528,14 @@ def get_avg_weighted_in_out_degree(g, field_name='duree'):
     try:
         result = ratio_sum / (len(g.vs) - nb_isolated)
     except Exception as e:
-        print('WARNING: Divide by zero error')
+        pass
+        # print('WARNING: Divide by zero error')
 
-    print(f'get_avg_weighted_in_out_degree: {result}')
-    # total_weigh_in = np.std(total_weigh_in)
-    # total_weigh_out = np.std(total_weigh_out)
+        # print(f'get_avg_weighted_in_out_degree: {result}')
+        # total_weigh_in = np.std(total_weigh_in)
+        # total_weigh_out = np.std(total_weigh_out)
 
-    # result = total_weigh_in / (total_weigh_in + total_weigh_out)
+        # result = total_weigh_in / (total_weigh_in + total_weigh_out)
     return result
 
 
@@ -519,14 +561,15 @@ def get_avg_in_out_disbalance(g):
 
     result = 0
     try:
-        print('LEN.G ', len(g.vs))
-        print('ISOLATED ', nb_isolated)
+        # print('LEN.G ', len(g.vs))
+        # print('ISOLATED ', nb_isolated)
 
         result = disbalance_sum / (len(g.vs) - nb_isolated)
     except Exception as e:
-        print('WARNING: Divide by zero error')
+        # print('WARNING: Divide by zero error')
+        pass
 
-    print(f'get_avg_in_out_disbalance: {result}')
+    # print(f'get_avg_in_out_disbalance: {result}')
     # print('DISBALANCE: ', result)
     return result
 
@@ -538,7 +581,7 @@ def get_unique_edges_vs_total(g):
         return -1
 
     nb_edges = len(g.es)
-    print(f'number of edges: {nb_edges}')
+    # print(f'number of edges: {nb_edges}')
     unique_edges = set()
     all_edges = list()
 
@@ -556,8 +599,9 @@ def get_unique_edges_vs_total(g):
     try:
         result = len(unique_edges) / nb_edges
     except Exception as e:
-        print('WARNING: Divide by zero error')
-    print(f'returned value: {result}')
+        pass
+        # print('WARNING: Divide by zero error')
+    # print(f'returned value: {result}')
     return result
 
 
@@ -584,9 +628,32 @@ def perform_filter(g, start_date, window_date, acc_id=None):
     return snapshot
 
 
+def compute_global_properties_on_snapshot(g: Graph, sn_size, start_date, end_date):
+
+    window_date = start_date + timedelta(sn_size * 1)
+
+    result = np.array([global_graph_properties(g)])
+    print('=========== PROCESSED GRAPH ===========')
+    while (window_date) < end_date:
+        snapshot: Graph = perform_filter(
+            g,  window_date - timedelta(sn_size), window_date)
+
+        props = global_graph_properties(snapshot)
+        print(
+            f'=========== PROCESSED SNAPSHOT FROM: {start_date.strftime("%Y-%m-%d")} - TO: {end_date.strftime("%Y-%m-%d")} ===========')
+
+        result = np.append(result, props)
+
+        window_date += timedelta(sn_size)
+
+    print(f'=========== ENDED PARSING SNAPSHOTS GRAPH ===========')
+
+    return result
+
+
 def growth_rate(g, sn_size, start_date, end_date, id, weighted=False, subset='NODE', degree_mode='all'):
     if len(g.vs) == 0:
-        return np.nan
+        return 0, []
 
     window_date = start_date + timedelta(sn_size * 1)
 
@@ -636,7 +703,7 @@ def growth_rate(g, sn_size, start_date, end_date, id, weighted=False, subset='NO
 
 def graph_novelty(g, sn_size, start_date, end_date, id, weighted=False, subset='NODE', degree_mode='all', density=False):
     if len(g.vs) == 0:
-        return np.nan
+        return 0, sn_size, [], [], []
 
     window_date = start_date + timedelta(sn_size * 2)
 

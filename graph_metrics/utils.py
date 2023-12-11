@@ -3,6 +3,8 @@ import os
 from dateutil import parser
 from graph_loader import data_loader
 from pathlib import Path
+from igraph import Graph
+
 
 # FIXME: POTENTIAL DUPLICATE
 metrics_columns = ['Degree', 'Betweenness', 'Closeness',
@@ -222,5 +224,35 @@ def perform_filter_on_graph(g, filters):
               str(filters["accorderie_edge"]))
         g = g.subgraph_edges(g.es.select(
             accorderie_in=filters["accorderie_edge"]))
+
+    return g
+
+# DUPLICATE
+
+
+def data_loader(input_dir=''):
+
+    # input_dir = input_dir + '/'+input_dir
+
+    # TODO: Should consider loading as stream for better memory usage in case of large dataset
+    users = pd.read_csv(os.path.join(
+        input_dir, 'members.csv'), encoding='latin-1')
+    transactions = pd.read_csv(os.path.join(
+        input_dir, 'transactions.csv'), encoding='latin-1')
+    # print(users, transactions)
+    return users, transactions
+
+
+def load_accorderie_network(input_dir=''):
+    # TODO: Should consider loading as stream for better memory usage in case of large dataset
+    users, transactions = data_loader(input_dir)
+
+    g = None
+
+    try:
+        g = Graph.DataFrame(transactions, directed=True, vertices=users)
+    except ValueError as err:
+        print("Failed to load graph")
+        raise err
 
     return g

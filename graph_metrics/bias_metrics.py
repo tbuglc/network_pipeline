@@ -6,7 +6,7 @@ import json
 from graph_loader import data_loader, load_accorderie_network
 from snapshot_generator import create_snapshots
 from utils import get_start_and_end_date,  add_sheet_to_xlsx, create_xlsx_file, save_csv_file, accorderies
-from metrics import graph_novelty, growth_rate, disparity, super_stars_count, get_avg_in_out_degree, get_avg_in_out_disbalance, get_avg_weighted_in_out_degree, get_unique_edges_vs_total, node_attribute_variance, compute_blau_index
+from metrics import graph_novelty, growth_rate, disparity, super_stars_count, get_avg_in_out_degree, get_avg_in_out_disbalance, get_avg_weighted_in_out_degree, get_unique_edges_vs_total, node_attribute_variance, compute_blau_index, compute_blau_on_link, modularity
 # accept input folder
 from collections import OrderedDict
 from matplotlib.backends.backend_pdf import PdfPages
@@ -123,12 +123,14 @@ def compute_bias_metrics(net_ids=[], alias=[], s_date='', e_date='', snapshot_si
     # Heterogeneity
     result["Age Heterogeneity Index"] = {"plt": "bar",
                                          "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
-    result["Region Heterogeneity Index"] = {"plt": "bar",
-                                            "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+    # result["Region Heterogeneity Index"] = {"plt": "bar",
+    #                                         "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
     result["Revenu Heterogeneity Index"] = {"plt": "bar",
                                             "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
     result["Gender Heterogeneity Index"] = {"plt": "bar",
                                             "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
+    result["Modularity"] = {"plt": "line",
+                            "data": [], "scale": prob_scale, "label": [], 'ylabel': '', 'xlabel': ''}
 
     result["Disbalance"] = {"plt": "bar", "data": [],
                             "scale": prob_scale[5:], "label": [], 'ylabel': '', 'xlabel': ''}
@@ -254,18 +256,6 @@ def compute_bias_metrics(net_ids=[], alias=[], s_date='', e_date='', snapshot_si
         # print(all_avg_disp)
         # print(all_disp)
 
-        region_idx_blau = compute_blau_index(g, 'region')
-        result['Region Heterogeneity Index']['data'].append(region_idx_blau)
-
-        genre_idx_blau = compute_blau_index(g, 'genre')
-        result['Gender Heterogeneity Index']['data'].append(genre_idx_blau)
-
-        revenu_idx_blau = compute_blau_index(g, 'revenu')
-        result['Revenu Heterogeneity Index']['data'].append(revenu_idx_blau)
-
-        age_idx_blau = compute_blau_index(g, 'age')
-        result['Age Heterogeneity Index']['data'].append(age_idx_blau)
-
         print('\nNode Novelty')
         _, _, node_novelty, raw_node_result, densities = graph_novelty(
             g, sn_size=snapshot_size, start_date=start_date, end_date=end_date, id=acc_id, density=True)
@@ -341,8 +331,31 @@ def compute_bias_metrics(net_ids=[], alias=[], s_date='', e_date='', snapshot_si
         print('Node Attribute Distances')
 
         if 'random' not in accorderie_name.lower():
-            result["Node Attribute Distances"]["data"].append(
-                node_attribute_variance(g, accorderie_name))
+            nav = node_attribute_variance(g, accorderie_name)
+            result["Node Attribute Distances"]["data"].append(nav)
+
+            print('\n\n\n\n\n\n')
+            print(nav)
+            print('\n\n\n\n\n\n')
+            # region_idx_blau = compute_blau_on_link(nav[0]['Undirected'])
+            # result['Region Heterogeneity Index']['data'].append(region_idx_blau)
+
+            genre_idx_blau = compute_blau_on_link(nav[0]['data']['Undirected'])
+            result['Gender Heterogeneity Index']['data'].append(genre_idx_blau)
+
+            revenu_idx_blau = compute_blau_on_link(
+                nav[1]['data']['Undirected'])
+            result['Revenu Heterogeneity Index']['data'].append(
+                revenu_idx_blau)
+
+            age_idx_blau = compute_blau_on_link(nav[2]['data']['Undirected'])
+            result['Age Heterogeneity Index']['data'].append(age_idx_blau)
+        modular = [modularity(g)]
+        print(f"\n MODULARITY: {modular} \n")
+
+        result['Modularity']['data'].append(modular)
+        # result['Modularity']["label"].append(
+        #     [round(i, 1) for i in np.arange(-1, 1 + 0.1, 0.1)])
 
         # except Exception as e:
         #     print(f'compute_bias_metrics error: {e}')
@@ -586,7 +599,7 @@ def bias_report(metrics_data):
 
                     axes.pie(result, explode=explode,
                              autopct=custom_autopct,
-                             shadow=True, startangle=135)
+                             shadow=True, startangle=135,  textprops={'color': 'white'})
 
                     axes.set_title(f'{accorderies[idx]}\n{key}')
 
@@ -596,10 +609,16 @@ def bias_report(metrics_data):
                     pdf.savefig()
                     plt.close()
             elif plt_key == 'bar':
+                # yticks = metrics_data[key]["ylabel"]
                 for i, d in enumerate(data):
+
                     X = np.arange(len([d]))
                     X_new = X + (i - 1) * width
                     # print('KEY: ', key, 'value: ', d)
+                    # if yticks:
+                    #     plt.bar(X_new, , width=width,
+                    #             label=accorderies[i])
+                    # else:
                     plt.bar(X_new, [d], width=width, label=accorderies[i])
 
                 tick_positions = np.arange(0, 1.1, 0.1)
@@ -695,11 +714,11 @@ all_accorderies = {
 #  s_date='01/01/2014', e_date='01/01/2022'
 res = compute_bias_metrics(
     net_ids=[
-        'accorderies\\2',
-        'accorderies\\2-',
+        # 'accorderies\\2',
+        # 'accorderies\\2-',
 
-        'accorderies\\92',
-        'accorderies\\92-',
+        # 'accorderies\\92',
+        # 'accorderies\\92-',
 
         'accorderies\\109',
         'accorderies\\109-',
@@ -722,11 +741,11 @@ res = compute_bias_metrics(
     ], s_date='28/02/2014',
     e_date='30/04/2022',
     alias=[
-        "Québec",
-        "Québec-1",
+        # "Québec",
+        # "Québec-1",
 
-        "Shawinigan",
-        "Shawinigan-1",
+        # "Shawinigan",
+        # "Shawinigan-1",
 
         "Sherbrooke",
         "Sherbrooke-1",
